@@ -1,0 +1,297 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Tufte-Style Book (Minimal Template)
+% LaTeX Template
+% Version 1.0 (5/1/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% IMPORTANT NOTE:
+% In addition to running BibTeX to compile the reference list from the .bib
+% file, you will need to run MakeIndex to compile the index at the end of the
+% document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{tufte-book} % Use the tufte-book class which in turn uses the tufte-common class
+
+\usepackage{natbib}
+
+\hypersetup{colorlinks} % Comment this line if you don't wish to have colored links
+
+\usepackage{microtype} % Improves character and word spacing
+
+%\usepackage{lipsum} % Inserts dummy text
+
+\usepackage{booktabs} % Better horizontal rules in tables
+
+\usepackage{graphicx} % Needed to insert images into the document
+\graphicspath{{graphics/}} % Sets the default location of pictures
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio} % Improves figure scaling
+
+\usepackage{fancyvrb} % Allows customization of verbatim environments
+\fvset{fontsize=\normalsize} % The font size of all verbatim text can be changed here
+
+\newcommand{\hangp}[1]{\makebox[0pt][r]{(}#1\makebox[0pt][l]{)}} % New command to create parentheses around text in tables which take up no horizontal space - this improves column spacing
+\newcommand{\hangstar}{\makebox[0pt][l]{*}} % New command to create asterisks in tables which take up no horizontal space - this improves column spacing
+
+\usepackage{xspace} % Used for printing a trailing space better than using a tilde (~) using the \xspace command
+
+\newcommand{\monthyear}{\ifcase\month\or January\or February\or March\or April\or May\or June\or July\or August\or September\or October\or November\or December\fi\space\number\year} % A command to print the current month and year
+
+\newcommand{\openepigraph}[2]{ % This block sets up a command for printing an epigraph with 2 arguments - the quote and the author
+\begin{fullwidth}
+\sffamily\large
+\begin{doublespace}
+\noindent\allcaps{#1}\\ % The quote
+\noindent\allcaps{#2} % The author
+\end{doublespace}
+\end{fullwidth}
+}
+
+\newcommand{\blankpage}{\newpage\hbox{}\thispagestyle{empty}\newpage} % Command to insert a blank page
+
+\usepackage{makeidx} % Used to generate the index
+\makeindex % Generate the index which is printed at the end of the document
+
+%----------------------------------------------------------------------------------------
+%	BOOK META-INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{Notes on\\Star Formation} % Title of the book
+
+\author{Mark R.~Krumholz} % Author
+
+\publisher{The Open Astrophysics Bookshelf} % Publisher
+
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+% MRK customizations
+
+% Symbols used throughout
+\input{symbols.tex}
+
+% Autoref for marginfigures
+%\newcommand{\marginfigureautorefname}{Figure}
+
+% Journals
+\newcommand{\aap}{Astron.~\& Astrophys.}
+\newcommand{\apj}{Astrophys.~J.}
+\newcommand{\aj}{Astron.~J.}
+\newcommand{\araa}{Annu.~Rev.~Astron.~Astrophys.}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\frontmatter
+
+%----------------------------------------------------------------------------------------
+%	EPIGRAPH
+%----------------------------------------------------------------------------------------
+
+\thispagestyle{empty}
+%\openepigraph{Quotation 1}{Author, {\itshape Source}}
+%\vfill
+%\openepigraph{Quotation 2}{Author}
+%\vfill
+%\openepigraph{Quotation 3}{Author}
+
+%----------------------------------------------------------------------------------------
+
+\maketitle % Print the title page
+
+%----------------------------------------------------------------------------------------
+%	COPYRIGHT PAGE
+%----------------------------------------------------------------------------------------
+
+\newpage
+\begin{fullwidth}
+~\vfill
+\thispagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{\baselineskip}
+Original version: \the\year\ \thanklessauthor
+
+\par\smallcaps{Published as part of the Open Astrophysics Bookshelf}
+
+\par\smallcaps{\url{http://open-astrophysics-bookshelf.github.io/}}
+
+\par Licensed under the Creative Commons 1.0 Universal License, \url{http://creativecommons.org/publicdomain/zero/1.0/}.\index{license}
+
+%\par\textit{First printing, \monthyear}
+\end{fullwidth}
+
+%----------------------------------------------------------------------------------------
+
+\tableofcontents % Print the table of contents
+
+%----------------------------------------------------------------------------------------
+
+\listoffigures % Print a list of figures
+
+%----------------------------------------------------------------------------------------
+
+\listoftables % Print a list of tables
+
+%----------------------------------------------------------------------------------------
+%	DEDICATION PAGE
+%----------------------------------------------------------------------------------------
+
+%\cleardoublepage
+%~\vfill
+%\begin{doublespace}
+%\noindent\fontsize{18}{22}\selectfont\itshape
+%\nohyphenation
+%Dedicated to my family and friends.
+%\end{doublespace}
+%\vfill
+%\vfill
+
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION
+%----------------------------------------------------------------------------------------
+
+\cleardoublepage
+\chapter*{Introduction} % The asterisk leaves out this chapter from the table of contents
+
+This book is based on a series of lectures given by the author in his graduate class on star formation, taught from 2009 - 2014 at UC Santa Cruz. It is intended for graduate students or advanced undergraduates in astronomy or physics, but does not presume detailed knowledge of particular areas of astrophysics (e.g., the interstellar medium or galactic structure). It is intended to provide a general overview of the field of star formation, at a level that would enable a student to begin independent research in the area.
+
+This course covers the basics of star formation and ending at the transition to planet formation. The structure of the course / book is as follows. Each chapter corresponds roughly to a single lecture. The first two chapters begin with a discussion of observational techniques, and the basic phenomenology they reveal. The goal is to familiarize students with the basic techniques that will be used throughout, and to provide a common vocabulary for the rest of the course. The next four chapters provide a similar review of the basic physical processes that are important for star formation. Again, the goal is to provide a basis for what follows. The remaining chapters discuss star formation over a variety of scales, starting with the galactic scale and working our way down to the scales of individual stars and their disks. The course concludes with the clearing of disks and the transition to planet formation.
+
+The "text" intended to go with these notes is the review article "\href{http://adsabs.harvard.edu/abs/2014arXiv1402.0867K}{The Big Problems in Star Formation: the Star Formation Rate, Stellar Clustering, and the Initial Mass Function}", Krumholz, M. R., 2014, \textit{Physics Reports}, 539, 49, which provides a snapshot of the literature as of the most recent time the course was given. Another extremely useful reference is the series of review chapters from the \href{http://www.mpia.de/homes/ppvi/}{Protostars and Planets VI Conference}, which took place in July 2013.
+
+In addition to the text, this book contains five problem sets, which are interspersed with the chapters at appropriate locations. Solutions to the problems are included at the end.
+
+%Citation example \cite{Tufte2001}, notice how the citation is in the margin. This is an example of how to add something to the index at the end of the document.\index{citation}
+
+%\newthought{Example of} the \texttt{newthought} command for starting new sections. Typography examples: \allcaps{all caps} and \smallcaps{small caps}.
+
+%------------------------------------------------
+
+%\section{Figures}
+
+%\lipsum[1] 
+
+%\begin{marginfigure}
+%\includegraphics[width=\linewidth]{helix}
+%\caption{This is a margin figure. The helix is defined by $x = \cos(2\pi z)$, $y = \sin(2\pi z)$, and $z = [0, 2.7]$. The figure was drawn using Asymptote (\url{http://asymptote.sf.net/}).}
+%\label{fig:marginfig}
+%\end{marginfigure}
+
+%\lipsum[2]
+
+%\begin{figure*}[h]
+%\includegraphics[width=\linewidth]{sine.pdf}
+%\caption{This graph shows $y = \sin x$ from about $x = [-10, 10]$.
+%\emph{Notice that this figure takes up the full page width.}}
+%\label{fig:fullfig}
+%\end{figure*}
+
+%\lipsum[3]
+
+%------------------------------------------------
+
+%\section{Tables} \marginnote{This is a random margin note. Notice that there isn't a number preceding the note, and there is no number in the main text where this note was written. Use \texttt{sidenote} to use a number.}
+
+%\lipsum[4]
+
+%\begin{table} % Add the following just after the closing bracket on this line to specify a position for the table on the page: [h], [t], [b] or [p] - these mean: here, top, bottom and on a separate page, respectively
+%\centering % Centers the table on the page, comment out to left-justify
+%\begin{tabular}{l c c c c c} % The final bracket specifies the number of columns in the table along with left and right borders which are specified using vertical bars (|); each column can be left, right or center-justified using l, r or c. To specify a precise width, use p{width}, e.g. p{5cm}
+%\toprule % Top horizontal line
+%& \multicolumn{5}{c}{Growth Media} \\ % Amalgamating several columns into one cell is done using the \multicolumn command as seen on this line
+%\cmidrule(l){2-6} % Horizontal line spanning less than the full width of the table - you can add (r) or (l) just before the opening curly bracket to shorten the rule on the left or right side
+%Strain & 1 & 2 & 3 & 4 & 5\\ % Column names row
+%\midrule % In-table horizontal line
+%GDS1002 & 0.962 & 0.821 & 0.356 & 0.682 & 0.801\\ % Content row 1
+%NWN652 & 0.981 & 0.891 & 0.527 & 0.574 & 0.984\\ % Content row 2
+%PPD234 & 0.915 & 0.936 & 0.491 & 0.276 & 0.965\\ % Content row 3
+%JSB126 & 0.828 & 0.827 & 0.528 & 0.518 & 0.926\\ % Content row 4
+%JSB724 & 0.916 & 0.933 & 0.482 & 0.644 & 0.937\\ % Content row 5
+%\midrule % In-table horizontal line
+%\midrule % In-table horizontal line
+%Average Rate & 0.920 & 0.882 & 0.477 & 0.539 & 0.923\\ % Summary/total row
+%\bottomrule % Bottom horizontal line
+%\end{tabular}
+%\caption{Table caption text} % Table caption, can be commented out if no caption is required
+%\label{tab:template} % A label for referencing this table elsewhere, references are used in text as \ref{label}
+%\end{table}
+
+%----------------------------------------------------------------------------------------
+
+% Number things
+\setcounter{secnumdepth}{3}
+
+\mainmatter
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 1
+%----------------------------------------------------------------------------------------
+
+%\chapter{Chapter 1 Title}
+%\label{ch:1}
+\input{chapters/chapter1.tex}
+
+%------------------------------------------------
+
+%\section{Section 1 - Fullwidth Environment Example}
+
+%\begin{fullwidth}
+%\lipsum[5]
+%\end{fullwidth}
+
+%\subsection{Subsection 1}
+
+%\lipsum[6-7]
+
+%\subsection{Subsection 2}
+
+%\lipsum[7-8]
+
+%------------------------------------------------
+
+%\section{Section 2}
+
+%\subsection{Subsection 1}
+
+%\lipsum[9-10]
+
+%\subsection{Subsection 2}
+
+%\lipsum[11-12]
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 2
+%----------------------------------------------------------------------------------------
+
+%\chapter{Chapter 2 Title}
+%\label{ch:2}
+
+%\lipsum[13-20]
+
+%----------------------------------------------------------------------------------------
+
+\backmatter
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\bibliography{bib/refs} % Use the bibliography.bib file for the bibliography
+%\bibliographystyle{plainnat} % Use the plainnat style of referencing
+\bibliographystyle{apj}
+
+%----------------------------------------------------------------------------------------
+
+\printindex % Print the index at the very end of the document
+
+\end{document}
