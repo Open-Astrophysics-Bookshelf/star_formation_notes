@@ -20,7 +20,7 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass{tufte-book} % Use the tufte-book class which in turn uses the tufte-common class
+\documentclass{tex/tufte-book} % Use the tufte-book class which in turn uses the tufte-common class
 
 \usepackage{natbib}
 
@@ -85,10 +85,37 @@
 % Journals
 \newcommand{\aap}{Astron.~\& Astrophys.}
 \newcommand{\apj}{Astrophys.~J.}
+\newcommand{\apjs}{Astrophys.~J.~Supp.}
 \newcommand{\aj}{Astron.~J.}
 \newcommand{\araa}{Annu.~Rev.~Astron.~Astrophys.}
 \newcommand{\pasp}{Proc.~Astron.~Soc.~Pac.}
 \newcommand{\mnras}{Mon.~Not.~Roy.~Astron.~Soc.}
+
+% Modify the chapter heading
+\titleformat{\chapter}%
+  [display]% shape
+  {\relax\ifthenelse{\NOT\boolean{@tufte@symmetric}}{\begin{fullwidth}}{}}% format applied to label+text
+  {\itshape\huge\thechapter}% label
+  {0pt}% horizontal separation between label and title body
+  {\huge\rmfamily\itshape}% before the title body
+  [\ifthenelse{\NOT\boolean{@tufte@symmetric}}{\end{fullwidth}}{}]% after the title body
+
+% Define section types for problem sets and solution sets
+\newcounter{problemset}
+\newcommand{\problemset}{%
+   \refstepcounter{problemset}
+   \chapter*{Problem Set~\theproblemset}
+   \addcontentsline{toc}{chapter}{Problem Set~\theproblemset}
+}
+
+\newcounter{solutionset}
+\newcommand{\solutionset}{%
+   \refstepcounter{solutionset}
+   \chapter*{Solutions to Problem Set~\thesolutionset}
+   \addcontentsline{toc}{chapter}{Solutions to Problem Set~\thesolutionset}
+}
+
+\usepackage{appendix}
 
 %----------------------------------------------------------------------------------------
 
@@ -142,7 +169,7 @@ Original version: \the\year\ \thanklessauthor
 
 %----------------------------------------------------------------------------------------
 
-\listoftables % Print a list of tables
+%\listoftables % Print a list of tables
 
 %----------------------------------------------------------------------------------------
 %	DEDICATION PAGE
@@ -236,7 +263,7 @@ In addition to the text, this book contains five problem sets, which are intersp
 \mainmatter
 
 %----------------------------------------------------------------------------------------
-%	CHAPTERS
+%	CHAPTERS AND PROBLEM SETS
 %----------------------------------------------------------------------------------------
 
 %\chapter{Chapter 1 Title}
@@ -250,6 +277,18 @@ In addition to the text, this book contains five problem sets, which are intersp
 
 \input{chapters/chapter3.tex}
 \input{chapters/chapter4.tex}
+\input{problems/probset1.tex}
+
+\appendix
+
+\chapter{Solutions to Problem Sets}
+
+\input{problems/probsol1.tex}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM SET SOLUTIONS
+%----------------------------------------------------------------------------------------
+
 
 %------------------------------------------------
 
