@@ -1,0 +1,326 @@
+\chapter{Stellar Feedback}
+\label{ch:feedback}
+
+\marginnote{
+\textbf{Suggested background reading:}
+\begin{itemize}
+\item \href{http://adsabs.harvard.edu/abs/2014prpl.conf..243K}{Krumholz, M.~R., et al. 2014, in ``Protostars and Planets VI", ed.~H.~Beuther et al., pp.~243-266} \nocite{krumholz14e}
+\end{itemize}
+\textbf{Suggested literature:}
+\begin{itemize}
+\item \href{http://adsabs.harvard.edu/abs/2010ApJ...709..191M}{Murray, N., Quataert, E., \& Thompson, T.~A. 2010, ApJ, 709, 191} \nocite{murray10a}
+\item \href{http://adsabs.harvard.edu/abs/2014MNRAS.442..694D}{Dale, J.~E., Ngoumou, J., Ercolano, B., \& Bonnell, I.~A. 2014, MNRAS, 442, 694} \nocite{dale14a}
+\end{itemize}
+}
+
+The final piece of physics we will discuss before moving on to the star formation process itself is the interaction of stellar radiation, winds, and other forms of feedback with the interstellar medium. Our goal is to understand the myriad ways that stars influence their environments. This is particularly relevant to star formation because for the most part these influences are exerted most strongly by young stellar populations, and therefore constitute an important part in the regulation of star formation.
+
+\section{General Formalism}
+
+\subsection{IMF-Averaged Yields}
+
+In most cases when considering feedback, we will be averaging over many, many stars. Consequently, it makes sense to focus not on individual stars, but on the collective properties of stellar populations. For this reason, a very useful first step is to consider budgets of mass, momentum, and energy.
+
+We've already encountered a formalism of this sort in our discussion of galactic star formation rate indicators, and the idea is similar here. To begin, let us fix the IMF
+\begin{equation}
+\xi(m) \equiv \frac{dn}{d\ln m},
+\end{equation}
+with the normalization chosen so that $\int \xi(m) \, dm = 1$. We will assume that this is invariant, for lack of really convincing evidence otherwise (although this is hotly debated). The mean stellar mass is
+\begin{equation}
+\overline{m} = \frac{\int_{-\infty}^\infty m \xi(m) \, d\ln m}{\int_{-\infty}^\infty \xi(m) \, d\ln m} = \frac{1}{\int_{-\infty}^\infty \xi(m) \, d\ln m},
+\end{equation}
+where the second step follows from our choice of normalization. The numerator here represents the total mass of the stars, and the denominator is the number of stars. Note that $\xi(m)$ is presumably zero outside some finite interval in mass -- we are writing the limits of integration as $-\infty$ to $\infty$ only for convenience.
+
+We will further assume that, from stellar evolution, we know the rate $q$ at which stars produce some quantity $Q$ as a function of their starting mass and age, where $\dot{Q} = q$. For example if the quantity $Q$ we are concerned with is total radiant energy $E$, then $q$ is the bolometric luminosity $L(m,t)$ of a star of mass $m$ and age $t$. Now consider a population of stars that forms in a single burst at time 0. The instantaneous production rate for these stars is
+\begin{equation}
+q(t) = M \int_{-\infty}^{\infty} d\ln m \, \xi(m) q(m,t).
+\end{equation}
+We use this equation to define the IMF-averaged production rate,
+\begin{equation}
+\left\langle \frac{q}{M}\right\rangle = \int_{-\infty}^{\infty} d\ln m \, \xi(m) q(m,t).
+\end{equation}
+Note that this rate is a function of the age of the stellar population $t$. We can also define a lifetime-averaged yield. Integrating over all time, the total amount of the quantity produced is
+\begin{equation}
+Q = M \int_{-\infty}^{\infty} d\ln m \, \xi(m) \int_0^\infty dt\, q(M,t).
+\end{equation}
+We therefore define the IMF-averaged yield
+\begin{equation}
+\left\langle \frac{Q}{M} \right\rangle = \int_{-\infty}^{\infty} d\ln m \, \xi(m) \int_0^\infty dt\, q(M,t).
+\end{equation}
+The meaning of these quantities is that $\langle q/M\rangle$ is the instantaneous rate at which the stars are producing $Q$ per unit stellar mass, and $\langle Q/M\rangle$ is the total amount produced per unit mass of stars formed over the stars' entire lifetimes.
+
+In practice we can't really integrate to infinity for most quantities, since the lifetimes of some stars may be very, very long compared to what we're interested in. For example the luminous output of a stellar population will have a large contribution for $\sim 5$ Myr coming from massive stars, which is mostly what is of interest. However, if we integrate for $1000$ Gyr, we will find that the luminous output is dominated by the vast numbers of $\sim 0.2$ $\msun$ stars near the peak of the IMF that are fully convective and thus are able to burn all of their hydrogen to He. In reality, though, this is longer than the age of the universe. In practice, therefore, we must define our lifetime averages as cutting off after some finite time.
+
+It can also be useful to define a different IMF average. The quantities we have discussed thus far are yields per unit mass that goes into stars. Sometimes we are instead interested in the yield per unit mass that stays locked in stellar remnants for a long time, rather than the mass that goes into stars for $\sim 3-4$ Myr and then comes back out in supernovae. Let us define the mass of the remnant that a star of mass $m$ leaves as $w(m)$. If the star survives for a long time, $w(m) = m$. In this case, the mass that is ejected back into the ISM is
+\begin{equation}
+M_{\rm remnant} = M \int_{-\infty}^{\infty} d\ln m \, \xi(m) [m - w(m)] \equiv R M,
+\end{equation}
+where we define $R$ as the return fraction. The mass fraction that stays locked in remnants is $1-R$.
+
+Of course ``long time" here is a vague term. By convention (defined by Tinsley 1980), we choose to take $w(m) = m$ for $m=1$ $\msun$. We take $w(m) = 0.7$ $\msun$ for $m=1-8$ $\msun$ and $w(m) = 1.4$ $\msun$ for $m>8$ $\msun$, i.e.\ to assume that stars from $1-8$ $\msun$ leave behind $0.7$ $\msun$ white dwarfs, and stars larger than that mass form $1.4$ $\msun$ neutron stars. If one puts this in for a Chabrier (2005) IMF, the result is $R=0.46$, meaning that these averages are larger by a factor of $1/0.56$.
+
+Given this formalism, it is straightforward to use a set of stellar evolutionary tracks plus an IMF to compute $\langle q/M\rangle$ or $\langle Q/M\rangle$ for any quantity of interest. Indeed, this is effectively what starburst99 and programs like it do. The quantities of greatest concern for massive star feedback are the bolometric output, ionizing photon output, wind momentum and energy output, and supernova output.
+
+\subsection{Energy- versus Momentum-Driven Feedback}
+
+Before discussing individual feedback mechanisms in detail, it is also helpful to lay out two general categories that can be used to understand them. Let us consider a population of stars surrounded by initially-uniform interstellar gas. Those stars eject both photons and baryons (in the form of stellar winds) into the surrounding gas, and these photons and baryons carry both momentum and energy. We want to characterize how the ISM will respond.
+
+One important consideration is that, as we have already shown, it is very hard to raise the temperature of molecular gas (or even dense atomic gas) because it is able to radiate so efficiently. A factor of ~10 increase in the radiative heating rate might yield only a tens of percent increase in temperature. This is true as long as the gas is cold and dense, but at sufficiently high temperatures or if the gas is continuously illuminated then the cooling rate begins to drop off, and it is possible for gas to remain hot.
+
+A critical distinction is therefore between mechanisms that at able to keep the gas hot for a time that is long enough to be significant (generally of order the crossing time of the cloud or longer), and those where the cooling time is much shorter. For the latter case, the energy delivered by the photons and baryons will not matter, only the momentum delivered will. The momentum cannot be radiated away. We refer to feedback mechanism where the energy is lost rapidly as momentum-driven feedback, and to the opposite case where the energy is retained for at least some time as energy-driven, or explosive, feedback.
+
+To understand why the distinction between the two is important, let us consider two extreme limiting cases. We place a cluster of stars at the origin and surround it by a uniform region of gas with density $\rho$. At time $t=0$, the stars ``turn on" and begin emitting energy and momentum, which is then absorbed by the surrounding gas. Let the momentum and energy injection rates be $\dot{p}_w$ and $\dot{E}_w$; it does not matter if the energy and momentum are carried by photons or baryons, so long as the mass swept up is significantly greater than the mass carried by the wind.
+
+The wind runs into the surrounding gas and causes it to begin moving radially outward, which in turn piles up material that is further away, leading to an expanding shell of gas. Now let us compute the properties of that shell in the two extreme limits of all the energy being radiated away, and all the energy being kept. If all the energy is radiated away, then at any time the radial momentum of the shell must match the radial momentum injected up to that time, i.e.,
+\begin{equation}
+p_{\rm sh} = M_{\rm sh} v_{\rm sh} = \dot{p}_w t.
+\end{equation}
+The kinetic energy of the shell is
+\begin{equation}
+E = \dot{p_{\rm sh}^2}{2 M_{\rm sh}} = \frac{1}{2} v_{\rm sh} \dot{p}_w t.
+\end{equation} 
+For comparison, if none of the energy is radiated away, the energy is simply
+\begin{equation}
+E = \dot{E}_w t.
+\end{equation}
+Thus the energy in the energy-conserving case is larger by a factor of
+\begin{equation}
+\frac{1}{v_{\rm sh}} \cdot \frac{2\dot{E}_w}{\dot{p}_w}.
+\end{equation}
+If the energy injected by the stars is carried by a wind of baryons, then $2\dot{E}_w/\dot{p}_w$ is simply the speed of that wind, while if it is carried by photons, then $2\dot{E}_w/\dot{p}_w = 2 c$. Thus the energy in the energy-conserving case is larger by a factor of $2c/v_{\rm sh}$ for a photon wind, and $v_w/v_{\rm sh}$ for a baryon wind. These are not small factors: observed expanding shells typically have velocities of at most a few tens of km s$^{-1}$, while wind speeds from massive stars, for example, can be thousands of km s$^{-1}$. Thus it matters a great deal where a particular feedback mechanism lies between the energy- and momentum-conserving limits.
+
+\section{Momentum-Driven Feedback Mechanisms}
+
+We are now ready to consider individual mechanisms by which stars can deliver energy and momentum to the gas around them. Our goal is to understand what forms of feedback are significant and to estimate their relative budgets of momentum and energy.
+
+\subsection{Radiation Pressure and Radiatively-Driven Winds}
+
+The simplest form of feedback to consider is radiation pressure. Since the majority of the radiant energy deposited in the ISM will be re-radiated immediately, radiation pressure is (probably) a momentum-driven feedback. To evaluate the momentum it deposits, one need merely evaluate the integrals over the IMF we have written down using the bolometric luminosities of stars. Murray \& Rahman (2010) find
+\begin{equation}
+\left\langle \frac{L}{M}\right \rangle = 1140 \,\lsun\,\msun^{-1} = 2200\mbox{ erg g}^{-1},
+\end{equation}
+and the corresponding momentum injection rate is
+\begin{equation}
+\left\langle \frac{p_{\rm rad}}{M}\right \rangle = \frac{1}{c} \left\langle \frac{L}{M}\right \rangle = 7.3\times 10^{-8}\mbox{ cm s}^{-2} = 23\mbox{ km s}^{-1}\mbox{ Myr}^{-1}
+\end{equation}
+The physical meaning of this expression is that for every gram of matter that goes into stars, those stars produce enough light over 1 Myr to accelerate another gram of matter to a speed of 23 km s$^{-1}$. For very massive stars, radiation pressure also accelerates winds off the star's surfaces; for such stars, the wind carries a bit under half the momentum of the radiation field. Including this factor raises the estimate by a few tens of percent.  However, these winds may also be energy conserving, a topic we will approach momentarily.
+
+Integrated over the lifetimes of the stars, out 100 Myr the total energy production is
+\begin{equation}
+\left\langle \frac{E_{\rm rad}}{M}\right\rangle = 1.1\times 10^{51}\mbox{ erg}\,\msun^{-1}
+\end{equation}
+The majority of this energy is produced in the first $\sim 5$ Myr of a stellar population's life, when the massive stars live and die.
+
+It is common to quote the energy budget in units of $c^2$, which gives a dimensionless efficiency with which stars convert mass into radiation. Doing so gives
+\begin{equation}
+\epsilon = \frac{1}{c^2} \left\langle \frac{E_{\rm rad}}{M}\right\rangle = 6.2\times 10^{-4}.
+\end{equation}
+The radiation momentum budget is simply this over $c$,
+\begin{equation}
+\left\langle \frac{p_{\rm rad,tot}}{M}\right\rangle = 190\mbox{ km s}^{-1}.
+\end{equation}
+This is an interesting number, since it is not all that different than the circular velocity a typical galaxy. It is a suggestion that the radiant momentum output by stars may be interesting in pushing matter around in galaxies -- probably not by itself, but perhaps in conjunction with other effects.
+
+\subsection{Protostellar Winds}
+
+A second momentum-driven mechanism, that we will discuss in more detail when we get to disks, is protostellar jets. All accretion disks appear to produce some sort of wind that carries away some of the mass and angular momentum, and protostars are no exception. The winds from these stars carry a mass flux of order a few tens of percent of the mass coming into the stars, and eject it with a velocity of order the Keplerian speed at the stellar surface. Note that these winds are distinct from the radiatively-driven ones that come from main sequence O stars. They are very different in both their driving mechanism and physical characteristics.
+
+Why do we expect protostellar winds to be a momentum-driven feedback mechanism instead of an energy-driven one? The key lies in their characteristic speeds. Consider a star of mass $M_*$ and radius $R_*$. Its wind will move at a speed of order
+\begin{equation}
+v_w \sim \sqrt{\frac{GM_*}{R_*}} = 250\mbox{ km s}^{-1}\left(\frac{M_*}{M_\odot}\right)^{1/2} \left(\frac{R_*}{3R_\odot}\right)^{-1/2},
+\end{equation}
+where the scalings are for typical protostellar masses and radii. The kinetic energy per unit mass carried by the wind is $v_w^2/2$, and when the wind hits the surrounding ISM it will shock and this kinetic energy will be converted to thermal energy. We can therefore find the post-shock temperature from energy conservation. The thermal energy per unit mass is
+$(3/2) k_B T/\mu m_{\rm H}$, where $\mu$ is the mean particle mass in H masses. Thus the post-shock temperature will be
+\begin{equation}
+T = \frac{\mu m_{\rm H} v_w^2}{3 k_B} \sim 5 \times 10^6\mbox{ K}
+\end{equation}
+for the fiducial speed above. This is low enough that gas at this temperature will be able to cool fairly rapidly, leaving us in the momentum-conserving limit.
+
+So how much momentum can we extract? To answer that, we will use our formalism for IMF averaging. Let us consider stars forming over some timescale $t_{\rm form}$. This can be a function of mass if we want; it doesn't matter. Similarly, let us assume for simplicity that the accretion rate during the formation stage is constant; again, this assumption actually makes no different to the result, it just makes the math easier. Thus a star of mass $m$ accretes at a rate $\dot{m} = m/t_{\rm form}$ over a time $t_{\rm form}$, and during this time it produces a wind with a mass flux $f \dot{m}$ that is launched with a speed $v_K$. Thus IMF-averaged yield of wind momentum is
+\begin{equation}
+\left\langle\frac{p_w}{M}\right\rangle = \int_{-\infty}^{\infty} d\ln m \, \xi(m) \, \int_0^{t_{\rm form}} dt \, \frac{f m v_K}{t_{\rm form}}.
+\end{equation}
+In reality $v_K$, $f$, and the accretion rate probably vary over the formation time of a star, but to get a rough answer we can assume that they are constant, in which case the integral is trivial and evaluates to
+\begin{equation}
+\left\langle\frac{p_w}{M}\right\rangle =  f v_K \int_{-\infty}^{\infty} d\ln m \, \xi(m) m = f v_K
+\end{equation}
+where the second step follows from the normalization of the IMF. Thus we learn that winds supply momentum to the ISM at a rate of order $f v_K$. Depending on the exact choices of $f$ and $v_K$, this amounts to a momentum supply of a few tens of km s$^{-1}$ per unit mass of stars formed.
+
+Thus in terms of momentum budget, protostellar winds carry over the full lifetimes of the stars that produce them about as much momentum as is carried by the radiation each Myr. Thus if one integrates over the full lifetime of even a very massive, short-lived star, it puts out much more momentum in the form of radiation than it does in the form of outflows. So why worry about outflows at all, in this case?
+
+There are two reasons. First, because the radiative luminosities of stars increase steeply with stellar mass, the luminosity of a stellar population is dominated by its few most massive members. In small star-forming regions with few or no massive stars, the radiation pressure will be much less than our estimate, which is based on assuming full sampling of the IMF, suggests. On the other hand, protostellar winds produce about the same amount of momentum per unit mass accreted no matter what stars is doing the accreting -- this is just because $v_K$ is not a very strong function of stellar mass. (This is a bit of an oversimplification, but it's true enough for this purpose.) This means that winds will be significant even in regions that lack massive stars, because they can be produced by low-mass stars too.
+
+Second, while winds carry less momentum integrated over stars' lifetimes, when they are on they are much more powerful. Typical formation times, we shall see, are of order a few times $10^5$ yr, so the instantaneous production rate of wind momentum is typically $\sim 100$ km s$^{-1}$ Myr$^{-1}$, a factor of several higher than radiation pressure. Thus winds can dominate over radiation pressure significantly during the short phase when they are on.
+
+\section{(Partly) Energy-Driven Feedback Mechanisms}
+
+\subsection{Ionizing Radiation}
+
+Massive stars produce significant amounts of ionizing radiation. From Murray \& Rahman (2010), the yield of ionizing photons from a zero-age population is
+\begin{equation}
+\left\langle\frac{S}{M}\right\rangle = 6.3\times 10^{46}\mbox{ photons s}^{-1}\,M_\odot^{-1}.
+\end{equation}
+The corresponding lifetime-averaged production of ionizing photons is
+\begin{equation}
+\left\langle \frac{S_{\rm tot}}{M}\right\rangle = 4.2\times 10^{60}\mbox{ photons}\,\msun^{-1}
+\end{equation}
+
+\paragraph{H~\textsc{ii} Region Expansion}
+
+We will not go into tremendous detail on how these photons interact with the ISM, but to summarize: photons capable of ionizing hydrogen will be absorbed with a very short mean free path, producing a bubble of fully ionized gas within which all the photons are absorbed. The size of this bubble can be found by equating the hydrogen recombination rate with the ionizing photon production rate, giving
+\begin{equation}
+S = \frac{4}{3} \pi r_i^3 n_e n_p \alpha_B,
+\end{equation}
+where $r_i$ is the radius of the ionized region, $n_e$ and $n_p$ are the number densities of electrons and protons, and $\alpha_B$ is the recombination rate coefficient for case B, and which has a value of roughly $3\times 10^{-13}$ cm$^3$ s$^{-1}$. Cases A and B, what they mean, and how this quantity is computed are all topics discussed in the class on diffuse matter, and here we will simply take $\alpha_B$ as a known constant. The radius of the ionized bubble is known as the Str\"omgren radius after the person who first calculated it.
+
+If we let $\mu_{\rm H}$ be the mean mass per hydrogen nucleus in the gas, and $\rho_0$ be the initial density before the photoionizing stars turn on, then $n_p = \rho_0/\mu_{\rm H}$ and $n_e = 1.1 \rho_0/\mu_{\rm H}$, with the factor of 1.1 coming from assuming that He is singly ionized (since its ionization potential is not that different from hydrogen's) and from a ratio of 10 He nuclei per H nucleus. Inserting these factors and solving for $r_i$, we obtain the Str\"omgren radius, the equilibrium radius of a sphere of gas ionized by a central source:
+\begin{equation}
+r_S = \left(\frac{3 S \mu_{\rm H}^2}{4(1.1) \pi \alpha_B \rho_0^2}\right)^{1/3} = 2.8 S_{49}^{1/3} n_2^{-2/3}\mbox{ pc},
+\end{equation}
+where $S_{49} = S/10^{49}$ s$^{-1}$, $n_2 = (\rho_0/\mu_{\rm H})/100$ cm$^{-3}$, and we have used $\alpha_B = 3.46\times 10^{-13}$ cm$^3$ s$^{-1}$.
+
+The photoionized gas will be heated to $\sim 10^4$ K by the energy deposited by the ionizing photons. The corresponding sound speed in the ionized gas will be
+\begin{equation}
+c_i = \sqrt{\frac{k_B T_i}{\mu_{\rm H}/2.2}} = 11 T_{i,4}^{1/2}\mbox{ km s}^{-1},
+\end{equation}
+where $T_{i,4} = T_i/10^4$ K, $\mu_{\rm H} = 2.3\times 10^{-24}$ g is the mean mass per H nucleus, and the factor of $2.2$ arises because there are 2.2 particles per H nucleus, and the extra particles are electrons that are essentially massless. The pressure in the ionized region is $\rho_0 c_i^2$, which is generally much larger than the pressure $\rho_0 c_0^2$ outside the ionized region, where $c_0$ is the sound speed in the neutral gas. As a result, the ionized region is hugely over-pressured compared to the neutral gas around it. The gas in this region will therefore begin to expand dynamically.
+
+The time to reach ionization balance is short compared to dynamical timescales (as is demonstrated in the diffuse matter class), so we can assume that ionization balance is always maintained as the expansion occurs. Consequently, when the ionized region has reached a radius $r_i$, the density inside the ionized region must obey
+\begin{equation}
+\rho_i = \left(\frac{3 S \mu_{\rm H}^2}{4(1.1)\pi \alpha_B r_i^3}\right)^{1/2}.
+\end{equation}
+At the start of expansion $\rho_i = \rho_0$, but we see here that the density drops as $r_i^{-3/2}$ as expansion proceeds. Since the expansion is highly supersonic with respect to the external gas (as we will see shortly), there is no time for sound waves to propagate away from the ionization front and pre-accelerate the neutral gas. Instead, this gas must be swept up by the expanding H~\textsc{ii} region. However, since $\rho_i \ll \rho_0$, the mass that is swept up as the gas expands must reside not in the ionized region interior, but in a dense neutral shell at its edges. At late times, when $r_i \gg r_S$, we can neglect the mass in the shell interior in comparison to that in the shell, and simply set the shell mass equal to the total mass swept up. We therefore have a shell mass
+\begin{equation}
+M_{\rm sh} = \frac{4}{3} \pi \rho_0 r_i^3.
+\end{equation}
+
+We can write down the equation of motion for this shell. If we neglect the small ambient pressure, then the only force acting on the shell is the pressure $\rho_i c_i^2$ exerted by ionized gas in the H~\textsc{ii} region interior. Conservation of momentum therefore requires that
+\begin{equation}
+\frac{d}{dt} \left(M_{\rm sh} \dot{r}_i\right) = 4\pi r_i^2 \rho_i c_i^2.
+\end{equation}
+Rewriting everything in terms of $r_i$, we arrive at an ODE for $r_i$:
+\begin{equation}
+\frac{d}{dt} \left(\frac{1}{3} r_i^3 \dot{r}_i\right) = c_i^2 r_i^2 \left(\frac{r_i}{r_S}\right)^{-3/2},
+\end{equation}
+where we have used the scaling $\rho_i = \rho_0 (r_i/r_S)^{-3/2}$.
+
+This ODE is straightforward to solve numerically, but if we focus on late times when $r_i \gg r_S$, we can solve it analytically. For $r_i \gg r_S$, we can take $r_i \approx 0$ as $t\rightarrow 0$, and with this boundary condition the ODE cries out for a similarity solution. As a trial, consider $r_i = f r_S (t/t_S)^\eta$, where 
+\begin{equation}
+t_S = \frac{r_S}{c_i} = 240  S_{49}^{1/3} n_2^{-2/3} T_{i,4}^{-1/2}\mbox{ kyr}
+\end{equation}
+and $f$ is a dimensionless constant. Substituting this trial solution in, there are numerous cancellations, and in the end we obtain
+\begin{equation}
+\frac{1}{4} \eta (4\eta-1) f^4 \left(\frac{t}{t_S}\right)^{4\eta-2} = f^{1/2} \left(\frac{t}{t_S}\right)^{\eta/2}.
+\end{equation}
+Clearly we can obtain a solution only if $4\eta-2 = \eta/2$, which requires $\eta = 4/7$. Solving for $f$ gives $f=(49/12)^{2/7}$. We therefore have a solution
+\begin{equation}
+r_i = r_S \left(\frac{7 t}{2\sqrt{3} t_S}\right)^{4/7} = 9.4 S_{49}^{1/7} n_2^{-2/7} T_{i,4}^{2/7} t_6^{4/7}\mbox{ pc}
+\end{equation}
+at late times, where $t_6 = t/1$ Myr.
+
+\paragraph{Feedback Effects of H~\textsc{ii} Regions}
+
+Given this result, what can we say about the effects of an expanding H~\textsc{ii} region? There are several possible effects: ionization can eject mass, drive turbulent motions, and possibly even disrupt clouds entirely. First consider mass ejection. In our simple calculation, we have taken the ionized gas to be trapped inside a spherical H~\textsc{ii} region interior. In reality, though, once the H~\textsc{ii} region expands to the point where it encounters a low density region at a cloud edge, it will turn into a ``blister" type region, and the ionized gas will freely escape into the low density medium. The mass flux carried in this ionized wind will be roughly
+\begin{equation}
+\dot{M} = 4\pi r_i^2 \rho_i c_i,
+\end{equation}
+i.e.\ the area from which the wind flows times the characteristic density of the gas at the base of the wind times the characteristic speed of the wind. Substituting in our similarity solution, we have
+\begin{equation}
+\dot{M} = 4\pi r_S^2 \rho_0 c_i \left(\frac{7t}{2\sqrt{3} t_S}\right)^{2/7} = 7.2\times 10^{-3} t_6^{2/7} S_{49}^{4/7} n_2^{-1/7} T_{i,4}^{1/7}\,\msun\mbox{ yr}^{-1}.
+\end{equation}
+We therefore see that, over the roughly $3-4$ Myr lifetime of an O star, it can eject $\sim 10^3 - 10^4$ $\msun$ of mass from its parent cloud, provided that cloud is at a relatively low density (i.e.\ $n_2$ is not too big). Thus massive stars can eject many times their own mass from a molecular cloud. In fact, we can use this effect to make an estimate of the star formation efficiency in GMCs -- see Matzner (2002).
+
+We can also estimate the energy contained in the expanding shell. This is
+\begin{equation}
+E_{\rm sh} = \frac{1}{2} M_{\rm sh} \dot{r}_i^2 = \frac{32}{147}\pi \rho_0 \frac{r_S^5}{t_S^2} \left(\frac{7t}{2\sqrt{3} t_S}\right)^{6/7}
+=8.1\times 10^{47} t_6^{6/7} S_{49}^{5/7} n_2^{-10/7} T_{i,4}^{10/7}\mbox{ erg}.
+\end{equation}
+For comparison, the gravitational binding energy of a $10^5$ $\msun$ GMC with a surface density of $0.03$ g cm$^{-2}$ is $\sim 10^{50}$ erg. Thus a single O star's H~\textsc{ii} region provides considerably less energy than this. On the other hand, the collective effects of $\sim 10^2$ O stars, with a combined ionizing luminosity of $10^{51}$ s$^{-1}$ or so, can begin to produce H~\textsc{ii} regions whose energies rival the binding energies of individual GMCs. This means that H~\textsc{ii} region shells may sometimes be able to unbind GMCs entirely. Even if they cannot, they may be able to drive significant turbulent motions within GMCs.
+
+We can also compute the momentum of the shell, for comparison to the other forms of feedback we discussed previously. This is
+\begin{equation}
+p_{\rm sh} = M_{\rm sh} \dot{r}_i = 1.1\times 10^5 n_2^{-1/7} T_{i,4}^{-8/7} S_{49}^{4/7} t_6^{9/7} \, M_\odot\mbox{ km s}^{-1}.
+\end{equation}
+Since this is non-linear in $S_{49}$ and in time, the effects of HII regions will depend on how the stars are clustered together, and how long they live. To get a rough estimate, though, we can take the typical cluster to have an ionizing luminosity around $10^{49}$, since by number most clusters are small, and we can adopt an age of 4 Myr. This means that (also using $n_2 = 1$ and $T_{i,4} = 1$) the momentum injected per $10^{49}$ photons s$^{-1}$ of luminosity is $p = 3-5\times 10^5$ $M_\odot$ km s$^{-1}$. Recalling that we get $6.3\times 10^{46}$ photons s$^{-1}$ $M_\odot^{-1}$ for a zero-age population, this means that the momentum injection rate for HII regions is roughly
+\begin{equation}
+\left\langle\frac{\dot{p}_{\rm HII}}{M}\right\rangle \sim 3\times 10^3\mbox{ km s}^{-1}.
+\end{equation}
+This is obviously a very rough calculation, and it can be done with much more sophistication, but this analysis suggests that HII regions are likely the dominant feedback mechanism compared to winds and HII regions.
+
+There is one important caveat to make, though. Although in the similarity solution we formally have $v_i \rightarrow \infty$ as $r_i \rightarrow 0$, in reality the ionized region cannot expand faster than roughly the ionized gas sound speed: one cannot drive a 100 km s$^{-1}$ expansion using gas with a sound speed of 10 km s$^{-1}$. As a result, all of these effects will not work in any cluster for which the escape speed or the virial velocity exceeds $\sim 10$ km s$^{-1}$. This is not a trivial limitation, since for very massive star clusters the escape speed can exceed this value. An example is the R136 cluster in the LMC, which has a present-day stellar mass of $5.5\times 10^4$ $\msun$ inside a radius of $1$ pc. The escape speed from the stars alone is roughly 20 km s$^{-1}$. Assuming there was gas in the past when the cluster formed, the escape speed must have been even higher. For a region like this, H~\textsc{ii} regions cannot be important.
+
+\subsection{Stellar Winds}
+
+Next let us consider the effects of stellar winds. As we alluded to earlier, O stars launch winds with velocities of $v_w \sim 1000-2500$ km s$^{-1}$ and mass fluxes of $\dot{M}_w \sim 10^{-7}$ $\msun$ yr$^{-1}$. We have already seen that the momentum carried by these winds is fairly unimportant in comparison to the momentum of the protostellar outflows or the radiation field, let alone the momentum provided by HII regions. However, because of the high wind velocities, repeating the analysis we performed for protostellar jets yields a characteristic post-shock temperature that is closer to $10^8$ K than $10^6$ K. Gas at such high temperatures has a very long cooling time, so we might end up with an energy-driven feedback. We therefore consider that case next.
+
+Since the winds are radiatively driven, they tend to carry momenta comparable to that carried by the stellar radiation field. The observed correlation between stellar luminosity and wind momentum (e.g.\ Repolust et al.~2004) is that
+\begin{equation}
+\dot{M}_w v_w \approx 0.5 \frac{L_*}{c},
+\end{equation}
+where $L_*$ is the stellar luminosity. This implies that the mechanical luminosity of the wind is
+\begin{equation}
+L_w = \frac{1}{2} \dot{M}_w v_w^2 = \frac{L_*^2}{8 \dot{M}_w c^2} = 850 L_{*,5}^2 \dot{M}_{w,-7}^{-1} \, \lsun.
+\end{equation}
+This is not much compared to the star's radiant luminosity, but that radiation will mostly not do into pushing the ISM around. The wind, on the other hand might. Also notice that over the integrated power output is
+\begin{equation}
+E_w = L_w t = 1.0\times 10^{50}  L_{*,5}^2 \dot{M}_{w,-7}^{-1} t_6\mbox{ erg},
+\end{equation}
+so over the $\sim 4$ Myr lifetime of a massive star, the total mechanical power in the wind is not much less than the amount of energy released when the star goes supernova.
+
+If energy is conserved, and we assume that about half the available energy goes into the kinetic energy of the shell and half is in the hot gas left in the shell interior, conservation of energy then requires that
+\begin{equation}
+\frac{d}{dt} \left(\frac{2}{3}\pi \rho_0 r_b^3 \dot{r}_b^2\right) \approx \frac{1}{2} L_w.
+\end{equation}
+As with the H~\textsc{ii} region case, this cries out for similarity solution. Letting $r_b = A t^\eta$, we have
+\begin{equation}
+\frac{4}{3} \pi \eta^2 (5\eta-2) \rho_0 A^5 t^{5\eta-3} \approx L_w.
+\end{equation}
+Clearly we must have $\eta=3/5$ and $A=[25 L_w/(12\pi \rho_0)]^{1/5}$. Putting in some numbers,
+\begin{equation}
+r_b = 16 L_{*,5}^{2/5} \dot{M}_{w,-7}^{-1/5} n_2^{-1/5} t_6^{3/5}\mbox{ pc}.
+\end{equation}
+Note that this is greater than the radius of the comparable H~\textsc{ii} region, so the wind will initially move faster and drive the H~\textsc{ii} region into a thin ionized layer between the hot wind gas and the outer cool shell -- {\it if the energy-driven limit is correct}. A corollary of this is that the wind would be even more effective than the ionized gas at ejecting mass from the cloud.
+
+However, this may not be correct, because this solution assumes that the energy carried by the wind will stay confined within a closed shell. This may not be the case: the hot gas may instead break out and escape, imparting relatively little momentum. Whether this happens or not is difficult to determine theoretically, but can be address by observations. n particular, if the shocked wind gas is trapped inside the shell, it should produce observable x-ray emission. We can quantify how much x-ray emission we should see with a straightforward argument. It is easiest to phrase this argument in terms of the pressure of the x-ray emitting gas, which is essentially what an x-ray observation measures.
+
+Consider an expanding shell of matter that began its expansion a time $t$ ago. In the energy-driven case, the total energy within that shell is, up to factors of order unity, $E_w = L_w t$. The pressure is simply $2/3$ of the energy density (since the gas is monatomic at these temperatures). Thus,
+\begin{equation}
+P_X = \frac{2 E_w}{3 [(4/3)\pi r^3]} = \frac{L_*^2 t}{16\pi \dot{M}_w c^2 r^3}.
+\end{equation}
+It is useful to compute the ratio of this to the pressure exerted by the radiation, which is simply twice that exerted by the wind in the momentum-driven limit. This is
+\begin{equation}
+P_{\rm rad} = \frac{L_*}{4\pi r^2 c}.
+\end{equation}
+We define this ratio as the trapping factor:
+\begin{equation}
+f_{\rm trap} = \frac{P_X}{P_{\rm rad}} = \frac{L_* t}{4\dot{M}_w c r} \approx \frac{L_*}{4\dot{M}_w c v},
+\end{equation}
+where in the last step we used $v \approx r/t$, where $v$ is the expansion velocity of the shell. If we now use the relation $\dot{M}_w v_w \approx (1/2)L_*/c$, we finally arrive at
+\begin{equation}
+f_{\rm trap} \approx \frac{v_w}{2v}.
+\end{equation}
+Thus if shells expand in the energy-driven limit due to winds, the pressure of the hot gas within them should exceed the direct radiation pressure by a factor of roughly $v_w/v$, where $V$ is the shell expansion velocity and $v_w$ is the wind launch velocity. In contrast, the momentum driven gas gives $P_X / P_{\rm rad} \sim 1/2$, since the hot gas exerts a force that is determined by the wind momentum, which is roughly has the momentum carried by the stellar radiation field.
+
+\citet{lopez11a} observed the 30 Doradus H~\textsc{ii} region, which is observed to be expanding with $v\approx 20$ km s$^{-1}$, giving a predicted $f_{\rm trap} = 20$ for a conservative $v_w = 1000$ km s$^{-1}$. They then measured the hot gas pressure from the x-rays and the direct radiation pressure from the stars optical emission. The result is that $f_{\rm trap}$ is much closer to 0.5 than 20 for 30 Doradus, indicating that the momentum-driven solution is closer to reality there. \citet{harper-clark09a} reached a similar conclusion about the Carina Nebula.
+
+\subsection{Supernovae}
+
+We can think of the energy and momentum budget from supernovae as simply representing a special case of the lifetime budgets we've computed. In this case, we can simply think of $q(M,t)$ as being a $\delta$ function: all the energy and momentum of the supernova is released in a single burst at a time $t=t_l(m)$, where $t_l(m)$ is the lifetime of the star in question. We normally assume that the energy yield per star is $10^{51}$ erg, and have to make some estimate of the minimum mass at which a SN will occur, which is roughly 8 $\msun$. We can also, if we want, imagine mass ranges where other things happen, for example direct collapse to black hole, pair instability supernova that produce more energy, or something more exotic. These choices usually don't make much difference, though, because they affect very massive stars, and since the supernova energy yield (unlike the luminosity) is not a sharp function of mass, the relative rarity of massive stars means they make a small contribution. Thus it usually safe to ignore these effects.
+
+Given this preamble, we can write the approximate supernova energy yield per unit mass as
+\begin{equation}
+\left\langle \frac{E_{\rm SN}}{M}\right\rangle = E_{\rm SN} \int_{m_{\rm min}}^\infty d\ln m\, \xi(m) \equiv E_{\rm SN} \left\langle \frac{N_{\rm SN}}{M}\right\rangle,
+\end{equation}
+where $E_{\rm SN} = 10^{51}$ erg is the constant energy per SN, and $m_{\rm min} = 8$ $\msun$ is the minimum mass to have a supernova. Note that the integral, which we have named $\langle N_{\rm SN}/M\rangle$, is simply the number of stars above $m_{\rm min}$ per unit mass in stars total, which is just the expected number of supernovae per unit mass of stars. For a Chabrier IMF from $0.01-120$ $\msun$, we have
+\begin{equation}
+\left\langle \frac{N_{\rm SN}}{M}\right\rangle = 0.011\, \msun^{-1}
+\qquad
+\left\langle \frac{E_{\rm SN}}{M}\right\rangle = 1.1\times 10^{49}\mbox{ erg}\,\msun^{-1}=6.1\times 10^{-6} c^2.
+\end{equation}
+A more detailed calculation from starburst99 agrees very well with this crude estimate. Note that this, plus the Milky Way's SFR of $\sim 1$ $\msun$ yr$^{-1}$, is the basis of the oft-quoted result that we expect $\sim 1$ supernova per century in the Milky Way.
+
+The momentum yield from SN can be computed in the same way. This is slightly more uncertain, because it is easier to measure the SN energy than its momentum -- the latter requires the ability to measure the velocity or mass of the ejecta before they are mixed with significant amounts of ISM. However, roughly speaking the ejection velocity is $v_{\rm ej} \approx 10^9$ cm s$^{-1}$, which means that the momentum is $p_{\rm SN} = 2 E_{\rm SN}/v_{\rm ej}$. Adopting this value, we have
+\begin{equation}
+\left\langle \frac{p_{\rm SN}}{M}\right\rangle = \frac{2}{v_{\rm ej}} \left\langle \frac{E_{\rm SN}}{M}\right\rangle = 55 v_{\rm ej,9}^{-1} \mbox{ km s}^{-1}.
+\end{equation}
+Physically, this means that every $\msun$ of matter than goes into stars provides enough momentum to raise another $\msun$ of matter to a speed of 55 km s$^{-1}$. This is not very much compared to other feedbacks, but of course supernovae, like stellar winds, may have an energy-conserving phase where their momentum deposition grows. We will discuss the question of supernova momentum deposition more in the next few classes as we discuss models for regulation of the star formation rate.

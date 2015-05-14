@@ -65,7 +65,16 @@
 %	BOOK META-INFORMATION
 %----------------------------------------------------------------------------------------
 
-\title{Notes on\\Star Formation} % Title of the book
+\newsavebox{\coverimage}
+\savebox{\coverimage}{\includegraphics[width=\linewidth]{coverimage}}
+
+\title[Notes on Star Formation]{%
+\setlength{\parindent}{0pt}%
+Notes on\par%
+Star Formation%
+\par \vspace{1cm}%
+\usebox{\coverimage}%
+} % Title of the book
 
 \author{Mark R.~Krumholz} % Author
 
@@ -81,15 +90,6 @@
 
 % Autoref for marginfigures
 %\newcommand{\marginfigureautorefname}{Figure}
-
-% Journals
-\newcommand{\aap}{Astron.~\& Astrophys.}
-\newcommand{\apj}{Astrophys.~J.}
-\newcommand{\apjs}{Astrophys.~J.~Supp.}
-\newcommand{\aj}{Astron.~J.}
-\newcommand{\araa}{Annu.~Rev.~Astron.~Astrophys.}
-\newcommand{\pasp}{Proc.~Astron.~Soc.~Pac.}
-\newcommand{\mnras}{Mon.~Not.~Roy.~Astron.~Soc.}
 
 % Modify the chapter heading
 \titleformat{\chapter}%
@@ -161,6 +161,7 @@ Original version: \the\year\ \thanklessauthor
 
 %----------------------------------------------------------------------------------------
 
+\setcounter{tocdepth}{1}
 \tableofcontents % Print the table of contents
 
 %----------------------------------------------------------------------------------------
@@ -175,15 +176,15 @@ Original version: \the\year\ \thanklessauthor
 %	DEDICATION PAGE
 %----------------------------------------------------------------------------------------
 
-%\cleardoublepage
-%~\vfill
-%\begin{doublespace}
-%\noindent\fontsize{18}{22}\selectfont\itshape
-%\nohyphenation
-%Dedicated to my family and friends.
-%\end{doublespace}
-%\vfill
-%\vfill
+\cleardoublepage
+~\vfill
+\begin{doublespace}
+\noindent\fontsize{18}{22}\selectfont\itshape
+\nohyphenation
+Dedicated to my students, who have contributed tremendously to the development of this book.
+\end{doublespace}
+\vfill
+\vfill
 
 %----------------------------------------------------------------------------------------
 %	INTRODUCTION
@@ -194,9 +195,9 @@ Original version: \the\year\ \thanklessauthor
 
 This book is based on a series of lectures given by the author in his graduate class on star formation, taught from 2009 - 2014 at UC Santa Cruz. It is intended for graduate students or advanced undergraduates in astronomy or physics, but does not presume detailed knowledge of particular areas of astrophysics (e.g., the interstellar medium or galactic structure). It is intended to provide a general overview of the field of star formation, at a level that would enable a student to begin independent research in the area.
 
-This course covers the basics of star formation and ending at the transition to planet formation. The structure of the course / book is as follows. Each chapter corresponds roughly to a single lecture. The first two chapters begin with a discussion of observational techniques, and the basic phenomenology they reveal. The goal is to familiarize students with the basic techniques that will be used throughout, and to provide a common vocabulary for the rest of the course. The next four chapters provide a similar review of the basic physical processes that are important for star formation. Again, the goal is to provide a basis for what follows. The remaining chapters discuss star formation over a variety of scales, starting with the galactic scale and working our way down to the scales of individual stars and their disks. The course concludes with the clearing of disks and the transition to planet formation.
+This course covers the basics of star formation and ending at the transition to planet formation. The structure of the course / book is as follows. Each chapter corresponds roughly to a single lecture. The first two chapters begin with a discussion of observational techniques, and the basic phenomenology they reveal. The goal is to familiarize students with the basic techniques that will be used throughout, and to provide a common vocabulary for the rest of the course. The next five chapters provide a similar review of the basic physical processes that are important for star formation. Again, the goal is to provide a basis for what follows. The remaining chapters discuss star formation over a variety of scales, starting with the galactic scale and working our way down to the scales of individual stars and their disks. The course concludes with the clearing of disks and the transition to planet formation.
 
-The "texts" intended to go with these notes are the review articles "\href{http://adsabs.harvard.edu/abs/2014arXiv1402.0867K}{The Big Problems in Star Formation: the Star Formation Rate, Stellar Clustering, and the Initial Mass Function}", Krumholz, M. R., 2014, \textit{Physics Reports}, 539, 49, which provides a snapshot of the literature as of the most recent time the course was given, and "\href{http://adsabs.harvard.edu/abs/2012ARA\%26A..50..531K}{Star Formation in the Milky Way and Nearby Galaxies}", Kennicutt, R.~C., \& Evans, N.~J., 2012, \textit{Annual Reviews of Astronomy \& Astrophysics}, 50, 531. Another extremely useful reference is the series of review chapters from the \href{http://www.mpia.de/homes/ppvi/}{Protostars and Planets VI Conference}, which took place in July 2013. Suggested background readings to accompany most chapters are listed at the chapter beginning. In addition to these background materials, most chapters also include "suggested literature": papers from the recent literature whose content is relevant to the material covered in that chapter. These readings are included to help students engage with the active research literature, as well as the more general reviews.
+The "texts" intended to go with these notes are the review articles "\href{http://adsabs.harvard.edu/abs/2014arXiv1402.0867K}{The Big Problems in Star Formation: the Star Formation Rate, Stellar Clustering, and the Initial Mass Function}", Krumholz, M. R., 2014, \textit{Physics Reports}, 539, 49, which provides a snapshot of the theoretical literature as of the most recent time the course was given, and "\href{http://adsabs.harvard.edu/abs/2012ARA\%26A..50..531K}{Star Formation in the Milky Way and Nearby Galaxies}", Kennicutt, R.~C., \& Evans, N.~J., 2012, \textit{Annual Reviews of Astronomy \& Astrophysics}, 50, 531, which is more focused on observations. Another extremely useful reference is the series of review chapters from the \href{http://www.mpia.de/homes/ppvi/}{Protostars and Planets VI Conference}, which took place in July 2013. Suggested background readings to accompany most chapters are listed at the chapter beginning. In addition to these background materials, most chapters also include "suggested literature": papers from the recent literature whose content is relevant to the material covered in that chapter. These readings are included to help students engage with the active research literature, as well as the more general reviews.
 
 In addition to the text and reading, this book contains five problem sets, which are interspersed with the chapters at appropriate locations. Solutions to the problems are included as an Appendix.
 
@@ -279,6 +280,10 @@ In addition to the text and reading, this book contains five problem sets, which
 \input{chapters/chapter4.tex}
 \input{problems/probset1.tex}
 \input{chapters/chapter5.tex}
+\input{chapters/chapter6.tex}
+\input{chapters/chapter7.tex}
+
+\part{Star Formation Processes and Problems}
 
 \appendix
 
