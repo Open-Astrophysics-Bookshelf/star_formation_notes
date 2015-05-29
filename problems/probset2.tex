@@ -1,0 +1,62 @@
+\problemset
+
+\begin{enumerate}
+
+\item \textbf{The Bonnor-Ebert Sphere.}\\
+Here we will investigate the properties of hydrostatic spheres of gas supported by thermal pressure. These are reasonable models for thermally-supported molecular cloud cores. Consider an isothermal, spherically-symmetric cloud of gas with mass $M$ and sound speed $c_s$, confined by some external pressure $P_{\mathrm{s}}$ on its surface.
+\begin{enumerate}
+\item For the moment, assume that the gas density inside the sphere is uniform. Use the virial theorem to derive a relationship between $P_{\mathrm{s}}$ and the cloud radius $R$. Show that there is a maximum surface pressure $P_{\mathrm{s,max}}$ for which virial equilibrium is possible, and derive its value.
+\item Now we will compute the true density structure. Consider first the equation of hydrostatic balance,
+\begin{displaymath}
+-\frac{1}{\rho}\frac{d}{dr} P = \frac{d}{dr} \phi,
+\end{displaymath}
+where $P = \rho c_s^2$ is the pressure and $\phi$ is the gravitational potential. Let $\rho_c$ be the density at $r=0$, and choose a gauge such that $\phi = 0$ at $r=0$. Integrate the equation of hydrostatic balance to obtain an expression relating $\rho$, $\rho_c$, and $\phi$.
+\item Now consider the Poisson equation for the potential,
+\begin{displaymath}
+\frac{1}{r^2}\frac{d}{dr}\left(r^2 \frac{d\phi}{dr}\right) = 4 \pi G \rho.
+\end{displaymath}
+Use your result from the previous part to eliminate $\rho$, and define $\psi \equiv \phi/c_s^2$. Show that the resulting equation can be non-dimensionalized to give the isothermal Lane-Emden equation:
+\begin{displaymath}
+\frac{1}{\xi^2}\frac{d}{d\xi}\left(\xi^2 \frac{d\psi}{d\xi}\right) = e^{-\psi}.
+\end{displaymath}
+where $\xi = r/r_0$. What value of $r_0$ is required to obtain this equation?
+\item Numerically integrate the isothermal Lane-Emden equation subject to the boundary conditions $\psi=d\psi/d\xi = 0$ at $\xi=0$; the first of these conditions follows from the definition of $\psi$, and the second is required for the solution to be non-singular. From your numerical solution, plot both $\psi$ and the density contrast $\rho/\rho_c = e^{-\psi}$ versus $\xi$.
+\item The total mass enclosed out to a radius $R$ is
+\begin{displaymath}
+M = 4\pi \int_0^R \rho r^2 \, dr.
+\end{displaymath}
+Show that this is equivalent to
+\begin{displaymath}
+M =\frac{c_s^4}{\sqrt{4\pi G^3 P_s}} \left(e^{-\psi/2}\xi^2 \frac{d\psi}{d\xi}\right)_{\xi_s},
+\end{displaymath}
+where
+\begin{eqnarray*}
+\xi_s & \equiv & \frac{R}{r_0} \\
+\rho_s & \equiv & \left(e^{-\psi}\right)_{\xi = \xi_s} \\
+P_s & \equiv & \rho_s c_s^2.
+\end{eqnarray*}
+Hint: to evaluate the integral, it is helpful to use the isothermal Lane-Emden equation to substitute.
+\item Plot the dimensionless mass $m = M/(c_s^4/\sqrt{G^3 P_s})$ versus the dimensionless density contrast $\rho_c/\rho_s$. You will see that $m$ reaches a finite maximum value $m_{\mathrm{max}}$ at a particular value of $\rho_c/\rho_s$. Numerically determine $m_{\mathrm{max}}$, along with the density contrast $\rho_c/\rho_s$ at which it occurs.
+\item The existence of a finite maximum $m$ implies that, for a given dimensional mass $M$, there is a maximum surface pressure $P_s$ at which a cloud of that mass can be in hydrostatic equilibrium. Solve for this maximum, and compare your result to the result you obtained in part (a).
+\item Conversely, for a given surface pressure $P_s$ and sound speed $c_s$ there exists a maximum mass at which the cloud can be in hydrostatic equilibrium, called the Bonnor-Ebert mass $M_{\mathrm{BE}}$. Obtain an expression for $M_{\mathrm{BE}}$ in terms of $P_s$ and $c_s$. In a typical low-mass star-forming region, the surface pressure on a core might be $P_{\mathrm{s}}/k_{\rm B} = 3\times 10^5$ K cm$^{-3}$. Compute this mass for a core with a temperature of 10 K, assuming the standard mean molecular weight $\mu=3.9\times 10^{-24}$ g.\\
+\end{enumerate}
+
+\item \textbf{Driving Turbulence with Protostellar Outflows.}\\
+Consider a collapsing protostellar core that delivers mass to an accretion disk at its center at a constant rate $\dot{M}_d$. A fraction $f$ of the mass that reaches the disk is ejected into an outflow, and the remainder goes onto a protostar at the center of the disk. The material ejected into the outflow is launched at a velocity equal to the escape speed from the stellar surface. The protostar has a constant radius $R_*$ as it grows.
+\begin{enumerate}
+\item Compute the momentum per unit stellar mass ejected by the outflow in the process of forming a star of final mass $M_*$. Evaluate this numerically for $f=0.1$, $M_* = 0.5$ $\msun$. and $R_* = 3$ $\rsun$.
+\item The material ejected into the outflow will shock and radiate energy as it interacts with the surrounding gas, so on large scales the outflow will conserve momentum rather than energy. The terminal velocity of the outflow material will be roughly the turbulent velocity dispersion $\sigma$ in the ambient cloud. If this cloud is forming a cluster of stars, all of mass $M_*$, with a constant star formation rate $\dot{M}_{\rm cluster}$, compute the rate at which outflows inject kinetic energy into the cloud.
+\item Suppose the cloud obeys Larson's relations, so its velocity dispersion, mass $M$, and size $L$ are related by $\sigma = \sigma_1 (L/\mbox{pc})^{0.5}$ and $M=M_1 (L/\mbox{pc})^2$, where $\sigma_1 \approx 1$ km s$^{-1}$ and $M_1\approx 100$ $\msun$ are the velocity dispersion and mass of a 1 pc-sized cloud. Assuming the turbulence in the cloud decays exponentially on a timescale $t_{\rm cr}=L/\sigma$, what star formation rate is required for energy injected by outflows to balance the energy lost via the decay of turbulence? Evaluate this numerically for $L = 1, 10$ and $100$ pc.
+\item If stars do form at the rate required to maintain the turbulence, what fraction of the cloud mass must be converted into stars per cloud free-fall time? Assume the cloud density is $\rho=M/L^3$. Again, evaluate numerically for $L = 1,10$ and $100$ pc. Are these numbers reasonable? Conversely, for what size clouds, if any, is it reasonable to neglect the energy injected by protostellar outflows?\\
+\end{enumerate}
+
+\item \textbf{Magnetic Support of Clouds.}\\
+Consider a spherical cloud of gas of initial mass $M$, radius $R$, and velocity dispersion $\sigma$, threaded by a magnetic field of strength $B$. In class we showed that there exists a critical magnetic flux $M_\Phi$ such that, if the cloud's mass $M<M_\Phi$, the cloud is unable to collapse.
+\begin{enumerate}
+\item Show that the the cloud's Alfv\'en Mach number $\mathcal{M}_A$ depends only on its virial ratio $\alpha_{\rm vir}$ and on $\mu_\Phi \equiv M/M_\Phi$ alone. Do not worry about constants of order unity. 
+\item Your result from the previous part should demonstrate that, if any two of the dimensionless quantities $\mu_\Phi$, $\alpha_{\rm vir}$, and $\mathcal{M}_A$ are of order unity, then the third quantity must be as well. Give an intuitive explanation of this result in terms of the ratios of energies (or energy densities) in the cloud.
+\item Magnetized turbulence naturally produces Alfv\'en Mach numbers $\mathcal{M}_A \sim 1$. Using this fact plus your responses to the previous parts, explain why this makes it difficult to determine observationally whether clouds are supported by turbulence or magnetic fields.
+\end{enumerate}
+
+
+\end{enumerate}
