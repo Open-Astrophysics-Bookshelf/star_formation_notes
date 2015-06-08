@@ -1,0 +1,79 @@
+\chapter{The Initial Mass Function: Observations}
+\label{ch:imf_obs}
+
+\marginnote{
+\textbf{Suggested background reading:}
+\begin{itemize}
+\item \href{http://adsabs.harvard.edu/abs/2014prpl.conf...53O}{Offner, S.~S.~R., et al. 2014, in ``Protostars and Planets VI", ed.~H.~Beuther et al., pp.~53-75} \nocite{offner14a}
+\end{itemize}
+\textbf{Suggested literature:}
+\begin{itemize}
+\item \href{http://adsabs.harvard.edu/abs/2010AJ....139.2679B}{Bochanski, J.~J., et al. 2010, AJ, 139, 2679} \nocite{bochanski10a}
+\item \href{http://adsabs.harvard.edu/abs/2012ApJ...748...14D}{da Rio, N., et al. 2012, ApJ, 748, 14} \nocite{da-rio12a}
+\end{itemize}
+}
+
+
+As we continue to march downward in size scale, we now turn from the way gas clouds break up into clusters to the way clusters break up into individual stars. This is the subject of the initial mass function (IMF), the distribution of stellar masses that result from the star formation process. The IMF is perhaps the single most important distribution in stellar and galactic astrophysics. Almost all inferences that go from light to physical properties for unresolved stellar populations rely on an assumed form of the IMF, as do almost all models of galaxy formation and the ISM. For this reason, we the next two chapters will focus on the IMF. This chapter is dedicated to observations, and the next to theoretical modeling.
+
+\section{Resolved Stellar Populations}
+
+To start with, how do we go about measuring the IMF? There are two major strategies. One is to use direct star counts in regions where we can resolve individual stars. The other is to use integrated light from more distant regions where we cannot.
+
+\subsection{Field Stars}
+
+The first attempts to measure the IMF were by \citet{salpeter55a} (for those counting, nearly 5000 citations as of this writing), using stars in the Solar neighborhood, and the use of Solar neighborhood stars remains one of the main strategies for measuring the IMF today. Suppose that we want to measure the IMF of the field stars within some volume or angular region around the Sun. What steps must we carry out? 
+
+\paragraph{Constructing the Luminosity Function}
+
+The first step is to construct a luminosity function for the stars in our survey volume in one or more photometric bands. This by itself is a non-trivial task, because we require absolute luminosities, which means we require distances. If we are carrying out a volume-limited instead of a flux-limited survey, we also require distances to determine if the target stars are within our survey volume.
+
+The most accurate distances available are from parallax, but this presents a challenge. To measure the IMF, we require a sample of stars that extends down to the lowest masses we wish to measure. As one proceeds to lower masses, the stars very rapidly become dimmer, and as they become dimmer it becomes harder and harder to obtain accurate parallax distances. For $\sim 0.1$ $M_\odot$ stars, typical absolute V band magnitudes are $M_V \sim 14$, and parallax catalogs at such magnitudes are only complete out to $\sim 5-10$ pc. A survey of this volume only contains $\sim 200-300$ stars and brown dwarfs, and this sample size presents a fundamental limit on how well the IMF can be measured. If one reduces the mass range being studied, parallax catalogs can go out somewhat further, but then one is trading off sample size against the mass range that the study can probe. Hopefully \textit{Gaia} will improve this situation significantly.
+
+For these reasons, more recent studies have tended to rely on less accurate spectroscopic or photometric distances. These introduce significant uncertainties in the luminosity function, but they are more than compensated for by the vastly larger number of stars available, which in the most recent studies can be $>10^6$. The general procedure for photometric distances is to construct color-magnitude (CMD) diagrams in one or more colors for Solar neighborhood stars using the limited sample of stars with measured parallax distances, perhaps aided by theoretical models. Each observed star with an unknown distance is then assigned an absolute magnitude based on its color and the CMD. The absolute magnitude plus the observed magnitude also gives a distance. The spectroscopic parallax method is analogous, except that one uses spectral type - magnitude diagrams (STMD) in place of color-magnitude ones to assign absolute magnitudes. This can be more accurate, but requires at least low resolution spectroscopy instead of simply photometry.
+
+\paragraph{Bias Correction}
+
+Once that procedure is done, one has in hand an absolute luminosity function, either over a defined volume or (more-commonly) a defined absolute magnitude limit. The next step is to correct it for a series of biases. We will not go into the technical details of how the corrections are made, but it is worth going through the list just to understand the issues, and why this is not a trivial task.
+
+\textit{Metallicity bias:} the reference CMDs or STMDs used to assign absolute magnitudes are constructed from samples very close to the Sun with parallax distances. However, there is a known negative metallicity gradient with height above the galactic plane, so a survey going out to larger distances will have a lower average metallicity than the reference sample. This matters because stars with lower metallicity have higher effective temperature and earlier spectral type than stars of the same mass with lower metallicity. (They have slightly higher absolute luminosity as well, but this is a smaller effect.) As a result, if the CMD or spectral type-magnitude diagram used to assign absolute magnitudes is constructed for Solar metallicity stars, but an actual star being observed is sub-Solar, then we will tend to assign too high an absolute luminosity based on the color, and, when comparing with the observed luminosity, too large a distance. We can correct for this bias if we know the vertical metallicity gradient of the galaxy.
+
+\textit{Extinction bias:} the reference CMDs / STMDs are constructed for nearby stars, which are systematically less extincted than more distant stars because their light travels through less of the dusty galactic disk. Dust extinction reddens starlight, which causes the more distant stars to be assigned artificially red colors, and thus artificially low magnitudes. This in turn causes their absolute magnitudes and distances to be underestimated, moving stars from their true luminosities to lower values. These effects can be mitigated with knowledge of the shape of the dust extinction curve and estimates of how much extinction there is likely to be as a function of distance.
+
+\textit{Malmquist bias:} there is some scatter in the magnitudes of stars at fixed color, both due to the intrinsic physical width of the main sequence (e.g., due to varying metallicity, age, stellar rotation) and due to measurement error. Thus at fixed color magnitudes can scatter up or down. Consider how this affects stars that are near the distance of magnitude limit for the survey: stars whose true magnitude should place them just outside the survey volume or flux limit will be artificially scatter into the survey if they scatter up but not if they scatter down, and those whose true magnitude should place them within the survey will be removed if they scatter to lower magnitude. This asymmetry means that, for stars near the distance or magnitude cutoff of the survey, the errors are not symmetric; they are much more likely to be in the direction of positive than negative flux. This effect is known as Malmquist bias. It can be corrected to the extent that one has a good idea of the size of the scatter in magnitude and understands the survey selection.
+
+\textit{Binarity:} many stars are members of binary systems, and all but the most distant of these will be unresolved in the observations and will be mistaken for a single star. This has a number of subtle effects, which we can think of in two limiting cases. If the binary is far from equal mass, say $q = M_2/M_1 \sim 0.3$ or less, then the colors and absolute magnitude will not be that different from those of the primary stuff. Thus the main effect is that we do not see the lower mass member of the system at all. We get a reasonable estimate for the properties of the primary, but we miss the secondary entirely, and therefore undercount the number of low luminosity stars. On the other hand, if the mass ratio $q\sim 1$, then the main effect is that the color stays about the same, but using our CMD we assign the luminosity of a single star when the true luminosity is actually twice that. We therefore underestimate the distance, and artificially scatter things into the survey (if it is volume limited) or out of the survey (if it is luminosity-limited). At intermediate mass ratios, we get a little of both effects.
+
+The main means of correcting for this is, if we have a reasonable estimate of the binary fraction of mass ratio distribution, to guess a true luminosity function, determine which stars are binaries, add them together as they would be added in the observation, filter the resulting catalog through the survey selection, and compare to the observed luminosity function. This procedure is then repeated, adjusting the guessed luminosity function, until the simulated observed luminosity function matches the actually observed one. 
+
+Once all these bias corrections are made, the result is a corrected luminosity function that (should) faithfully reproduce the actual luminosity function in the survey volume.
+
+\paragraph{The Mass-Magnitude Relation}
+
+The next step is to convert the luminosity function into a mass function, which requires knowledge of the mass-magnitude relation (MMR) in whatever photometric band we have used for our luminosity function. This must be determined by either theoretical modeling, empirical calibration, or both. Particularly at the low mass end, the theoretical models tend to have significant uncertainties arising from complex atmospheric chemistry that affects the optical and even near-infrared colors. 
+
+For empirical calibrations, the data are only as good as the empirical mass determinations, which must come from orbit modeling. This requires the usual schemes for measuring stellar masses from orbits, e.g., binaries that are both spectroscopic and eclipsing and thus have known inclinations, or visual binaries with measured radial velocities.
+
+As with the luminosity function, there are a number of possible biases, because the stars are not uniform in either age or metallicity, and as a result there is no true single MMR. This would only introduce a random error if the age and metallicity distribution of the sample used to construct the MMR were the same as that in the IMF survey, but there is no reason to believe that this is actually the case. The selection function used to determine the empirical mass-magnitude sample is complex and poorly characterized, but it is certainly biased towards systems closer to the Sun, for example. Strategies to mitigate this are similar to those used to mitigate the corresponding biases in the luminosity function.
+
+Once the mass-magnitude relationship and any bias corrections have been applied, the result is a measure of the field IMF. The results appear to be well-fit by a lognormal distribution or a broken powerlaw, along the lines of the \citet{chabrier05a} and \citet{kroupa02a} IMFs introduced in Chapter \ref{ch:obsstars}.
+
+\paragraph{Age Correction}
+
+The strategy we have just described works fine for stars up to $\sim 0.7$ $M_\odot$ in mass. However, it fails with higher mass stars, for one obvious reason: stars with masses larger than this can evolve off the main sequence on timescales comparable to the mean stellar age in the Solar neighborhood. Thus the quantity we measure from this procedure is the present-day mass function (PDMF), not the IMF. Even that is somewhat complicated because stars' luminosities start to evolve non-negligibly even before they leave the main sequence, so there are potential errors in assigning masses based on a MMR calibrated from younger stars.
+
+One option in this case is simply to give up and not say anything about the IMF at higher masses. However, there is another option, which is to try to correct for the bias introduced by stellar evolution. Suppose that we think we know both the star formation history of the region we're sampling, $\dot{M}_*(t)$, and the initial mass-dependent main-sequence stellar lifetime, $t_{\rm MS}(M)$. Let $dN/dM$ be the IMF. In this case, the total number of stars formed of the full lifetime of the galaxy in a mass bin from $M$ to $M+dM$ is
+\begin{equation}
+\frac{dN_{\rm form}}{dM} =  \frac{dN}{dM} \int_{-\infty}^0 dt \, \dot{M}_*(t)
+\end{equation}
+where $t=0$ represents the present. In contrast, the number of stars per unit mass still on the main sequence is
+\begin{equation}
+\frac{dN_{\rm MS}}{dM} = \frac{dN}{dM} \int_{-t_{\rm MS}(M)}^0 dt \, \dot{M}_*(t)
+\end{equation}
+Thus if we measure the main sequence mass distribution $dN_{\rm MS}/dM$, we can correct it to the IMF just by multiplying:
+\begin{equation}
+\frac{dN}{dM} \propto \frac{dN_{\rm MS}}{dM} \frac{\int_{-t_{\rm MS}(M)}^0 dt \, \dot{M}_*(t)}{\int_{-\infty}^0 dt \, \dot{M}_*(t)}.
+\end{equation}
+This simply reduces to scaling the number of observed stars by the fraction of stars in that mass bin that are still alive today.
+
+Obviously this correction is only as good as our knowledge of the star formation history, and it becomes increasingly uncertain as the correction factor becomes larger. Thus attempts to measure the IMF from the galactic field even with age correction are generally limited to masses of no more than a few $M_\odot$.
