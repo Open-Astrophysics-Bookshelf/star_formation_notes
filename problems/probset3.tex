@@ -1,0 +1,40 @@
+\problemset
+
+\begin{enumerate}
+
+\item \textbf{Toomre Instability.}\\
+Chapter \ref{ch:sflaw_th} discusses the Toomre instability as a potentially important factor in driving star formation. It may also be relevant to determining the maximum masses of molecular clouds. Here we will derive the instability. We will consider a uniform infinitely thin disk of surface density $\Sigma$ occupying the $z=0$ plane. The disk has a flat rotation curve with velocity $v_R$, so the angular velocity is $\veco=\Omega \ehat_z$, with $\Omega = v_R/r$ at a distance $r$ from the disk center. The velocity of the fluid in the $z=0$ plane is $\vecv$ and its vertically-integrated pressure is $\Pi=\int_{-\infty}^{\infty} P \, dz = \Sigma c_s^2$. 
+\begin{enumerate}
+\item Consider a coordinate system co-rotating with the disk, centered at a distance $R$ from the disk center, oriented so that the $x$ direction is radially outward and the $y$ direction is in the direction of rotation. In this frame, we can derive the governing equations by combining the vertically-integrated equations of motion with the Poisson equation. This gives
+\begin{eqnarray*}
+\frac{\partial \Sigma}{\partial t} + \nabla \cdot (\Sigma \vecv) & = & 0 \\
+\frac{\partial \vecv}{\partial t} + (\vecv\cdot\nabla)\vecv & = & -\frac{\nabla \Pi}{\Sigma} - \nabla \phi - 2\veco \times \vecv + \Omega^2 (x \ehat_x + y \ehat_y) \\
+\nabla^2 \phi & = & 4 \pi G \Sigma \delta(z).
+\end{eqnarray*}
+The last two terms in the second equation are the Coriolis and centrifugal force terms.
+We wish to perform a stability analysis of these equations. Consider a solution $(\Sigma_0, \phi_0)$ to these equations in which the gas is in equilibrium (i.e.\ $\vecv=0$), and add a small perturbation: $\Sigma=\Sigma_0 + \epsilon \Sigma_1$, $\vecv = \vecv_0 + \epsilon \vecv_1$, $\phi=\phi_0 + \epsilon \phi_1$, where $\epsilon \ll 1$. Derive the perturbed equations by substituting these values of $\Sigma$, $\vecv$, and $\phi$ into the equations of motion and keeping all the terms that are linear in $\epsilon$.
+\item The perturbed equations can be solved by Fourier analysis. Consider a trial value of $\Sigma_1$ described by a single Fourier mode $\Sigma_1 = \Sigma_a \exp[i(kx - \omega t)]$, where we choose to orient our coordinate system so that the wave vector $\mathbf{k}$ for this mode is in the $x$ direction. As an {\it ansatz} for $\phi_1$, we will look for a solution of the form $\phi_1 = \phi_a \exp[i(kx - \omega t) - |k z|]$. (One can show that the solution must take this form, but we will not do so here.) Derive the relationship between $\phi_a$ and $\Sigma_a$.
+\item Now try a similar single-Fourier mode form for the perturbed velocity: $\vecv_1 = (v_{ax} \ehat_x + v_{ay} \ehat_y) \exp[i(kx - \omega t)]$. Derive three equations relating the unknowns $\Sigma_a$, $v_{ax}$, and $v_{ay}$. You will find it useful to expand $\Omega$ in a Taylor series around the origin of your coordinate system, i.e., write $\Omega = \Omega_0 + (d\Omega/dx)_0 x$, where $\Omega_0 = v_R/R$ and $(d\Omega/dx)_{0} = -\Omega_0/R$.
+\item Show that these equations have non-trivial solutions only if
+\begin{displaymath}
+\omega^2 = 2 \Omega_0^2 - 2 \pi G \Sigma_0 |k| + k^2 c_s^2.
+\end{displaymath}
+This is the dispersion relation for our rotating thin disk.
+\item Solutions with $\omega^2 > 0$ correspond to oscillations, while those with $\omega^2 < 0$ correspond to pairs of modes, one of which decays with time and one of which grows. We refer to the growing modes as unstable, since in the linear regime they become arbitrarily large. Show that an unstable mode exists if $Q<1$, where
+\begin{displaymath}
+Q = \frac{\sqrt{2} \Omega_0 c_s}{\pi G \Sigma_0}.
+\end{displaymath}
+is called the Toomre parameter. Note that this stability condition refers only to axisymmetric modes in infinitely thin disks; non-axisymmetric instabilities in finite thickness disks usually appear around $Q\approx 1.5$.
+\item When an unstable mode exists, we define the Toomre wave number $k_T$ as the wave number that corresponds to mode for which the instability grows fastest. Calculate $k_T$ and the corresponding Toomre wavelength, $\lambda_T = 2\pi / k_T$.
+\item The Toomre mass, defined as $M_T =  \lambda_T^2 \Sigma_0$, is the characteristic mass of an unstable fragment produced by Toomre instability. Compute $M_T$, and evaluate it for $Q=1$, $\Sigma_0=12$ $\msun$ pc$^{-2}$ and $c_s = 6$ km s$^{-1}$, typical values for the atomic ISM in the solar neighborhood. Compare the mass you find to the maximum molecular cloud mass observed in the Milky Way as reported by \href{http://adsabs.harvard.edu/abs/2005PASP..117.1403R}{Rosolowsky (2005, {\it PASP}, 117, 1403)}. \nocite{rosolowsky05b}\\
+\end{enumerate}
+
+\item \textbf{The Origin of Brown Dwarfs.}\\
+For the purposes of this problem, we will define a brown dwarf as any object whose mass is below $M_{\rm BD} = 0.075$ $\msun$, the hydrogen burning limit. We would like to know if these could plausibly be produced via turbulent fragmentation, as appears to be the case for stars.
+\begin{enumerate}
+\item For a \citet{chabrier05a} IMF (see Chapter \ref{ch:obsstars}, equation \ref{eq:chabrier}), compute the fraction $f_{\rm BD}$ of the total mass of stars produced that are brown dwarfs.
+\item In order to collapse the brown dwarf must exceed the Bonnor-Ebert mass. Consider a molecular cloud of temperature 10 K. Compute the minimum ambient density $n_{\rm min}$ that a region of the cloud must have in order for the thermal pressure to be such that the Bonnor-Ebert mass is less than the brown dwarf mass.
+\item Assume the cloud has a lognormal density distribution; the mean density is $\overline{n}$ and the Mach number is $\mathcal{M}$. Plot a curve in the $(\overline{n}$, $\mathcal{M})$ plane along which the fraction of the mass at densities above $n_{\rm min}$ is equal to $f_{\rm BD}$. Does the gas cloud that formed the cluster IC 348 ($\overline{n} \approx 5\times 10^4$ cm$^{-3}$, $\mathcal{M}\approx 7$) fall into the part of the plot where the mass fraction is below or above $f_{\rm BD}$?
+\end{enumerate}
+
+\end{enumerate}
