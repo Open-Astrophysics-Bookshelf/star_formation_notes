@@ -1,0 +1,42 @@
+\problemset
+
+\begin{enumerate}
+
+\item {\bf HII Region Trapping.}\\
+Consider a star of radius $R_*$ and mass $M_*$ with ionizing luminosity $S$ photons s$^{-1}$ at the center of a molecular cloud. For the purposes of this problem, assume that the ionized gas has constant sound speed $c_i=10$ km s$^{-1}$ and case B recombination coefficient $\alphab=2.6\times 10^{-13}$ cm$^{-3}$ s$^{-1}$.
+\begin{enumerate}
+\item Suppose the cloud is accreting onto the star at a constant rate $\dot{M}_*$. The incoming gas arrives at the free-fall velocity, and the accretion flow is spherical. Compute the equilibrium radius $r_i$ of the ionized region, and show that there is a critical value of $\dot{M}_*$ below which $r_i \gg R_*$. Estimate this value numerically for $M_*=30$ $\msun$ and $S=10^{49}$ s$^{-1}$. How does this compare to typical accretion rates for massive stars?
+\item The H~\textsc{ii} region will remain trapped by the accretion flow as long as the ionized gas sound speed is less than the escape velocity at the edge of the ionized region. What accretion rate is required to guarantee this? Again, estimate this numerically for the values given above.\\
+\end{enumerate}
+
+\item \textbf{Self-Similar Viscous Disks.}\\
+Consider a protostellar disk orbiting a star, governed by the usual viscous evolution equation
+\begin{displaymath}
+\frac{\partial\Sigma}{\partial t} = \frac{3}{\varpi} \frac{\partial}{\partial \varpi} \left[\varpi^{1/2} \frac{\partial}{\partial \varpi} \left(\nu \Sigma \varpi^{1/2}\right)\right],
+\end{displaymath}
+where $\Sigma$ is the surface density, $\varpi$ is the radius in cylindrical coordinates, and $\nu$ is the viscosity. Suppose that the viscosity is linearly proportional to the radius, $\nu = \nu_1 (\varpi/\varpi_1)$.
+\begin{enumerate}
+\item Non-dimensionalize the evolution equation by making a change of variables to the dimensionless position, time, and surface density $x=\varpi/\varpi_1$, $T = t/t_s$, $S = \Sigma/\Sigma_1$, where $t_s = \varpi_1^2/(3\nu_1)$.
+\item Use your non-dimensionalized equation to show that
+\begin{displaymath}
+\Sigma = \left(\frac{C}{3\pi \nu_1}\right) \frac{e^{-x/T}}{x T^{3/2}}
+\end{displaymath}
+is a solution of the equation for an arbitrary constant $C$.
+\item Calculate the total mass in the disk in terms of $C$, $t_s$, and $t$, and calculate the time rate of change of this mass. Based on your result, give a physical interpretation of what the constant $C$ means. (Hint: what units does $C$ have?)
+\item Plot $S$ versus $x$ at $T = 1, 1.5, 2$, and $4$. Give a physical interpretation of the results.\\
+\end{enumerate}
+
+\item {\bf A Simple T Tauri Disk Model.}\\
+In this problem we will construct a simple model of a T Tauri star disk in terms of a few parameters: the midplane density and temperature $\rho_m$ and $T_m$, the surface temperature $T_s$, the angular velocity $\Omega$, and the specific opacity of the disk material $\kappa$. We assume that the disk is very geometrically thin and optically thick, and that it is in thermal and mechanical equilibrium.
+\begin{enumerate}
+\item Assume that the disk radiates as a blackbody at temperature $T_s$. Show that the surface and midplane temperatures are related approximately by
+\begin{displaymath}
+T_m \approx \left(\frac{3}{8}\kappa\Sigma\right)^{1/4} T_s,
+\end{displaymath}
+where $\Sigma$ is the disk surface density.
+\item Suppose the disk is characterized by a standard $\alpha$ model, meaning that the viscosity $\nu=\alpha c_s H$, where $H$ is the scale height and $c_s$ is the sound speed. For such a disk the rate per unit area of the disk surface (counting each side separately) at which energy is released by viscous dissipation is $F_d=(9/8) \nu \Sigma \Omega^2$. Derive an estimate for the midplane temperature $T_m$ in terms of $\Sigma$, $\Omega$, and $\alpha$.
+\item Calculate the cooling time of the disk in terms of the orbital period. Should the behavior of the disk be closer to isothermal or adiabatic?
+\item Consider a disk with a mass of $0.03$ $\msun$ orbiting a $1$ $\msun$ star, which has $\kappa=3$ cm$^2$ g$^{-1}$ and $\alpha=0.01$. The disk runs from 1 to 20 AU, and the surface density varies as $R^{-1}$. Use your model to express $\rho_m$, $T_m$, and $T_s$ as functions of the radius, normalized to 1 AU; i.e., derive results of the form $\rho_m = \rho_0 (r/\mathrm{AU})^p$ for each of the quantities listed. Is your numerical model disk gravitationally unstable (i.e., $Q<1$) anywhere?
+\end{enumerate}
+
+\end{enumerate}

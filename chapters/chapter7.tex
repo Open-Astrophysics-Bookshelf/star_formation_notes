@@ -169,15 +169,15 @@ The corresponding lifetime-averaged production of ionizing photons is
 
 We will not go into tremendous detail on how these photons interact with the ISM, but to summarize: photons capable of ionizing hydrogen will be absorbed with a very short mean free path, producing a bubble of fully ionized gas within which all the photons are absorbed. The size of this bubble can be found by equating the hydrogen recombination rate with the ionizing photon production rate, giving
 \begin{equation}
-S = \frac{4}{3} \pi r_i^3 n_e n_p \alpha_B,
+S = \frac{4}{3} \pi r_i^3 n_e n_p \alphab,
 \end{equation}
-where $r_i$ is the radius of the ionized region, $n_e$ and $n_p$ are the number densities of electrons and protons, and $\alpha_B$ is the recombination rate coefficient for case B, and which has a value of roughly $3\times 10^{-13}$ cm$^3$ s$^{-1}$. Cases A and B, what they mean, and how this quantity is computed are all topics discussed in the class on diffuse matter, and here we will simply take $\alpha_B$ as a known constant. The radius of the ionized bubble is known as the Str\"omgren radius after the person who first calculated it.
+where $r_i$ is the radius of the ionized region, $n_e$ and $n_p$ are the number densities of electrons and protons, and $\alphab$ is the recombination rate coefficient for case B, and which has a value of roughly $3\times 10^{-13}$ cm$^3$ s$^{-1}$. Cases A and B, what they mean, and how this quantity is computed are all topics discussed in the class on diffuse matter, and here we will simply take $\alphab$ as a known constant. The radius of the ionized bubble is known as the Str\"omgren radius after the person who first calculated it.
 
 If we let $\mu_{\rm H}$ be the mean mass per hydrogen nucleus in the gas, and $\rho_0$ be the initial density before the photoionizing stars turn on, then $n_p = \rho_0/\mu_{\rm H}$ and $n_e = 1.1 \rho_0/\mu_{\rm H}$, with the factor of 1.1 coming from assuming that He is singly ionized (since its ionization potential is not that different from hydrogen's) and from a ratio of 10 He nuclei per H nucleus. Inserting these factors and solving for $r_i$, we obtain the Str\"omgren radius, the equilibrium radius of a sphere of gas ionized by a central source:
 \begin{equation}
-r_S = \left(\frac{3 S \mu_{\rm H}^2}{4(1.1) \pi \alpha_B \rho_0^2}\right)^{1/3} = 2.8 S_{49}^{1/3} n_2^{-2/3}\mbox{ pc},
+r_S = \left(\frac{3 S \mu_{\rm H}^2}{4(1.1) \pi \alphab \rho_0^2}\right)^{1/3} = 2.8 S_{49}^{1/3} n_2^{-2/3}\mbox{ pc},
 \end{equation}
-where $S_{49} = S/10^{49}$ s$^{-1}$, $n_2 = (\rho_0/\mu_{\rm H})/100$ cm$^{-3}$, and we have used $\alpha_B = 3.46\times 10^{-13}$ cm$^3$ s$^{-1}$.
+where $S_{49} = S/10^{49}$ s$^{-1}$, $n_2 = (\rho_0/\mu_{\rm H})/100$ cm$^{-3}$, and we have used $\alphab = 3.46\times 10^{-13}$ cm$^3$ s$^{-1}$.
 
 The photoionized gas will be heated to $\sim 10^4$ K by the energy deposited by the ionizing photons. The corresponding sound speed in the ionized gas will be
 \begin{equation}
@@ -187,7 +187,7 @@ where $T_{i,4} = T_i/10^4$ K, $\mu_{\rm H} = 2.3\times 10^{-24}$ g is the mean m
 
 The time to reach ionization balance is short compared to dynamical timescales (as is demonstrated in the diffuse matter class), so we can assume that ionization balance is always maintained as the expansion occurs. Consequently, when the ionized region has reached a radius $r_i$, the density inside the ionized region must obey
 \begin{equation}
-\rho_i = \left(\frac{3 S \mu_{\rm H}^2}{4(1.1)\pi \alpha_B r_i^3}\right)^{1/2}.
+\rho_i = \left(\frac{3 S \mu_{\rm H}^2}{4(1.1)\pi \alphab r_i^3}\right)^{1/2}.
 \end{equation}
 At the start of expansion $\rho_i = \rho_0$, but we see here that the density drops as $r_i^{-3/2}$ as expansion proceeds. Since the expansion is highly supersonic with respect to the external gas (as we will see shortly), there is no time for sound waves to propagate away from the ionization front and pre-accelerate the neutral gas. Instead, this gas must be swept up by the expanding H~\textsc{ii} region. However, since $\rho_i \ll \rho_0$, the mass that is swept up as the gas expands must reside not in the ionized region interior, but in a dense neutral shell at its edges. At late times, when $r_i \gg r_S$, we can neglect the mass in the shell interior in comparison to that in the shell, and simply set the shell mass equal to the total mass swept up. We therefore have a shell mass
 \begin{equation}
