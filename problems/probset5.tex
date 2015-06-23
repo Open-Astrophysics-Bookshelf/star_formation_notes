@@ -1,0 +1,41 @@
+\problemset
+
+\begin{enumerate}
+
+\item {\bf A Simple Protostellar Evolution Model.}\\
+Consider a protostar forming with a constant accretion rate $\dot{M}$. The accreting gas is fully molecular, arrives at free-fall, and radiates away a luminosity $L_{\rm acc} = f_{\rm acc} G M \dot{M}/R$ at the accretion shock, where $M$ and $R$ are the instantaneous protostellar mass and radius, and $f_{\rm acc}$ is a numerical constant of order unity. At the end of contraction the resulting star is fully ionized, all its deuterium has been burned to hydrogen, and it is in hydrostatic equilibrium. The ionization potential of hydrogen is $\psi_I = 13.6$ eV per amu, the dissociation potential of molecular hydrogen is $\psi_M=2.2$ eV per amu, and the energy released by deuterium burning is $\psi_D\approx 100$ eV per amu of total gas (not per amu of deuterium).
+\begin{enumerate}
+\item First consider a low-mass protostar whose internal structure is well-described by an $n=3/2$ polytrope. Compute the total energy of the star, including thermal energy, gravitational energy, and the chemical energies associated with ionization, dissociation, and deuterium burning.
+\item Use your expression for the total energy to derive an evolution equation for the radius for a star. Assume the star is always on the Hayashi track, which for the purposes of this problem we will approximate as having a fixed effective temperature $T_{\rm H} = 3500$ K.
+\item Numerically integrate your equation and plot the radius as a function of mass for $\dot{M} = 10^{-5}$ $\msun$ yr$^{-1}$ and $f_{\rm acc}=3/4$. As an initial condition, use $R=2.5$ $\rsun$ and $M=0.01$ $\msun$, and stop the integration at a mass of $M=1.0$ $\msun$. Plot the radius and luminosity as a function of mass; in the luminosity, include both the the accretion luminosity and the internal luminosity produced by the star.
+\item Now consider two modifications we can make to allow the model to work for massive protostars. First, since massive stars are radiative, the polytropic index will be roughly $n=3$ rather than $n=3/2$. Second, the surface temperature will in general be larger than the Hayashi limit, so take the luminosity to be $L=\max[L_{\rm H}, \lsun(M/\msun)^3]$, where $L_{\rm H}=4\pi R^2 \sigma T_{\rm H}^4$ and $R$ is the stellar radius. Modify your evolution equation for the radius to include these effects, and numerically integrate the modified equations up to $M=50$ $\msun$ for $\dot{M} = 10^{-4}$ $\msun$ yr$^{-1}$ and $f_{\rm acc}=3/4$, using the same initial conditions as for the low mass case. Plot $R$ and $L$ versus $M$.
+\item Compare your result to the fitting formula for the ZAMS radius of solar-metallicity stars as a function of $M$ in \citet{tout96a}\footnote{\href{http://adsabs.harvard.edu/abs/1996MNRAS.281..257T}{Tout et al., 1996, MNRAS 281, 257}}. Find the mass at which the massive star would join the main sequence. Your plots for $R$ and $L$ are only valid up to this mass, because this simple model does not include hydrogen burning.
+\end{enumerate}
+
+\item {\bf Disk Dispersal by Photoionization.}\\
+Consider a disk around a T Tauri star of mass $M_*$ that produces an ionizing flux $\Phi$ photons s$^{-1}$. The flux ionizes the disk surface and raises the gas temperature to $10^4$ K, leading to a wind leaving the disk surface.
+\begin{enumerate}
+\item Close to the star the ionized gas remains bound due to the star's gravity. Estimate the gravitational radius $r_g$ at which the ionized gas becomes unbound.
+\item Inside $r_g$, we can think of the trapped ionized gas as forming a cloud of characteristic density $n_0$. Assuming this region is roughly in ionization balance, estimate $n_0$.
+\item At $r_g$, a wind begins to flow off the disk surface. Because the ionizing photons are attenuated quickly as one moves away from the star, most of the mass loss comes from radii $\sim r_g$. Make a rough estimate for the mass flux in the wind.
+\item Evaluate the mass flux numerically for a 1 $\msun$ star with an ionizing flux of $10^{41}$ s$^{-1}$. How long would this take to evaporate a $0.01$ $\msun$ disk around this star? Given the observed lifetimes of T Tauri star disks, are photoionization-induced winds a plausible candidate for the primary disk removal mechanism?
+\end{enumerate}
+
+\item {\bf Aerodynamics of Small Solids in a Disk.}\\
+Consider a solid sphere of radius $s$ and density $\rho_s$, orbiting a star of mass $M$ at a distance $r$. The sphere is embedded in a protoplanetary disk, whose density and temperature where the particle is orbiting are $\rho_d$ and $T$. The gas pressure in the disk varies with distance from the star as $P\propto r^{-n}$.
+\begin{enumerate}
+\item Because it is partially supported by gas pressure, gas in the disk orbits at a velocity slightly below the Keplerian velocity. Show that the difference between the gas velocity $v_g$ and the Keplerian velocity $v_K$ is
+\begin{displaymath}
+\Delta v = v_K - v_g \approx \frac{n c_s^2}{2v_K},
+\end{displaymath}
+where $c_s$ is the isothermal sound speed of the gas. You may assume that the deviation from Keplerian rotation is small.
+\item For a particle so small that the mean free path of gas atoms is $> s$ (which is the case for grains smaller than $\sim 10$ cm), the drag force it experiences as it moves through the gas at a relative velocity $v$ is
+\begin{displaymath}
+F_D = \frac{4\pi}{3} s^2 \rho_d v c_s.
+\end{displaymath}
+This is called the Epstein drag law. We define the stopping time $t_s$ as the ratio of the particle's momentum to $F_D$; this is the time required to reduce the particle velocity by one $e$-folding. Compute $t_s$ for a particle governed by Epstein drag.
+\item For small particles $t_s$ is much less than orbital period of a particle rotating at the Keplerian speed. In this case drag will force the particle's orbital velocity to match the sub-Keplerian orbital velocity of the gas, and since the particle is not supported by pressure as the disk is, it will drift inward. Estimate the equilibrium drift velocity, and the time required for the particle to drift into the star.
+\item Consider a particle of size $s=1$ cm and density $\rho_s = 3$ g cm$^{-3}$ orbiting at $r=1$ AU in a protoplanetary disk of density $\rho_d=10^{-9}$ g cm$^{-3}$, temperature $T=600$ K, and pressure index $n=3$. Verify that this particle is in the regime where $t_s$ is much less than the orbital period, and then numerically evaluate the time required for the particle to drift into the star. How does this compare to the observed time scale of planet formation and disk dissipation?
+\end{enumerate}
+
+\end{enumerate}
