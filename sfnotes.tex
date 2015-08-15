@@ -20,7 +20,7 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass{tex/tufte-book} % Use the tufte-book class which in turn uses the tufte-common class
+\documentclass[twoside]{tex/tufte-book} % Use the tufte-book class which in turn uses the tufte-common class
 
 \usepackage{natbib}
 
@@ -28,7 +28,7 @@
 
 \usepackage{microtype} % Improves character and word spacing
 
-%\usepackage{lipsum} % Inserts dummy text
+\usepackage{lipsum} % Inserts dummy text
 
 \usepackage{booktabs} % Better horizontal rules in tables
 
@@ -65,20 +65,34 @@
 %	BOOK META-INFORMATION
 %----------------------------------------------------------------------------------------
 
+%\newsavebox{\coverimage}
+%\savebox{\coverimage}{\includegraphics[width=\linewidth]{coverimage}}
+%
+%\title[Notes on Star Formation]{%
+%\setlength{\parindent}{0pt}%
+%Notes on\par%
+%Star Formation%
+%\par \vspace{1cm}%
+%\usebox{\coverimage}%
+%} % Title of the book
+
 \newsavebox{\coverimage}
 \savebox{\coverimage}{\includegraphics[width=\linewidth]{coverimage}}
 
+\usepackage{xcolor}
+\definecolor{WHITE}{HTML}{FFFFFF}
+
 \title[Notes on Star Formation]{%
 \setlength{\parindent}{0pt}%
-Notes on\par%
-Star Formation%
+\textcolor{white}{Notes on}\par%
+\textcolor{white}{Star Formation}%
 \par \vspace{1cm}%
-\usebox{\coverimage}%
+%\usebox{\coverimage}%
 } % Title of the book
 
-\author{Mark R.~Krumholz} % Author
+\author{\textcolor{white}{Mark R.~Krumholz}} % Author
 
-\publisher{The Open Astrophysics Bookshelf} % Publisher
+\publisher{\textcolor{white}{The Open Astrophysics Bookshelf}} % Publisher
 
 %----------------------------------------------------------------------------------------
 
@@ -121,8 +135,23 @@ Star Formation%
 \usepackage{appendix}
 
 %----------------------------------------------------------------------------------------
+% Make background image on cover page
+
+\usepackage{transparent}
+\usepackage{eso-pic}
+\newcommand\BackgroundPic{%
+\put(0,0){%
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+\includegraphics[width=\paperwidth,height=\paperheight,%
+keepaspectratio]{coverimage_rot}%
+\vfill
+}}}
 
 \begin{document}
+
+\AddToShipoutPicture*{\BackgroundPic}
 
 \frontmatter
 
