@@ -9,6 +9,14 @@ Consider a star of radius $R_*$ and mass $M_*$ with ionizing luminosity $S$ phot
 \item The H~\textsc{ii} region will remain trapped by the accretion flow as long as the ionized gas sound speed is less than the escape velocity at the edge of the ionized region. What accretion rate is required to guarantee this? Again, estimate this numerically for the values given above.\\
 \end{enumerate}
 
+\item \textbf{The Transition to Grain-Mediated H$_2$ Formation.}\\
+In this problem we will make some rough estimates for how the Universe transitions from H$_2$ formation being mostly by gas-phase processes, as it must in the early Universe where there are no metals, to H$_2$ formation being mostly on grain surfaces. It may be helpful for this problem to review the discussion of H$_2$ formation in Section \ref{ssec:Hchemistry}.
+\begin{enumerate}
+\item As a first simple example, consider atomic gas with a temperature of $100$ K immersed in a background radiation field equal to that of the Milky Way; this radiation field causes photodetachment of H$^-$ at a rate $\zeta_{\rm pd} = 2.4\times 10^{-7}$ s$^{-1}$ per H$^-$. If all H is neutral and free electrons come only from metals, then the free electron density is $n_e \approx x_{\rm C} n_{\rm H} Z$, where $x_{\rm C} \approx 10^{-4}$ is the gas-phase carbon abundance (the dominant source of free electrons) and $Z$ is the metallicity relative to Solar. Similarly, if the dust grain abundance scales linearly with metallicity, the rate coefficient for H$_2$ formation on grains is $R = 3\times 10^{-17} Z$ cm$^3$ s$^{-1}$. Show that, under these assumptions, the rate of H$_2$ formation is always dominated by grain surface processes independent of the metallicity or density.
+\item Now suppose that the ionization fraction of H is non-negligible, and the photodetachment rate is the same as in part (a). Determine the ionization fraction $x$ at which the rates of H$_2$ formation in the gas phase and on grain surfaces become equal. Your answer should depend on the gas density $n_{\rm H}$, temperature $T$, and metallicity $Z$. Plot the solution for $x$ as a function of metallicity for gas at temperature $T=100$ K and density $n_{\rm H} = 1$, $10$, and $100$ cm$^{-3}$.
+\item In part (b), you should have found that, for a given density, there is a critical metallicity above which grain-mediated H$_2$ formation dominates regardless of the ionization fraction (except for the pathological case $x=1$). Solve for this critical metallicity as a function of density, and plot the result for $T = 100$ and $1000$ K.
+\end{enumerate}
+
 \item \textbf{Self-Similar Viscous Disks.}\\
 Consider a protostellar disk orbiting a star, governed by the usual viscous evolution equation
 \begin{displaymath}

@@ -41,6 +41,107 @@ where $v_{\rm esc,*} = \sqrt{2 G M_*/R_*}$ is the escape speed from the stellar 
 
 \end{enumerate}
 
+\item \textbf{The Transition to Grain-Mediated H$_2$ Formation}
+
+\begin{enumerate}
+
+\item To calculate the rate of H$_2$ formation catalyzed by free electrons, we first calculate the rate of formation of H$^-$:
+\begin{displaymath}
+\gamma({\rm H}^{-}\,{\rm form.}) = k_{-} n_e n_{\rm H} = k_{-} x_{\rm C} Z n_{\rm H}^2,
+\end{displaymath}
+where $k_{-} = 1.1\times 10^{-16} T_2^{0.88}$ cm$^3$ s$^{-1}$ is the rate coefficient given in Chapter \ref{ch:first_stars}. Next we must calculate the fraction of H$^-$ ions formed that yield H$_2$. The H$^-$ can be destroyed either by photodetachment or by reacting with a neutral hydrogen to form H$_2$:
+\begin{displaymath}
+{\rm H}^{-} + {\rm H} \rightarrow {\rm H}_2 + e^{-}.
+\end{displaymath}
+The rate of the latter reaction is
+\begin{displaymath}
+\gamma({\rm H}^{-}\rightarrow{\rm H}_2) = k_2 n_{{\rm H}^-} n_{\rm H}
+\end{displaymath}
+with $k_2 = 1.3\times 10^{-9}$ cm$^3$ s$^{-1}$ (the value given in class). The rate of photodetachment is
+\begin{displaymath}
+\gamma({\rm H}^{-}\,{\rm photo.}) = \zeta_{\rm pd} n_{{\rm H}^-}
+\end{displaymath}
+with $\zeta_{\rm pd} = 2.4\times 10^{-7}$ s$^{-1}$ for the Milky Way radiation field, again as given in class. Thus the branching ratio for H$^{-}$ going to H$_2$ rather than being destroyed by photodetachment is
+\begin{displaymath}
+\Gamma({\rm H}^{-}\rightarrow{\rm H}_2) = \frac{\gamma({\rm H}^{-}\rightarrow{\rm H}_2)}{\gamma({\rm H}^{-}\rightarrow{\rm H}_2) + \gamma({\rm H}^{-}\,{\rm photo.})} = \frac{k_2 n_{\rm H}}{k_2 n_{\rm H}+\zeta_{\rm pd}}
+\end{displaymath}
+Putting this together, the rate of formation of H$_2$ via free electrons is
+\begin{eqnarray*}
+\gamma({\rm H}_2{\rm - gas}) & = & \gamma({\rm H}^{-}\,{\rm form.}) \Gamma({\rm H}^{-}\rightarrow{\rm H}_2) \\
+& = & k_{-} x_{\rm C} Z  \left[1+ \zeta_{\rm pd}/(k_2 n_{\rm H})\right]^{-1} n_{\rm H}^2. 
+\end{eqnarray*}
+In comparison, the rate of H$_2$ formation on grain surfaces is simply
+\begin{displaymath}
+\gamma({\rm H}_2{\rm - grain}) = R n_{\rm H}^2 = R_{\odot} Z n_{\rm H}^2,
+\end{displaymath}
+where $R_{\odot} = 3\times 10^{-17}$ cm$^3$ s$^{-1}$ is the rate coefficient at Solar metallicity. Taking the ratio of these two, we have
+\begin{eqnarray*}
+\frac{\gamma({\rm H}_2{\rm - grain})}{\gamma({\rm H}_2{\rm - gas})} & = & \frac{R_{\odot} \left[1+ \zeta_{\rm pd}/(k_2 n_{\rm H})\right]}{k_{-} x_{\rm C}} \\
+& = & 2700 T_2^{-0.88} \left[1+ \zeta_{\rm pd}/(k_2 n_{\rm H})\right].
+\end{eqnarray*}
+Thus even in the limit $n_{\rm H} \rightarrow \infty$, the rate of formation on grain surfaces exceeds that in the gas phase by $\sim 3$ orders of magnitude. At densities below $\zeta_{\rm pd}/k_2 = 185$ cm$^{-3}$, where photodetachment significantly inhibits H$_2$ formation via the H$^-$ channel, grain formation wins by an even larger factor.\\
+
+\item For gas phase formation, this calculation is exactly the same as the previous part, with two minor differences. First, the factor $x_{\rm C} Z$ in the gas-phase formation rate is replaced by $x$, since how hydrogen rather than carbon is the dominant source of free electrons. Second, all the $n_{\rm H}$ factors become $(1-x) n_{\rm H}$, since only neutral hydrogen participates in the relevant reactions. Making these changes, the H$^-$ formation rate is
+\begin{displaymath}
+\gamma({\rm H}^{-}\,{\rm form.}) = k_{-} x (1-x) n_{\rm H}^2,
+\end{displaymath}
+and the H$^-$ to H$_2$ reaction rate is
+\begin{displaymath}
+\gamma({\rm H}^{-}\rightarrow{\rm H}_2) = k_2 (1-x) n_{{\rm H}^-} n_{\rm H}.
+\end{displaymath}
+The photodetachment rate is unchanged, so the branching ratio for H$^-$ going to H$_2$ becomes
+\begin{displaymath}
+\Gamma({\rm H}^{-}\rightarrow{\rm H}_2) = \frac{k_2 (1-x) n_{\rm H}}{k_2 (1-x) n_{\rm H}+\zeta_{\rm pd}},
+\end{displaymath}
+and the gas-phase H$_2$ formation rate is therefore
+\begin{displaymath}
+\gamma({\rm H}_2{\rm - gas}) = k_{-} x (1-x)  \left[1+ \zeta_{\rm pd}/(k_2 (1-x) n_{\rm H})\right]^{-1} n_{\rm H}^2. 
+\end{displaymath}
+The grain-mediated reaction rate becomes
+\begin{displaymath}
+\gamma({\rm H}_2{\rm - grain}) = R_{\odot} Z (1-x) n_{\rm H}^2.
+\end{displaymath}
+Notice that there is only one factor of $x$, because the reaction rate involves the collision of neutral hydrogen atoms with dust grains, and therefore depends on the density of gas times the density of grains. If the ionization fraction is $x$, the neutral hydrogen fraction is reduced by a factor $(1-x)$, but the grain abundance is unchanged. Setting the two rates equal, we have
+\begin{displaymath}
+k_{-} x \left[1+ \zeta_{\rm pd}/(k_2 (1-x) n_{\rm H})\right]^{-1} = R_{\odot} Z.
+\end{displaymath}
+This is a quadratic in $x$, and the solution is
+\begin{displaymath}
+x = \frac{1}{2}\left(1+k \pm \sqrt{1-2k + k^2 - 4 k/r_{\rm pd}}\right)
+\end{displaymath}
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{hw4sol1}
+\caption[Solution to problem set~\thesolutionset, problem~\theenumi\theenumii]{
+\label{fig:hw4sol1}
+$x$ versus $Z$ for $n_{\rm H} = 1$, 10, and 100 cm$^{-3}$.
+}
+\end{marginfigure}
+where $k = R_{\odot} Z/k_{-}\approx 0.27 T_2^{-0.88} Z$ is the ratio of the rate coefficients for H$_2$ formation on grains and H$^-$ formation in the gas phase, and $r_{\rm pd} = n_{\rm H} k_2 / \zeta_{\rm pd}$ is the ratio of the gas density to the critical density for H$_2$ photodetachment, $n_{\rm crit,pd} = \zeta_{\rm pd}/k_2\approx 185$ cm$^{-3}$. Note that both roots represent mathematically valid solutions, one at ionization fraction below 50\% and one at ionization fraction above 50\%. In practice, however, the low ionization fraction solution is the more physically-realistic one, since if the gas is highly ionized the temperature is unlikely to be low enough to allow formation of H$_2$. Figure \ref{fig:hw4sol1} shows the physically-realistic solution plotted for $n_{\rm H} = 1$, 10, and 100 cm$^{-3}$.
+
+\item A solution ceases to exist when the metallicity is such that the quantity under the square root in the equation from the previous part goes to zero. Thus, grain-mediated H$_2$ formation must dominate whenever
+\begin{displaymath}
+1 - 2k + k^2 - 4 k r_{\rm pd}^{-1} < 0.
+\end{displaymath}
+Solving, this condition reduces to
+\begin{displaymath}
+k > 1 + \frac{2}{r_{\rm pd}} \left(1 - \sqrt{1+r_{\rm pd}}\right).
+\end{displaymath}
+(Note: there is another root to this equation, with a $+$ instead of a $-$ in front of the square root. However, one can easily verify that in the vicinity of this root $x>1$, which is obviously unphysical. Thus the $-$ root is the physically realistic one.) Rewriting this in terms of dimensional quantities, this is
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{hw4sol2}
+\caption[Solution to problem set~\thesolutionset, problem~\theenumi\theenumii]{
+\label{fig:hw4sol2}
+$Z$ versus $n_{\rm H}$ at $T=100$ K and $1000$ K.
+}
+\end{marginfigure}
+\begin{displaymath}
+Z > 0.27 T_2^{0.88} \left[1 + \frac{2 n_{\rm crit,pd}}{n_{\rm H}} \left(1 - \sqrt{1+\frac{n_{\rm H}}{n_{\rm crit,pd}}}\right)\right].
+\end{displaymath}
+Figure \ref{fig:hw4sol2} shows a plot of the minimum value of $Z$ versus density $n_{\rm H}$ at $T=100$ K and 1000 K.
+
+
+\end{enumerate}
+
 \item \textbf{Self-Similar Viscous Disks.}
 
 \begin{enumerate}
@@ -96,13 +197,13 @@ The time rate of change of the disk mass is just
 Looking at the equation, and noting that $C$ has units of mass per time, it is clear that $C$ controls the accretion rate of the disk onto the point mass in the center.
 
 \begin{marginfigure}
-\includegraphics[width=\linewidth]{hw4sol1}
+\includegraphics[width=\linewidth]{hw4sol3}
 \caption[Solution to problem set~\thesolutionset, problem~\theenumi\theenumii]{
-\label{fig:hw4sol1}
+\label{fig:hw4sol3}
 $S$ versus $x$ at dimensionless times $T=1, 1.5, 2$, and 4.
 }
 \end{marginfigure}
-\item Figure \ref{fig:hw4sol1} shows the required plot. We see that the disk surface density profile follows $S\propto x^{-1}$ for $x<T$, and is exponentially truncated at $x>T$. We can think of the inner part as the ``main disk", and the outer part as the material pushed outward by viscosity in order to compensate for the angular momentum lost as other gas moves inwards. As time passes, the inner, main disk drains onto the star, and its surface density decreases. At the same time, the outer, exponentially truncated segment of the disk grows to larger and larger radii as more and more angular momentum is extracted from the inner disk.
+\item Figure \ref{fig:hw4sol3} shows the required plot. We see that the disk surface density profile follows $S\propto x^{-1}$ for $x<T$, and is exponentially truncated at $x>T$. We can think of the inner part as the ``main disk", and the outer part as the material pushed outward by viscosity in order to compensate for the angular momentum lost as other gas moves inwards. As time passes, the inner, main disk drains onto the star, and its surface density decreases. At the same time, the outer, exponentially truncated segment of the disk grows to larger and larger radii as more and more angular momentum is extracted from the inner disk.
 
 \end{enumerate}
 
