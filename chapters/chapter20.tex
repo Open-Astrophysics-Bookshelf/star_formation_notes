@@ -1,229 +1,257 @@
-\chapter{The Transition to Planet Formation}
-\label{ch:planets}
+\chapter{Late-Stage Stars and Disks}
+\label{ch:late_disk}
 
 \marginnote{
 \textbf{Suggested background reading:}
 \begin{itemize}
-\item \href{http://adsabs.harvard.edu/abs/2014prpl.conf..475A}{Johansen, A., et al. 2014, in ``Protostars and Planets VI", ed.~H.~Beuther et al., pp.~547-570} \nocite{johansen14a}
+\item \href{http://adsabs.harvard.edu/abs/2014prpl.conf..475A}{Alexander, R., et al. 2014, in ``Protostars and Planets VI", ed.~H.~Beuther et al., pp.~475-496} \nocite{alexander14a}
 \end{itemize}
 \textbf{Suggested literature:}
 \begin{itemize}
-\item \href{http://adsabs.harvard.edu/abs/2010ApJ...722.1437B}{Bai, X.-N., \& Stone, J.~M. 2010, ApJ, 722, 1437} \nocite{bai10a}
+\item \href{http://adsabs.harvard.edu/abs/2001ApJ...560..957D}{Dullemond, C.~P., Dominik, C., \& Natta, A. 2001, ApJ, 560, 957} \nocite{dullemond01a}
+\item \href{http://adsabs.harvard.edu/abs/2009ApJ...700.1502A}{Andres, S.~M., et al. 2009, ApJ, 700, 1502} \nocite{andrews09a}
 \end{itemize}
 }
 
-In this final Chapter, we will finish our discussion of the transition from star formation to planet formation. We have already seen in Chapter \ref{ch:late_disk} that the interstellar dust grains that are captured in a star's disk will begin to collide with one another and grow, and that they will reach macroscopic size on time scales shorter than the observed disk lifetime. We now see to sharpen our understanding of how these solids will evolve. We will continue to make use of fiducial numbers from the minimum mass Solar nebula that we introduced in Chapter \ref{ch:late_disk}.
+The last two chapters of this book are concerned with the fate of the left-over material from the star formation process, which is mostly collected into accretion disks around them. This chapter discusses how this material is dispersed, and the final one introduces the process by which it can begin to form planets.
 
-\section{Dynamics of Solid Particles in a Disk}
+\section{Stars Near the End of Star Formation}
 
-\subsection{Forces on Solids}
+\marginnote{Historically the objects discussed in this section have been divided into two classes, T Tauri stars and Herbig Ae/Be stars. Roughly speaking, T Tauri stars are objects below 2 $\msun$, of spectral type G0 or later, and Herbig Ae/Be stars are more massive objects of earlier spectral types. We have studied a lot more T Tauri stars, with much higher spectral resolution, than Herbig Ae/Be stars simply because they are more common and thus on average they are closer. However, there do not appear to be significant differences in the physical nature or history of these objects. What differences we do see between them are a result of the shorter Kelvin-Helmholtz times and stronger winds and radiation 
+fields produced by the higher mass objects. Consequently we will deal treat these objects as a single class.}
 
-We begin our discussion by attempting to determine the dynamics of solid particles orbiting in a protoplanetary disk. Consider such a particle. Because the mass of the disk is very small compared that of the star, we can neglect the gravitational force it exerts in the radial direction, and thus the radial gravitational acceleration felt by the particle is simply $g_r = G M/r^2$, where $M$ is the star's mass and $r$ is the distance from the star. 
+We will begin our study of the final stages of star formation with a discussion of the stars themselves. The stars we want to study are ones that fall into the class II and class III category, in that they no longer have envelopes of material around them that are sufficient to obscure the stellar photosphere. However, they are young enough that they still exhibit various signs of youth. The presence of a disk is one of these signs.
 
-In the vertical direction we have the gravitational pull of both the star and the disk itself, and we have to think a bit more. However, it isn't hard to convince one's self that, for material distributed with the thermal scale height of the disk, the star's vertical gravity must dominate as well. The star's vertical gravitational force is 
-\begin{equation}
-g_{z,*} = \frac{z}{r} g_r = \Omega^2 z,
-\end{equation}
-where $z$ is the distance above the disk midplane and $\Omega$ is the angular velocity of a Keplerian orbit. We can approximate the disk as an infinite slab of surface density $\Sigma$; the gravitational force per unit mass exerted by such a slab is
-\begin{equation}
-g_{z,d} = 2\pi G \Sigma.
-\end{equation}
-The ratio of the stellar force to the disk force at a distance $H$ off the midplane, the typical disk height, is
-\begin{equation}
-\frac{g_{z,*}}{g_{z,d}} = \frac{\Omega^2 H}{2\pi G \Sigma} = \frac{c_g \Omega}{2\pi G \Sigma} = \frac{Q}{2},
-\end{equation}
-where in the last step we substituted in the Toomre $Q=\Omega c_g/(\pi G \Sigma)$ for a Keplerian disk.
+\subsection{Optical Properties}
 
-Thus the vertical gravity of the disk is negligible as long as it is Toomre stable, $Q\gg 1$. For our minimum mass solar nebula, $Q=55 \varpi^{-1/4}$, so unless we are {\it very} far out, stellar gravity completely dominates. As a caveat, it is worth noting that we implicitly assumed that the scale height $H$ applies to both the gas and the dust, even though we calculated it only for the gas. In fact, the motion of the dust is more complex, and, as we will see shortly, the assumption that the dust scale height is the same as that of the gas is not a good one. Nonetheless, neglecting the self-gravity of the disk is a reasonable approximation until significant gas-dust separation has occurred.
+The main observational signature that has been used historically to define the T Tauri and Herbig Ae/Be classes is the presence of excess optical spectral line emission beyond that expected for a main sequence star of the same spectral class. The most prominent such line is H$\alpha$, the $n=3\rightarrow 2$ line for hydrogen (Figure \ref{fig:tts_appenzeller89}). H$\alpha$ is particularly striking because in almost all main sequence objects H$\alpha$ is seen in absorption rather than emission. The strength of the H$\alpha$ ranges form booming lines with equivalent widths (EW) of $\sim 100$ \AA\ down to stars that show essentially no feature at H$\alpha$ (as opposed to absorption for main sequence stars). For T Tauri stars, we divide them into classical, those with H$\alpha$ EW $\gtrsim 10$ \AA, and weak-lined, those with H$\alpha$ EW $\lesssim 10$ \AA. These lines often show variability on periods of hours or days.
 
-The other force on the solids that we have to consider is drag. Aerodynamic drag is a complicated topic, but we can get an estimate of the drag force for a small, slowly moving particle that is good to order unity fairly easily. Consider a spherical particle of size $s$ moving through a gas of density $\rho$ and sound speed $c_g$ at a velocity $v$ relative to the mean velocity of the gas. First note that for small particles the mean free path of a gas molecule is larger than the particle size -- Problem Set 5 contains a computation of the size scale up to which this remains the case.
+A large number of other optical and UV emission lines are also seen from these stars, and their strength generally correlates with that of the H$\alpha$ line. In addition to optical and ultraviolet line emission, these stars also exhibit the property of continuum veiling. What this means is that, in addition to excess line emission, these stars show excess continuum emission beyond what would be expected for a bare stellar photosphere. This excess emission arises from above the photospheric region where absorption occurs, so these photons are not absorbed. As a result they can partially or completely fill in normal photospheric absorption lines, reducing their equivalent width -- hence the name veiling.
 
-For such small grains it is a reasonable approximation to neglect collective behavior of the gas and view it as simply a sea of particles whose velocity distribution doesn't change in response to the dust grain moving through it. If the particle is moving slowly compared to the molecules, which will be the case for most grains, then the rate at which molecules strike the grain surface will be
-\begin{equation}
-\mbox{collision rate} \approx 4\pi s^2 \frac{\rho}{\mu} c_g,
-\end{equation}
-where $\mu$ is the mean mass per molecule, so $\rho/\mu$ is the number density. This formula simply asserts that the collision rate is roughly equal to the grain area times the number density of molecules times their mean speed.
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{tts_appenzeller89}
+\caption[Balmer lines of T Tauri stars]{
+\label{fig:tts_appenzeller89}
+Observed line profiles for three Balmer lines from the T Tauri star S Cr A taken on two nights in July, 1983. Figure from \citet{appenzeller89a}.
+}
+\end{marginfigure}
 
-If the grain were at rest the mean momentum transferred by these collisions would be zero. However, because it is moving, collisions on the forward face happen at a mean velocity of $\sim c_g+v$, and those on the backward face have a mean velocity $\sim c_g-v$. Thus, averaging over many collisions, there will be a net momentum transfer per collision of $\mu v$. The net rate of momentum transfer, the drag force, is therefore the product of this with the collision rate:
-\begin{equation}
-F_D = C_D s^2 \rho v c_g,
-\end{equation}
-where $C_D$ is a constant of order unity.
+\subsection{Infall Signatures}
 
-Integrating over the Boltzmann distribution and assuming that all collisions are elastic and that the reflectance is in random directions (so-called diffuse reflection), appropriate for a rough surface, gives $C_D = 4\pi/3$. With this value of $C_D$, this formula is known as the Epstein drag law. It becomes exact in the limit $s\ll \mbox{mean free path}$, $v \ll c_g$, and for pure elastic, diffuse reflection. Larger bodies experience Stokes drag, in which the dependence changes from $s^2 \rho v c_g$ to $s^2 \rho v^2$, but we will not worry about that for now. Finally, note that solid particles will not experience significant pressure forces, since they are so much more massive than the molecules that provide pressure.
+The H$\alpha$ is particularly interesting, because it tells us something about the star's immediate environment. For main sequence stars, the H$\alpha$ line profile is a result of absorption at the stellar photosphere and emission from the chromosphere. At the photosphere there is a population of neutral hydrogen atoms in the $n=2$ level that absorbs photons at H$\alpha$ frequencies, producing absorption. Above that in the chromosphere is an optically thin, hot gas, which contains atoms in the $n=3$ level. Some of these emit H$\alpha$ photons, partially filling in the absorption trough, but leaving the line overall in absorption.
 
-\subsection{Settling}
+Producing H$\alpha$ in emission is tricky, however. The emitting material must be above the stellar photosphere, so it can fill in the absorption trough created there. This gas must be at temperatures of $5,000-10,000$ K to significantly populate the $n=3$ level. However, in order to produce enough H$\alpha$ photons to fill in the trough and produce net emission, this gas must also be dense enough for the collision rate to be high enough to force the $n=3$ level close to LTE.
 
-Now let us consider what the combination of vertical gravity and drag implies. The vertical equation of motion for a particle is
-\begin{equation}
-\frac{d^2 z}{dt^2} = -g_z - \frac{F_D}{\frac{4}{3}\pi s^3 \rho_s} = -\Omega^2 z - \frac{\rho c_g}{\rho_s s} \frac{dz}{dt}
-\end{equation}
-where $\rho_s$ is the density of the solid particle. This ODE represents a damped harmonic oscillator: the gravitational term is the linear restoring force, and the drag term is the damping term. Within one gas scale height of the midplane $\rho$ is roughly constant, $\rho \approx \Sigma/H = 3\times 10^{-9} \varpi^{-11/4}$ g cm$^{-3}$. For constant $\rho$ the ODE can be solved analytically:
-\begin{equation}
-z = z_0 e^{-t/\tau},
-\end{equation}
-where
-\begin{equation}
-\tau = 2\frac{\rho_s s}{\rho c_g} \left[1 - \left(1 - \frac{4 s^2 \rho_s^2 \Omega^2}{\rho^2 c_g^2}\right)^{1/2}\right]^{-1}.
-\end{equation}
+Ordinary stellar chromospheres have densities that are much too low to meet this requirement. Thus H$\alpha$ emission implies the presence of material around the star at temperatures of  $5,000-10,000$ K, but at densities much higher than found in an ordinary stellar chromosphere. Moreover, the width of the H$\alpha$ emission requires that this material be moving at velocities of hundreds of km s$^{-1}$ relative to the stellar surface, i.e., comparable to the free-fall velocity. This cannot be thermal broadening, because this would require temperatures of $\sim 10^6$ K, high enough to completely ionize hydrogen. It must therefore be bulk motion.
 
-If the term in the square root is negative, which is the case when $s$ is large, the damping is not strong enough to stop particles before they reach the midplane, and they instead perform a vertical oscillation of decreasing magnitude. If it is positive, they simply drift downward, approaching the midplane exponentially. The minimum time to reach the midplane occurs when the particles are critically damped, corresponding to the case where the square root term vanishes exactly. Critical damping occurs for particles of size
-\begin{equation}
-s_c = \frac{\rho c_g}{2 \rho_s \Omega} = 850 \varpi^{-3/2} \rho_{s,0}^{-1}\mbox{ cm},
-\end{equation}
-where $\rho_{s,0} = \rho_s/(1\mbox{ g cm}^{-3})$.
+The standard inference is that this indicates the presence of gas infalling onto the stellar surface. Such gas would provide the high densities required to produce H$\alpha$ in emission. The infall of this material would provide the requisite bulk motion. Internal shocks and the shocking of this gas against the stellar surface could easily heat gas to the required temperatures. Finally, this hot material would also produce continuum emission, explaining the continuum veiling.
 
-Thus all objects smaller than $\sim 10$ m boulders will slowly drift down to the midplane without oscillating. For $s\ll s_c$, we can expand the square root term in a series to obtain
-\begin{equation}
-\tau \approx 4 \frac{\rho_s s}{\rho c_g} \left(\frac{s}{s_c}\right)^{-2} = \frac{\rho c_g}{\rho_s \Omega^2 s} = 270 \varpi^{11/4} \rho_{s,0}^{-1} s_0^{-1}\mbox{ yr},
-\end{equation}
-where $s_0 = s/(1\mbox{ cm})$. 
+Quantitative radiative transfer calculations that attempt to fit the observed veiling and line emission can be used to infer the densities and velocities of the circumstellar gas, thereby constraining the accretion rate (Figure \ref{fig:tts_ha_muzerolle05}). The inferred accretion rates depend on the strength of the H$\alpha$ emission, and are typically $10^{-8}$ $\msun$ yr$^{-1}$. There is a broad range, however, running from $10^{-11}-10^{-6}$ $\msun$ yr$^{-1}$, with a very rough correlation $\dot{M}_*\propto M_*^2$.
 
-Thus 1 cm grains will settle to the midplane almost immediately, while interstellar grains, those $\sim 1$ $\mu$m in size, will take several Myr to reach the midplane. Of course these very small grains will also collide with one another and grow to larger sizes, which will let them sediment more rapidly. In practice coagulation and sedimentation occur simultaneously, and each enhances the other: growth helps particle sediment faster, and sedimentation raises the density, letting them collide more often.
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{tts_ha_muzerolle05}
+\caption[H$\alpha$ lines from T Tauri stars compared to models]{
+\label{fig:tts_ha_muzerolle05}
+Comparisons between observed (solid) and model (dashed) H$\alpha$ line profiles for a sample of T Tauri stars \citep{muzerolle05a}. The $x$ axis shows velocity in km s$^{-1}$. Each model curve is a fit in which the accretion rate is one of the free parameters.
+}
+\end{marginfigure}
 
-\subsection{Radial Drift}
+These accretion rates are generally low enough so that accretion luminosity does not dominate over stellar surface emission. However, the estimated accretion rates are extremely uncertain, and the models used to make these estimates are very primitive. In general they simply assume that a uniform density slab of material arrives at the free-fall velocity, and covers some fraction of the stellar surface, and the accretion rate is inferred by determining the density of this material required to produce the observed spectral characteristics.
 
-We have just considered the consequences of the forces acting on solid particles in the vertical direction. Next let us consider the radial direction. The homework includes a detailed solution to this problem for small particles, so we will not go through the calculation, just the qualitative result. The basic idea is that gas in the disk is mostly supported by rotation, but it also has some pressure support. As a result, it orbits at a slightly sub-Keplerian velocity. Solid bodies, on the other hand, do not feel gas pressure, so they can only remain in orbit at constant radius if they orbit at the Keplerian velocity. The problem is that this means that they are moving faster than the gas, and thus experience a drag force.
+Despite this caveat, though, the H$\alpha$ line and other optical properties do seem to indicate that there must be some dense infalling material even around these stars that lack obvious envelopes. This in turn requires a reservoir of circumstellar material not in the form of an envelope, which is most naturally provided by a disk. Indeed, before the advent of space-based infrared observatories, optical indicators like this were the only real evidence we had for disks around T Tauri and Herbig Ae/Be stars.
 
-Problem Set 5 contains a calculation showing that the difference in velocity between the Keplerian speed and the speed with which a particle orbits is
-\begin{equation}
-\Delta v = \frac{2n c_s^2}{v_K} = \eta v_K^2
-\end{equation}
-where the pressure in the disk is assumed to vary with distance from the star as $P\propto r^{-n}$, $c_g$ is the gas sound speed, and the dimensionless quantity $\eta = 2 n c_s^2/v_K^2$, which depends only on the local properties of the disk, has been defined for future convenience. At 1 AU for our minimum mass solar nebula model, this velocity is about $70 n$ m s$^{-1}$.
+\subsection{FU Orionis Outbursts}
 
-Drag takes away angular momentum, in turn causing the bodies to spiral inward. We can parameterize this effect in terms of the stopping time 
-\begin{equation}
-t_s = \frac{mv}{F_D},
-\end{equation}
-where $m$ and $v$ are the body's mass and velocity, and $F_D$ is the drag force it experiences. The stopping time is simply the characteristic time scale required for drag to stop the body.
-
-Consider a spherical solid body of size $s$. For the Epstein law, which we discussed last time, $F_D \propto s^2$, while for Stokes drag, which describes larger bodies, $F_D \propto s^2$ at low Reynolds and $s$ at high Reynolds number. On the other hand, for a body of fixed density the mass varies as $s^3$, so the acceleration produced by drag must be a decreasing function of $s$. The stopping time is therefore an increasing function of $s$. Intuitively, big things have a lot of inertia per unit area, so they are hard to stop. Little things have little inertia per unit area, so they are easy to stop.
-
-Now consider two limiting cases. Very small bodies will have stopping times $t_s$ much smaller then their orbital periods $t_p$, so they will always be forced into co-rotation with the gas. Since this makes their rotation sub-Keplerian, they will want to drift inward. The rate at which they can drift, however, will also be limited by gas drag, since to move inward they must also move through the gas. Thus we expect that the inward drift velocity will also decrease as the stopping time decreases, and thus as the particle size decreases. To summarize, then, for $t_s/t_p \ll 1$, we expect $v_{\rm drift} \propto s^p$, where $p$ is a positive number. Small particles drift inward very slowly, and the drift speed increases with particle size for small $s$.
-
-Now consider the opposite limit, $t_s \gg t_p$. In this case, the drag is unable to force the solid body into co-rotation on anything like the orbital period, so the body is always in a near-Keplerian orbit, and just slowly loses angular momentum to drag. Clearly in this case the rate at which this causes the particle to drift inward will decrease as the stopping time increases, and thus as the particle size increases. Summarizing this case, then, for $t_s/t_p \gg 1$, we expect $v_{\rm drift} \propto s^{-q}$, where $q$ is a positive number.
-
-Since the inward drift speed rises with particle size at small sizes and decreases with particle size at large sizes, there must be some intermediate size with it reaches a maximum. Conversely, the time required for drag to take away all of a body's angular momentum, so that it spirals into the star, must reach a minimum at some intermediate size. On your homework you will show that even for 1 cm pebbles the loss time is a bit shorter than the disk lifetime, and 1 cm pebbles are in the regime where $t_s \ll t_p$. The drift rate reaches a maximum for $\sim 1$ m radius objects, and for them the loss time can be as short as $\sim 100$ yr. For km-sized objects the drift rate is back down to the point where the loss time is $\sim 10^5$ to $10^6$ yr. 
-
-\section{From Pebbles to Planetesimals}
-
-The calculation we have just completed reveals a serious problem in how we can continue the process of growing the solids to larger sizes, forming planets and clearing away disks: it seems that once growth reaches $\sim 1$ m sizes, all those bodies should be dragged into the star in a very short amount of time. We therefore next consider how to overcome this barrier.
-
-\subsection{Gravitational Growth}
-
-One solution is to skip over this size range using a mechanism that allows particles to go directly from cm to km sizes, while spending essentially no time at intermediate sizes. A natural candidate mechanism for this is gravitational instability, so we begin with a discussion of whether this might work. As we saw earlier in our discussion of the minimum mass Solar Nebula, the gas disk is very Toomre stable, $Q \sim 50$. However, we also saw that solids will tend to settle toward the midplane, and the solids have a much smaller velocity dispersion than the gas. The Toomre $Q$ for the solid material alone is
-\begin{equation}
-Q_s = \frac{\Omega c_s}{\pi G \Sigma_s}
-\end{equation}
-where $c_s$ and $\Sigma_s$ are the velocity dispersion and surface density of the solid material. To see what velocity dispersion is required, note that this definition of $Q$ lets use write $Q_s$ in terms of $Q_g$ as
-\begin{equation}
-Q_s = Q_g \left(\frac{\Sigma_s}{\Sigma_g}\right) \left(\frac{c_g}{c_s}\right) \approx(240, 60) Q_g \left(\frac{c_g}{c_s}\right),
-\end{equation}
-where the factors of 240 or 60 are for regions with and without solid ices, respectively.
-
-Recall that we estimated that for the MMSN at 1 AU, $Q_g\approx 55$ and $c_g\approx 1$ km s$^{-1}$. Thus, gravitational instability for the solids, $Q_s<1$, requires that $c_s \lesssim (30, 7)$ cm s$^{-1}$, depending on whether ice is present or not. If such an instability were to occur, the characteristic mass of the resulting object would be set by the Toomre mass
-\begin{equation}
-M_T = \frac{4 c_s^4}{G^2 \Sigma_s} = (2\times 10^{19}, 3\times 10^{17})\mbox{ g},
-\end{equation}
-where the two numbers are again for the cases with and without ices in solid form. If we adopt $\rho_{\rm i,r} = (1,3)$ g cm$^{-3}$ as the characteristic densities of (icy, rocky) material, the corresponding sizes of spheres with this mass are $(20, 3)$ km. This is large enough to avoid the size range where rapid loss occurs.
-
-To see whether this condition can be met, it is more convenient to phrase the instability criterion in terms of a density. If we use $H_s=c_s/\Omega$ in the Toomre condition, where $H_s$ is the scale height of the solids, and we take the midplane density of the solids to be $\rho_s \approx \Sigma_s/H_s$, then we have
-\begin{equation}
-Q_s  = \frac{\Omega^2 H_s}{\pi G \Sigma_s} \approx \frac{M_*}{r^3 \rho_s},
-\end{equation}
-where $M_*$ is the mass of the star. A detailed stability analysis by Sekiya (1983) of the behavior of a stratified self-gravitating disk show that the instability condition turns out to be
-\begin{equation}
-\rho > 0.62\frac{M_*}{r^3} = 4\times 10^{-7} M_{*,0} \varpi^{-3} \mbox{ g cm}^{-3},
-\end{equation}
-where $\rho = \rho_s + \rho_g$ is the total (gas plus solid) surface density, $M_{*,0}=M_*/\msun$ and $\varpi=r/\mbox{AU}$. For our minimum mass solar nebula, recall that the midplane density of the gas is roughly $3\times 10^{-9}$ g cm$^{-3}$, a factor of 100 too small for instability to set in. The question then is whether the density of solids at the midplane can rise to 100 times that of the gas.
-
-The discussion followed here closely follows that of \citet{youdin02a}. We have seen that settling causes solid particles to drift down in to the midplane, and if this were the only force acting on them, then the density could rise to arbitrarily high values. However, there is a countervailing effect that will limit how high the midplane density can rise. If the midplane density of solids is large enough so that the solid density greatly exceeds the gas density, then the solid-dominated layer will rotate at the Keplerian speed rather than the sub-Keplerian speed that results from gas pressure. It is fairly straightforward to show (and a slight extension of one of the problems in Problem Set 5) that the rotation velocity required for radial hydrostatic balance is
-\begin{equation}
-v_{\phi} = \left(1-\eta \frac{\rho_g}{\rho}\right) v_K,
-\end{equation}
-where $\rho = \rho_g + \rho_s$ which approaches $v_K$ for $\rho_g \ll \rho_s$, and $(1-\eta) v_K$ for $\rho_g \gg \rho_s$. Since $\rho_s / \rho_g$ rises toward the midplane, this velocity profile has shear in it, with $v_{\phi}$ reaching a maximum at the midplane and dropping above it.
-
-The shear can generate Kelvin-Helmholtz instability, which will in turn create turbulence that will dredge up the dust out of the midplane, halting settling and preventing the density from continuing to rise. A useful analogy to think about, which I borrow from \citet{youdin02a}, is a sandstorm in the desert. Since the midplane full of dust is trying to rotating faster than the gas-dominated layer above it, there is effectively a wind blowing above the dusty midplane layer, like a wind blowing over the desert. If the wind blows too fast, it will start picking up dust, preventing it from falling back to the desert floor.
-
-In the case of a disk, this process will self-regulate, since reducing the amount of dust in the midplane brings its rotation velocity closer to that of the gas, thereby reducing the strength of the wind. This process of self-regulation can be calculated in terms of the condition required for KH instability. To understand how the criterion for KH instability is set, it is easiest to think about the case of a physical interface -- the results aren't significantly different for a continuous medium. The most common example is a pond of water with wind blowing across its surface. Imagine that there is a small ripple in the water that causes the surface to rise a little. The wind will strike the bit of the water above the surface and try to push it horizontally. At the same time gravity will try to drag the water downward.
-
-If the wind is strong, it will push the water horizontally faster than gravity can drag it downward. The moving water will displace the surface even more, creating a growing wave, the signature of KH instability. If it is weak, gravity will drag the ripple downward before the wind is able to displace it significantly. Thus we expect the critical condition for KH instability to involve a balance between the restoring force of gravity and the destabilizing force of shear. For a continuous medium, it turns out that the condition for instability can be stated in terms of the Richardson number
-\begin{equation}
-\mbox{Ri} = \frac{(g_z/\rho) (\partial \rho/\partial z)}{\left(\partial v_\phi/\partial z\right)^2} < \mbox{Ri}_c,
-\end{equation}
-where $z$ is the vertical distance, $g_z$ is the gravitational acceleration in the vertical direction, and the critical Richardson number for instability $\mbox{Ri}_c\approx 1/4$.
-Just for reference the quantity on the top has units of one over time squared, so it is the square of a frequency. In fact, it's a frequency with which you are probably familiar from stellar structure: $(g_z/\rho) (\partial \rho/\partial z)$ is the square of the Brunt-V\"{a}is\"{a}l\"{a} frequency, the characteristic oscillation frequency for vertical displacements in a stratified medium, such as stellar atmosphere.
-
-The numerator here represents the stabilizing effects of gravity, which depends on both the gravitational acceleration and high quickly the density drops with height. The gravitational acceleration is
-\begin{equation}
-g_z = \Omega^2 z + 4\pi G \int_0^z \rho(z') \, dz',
-\end{equation}
-where the first term represents the gravitational pull of the star and the second represents the self-gravity of the disk. The denominator represents the amount of destabilizing velocity shear.
-
-A reasonable approximation is that the KH instability will stop any further settling once it turns on, so the density of the solids will become as centrally peaked as possible while keeping the disk marginally stable against KH. Thus, we expect the equilibrium density profile for the solids to be the one that gives $\mbox{Ri}=1/4$. If $\rho_g(z)$ is known at a given radius, then the condition $\mbox{Ri} =1/4$ fully specifies the total density profile $\rho(z)$, since both $g_z$ and $v_\phi$ are known function of $\rho$ and $\rho_g$. Given $\rho(z)$, it is obviously trivial to deduce the density of solids $\rho_s(z)$. The equation can be solved numerically fairly easily, but we can gain additional insight by proceeding via analytic approximations.
-
-First, note that we are interested in whether a self-gravitating layer of particles can develop at all, and that until one does then we can ignore the self-gravity of the disk in $g_z$. Thus, we can set $g_z\approx \Omega^2 z$ for our analytic approximation. If we now differentiate the velocity profile $v_{\phi}$ with respect to $z$, we get
-\begin{equation}
-\frac{\partial v_\phi}{\partial z} = -\eta \left(\frac{1}{\rho} \frac{\partial \rho_g}{\partial z} - \frac{\rho_g}{\rho^2}\frac{\partial \rho}{\partial z}\right) v_K.
-\end{equation}
-Substituting this into the Richardson number equation, and noting the $v_K = r\Omega$, we have
-\begin{eqnarray}
-\mbox{Ri}_c & = & \frac{1}{4} \nonumber \\
-& = & \frac{z}{\eta^2 r^2} \frac{\rho^3 (\partial \rho/\partial z)}{\left[\rho (\partial \rho_g/\partial z) - \rho_g (\partial \rho/\partial z)\right]^2} \\
-& = &
-\frac{z}{\eta^2 r^2} \frac{\rho^3 (\partial \rho/\partial z)}{\left[\rho_s (\partial \rho_g/ \partial z) - \rho_g (\partial \rho_s/\partial z)\right]^2}.
-\end{eqnarray}
-
-Now we make our second approximation: if we focus our attention near the midplane where solids are trying to sediment out, and are being stirred up by KH instability, the density of solids should be changing much more quickly than the density of gas. In other words, we will focus our attention at heights $z$ much smaller than the gas scale height, so we can set $\partial \rho/\partial z \approx \partial \rho_s/\partial z$, and drop $\partial \rho_g/\partial z$ in comparison to $\partial \rho_s/\partial z$. Doing that in the Richardson number equation reduces it to
-\begin{equation}
-\mbox{Ri}_c \approx \frac{z}{\eta^2 r^2} \frac{\rho^3}{\rho_g^2 (\partial\rho_s/\partial z)}
-\end{equation}
-
-To see what this implies, consider a layer of solids with scale height $H_s$ and surface density $\Sigma_s$ that marginally satisfies this equation. Plugging in $z\sim H_s$ and $\rho_s \sim \Sigma_s/H_s$ gives
-\begin{equation}
-\mbox{Ri}_c \sim \frac{H_s}{\eta^2 r^2} \frac{(\rho_g + \Sigma_s/H_s)^3}{\rho_g^2 (\Sigma_s/H_s^2)} = \frac{(\rho_g H_s + \Sigma_s)^3}{(\eta r \rho_g)^2 \Sigma_s}
-\end{equation}
-Clearly this equation cannot be satisfied for arbitrarily large $\Sigma_s$, since the RHS scales as $\Sigma_s^2$ in this case. Physically, this indicates that our assumption that the KH instability can keep the Richardson number at the critical value must break down if the surface density of solids is too high. If we think about it, it makes sense that there is a maximum amount of solid material that the gas can keep aloft. To continue the sandstorm analogy, the wind can only keep a certain amount of sand aloft in the desert. It cannot pick up the entire desert.
-
-Thus, we expect there to be a critical column density $\Sigma_p$ at which it becomes impossible to satisfy the condition that the Richardson number is $1/4$. If $\Sigma_p$ exceeds this critical value, the surface density at the midplane will rise arbitrarily, and gravitational instability become inevitable.
-For the case $\Sigma_s \gg \rho_g H_s$, this critical value is clearly given by
-\begin{equation}
-\Sigma_s \sim \sqrt{\mbox{Ri}_c} \eta r \rho_g = 2 n \sqrt{\mbox{Ri}_c} \left(\frac{c_s}{v_K}\right)^2 r \rho_g.
-\end{equation}
-For the conditions of our MMSN at 1 AU, using $n=1$ and $\mbox{Ri}_c=1/4$, this evaluates to $70$ g cm$^{-2}$. The numerical solution for the critical surface density is $\Sigma_s=94$ g cm$^{-2}$; the increase relative to our simple analytic estimate mostly comes from the self-gravity of the dust, which increases the shear and thus strengthens the KH instability.
-
-This is clearly larger than the surface density of solids we have available in the MMSN, even using ices. Moreover, just increasing the total mass of the disk doesn't help any, because $\rho_g$ will rise along with $\Sigma_s$, and thus the condition won't get any easier to meet. We therefore conclude that gravitational instability cannot be a viable mechanism to jump from cm to km sizes unless a way can be found to enhance the solid to gas ratio in the disk by a factor of $\sim 3$ in the icy part of the disk, of $\sim 10$ in the rocky part. 
-
-\subsection{Hydrodynamic Concentration Mechanisms}
-
-We have found that gravitational instability by itself won't solve the problem of the meter-size barrier, but that it potentially can if a mechanism can be found to increase the solid-to-gas ratio by a factor of $\sim 3-10$. Exactly what mechanism this might be is still under a great deal of investigation. We will discuss two here. The first of these is concentration of small particles by eddies in a disk (Figure \ref{fig:eddies_johansen14a}).
+There are many other interesting phenomena associated with these young stars, such as radio and x-ray flaring, but one in particular deserves mention both as a puzzle and a potential clue about disks. This is the FU Orionis phenomenon, named after the star FU Orionis in which it was first observed. In 1936 this star, an object in Orion, brightened by $\sim 5$ magnitudes in B band over a few months. After peaking, the luminosity began a very slow decline -- it is still much brighter today than in its pre-outburst state (Figure \ref{fig:fu_ori_herbig77}). Since then many other young stars have displayed similar behavior. When available, the spectra of these stars in the pre-outburst state generally look like ordinary T Tauri stars.
 
 \begin{figure}
-\includegraphics[width=\linewidth]{eddies_johansen14}
-\caption[Schematic of particle concentration by eddies in a protoplanetary disk]{
-\label{fig:eddies_johansen14a}
-Schematic diagram of three mechanisms to concentrate particles in a protoplanetary disk. The left panel shows how small-scale turbulent eddies expel particles to their outskirts. The middle panel shows how zonal flows associated with large-scale pressure bumps concentrate particles. The right panel shows concentration by streaming instabilities. In each panel, black arrows show the velocity field, and the caption indicates the characteristic length scale of the structures shown, where $H$ is the disk scale height.
+\includegraphics[width=\linewidth]{fu_ori_herbig77}
+\caption[Long-term light curve of FU Orionis]{
+\label{fig:fu_ori_herbig77}
+A light curve of the star FU Orionis, from the 1930s to 1970s \citep{herbig77a}. The $y$ axis shows the apparent magnitude in B band, or from photographic observations prior to filter standardization.
 }
 \end{figure}
 
-Consider a rotating eddy in a disk, defined as structures where the gas moves on circular trajectories in the frame co-rotating with the disk at angular velocity $\Omega$. Suppose that the gas at some distance $r$ from the center of an eddy is rotating at some speed $v_e$. In the rotating reference frame, there are two forces acting on the gas: pressure gradients and Coriolis forces. For the eddy to remain static, the sum of these two forces must produce an acceleration per unit mass equal to the centripetal acceleration associated with the circular motion of the eddy. Specifically, we must have
+Some simple population statistics imply that this must be a periodic phenomenon. The rate of FU Ori outbursts within $\sim 1$ kpc of the Sun is roughly one per 5 years. The star formation rate in the same region is roughly 1 star per 50 years, so this implies that the mean number of FU Ori outbursts per young star is $\sim 10$.
+
+The stellar brightening is accompanied by a rise in effective temperature, indicating the presence of hot emitting material. It is also accompanied by spectral features indicating both an outflowing wind and the presence of rapid rotation. Although a number of models have been proposed to explain exactly what is going on, and the problem is by no means solved, the most popular general idea is that outbursts like this are caused by a sudden rise in the accretion rate. For whatever reason, the disk dumps a lot of material onto the star, briefly raising the accretion rate from the tiny $10^{-8}$ $\msun$ yr$^{-1}$ typical of classical T Tauri stars up to values closer to those expected for still-embedded sources. The accreted material produces a large accretion luminosity, and the subsequent decay in the emission is associated with the cooling time of the gas that has undergone rapid infall. If this model is correct, the mystery then becomes what can set off the disk.
+
+\section{Disk Dispersal: Observation}
+
+We now turn to the disks that surround T Tauri and similar stars. Prior to the 2000s, we had very little direct information about such objects, since they are not visible in the optical. That changed dramatically with the launch of space-based infrared observatories, and the developed of ground-based millimeter interferometers. These new techniques made it possible to observe disks directly for the first time.
+
+\subsection{Disk Lifetimes}
+
+One of the most interesting properties of disks for those who are interested in planets is their lifetimes. This sets the limit on how long planets have to form in a disk before it is dispersed. In discussing disk lifetimes, it is important to be clear on how the presence or absence of a disk is to be inferred, since different techniques probe different parts and types of disks. Our discussion of disk lifetimes will therefore mirror our discussion of disk detection methods in Chapter \ref{ch:disks_obs}. In general what all these techniques have in common is that one uses some technique to survey young star clusters for disks. The clusters can be age-dated using pre-main sequence or main sequence HR diagrams, as discussed in Chapter \ref{ch:protostar_evol}. One then plots the disk fraction against age.
+
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{accretefrac_fedele10}
+\caption[Accreting star fraction versus cluster age]{
+\label{fig:accretefrac_fedele10}
+Fraction of stars that show evidence of accretion, as indicated by H$\alpha$ line emission, for clusters of different ages (indicated on the $x$ axis). The names of individual clusters are marked. Figure from \citet{fedele10a}.
+}
+\end{marginfigure}
+
+One signature of disks we have already discussed: optical line emission associated with accretion in T Tauri stars, particularly H$\alpha$. Surveys of nearby groups find that H$\alpha$ line emission usually disappears at times between 1 and 10 Myr (Figure \ref{fig:accretefrac_fedele10}). This tells us that the inner parts of disks, $\lesssim 1$ AU, which feed stars disappear over this time scale. In contrast, ground-based near infrared observations tell us about somewhat more distant parts of the disk, out to a few AU. The timescales implied by these results are very similar those obtained from the H$\alpha$: roughly half the systems loose their disks within $\sim 3$ Myr (Figure \ref{fig:diskfrac_haisch01}).
+
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{diskfrac_haisch01}
+\caption[Near infrared excess fraction versus cluster age]{
+\label{fig:diskfrac_haisch01}
+Fraction of stars that show near-infrared excess emission versus cluster age. The names of individual clusters are marked. Figure from \citet{haisch01a}.
+}
+\end{marginfigure}
+
+These observations are sensitive primarily to the inner disk, and the infrared techniques are generally sensitive only in cases where the dust in these regions is optically thick. Some optically thin material could still be present and would not have been detected. Observations at longer wavelengths, such as Spitzer's 24 $\mu$m band and in the mm regime from ground-based radio telescopes, probe further out in disks, at distances of $\sim 10-100$ AU. They are also sensitive to much lower amounts of material. Interestingly, unlike the shorter wavelength observations, these measurements indicate that a small but non-zero fraction of systems retain some disks out to times of $\sim 10^8$ yr. The amounts of mass needed to explain the long wavelength excess are only $\sim 10^{-5}$ $M_{\oplus}$ in dust. Thus in the older systems are likely looking at an even later evolutionary phase than T Tauri disks, one in which almost all the gas and inner disk material is gone. These are debris disks, which are thought to originate from collisions between larger bodies rather than to be made up of dust from interstellar gas.
+
+\subsection{Transition Disks}
+
+The observation that accreting disks and inner optically thick disks disappear on a few Myr timescales, but that some fraction leave behind very small amounts of mass in the outer disk is a very interesting one. We will discuss theoretical models for how this happens shortly. In the meantime, though, we can talk a bit more about the transition from gaseous, accreting T Tauri disks to low-mass debris disks.
+
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{lkha330_brown08}
+\caption[Spectral energy distribution of LkH$\alpha$ 330]{
+\label{fig:lkha330_brown08}
+The spectral energy distribution of the star LkH$\alpha$ 330 \citep{brown08a}. Plus signs indicate measurements. The black line is a model for a stellar photosphere. The blue line is a model for a star with a disk going all the way to the central star, while the red line is a model in for a disk with a 40 AU hole in its center.
+}
+\end{marginfigure}
+
+Observationally, we would like to get some constraints on how this process occurs. For this purpose, there is an intriguing class of objects known as transition disks. Spectrally, these are defined as objects that have a significant 24 $\mu$m excess (or excess at even longer wavelengths), but little or no IR excess (Figure \ref{fig:lkha330_brown08}). This SED suggests a natural physical picture: a disk with a hole in its center. The short wavelength emission normally comes from near the star, and the absence of material there produces the lack of short wavelength excess. Indeed, it is possible to fit the SEDs of some stars with models with holes.
+
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{lkha330_image_brown08}
+\caption[Dust continuum image of the disk around LkH$\alpha$ 330]{
+\label{fig:lkha330_image_brown08}
+Dust continuum image of the disk around LkH$\alpha$ 330, taken at 340 GHz by the SMA \citep{brown08a}. Colors show the detected signal, and contours show the signal to noise ratio, starting from S/N of 3 and increasing by 1 thereafter. The green plus marks the location of the star. The blue circle is the SMA beam.
+}
+\end{marginfigure}
+
+In the last decade it has become possible to confirm the presence of inner holes in transition disks directly, at least cases where the inferred hole is sufficiently large (Figure \ref{fig:lkha330_image_brown08}). The sizes of the holes inferred by the observations are generally very good matches to the values inferred by modeling the SEDs. The holes are remarkably devoid of dust: upper limits on the masses of small dust grains within the hole are often at the level of $\sim 10^{-6}$ $M_\odot$. The sharp edges of the holes indicate that the effect driving them isn't simply the growth of dust grains to larger sizes, which should produce a more gradual transition. Instead, something else is at work. However, in some transition disks gas is still seen within the gap in molecular line emission, which also suggests that whatever mechanism is removing the dust does not necessarily get rid of all the gas as well.
+
+\section{Disk Dispersal: Theory}
+
+We have seen the observations suggest that disks are cleared in a few Myr. We would like to understand what mechanism is responsible for this clearing.
+
+\subsection{Setting the Stage: the Minimum Mass Solar Nebula}
+
+Before diving into the theoretical models, let's pause for a moment to obtain some typical numbers, which we can use below to plug in an evaluate timescales. Imagine spreading the mass in the Solar System's observed planets into an annulus that extends from its observed orbit to halfway to the next planet in each direction. Then add enough hydrogen and helium so that metal content matches that observed in the Sun. This is the mass distribution that the protoplanetary disk of the Sun must have had if all the metals in the disk wound up in planets, and if the planets were formed at their present-day locations.
+
+Neither of these assumptions is likely to be strictly true, but they are a reasonable place to begin thinking about initial conditions. Performing this exercise gives a mass of $\sim 0.01$ $\msun$ and a surface density $\Sigma$ that varies as roughly $r^{-3/2}$. The ``standard" modern value for the minimum mass solar nebula's surface density is $\Sigma=\Sigma_0 \varpi^{-3/2}$, where $\Sigma_0 \approx 1700$ g cm$^{-2}$ and $\varpi=r/\mbox{AU}$. The true surface density was probably higher than this.
+
+If solar illumination is the principal factor determining the disk temperature structure and we neglect complications like flaring of the disk, we expect the temperature to be $T=280 \varpi^{-1/2}$ K. True temperatures are probably also higher by a factor of $\sim 2$, as a result of flaring and viscous dissipation providing extra heat. The corresponding disk scale height is
 \begin{equation}
-2\Omega v_e - \frac{1}{\rho} \frac{dP}{dr} = -\frac{v_e^2}{r},
+H = \frac{c_g}{\Omega} = \sqrt{\frac{k_B T}{\mu}} \sqrt{\frac{\varpi^3}{GM}} = 0.03 \varpi^{5/4}\mbox{ AU},
 \end{equation}
-where the first term is the Coriolis force per unit mass, the second is the pressure force per unit mass, and the right hand side is the centripetal acceleration. For a slowly-rotating eddy, $v_e /r \ll \Omega$, we can ignore the right hand side, and simply approximate that the sum of the two terms on the left is zero. Thus for slow eddies, the eddy rotation speed is given by
+where $c_g$ is the gas sound speed.
+
+For solar metallicity, heavy elements will constitute roughly 2\% of the total mass, but much of this mass is in the form of volatiles which will be in the gas phase in part of all of the disk. For example a significant fraction of the carbon is in the form of CO, and at the pressures typical of protoplanetary disks this material will not freeze out into ices until the temperature drops below $20-30$ K. Such low temperatures are found, if anywhere, in the extreme outer parts of disks. Similarly, water, which is a repository for much of the oxygen, will be vapor rather than ice at temperatures above 170 K. This temperature will be found only outside several AU.
+
+A rough approximation to the mass in ``rocks", things that are solid at any radius, and ``ices", things that are solid only at comparatively low temperatures, is
+\begin{eqnarray}
+\Sigma_{\rm rock} & \approx & 7 \varpi^{-3/2} \\
+\Sigma_{\rm ice} & \approx &
+\left\{
+\begin{array}{ll}
+0 & T > 170\mbox{ K}\\
+23\varpi^{-3/2} \qquad & T < 170\mbox{ K}
+\end{array}
+\right.
+\end{eqnarray}
+In other words, rocks are about $0.4\%$ of the mass, and ices, where present, are about $1.3\%$. Typical densities for icy material are $\sim 1$ g cm$^{-3}$, and for rocky material they are $\sim 3$ g cm$^{-3}$.
+
+\subsection{Viscous Evolution}
+
+Now that we have a setting, let us consider the first and most obvious mechanism for getting rid of disks: having them accrete onto their parent star. The basic process governing movement of mass in a late-stage disk is the same as during the protostellar period: viscous evolution. The difference at late stages is that there is no more mass being supplied to the disk edge, so accretion onto the star, rather than occurring in steady state, tends to drain the disk and reduce its surface density. Recall that the typical accretion rates we infer during the T Tauri phase are $\sim 10^{-9}-10^{-8}$ $\msun$ yr$^{-1}$. Since typical disk masses are $\sim 0.01$ $\msun$, this would imply that the time required to drain the disk completely into the star is $\sim 1 - 10$ Myr, not far off the observed disk dispersal lifetime.
+
+We can make this argument more quantitative. Recall that the evolution equation for the surface density of a viscous disk is (Chapter \ref{ch:disks_theory})
 \begin{equation}
-v_e = \frac{1}{2\rho\Omega} \frac{dP}{dr}.
+\frac{\partial \Sigma}{\partial t} = \frac{3}{\varpi} \frac{\partial}{\partial \varpi} \left[\varpi^{1/2} \frac{\partial}{\partial \varpi} (\nu \Sigma \varpi^{1/2})\right],
 \end{equation}
-We see that if the eddy is associated with a pressure maximum, $dP/dr < 0$, then $v_e < 0$ as well, indicating that rotation is clockwise; eddies associated with pressure minima, $dP/dr > 0$, produce counter-clockwise rotation.
+where $\nu$ is the viscosity, $\Sigma$ is the surface density, and $\varpi$ is the radius. To see how this will affect protoplanetary disks, it is useful to consider some simple cases that we can solve analytically. Let us suppose that the viscosity follows a powerlaw form $\nu=\nu_1 (\varpi/\varpi_1)^\gamma$. The equations in this case admit a similarity solution; the case $\gamma=1$ was on the homework. For arbitrary $\gamma$, it is easy to verity that in this case the evolution equation above has a similarity solution
+\begin{equation}
+\Sigma = \frac{C}{3\pi\nu_1 x^\gamma} T^{-(5-2\gamma)/(4-2\gamma)} \exp\left(-\frac{x^{2-\gamma}}{T}\right),
+\end{equation}
+where $C$ is a constant with units of mass over time that determines the total mass in the disk and the accretion rate, $x=\varpi/\varpi_1$, and $T$ is a dimensionless time defined by
+\begin{equation}
+T = \frac{t}{t_s}+1
+\qquad
+t_s = \frac{1}{3(2-\gamma)} \frac{r_1^2}{\nu_1}.
+\end{equation}
+In this similarity solution, at any given time the disk surface density has two regions. For $x^{2-\gamma} \ll T$, the exponential term is negligible, and the surface density is simply follows a powerlaw profile $x^{-\gamma}$. For $x^{2-\gamma} \gg T$, the exponential term imposes an exponential cutoff. As time goes on and $T$ increases, the powerlaw region expands, but its surface density also declines (at least for $\gamma < 2$, which is what most physically-motivated models produce). The quantity $t_s$ is the characteristic viscous evolution time. For times $t\ll t_s$, $T$ is about constant, so there is no evolution. Evolution becomes significant after $t>t_s$.
 
-Now let us consider the dynamics of a solid particle moving through the eddy. Returning to the inertial frame, if the eddy is rotating clockwise, $v_e < 0$, then the material that is further from the star is orbiting somewhat more slowly, while the material that is closer to the star is orbiting somewhat more rapidly. This means that the material further from the star will have a smaller velocity difference with the sub-Keplerian solids, while the material that is closer to the star will have a somewhat larger velocity difference. The drag force is therefore smaller on the far side of the eddy, and larger on the near side. The net effect is that, as solids drift from large radii inward and encounter the eddy, their rate of drift slows down, and they tend to pile up at the location of the eddy. This is a potential mechanism to raise the local ratio of solids to gas, and thus to set of gravitational instability.
+If we adopt a simple $\alpha$ model with constant $\alpha$, then recall that $\nu = \alpha c_s H$. As discussed above the the MMSN, $T \approx 280 \varpi^{-1/2}$ K and $H \approx 0.03 \varpi^{5/4}$ K. Since $c_s\propto T^{1/2}$, this implies $\nu\propto \varpi$:
+\begin{equation}
+\nu \approx 5\times 10^{16} \alpha \varpi\mbox{ cm}^2\mbox{ s}^{-1},
+\end{equation}
+where we have plugged in the MMSN values. This corresponds to $\gamma = 1$. Plugging this value into the similarity solution gives $t_s = 0.024\alpha_{-2}^{-1}\mbox{ Myr}$, where $\alpha_{-2} = \alpha/0.01$. Thus we would expect the disk to drain into the star in $\sim 1$ Myr if it had values of $\alpha$ expected for the MRI.
 
-The final step in this argument is to have something that provides a pressure jump and thus can produce clockwise eddies. There are a number of possible mechanisms, including a build-up of gas at the edge of a dead zone where MRI shuts off, or simply the turbulence driven by the MRI itself. Whether this actually happens in practice is still an unsolved problem, but the mechanism is at least potentially viable.
+This might seem like an appealing explanation for why disks disappear, but it faces two serious objections. The first is that, as discussed earlier, MRI seems unlikely to be able to operate everywhere in the late-stage disks. The surface will be kept ionized by stellar radiation and possibly cosmic rays, but the midplane will be too neutral for strong magnetic coupling. This should reduce the accretion rate.
 
-Another possible mechanism to concentrate particles is known as the streaming instability. We will not derive this rigorously, but we can describe it qualitatively. Streaming instability operates as follows: suppose that, in some region of the disk, for whatever reason, the local density of solids relative to gas is slightly enhanced. Because we are in a mid-plane layer that is at least partly sedimented, the inertia of the solids is non-negligible. Thus while we have focused on the drag force exerted by the gas on the solids, the corresponding force on gas is not entirely negligible. This force tries to make the gas rotate faster, and thus closer to Keplerian. This in turn reduces the difference in gas and solid velocities.
-
-Now consider the implications of this: where the solid to gas ratio is enhanced, the solids force the gas to rotate closer to their velocity, which in turn reduces the draft force and thus the inward drift speed. Thus if solid particles are drifting inward, when the encounter a region of enhanced solid density, they will slow down and linger in that region. This constitutes an instability, because the slowing down of the drift enhances the solid density even further, potentially leading to a runaway.
+A second, more serious objection is that it does not reproduce the observation that disks drain inside-out (or at least some of them do). In this model, the surface density everywhere inside the powerlaw inner region decreases with time as $t^{-3/2}$, meaning that the disk would fade uniformly rather than from the inside out. While this result is for the particular similarity solution we used, it is a generic statement that, in any model where $\alpha$ is constant with radius, the disk will tend to drain uniformly rather than inside-out. Thus something more sophisticated is needed.
 
 
+\subsection{Photoevaporation Models}
+
+One mechanism that has been proposed for disk clearing is photoevaporative winds. We will not discuss this quantitatively here, because a basic model of this process is left as an exercise in Problem Set 5. The qualitative picture is simply that the surface of the disk is heated to temperatures of $\sim 100-200$ K by stellar FUV radiation out to a fairly large region, and is heated to $\sim 10^4$ K by ionizing radiation closer in to the star. If the heated gas is far enough from the star for this temperature increase to raise its sound speed above the escape speed, it will flow away from the disk in a thermally-driven wind.
+
+This tends to produce maximum mass loss from a region near where the sound speed equals the escape speed, since that is where there is the most gas and the radiation is most intense, but the gas can still escape. If the radiation is intense enough, a gap in the disk will open at this radius, and mass will not be able to pass through it -- any gas that gets to the gap is lost in the wind. As a result the inner disk drains viscously, and is not replenished, leaving a hole like we observe.
+
+\subsection{Rim Accretion Models}
+
+A second mechanism that could produce an inner hole is rim accretion. In this picture, MRI operates only on the inner rim of the disk where the gas is exposed to direct stellar radiation. Material from this rim accretes inward while the rest of the disk remains static. As the rim accretes, more disk material is exposed to stellar radiation and the MRI-active region grows. Thus the disk drains inside-out.
+
+In this picture, we let $N_*$ be the column (in H atoms per cm$^2$) of material in the rim that is sufficiently ionized for MRI to operate. In this case the mass in the MRI-active rim at any time is
+\begin{equation}
+M_{\rm rim} = 4\pi N_* \mu_{\rm H} r_{\rm rim} H,
+\end{equation}
+where $r_{\rm rim}$ is the rim radius, H is the scale height at the rim, and $\mu_{\rm H}$ is the mass per H nucleus. The time required for this material to accrete is the usual value for viscous accretion:
+\begin{equation}
+t_{\rm acc} = \frac{r_{\rm rim}^2}{\nu} = \frac{r_{\rm rim}^2}{\alpha c_s H},
+\end{equation}
+where $c_s$ is the sound speed in the irradiated rim, which is presumably higher than in the shielded disk interior. Putting these together, we expect an accretion rate $\sim M_{\rm rim}/t_{\rm acc}$. \citet{chiang07a}, solving the problem a bit more exactly, get
+\begin{equation}
+\dot{M} \approx \frac{4\pi N_* \mu_{\rm H} \alpha c_s^3 r_{\rm rim}^2}{G M}.
+\end{equation}
+One can estimate $N_*$ and $c_s$ from the thermal and ionization balance of the irradiated rim, and \citet{chiang07a}'s result is $N_* \approx 5\times 10^{23}$ cm$^{-2}$ and $c_s \approx 0.9$ km s$^{-1}$, giving
+\begin{equation}
+\dot{M} = 1.4\times 10^{-11} \alpha_{-2} M_0^{-1} r_{\rm rim,0}^{-2} \,\msun\mbox{ yr}^{-1},
+\end{equation} 
+where $M_0$ is the stellar mass in units of $\msun$ and $r_{\rm rim}$ is the rim radius in units of AU.
+
+This model nicely explains why disks will drain inside out. Moreover, it produces the additional result that any grains left in the disk that reach the rim will not accrete, and are instead blown out by stellar radiation pressure. This produces an inner hole with a small amount of gas on its way in to the star, as is required to explain the molecular observations, but with no dust.
+
+\subsection{Grain Growth and Planet Clearing Models}
+
+The final possible mechanism for getting rid of the disk is the formation of planets. If the dust in a disk agglomerates to form larger bodies, then the opacity per unit mass will drop dramatically, and as a result the disk will appear to disappear as far as observational techniques that are looking for dust emission, which is all the IR and sub-mm continuum measurements. If the planetesimals further agglomerate into planets with significant gravitational effects, these can begin to clear the gas as well. We will therefore end this Chapter with a discussion of how grains might begin to agglomerate together, starting the process of getting rid of a disk by planet formation that will be the subject of Chapter \ref{ch:planets}.
+
+Consider a population of solid particles radius $s$, each of which individually has density $\rho_s$. The number density of particles (i.e.\ the number of particles per cm$^{3}$) is $n$, so the total mass density of the population of solids is
+\begin{equation}
+\rho_d = \frac{4}{3}\pi \rho_s s^3 n
+\end{equation}
+If the collection of solids has a velocity dispersion $c_s$, the mean time between collisions between them is
+\begin{equation}
+t_{\rm coll} = (n \pi s^2 \sigma_s)^{-1} = \frac{4}{3} \frac{\rho_s s}{\rho_d c_s}
+\end{equation}
+We will see in a little while that grains of interstellar sizes will have about the same scale height as the gas. Thus, within one scale height of the disk midplane, we may take 
+\begin{equation}
+\rho_d \approx \frac{\Sigma_d}{H} = \frac{\Sigma_d \Omega}{c_g},
+\end{equation}
+where $\Sigma_d = \Sigma_{\rm rock} + \Sigma_{\rm ice}$ is the total surface density of ``dust", including both rocky and icy components. 
+
+For the velocity dispersion, in the case of small grains this will simply be the typical velocity imparted by Brownian motion in the fluid, which is
+\begin{equation}
+c_s = \sqrt{\frac{3}{2} k_B T} = \sqrt{\frac{3 \mu}{2 m_s}} c_g \approx 0.1 \varpi^{-1/4} s_{-4}^{-3/2} \rho_{s,0}^{-1/2}\mbox{ cm s}^{-1}
+\end{equation}
+where $m_s = (4/3)\pi s^3 \rho_s$ is the mass of the solid particle, $\rho_{s,0}=\rho_s/(1\mbox{ g cm}^{-3})$, $s_{-4} = s/(1\,\mu\mbox{m})$, and we have used our fiducial MMSN to estimate $c_g$. Plugging $n$ and $c_s$ into the collision time, we have
+\begin{equation}
+t_{\rm coll} \approx \frac{4\sqrt{2}}{3\sqrt{3}}\frac{s\rho_s}{\Sigma_d \Omega}\sqrt{\frac{m_s}{\mu}} = \frac{8\sqrt{2\pi}}{9} \sqrt{\frac{\rho_s^3 s^5}{\Sigma_d^2\Omega^2 \mu}} = (2.6, 0.6) \varpi^3 \rho_{s,0}^{3/2} s_{-4}^{5/2}\mbox{ yr},
+\end{equation}
+where the two coefficients refer to the cases of rock only, or rock plus ice.
+
+The bottom line of this calculation is that the small particles that are inherited from the parent molecular cloud will very rapidly collide with one another in the disk: a 1 $\mu$m-sized particle can expect to run into another one roughly 1 million times over the lifetime of the disk. As the particles grow in size, collisions will rapidly become much less rapid, and will reach one collision per Myr at around 0.25 mm. Of course this assumes that the particles remain distributed with the same scale height as the gas, which is not a good assumption for larger particles, as we will see.
+
+Before moving on, though, we must consider what happens when the particles collide. This is a complicated question, which is experimentally difficult enough that some groups have constructed dust-launching crossbows to shoot dust particles at one another in an attempt to answer experimentally. For very small particles, those of micron sizes, the answer is fairly easy. Such particles will be attracted to one another by van der Waals forces, and when they collide they will dissipate energy via elastic deformation. Theoretical models and experiments indicate that two particles will stick when they collide if the collisions velocity is below a critical value, and will bound or shatter if the velocity is above that value.
+
+For 1 $\mu$m particles, estimated sticking velocities are $\sim 1-100$ cm s$^{-1}$, depending on the composition of the body, and that this declines as $\sim s^{-1/2}$. Since this is much less than the Brownian speed, $1-10$ $\mu$m particles will very quickly grow to large sizes. We are clearly able to understand why grains should grow in disks. We will return to the question of how far this growth goes in the next chapter.
 
 

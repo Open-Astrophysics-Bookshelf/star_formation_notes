@@ -1,359 +1,251 @@
-\chapter{Protostellar Evolution}
-\label{ch:protostar_evol}
+\chapter{Protostar Formation}
+\label{ch:protostar_form}
 
 \marginnote{
 \textbf{Suggested background reading:}
 \begin{itemize}
-\item \href{http://adsabs.harvard.edu/abs/2014prpl.conf..173L}{Dunham, M.~M., et al. 2014, in ``Protostars and Planets VI", ed.~H.~Beuther et al., pp.~195-218}, sections 5-9 \nocite{dunham14a}
+\item \href{http://adsabs.harvard.edu/abs/2014prpl.conf..173L}{Dunham, M.~M., et al. 2014, in ``Protostars and Planets VI", ed.~H.~Beuther et al., pp.~195-218}, sections 1-4 \nocite{dunham14a}
 \end{itemize}
 \textbf{Suggested literature:}
 \begin{itemize}
-\item \href{http://adsabs.harvard.edu/abs/2011ApJ...738..140H}{Hosokawa, T., Offner, S.~S.~R., \& Krumholz, M,~R., 2011, ApJ, 738, 140} \nocite{hosokawa11a}
+\item \href{http://adsabs.harvard.edu/abs/2013ApJ...763....6T}{Tomida, K., et al., 2013, ApJ, 763, 6} \nocite{tomida13a}
 \end{itemize}
 }
 
-This chapter considers the behavior of the stellar objects that form at the centers of collapsing clouds. Our goal is to extend the theory of stellar structure to the case of protostars that are not yet on the main sequence. This calculation is not fundamentally different than the stellar structure calculations that we normally perform for main sequence stars. Indeed, as we will demonstrate in a moment, the same basic assumptions of hydrostatic balance and diffusion of energy through the star are valid in the pre-main sequence and main sequence cases. There are only two significant differences. First, the boundary conditions are obviously different, since protostars are gaining mass from the outside. Second, although the star is in hydrostatic balance, it need not be in long-term thermal balance. Given these points, let us discuss how we calculate the evolution of a protostar.
+The next two chapters focus on the structure and evolution of protostars. Our goal will be to understand when and why collapse stops to form a pressure-supported object, and how those objects subsequently evolve into main sequence stars. This chapter focuses on the dynamics and thermal behavior of the material at the center of a collapsing core as it settles into something we can describe as a star, and on the structure of the envelope around this protostar. Chapter \ref{ch:protostar_evol} is focused on the evolution of this object, both internally and in its appearance on the HR diagram. 
 
-\section{Fundamental Theory}
+\section{Thermodynamics of a Collapsing Core}
 
-\subsection{Time Scales}
+We will begin by considering what happens at the center of a collapsing core where the density in the center is rising rapidly as it collapses. We would like to understand the structure forming at the center of this collapsing object.
 
-Let us begin by justifying the statement that we can treat protostars using the same techniques we use for main sequence stars. The way we can check this is by evaluating two time scales: the mechanical time scale over which the star will reach mechanical equilibrium, and the Kelvin-Helmholtz time scale over which it reaches thermal equilibrium.
+\subsection{The Isothermal-Adiabatic Transition}
 
-The time to reach mechanical equilibrium is the sound crossing time, $t_s\sim R/c_s$. From the virial theorem we know that the RMS velocity inside the star must be of order $\sqrt{GM/R}$, and, since gas should be subsonic after it shocks at the stellar surface, this RMS velocity must be mostly thermal motion. Thus, $c_s\sim \sqrt{GM/R}$, and
+The first important point to make is the assumption of isothermality for cores that we have been making must break down at some point. Even at low density there are minor deviations from isothermality that result from the changeover in heating and cooling processes, but these are fairly minor, in the sense that they are unable to significantly affect collapse. For example, the proposed \citet{larson05a} EOS only gets as stiff as $T\propto \rho^{0.07}$ at high density, corresponding to a polytrope $P\propto \rho^{\gamma}$ with $\gamma=1.07$. Since $\gamma=4/3$ is the dividing line between equations of state that are and are not stable against collapse, $\gamma=1.07$ is still in the unstable regime.
+
+In contrast, if the gas is not able to radiate at all, it will behave adiabatically. This means it will approach a polytrope with $\gamma=7/5$ or $5/3$, depending on whether the gas temperature is high enough to excite the internal quantum mechanical states of H$_2$ or not. (In actuality the $\gamma$ for H$_2$ is more complicated than that, but that doesn't really matter for our purposes.) Either one is $>4/3$, and thus sufficient to halt collapse.
+
+Let us make some estimates of when deviations from isothermality that are significant enough to put us into this regime will occur. Since we are dealing with the collapse of the first region to fall in, we can probably safely assume that this material has very low angular momentum and treat the collapse as spherical -- higher angular momentum material will only fall in later, since removal of angular momentum by the disk takes a while. The behavior of this material has been studied by a number of authors, going all the way back to \citet{larson69a}, but the treatment here follows that of \citet{masunaga98a} and \citet{masunaga00a}.
+
+At high densities inside a core immediately before a central star forms and begins to radiate, the dominant source of energy is adiabatic compression of the gas. We therefore have a situation much like that considered in Section \ref{ssec:chemevol} for the first stars. We let  $e$ be the thermal energy per unit mass of a particular gas parcel and $\Gamma$ and $\Lambda$ be the rates of change in $e$ due to heating and cooling processes, so
 \begin{equation}
-t_s \sim \sqrt{\frac{R^3}{GM}} = 35\, M_0^{-1/2} R_1^{3/2}\mbox{ hours},
+\frac{de}{dt} = \Gamma - \Lambda.
 \end{equation}
-where $M_0 = M_* / \msun$ and $R_{*,1} = R/(10\rsun)$.
+For gas collapsing on a free-fall timescale, we showed in Section \ref{ssec:chemevol} that the heating rate is roughly $c_s^2/t_{\rm ff}$. To be definite we write this out as
+\begin{equation}
+\Gamma = C_1 c_s^2 \sqrt{4\pi G\rho},
+\end{equation}
+where $C_1$ is a constant of order unity that will depend on the exact collapse solution, and the factor of $\sqrt{4\pi}$ has been inserted for future convenience.
 
-In contrast, the time required to reach thermal equilibrium is the Kelvin-Helmholtz time, which is defined as roughly the time required for the star to radiate away its own binding energy:
+The main cooling source is thermal emission by dust grains, which at the high densities with which we are concerned are thermally very well coupled to the gas. Let us first consider the gas where the gas is optically thin to this thermal radiation. In this case the cooling rate per unit mass is simply given by the rate of thermal emission,
 \begin{equation}
-t_{\rm KH} = \frac{GM^2}{RL} = 3\times 10^5\, M_0^2 R_1^{-1} L_1^{-1}\mbox{ yr},
+\Lambda_{\rm thin} = 4\kappa_{\rm P} \sigma T^4,
 \end{equation}
-where $L_1 = L/(10 \lsun)$. Thus the star reaches mechanical equilibrium essentially instantaneously compared to the time required to reach thermal equilibrium. It is therefore reasonable to assume that at all times the star is in hydrostatic balance, and then to describe its subsequent evolution movement from one hydrostatic state to another, with the change in state dictated by the evolution of the energy and entropy of the gas. 
+where $\sigma$ is the Stefan-Boltzmann constant and $\kappa_{\rm P}$ is the Planck mean opacity of the dust grains. As long as $\Lambda \gtrsim \Gamma$, the gas will remain isothermal. (Strictly speaking if $\Lambda > \Gamma$ the gas will cool, but that's because we've left out other sources of heating, such as cosmic rays and the fact that the protostar is bathed in a background IR radiation field from other stars.)
 
-For future reference, it is also useful to think about how long accretion will last. At an accretion rate of $10^{-5}$ $\msun$ yr$^{-1}$, the formation of a 1 $\msun$ star takes $10^5$ yr. Thus, the accretion time is generally shorter than the KH time, so that stars will cease accreting before they reach thermal equilibrium. Note that this is true only for low mass stars, not high mass ones as we discussed previously.
-
-\subsection{Evolution Equations}
-
-Now that we have shown that we can treat protostars as hydrostatic equilibrium objects, let us proceed to write down the evolution equations that govern the protostar. These should be familiar from stellar structure. An important caveat is that what we cover here represents an extremely simple approach to stellar structure, and that all of the complications that arise in real stellar structure calculations (e.g., rotation, convective overshooting, real stellar atmospheres, etc.) apply equally-well to protostellar evolution. The goal here is simply to sketch the basic theory, so that we can understand how it changes for protostars as opposed to main sequence stars.
-
-As in other stellar structure calculations, it is most convenient to work in Lagrangian coordinates, where we let $M_r$ be the mass interior to radius $r$, and then solve for stellar properties as a function of $M_r$. The first equation is the standard definition of mass in terms of density and radius:
-\begin{equation}
-\label{mass}
-\frac{\partial r}{\partial M_r} = \frac{1}{4\pi r^2 \rho}.
-\end{equation}
-The second equation is the equation of hydrostatic balance. In Eulerian coordinates it is
-\begin{equation}
-\frac{\partial P}{\partial r} = -\frac{G M_r \rho}{r^2},
-\end{equation}
-and converting to Lagrangian coordinates by dividing by the relationship between $r$ and $M_r$ gives
-\begin{equation}
-\frac{\partial P}{\partial M_r} = -\frac{G M_r}{4\pi r^4}
-\end{equation}
-Note that we have ignored radiation pressure in writing this equation, since it is significant only for very massive stars. I can be included in exactly the same manner as for massive main sequence stars.
-
-The third equation is the equation of radiation diffusion:
-\begin{equation}
-F = \frac{L}{4\pi r^2} = -\frac{c}{3\rho\kappa} \frac{\partial E}{\partial r},
-\end{equation}
-where $F$ is the radiation flux, $L$ is the luminosity passing through radius $r$, and $\kappa$ is the Rosseland mean opacity of the gas. Writing $E=aT^4 = \sigma T^4/(4c)$ and again converting to Lagrangian coordinates by dividing by $\partial r/\partial M_r$ gives
-\begin{equation}
-T^3 \frac{\partial T}{\partial M_r} = - \frac{3\kappa L}{256 \pi^2 \sigma r^4}.
-\end{equation}
-This applies only as long as the protostar is stable against convection, $\partial s/\partial M_r > 0$, i.e.\ the entropy increases outward. If it is unstable to convection, we instead have
-\begin{equation}
-\frac{\partial s}{\partial M_r} = 0,
-\end{equation}
-or some more sophisticated treatment of convection based on mixing-length theory.
-
-Finally, the last equation describes how the internal energy of the fluid evolves:
-\begin{equation}
-\rho T\frac{\partial s}{\partial t} = \rho \epsilon - \frac{1}{r^2}\frac{\partial}{\partial r}(r^2 F),
-\end{equation}
-where $s$ is the entropy per unit mass of the gas and $\epsilon$ is the rate of nuclear energy generation per unit mass.  Substituting $L_r = 4 \pi r^2 F$ gives
-\begin{equation}
-\frac{\partial L}{\partial r} = 4\pi r^2 \rho \left(\epsilon - T\frac{\partial s}{\partial T}\right),
-\end{equation}
-and dividing once more by $\partial r/\partial M_r$ gives
-\begin{equation}
-\label{heat}
-\frac{\partial L}{\partial M_r} = \epsilon - T\frac{\partial s}{\partial t}.
-\end{equation}
-This is the only equation that is different from the case of a main sequence star. For a main sequence star, we simply assume that the entropy per unit mass is constant, so we drop the $\partial s/\partial t$ term.
-
-This constitutes four equations in the four unknowns $r$, $P$, $T$, and $L$.  We also require functions specifying the equation of state $P(\rho)$, the opacity $\kappa(\rho,T)$, the energy generation rate $\epsilon(\rho,T)$, and the entropy $s(\rho,T)$.
-The equation of state is just the ideal gas law
-\begin{equation}
-P = \frac{\rho k_B T}{\mu},
-\end{equation}
-where $\mu$ is the mean mass for particle. For fully ionized gas $\mu=0.61 m_H$, but in numerical calculations we generally use a numerically tabulated value of $\mu(\rho, T)$. Similarly, for constant $\mu$ the entropy is
-\begin{equation}
-s = \frac{k}{\mu} \ln \left(\frac{T^{3/2}}{\rho}\right) + \mbox{const},
-\end{equation}
-but, again, when $\mu$ is not constant $s$ must be tabulated numerically.
-
-\subsection{Boundary Conditions}
-
-The four structure equations require four boundary conditions to solve. Two are obvious: at $M_r=0$
+If we equate the heating and cooling rates, using for $T$ the temperature in the isothermal gas, we therefore will obtain a characteristic density beyond which the gas can no longer remain isothermal. Doing so gives
 \begin{eqnarray}
-r(0) & = & 0\\
-L(0) & = & 0.
+\rho_{\rm thin} & = & \frac{4}{\pi} \frac{\kappa_{\rm P}^2 \sigma^2 \mu^2 T^4}{C_1^2 G k_B^2} \\
+& = & 5\times 10^{-15} \mbox{ g cm}^{-3}\, C_1^{-2} \left(\frac{100 \kappa_{\rm P}}{\mbox{cm}^2\mbox{ g}^{-1}}\right)^2 \left(\frac{T}{10\mbox{ K}}\right)^6,
 \end{eqnarray}
-The remaining two are less obvious. Thus far everything we have written down is completely identical to the case of a main sequence star, except for the time derivative in the heat equation, but the remaining two boundary conditions, describing the pressure and luminosity at the edge of the star, are different.
+where $\mu$ is the mean mass per particle and we have set $c_s\sqrt{k_B T/\mu}$. Thus we find that compressional heating and optically thin cooling to balance at about $10^{-14}$ g cm$^{-3}$.
 
-The pressure at the edge of the star is set by requiring that the star's pressure be sufficient to bring the incoming mass flow to a halt at the stellar surface. The mass flux onto the star is
+A second important density is the one at which the gas starts to become optically thick to its own re-emitted infrared radiation. Suppose that the optically thick region at the center of our core has some mean density $\rho$ and radius $R$. The condition that the optical depth across it be unity then reduces to
 \begin{equation}
-\dot{M} = 4\pi r^2 \rho v,
+2 \kappa \rho R \approx 1.
 \end{equation}
-and the pressure at the stellar surface is therefore
+If this central region corresponds to the size of the region that is no longer in free-fall collapse and is instead thermally supported, then its size must be comparable to the Jeans length at its lowest temperature, i.e.\ $R\sim \lambda_J = \sqrt{\pi c_s^2/(G\rho)}$. Thus we set
 \begin{equation}
-P(M_*) = \rho v^2 = \frac{\dot{M} v}{4\pi r^2},
+R = C_2 \frac{2\pi c_s}{\sqrt{4\pi G \rho}},
 \end{equation}
-where the right hand side is to be evaluated at $r=R_*$. If the incoming gas is in free-fall, then we can set $v = v_{\rm ff} = \sqrt{2GM_*/R_*}$, which gives
-\begin{equation}
-\label{pbound1}
-P(M_*) = \frac{\dot{M}}{4\pi} \sqrt{\frac{2 G M_*}{R_*^5}},
-\end{equation}
-where $M_*$ is the total stellar mass. 
+where $C_2$ is again a constant of order unity, and Masunaga et al.\ find based on numerical results that $C_2\approx 0.75$.
 
-The final boundary condition is on the luminosity. For a non-accreting star it is simple: we require that $L(M_*)=4\pi R_* \sigma T(M_*)^4$, i.e.\ that the star radiate as a black body from its surface, or something somewhat more complicated involving a table lookup of a stellar atmosphere. For an accreting star it is more complicated, however, because the accreting gas carries energy, and the question becomes what fraction of this energy will be radiated away at the stellar surface and what fraction will be advected or radiated into the stellar interior.
-
-We will not derive these results in detail, just sketch out the issues. The boundary condition must take the form
-\begin{equation}
-\label{lbound1}
-L(M_*) = L_{\rm acc} + L_{\rm bb} - L_{\rm in},
-\end{equation}
-where $L_{\rm acc}=G M_* \dot{M}_*/R_*$ is the kinetic energy of the accreting gas, $L_{\rm bb} = 4\pi R_*^2 \sigma T(M_*)^4$ represents the blackbody radiation from the stellar surface, and $L_{\rm in}$ represents the inward flux of energy due to advection and radiation from the shocked gas. One way to think about $L_{\rm in}$ is that it specifies what fraction of the kinetic energy of the accreting gas escapes promptly as radiation, with the remaining portion assumed to be advected into the stellar interior with the accreting gas.
-
-The correct value of $L_{\rm in}$ is a subtle question, since it depends on the structure of the shock at the stellar surface, and on its geometry. For spherical accretion, \citet{stahler80a, stahler80b, stahler81a} show that $L_{\rm in}\approx 3 L_{\rm acc}/4$. However, if the accretion is confined to a small portion of the stellar surface, for example by a magnetic field, some radiation may escape out the sides of the accretion shock, and $L_{\rm in}$ can be larger. Different authors make different assumptions about this, with those adopting values closer to the spherical case generally referred to as "hot accretion" models, and those adopting value with $L_{\rm in} = L_{\rm acc}$ or close to it referred to as "cold accretion" models. The hot versus cold terminology refers to the thermal energy content of the accreting gas. Whichever assumption one adopts, this constitutes the final boundary condition fully specifies the problem for an accreting protostar.
-
-The last two boundary conditions apply only as long as the star is accreting. After accretion stops, the boundary conditions change to their free-space forms, identical to what we would use for a main sequence star.
-To remind you of the pressure boundary condition, we start by noting that we can integrate the equation of hydrostatic balance to obtain
-\begin{equation}
-P(M_*) = \frac{G M_*}{R_*}^2 \int_{R_*}^{\infty} \rho \, dr.
-\end{equation}
-If $\kappa$ changes relatively little past the stellar photosphere, then 
-\begin{equation}
-\int _{R_*}^{\infty} \rho \, dr \approx \frac{\tau_{\rm phot}}{\kappa_{\rm phot}},
-\end{equation}
-where $\tau_{\rm phot}$ is the optical depth from infinity to the photosphere and $\kappa_{\rm phot}$ is the opacity at the edge of the photosphere. Since the edge of the star is roughly where $\tau_{\rm phot} = 2/3$, the boundary condition becomes
-\begin{equation}
-\label{pbound2}
-P(M_*) = \frac{2 G M_*}{3 R_*^2 \kappa_{\rm phot}}.
-\end{equation}
-In the non-accreting case the temperature boundary condition is simply that
-\begin{equation}
-\label{lbound2}
-L(M_*) = 4\pi R_*^2 \sigma T(M_*)^4.
-\end{equation}
-
-\subsection{Deuterium Burning}
-
-Before discussing how the structure equations can be solved numerically, it is worth delving a little further into the term $\epsilon$, representing nuclear energy generation. For a main sequence star, $\epsilon$ comes from fusion of hydrogen into helium, either via the pp-chain or the CNO cycle. However, hydrogen burning doesn't occur until just before the star reaches the main sequence.
-
-There is, however, an energetically-important nuclear reaction that can occur at lower temperatures, before the star is hot enough to burn hydrogen: fusion of deuterium, via the reaction
-\begin{equation}
-^2\mbox{H} + ^1\mbox{H} \rightarrow ^3\mbox{He} + \gamma.
-\end{equation}
-This reaction begins to occur at an appreciable rate once the temperature reaches $10^6$ K, and the reaction releases $5.5$ MeV per deuterium nucleus burned. The energy generation rate from deuterium fusion is reasonably well-approximated by
-\begin{equation}
-\epsilon \approx 
-\left\{
-\begin{array}{ll}
-0, & T < 10^6\mbox{ K} \\
-4.19\times 10^7\, [\mbox{D}/\mbox{H}] \rho_0 T_6^{11.8} \mbox{ erg g}^{-1}\mbox{ s}^{-1}
-\qquad & T > 10^6\mbox{ K},
-\end{array}
-\right.
-\end{equation}
-where $[\mbox{D}/\mbox{H}]\approx 2\times 10^{-5}$ is the ratio of D to H in the gas, $\rho_0=\rho/(1\mbox{ g cm}^{-3})$, and $T_6=T/(10^6\mbox{ K})$.
-
-Strictly speaking the expression we have for $T>10^6$ K is only valid for temperatures near $10^6$ K, but, as we shall see, this good enough for our purposes. If we wish to run a model past the start of H burning, we need an analogous expression for it, which is the same as one used for normal main sequence stellar structure calculations.
-
-\subsection{Numerical Solution}
-
-We have now fully specified the equations describing our protostar. To construct a numerical model, we need to specify the accretion rate $\dot{M}$ that appears in the boundary condition equations (\ref{pbound1}) and (\ref{lbound1}) describing the pressure and luminosity at the stellar surface. In general $\dot{M}$ can be a function of time, although usually it is taken to be constant until accretion halts at some specified final stellar mass $M_*$, at which point we switch to boundary conditions (\ref{pbound2}) and (\ref{lbound2}) for the boundary pressure and luminosity.
-
-We must also start with an initial condition, which we usually take to be a simple polytrope. This gives us initial profiles of $r$, $P$, $T$, and $L$, from which we can obtain other derived variables like $\rho$ and $s$, as a function of $M_r$. The choice of initial condition might matter a little or a lot, depending on the choice of boundary conditions, as we will see.
-
-Given these boundary conditions, we construct the solution at each time using a shooting method in much the same way as we would for a main sequence star. We first guess a central temperature $T$ and pressure $P$, which of course also gives us the central density $\rho$ and entropy $s$. Usually a good first guess is the value of $\rho$ and $s$ at the last time step.
-Then we integrate equations (\ref{mass}) - (\ref{heat}) outward in radius until we reach the outer mass shell $M_*$ (which is a function of time).
-
-To obtain the time derivative of the entropy term that appears in the internal energy equation (\ref{heat}), we just compute the difference between the entropy $s(M_r,t)$ for mass shell $M_r$ at the current time $t$ and the value for $s(M_r,t-\Delta t)$ that we had in the previous time step. In general the solution we have constructed will not satisfy the outer boundary conditions (\ref{pbound1}/\ref{pbound2}) and (\ref{lbound1}/\ref{lbound2}), so we must modify our guesses for $T$ and $P$ in the center and try again.
-
-We repeat this until we converge, and then we proceed to the next time step, adding new mass shells on the outside as necessary to account for new material deposited by accretion. We continue the calculation until the star's radius converges to its main sequence value. In this manner, we can generate a full evolutionary track for a given accretion rate.
-
-\section{Evolutionary Phases for Protostars}
-
-We have now outlined the basic equations describing protostellar evolution, as well as the numerical method used to solve them. We will now discuss the results of these calculations. There are generally a few distinct stages though with forming stars pass, which can be read off from how the radius evolves as the star gains mass. We will use as our primary example the case of a star undergoing hot accretion at $10^{-5}$ $M_\odot$ yr$^{-1}$, as illustrated in Figure \ref{fig:kippenhahn_hosokawa09}. However, note that the ordering of these phases we describe below can vary somewhat depending on the accretion rate and the boundary conditions assumed. Moreover, for low mass stars, some of the later phases may not occur at all, or occur only after the end of accretion.
-
-\begin{figure}
-\includegraphics[width=\linewidth]{kippenhahn_hosokawa09}
-\caption[Kippenhahn diagram for an accretion protostar]{
-\label{fig:kippenhahn_hosokawa09}
-Kippenhahn and composition diagrams for a protostar accreting at $10^{-5}$ $M_\odot$ yr$^{-1}$ \citep{hosokawa09a}. In the top panel, the thick curve shows the protostellar radius as a function of mass, and gray and white bands show convective and radiative regions, respectively. Hatched areas show regions of D and H burning, as indicated. Thin dotted lines show the radii containing $0.1$, $0.3$, $1$, $3$, and $10$ $M_\odot$, as indicated. Shaded regions show four evolutionary phases: (I) convection, (II) swelling, (III) KH-contraction, and (IV) the main sequence. In the lower panel, the solid line shows the mean deuterium fraction in the star, normalized to the starting value, while the dashed line shows the D fraction only considering the convective parts of the star. The dot-dashed line shows the maximum temperature.
-}
-\end{figure}
-
-\subsection{Initial Contraction}
-
-The initial phase of evolution is visible in Figure \ref{fig:kippenhahn_hosokawa09} as what takes place up to a mass of $\approx 0.2$ $M_\odot$ for the example shown. The first thing that happens during this phase is that the star reaches a radius that is a function solely of $M_*$ and $\dot{M}_*$. This occurs regardless of the initial radius with which we initiate the model, as long as we are using the hot accretion boundary condition. The physical reason for this behavior is easy to understand. The radius of the star is determined by the entropy profile $s(M_r)$. High entropy leads to high radius. Since the internal energy generated by the star is small compared to the accretion power when the stellar mass is low (i.e., $L_{\rm bb} \ll L_{\rm acc}$), once gas is incorporated into the star it does not lose significant energy by radiation. The only entropy it loses is due to the radiation that occurs at the shock on the star's surface. We could have guessed this result from the large value of $t_{\rm KH}$ compared to the accretion time -- in effect, this means that, once a fluid element reaches the stellar surface it will be buried and reach a nearly constant entropy quite quickly. Consequently, we can treat the material falling onto the star during this phase as having an entropy per unit mass that depends only on two factors: (1) the entropy it acquires by striking the stellar surface, and (2) how much it radiates before being buried.
-
-The latter factor is just determined by the accretion rate. Higher accretion rates bury accreted material more quickly, leaving it with higher entropy and producing larger radii. The former depends on the velocity of the infalling material just before it strikes the stellar surface, and thus on $v_{\rm ff}\propto \sqrt{M_*/R_*}$. However, this second factor self-regulates. If at fixed $M_*$, $R_*$ is very large, then $v_{\rm ff}$ is small, and the incoming material gains very little entropy in the shock. Small entropy leads to a smaller radius. Conversely, if $R_*$ is very small, then $v_{\rm ff}$ and the post-shock entropy will be large, and this will produce rapid swelling of the protostar. This effect means that the radius rapidly converges to a value that depends only on $M_*$ and $\dot{M}_*$.
-
-This self-regulation does not happen if the material is assumed to accretion cold. In this case, the radial evolution of the star is determined solely by the amount of entropy that is assumed to remain in the accretion flow when it joins onto the star. One common practice is to assume that the entropy of the accreting material is equal to the entropy of the gas already in the star, and, under this assumption, the choice of initial condition completely determines the subsequent evolution, since the choice of initial condition then determines the entropy content of the star thereafter.
-
-Regardless of the boundary condition assumed, during this phase there is no nuclear burning in the star, as the interior is too cold for any such activity. Since there is no nuclear burning, and this phase generally lasts much less than the Kelvin-Helmholtz timescale on which radiation changes the star's structure, during this phase the entropy content of the star is nearly constant. This phase can therefore be referred to as the adiabatic stage in the star's evolution.
-
-
-\subsection{Deuterium Ignition and Convection}
-
-In Figure \ref{fig:kippenhahn_hosokawa09}, the next evolutionary phase begins at $\approx 0.25$ $M_\odot$, and continues to $\approx 0.7$ $M_\odot$. This stage is marked by two distinct but interrelated phenomena: the onset of nuclear burning and the onset of convection. The driving force behind both phenomena is that, as the protostar gains mass, its interior temperature rises. Recall the results of our calculation from Chapter \ref{ch:protostar_form}: for a polytrope, which is not an unreasonable description of the accreting protostar, the central temperature rises with mass to the $T_c\propto M^{(2\gamma-2)/(3\gamma-2)}$. Thus even at fixed entropy the central temperature must rise as the star gains mass.
-
-Once $T_c$ reaches $\sim 10^6$ K, deuterium will ignite at the center of the protostar. This generally happens at a mass of hundredths to tenths of $M_\odot$, depending on the choice of accretion rate and boundary condition. This has two significant effects. The first is that deuterium acts as a thermostat for the star's center, much as hydrogen does in a main sequence star. Because the energy generation rate is so incredibly sensitive to $T$, any slight raise in the temperature causes it to jump enough to raise the pressure and adiabatically expand the star, reducing $T$. Thus, $T_c$ becomes fixed at $10^6$ K -- which is part of the reason we didn't need an expression for $\epsilon$ that would work at higher temperatures. The star adjusts its radius accordingly, which generally requires that the radius increase to keep $T_c$ nearly constant as the mass rises. Thus deuterium burning temporarily halts core contraction. Both effects are visible in Figure \ref{fig:kippenhahn_hosokawa09}. The halting of core contraction is apparent from the way the dotted lines showing constant mass enclosed bend upward at $\approx 0.3$ $M_\odot$, and the nearly constant core temperature is visible from the fact that, between $\approx 0.25$ $M_\odot$ and $3-4$ $M_\odot$, a factor of more than 10 in mass, the central temperature stays within a factor of 2 of $10^6$ K.
-
-The second effect of deuterium burning that it causes a rapid rise in the entropy at the center of the star: looking at the heat equation (\ref{heat}), we can see that if $\epsilon$ is large, then $\partial s/\partial t$ will be as well. This has the effect of starting up convection in the star. Before deuterium burning the star is generally stable against convection. That is because the entropy profile is determined by infall, and since shells that fall onto the star later arrive at higher velocities (due to the rising $M_*$), they have higher entropy. Thus $s$ is an increasing function of $M_r$, which is the condition for convective stability. Deuterium burning reverses this, and convection follows, eventually turning much of the star convective. This also ensures the star a continuing supply of deuterium fuel, since convection will drag gas from the outer parts of the star down to the core, where they can be burned.
-
-An important caveat here is that, although D burning encourages convection, it is not necessary for it. In the absence of D, or for very high accretion rates, the onset of convection is driven by the increasing luminosity of the stellar core as it undergoes KH contraction. This energy must be transported outwards, and as the star's mass rises and the luminosity goes up, eventually the energy that must be transported exceeds the ability of radiation to carry it. Convection results. For very high accretion rates, this effect drives the onset of convection even before the onset of D burning.
-
-A third effect of the deuterium thermostat is that it forces the star to obey a nearly-linear mass-radius relation, and thus to obey a particular relationship between accretion rate and accretion luminosity. One can show that for a polytrope the central temperature and surface escape speed are related by
-\begin{equation}
-\psi = \frac{GM}{R} = \frac{1}{2}v_{\rm esc}^2 = T_n \frac{k_B T_c}{\mu m_{\rm H}},
-\end{equation}
-where $T_c$ is the core temperature, $T_n$ is a dimensionless constant of order unity that depends only on the polytropic index, and $\mu$ is the mean mass per particle in units of hydrogen masses. For $n=3/2$, expected for a fully convective star, $T_n = 1.86$. Plugging in this value of $T_n$, $\mu=0.61$ (the mean molecular weight for a fully ionized gas of H and He in the standard abundance ratio), and $T_c = 10^6$ K, one obtains $\psi = 2.5\times 10^{14}$ erg g$^{-1}$ as the energy yield from accretion.
-
-\subsection{Deuterium Exhaustion and Formation of a Radiative Barrier}
-
-The next evolutionary phase, which runs from $\approx 0.6 - 3$ $M_\odot$ in Figure \ref{fig:kippenhahn_hosokawa09}, is marked by the exhaustion of deuterium in the stellar core. Deuterium can only hold up the star for a finite amount of time. The reason is simply that there isn't that much of it. Each deuterium burned provides $5.5$ MeV of energy, comparable the $7$ MeV per hydrogen  provided by burning hydrogen, but there are only $2\times 10^{-5}$ D nuclei per H nuclei. Thus, at fixed luminosity the ``main sequence" lifetime for D burning is shorter than that for H burning by a factor of $2\times 10^{-5} \times 5.5/7 = 1.6\times 10^{-5}$.
-
-We therefore see that, while a main sequence star can burn hydrogen for $\sim 10^{10}$ yr, a comparable pre-main sequence star of the same mass and luminosity burning deuterium can only do it for only a few times $10^5$ yr. To be more precise, the time required for a star to exhaust its deuterium is
-\begin{equation}
-t_{\rm D} = \frac{[\mbox{D}/\mbox{H}] \Delta E_{\rm D} M_*}{m_H L_*} = 1.5\times 10^6\mbox{ yr} \, M_{*,0} L_{*,0}^{-1}.
-\end{equation}
-Thus deuterium burning will briefly hold up a star's contraction, but cannot delay it for long. However, a brief note is in order here: while this delay is not long compared to the lifetime of a star, it is comparable to the formation time of the star. Recall that typical accretion rates are of order a few times $10^{-6}$ $\msun$ yr$^{-1}$, so a 1 $\msun$ star takes a few times $10^5$ yr to form. Thus stars may burn deuterium for most of the time they are accreting.
-
-The exhaustion of deuterium does not mean the end of deuterium burning, since fresh deuterium that is brought to the star as it continues accreting will still burning. Instead, the exhaustion of core deuterium happens for a more subtle reason. As the deuterium supply begins to run out, the rate of energy generation in the core becomes insufficient to prevent it from undergoing further contraction, leading to rising temperatures. The rise in central temperature lowers the opacity, which is govern by a Kramers' law: $\kappa \propto \rho T^{-3.5}$. This in turn makes it easier for radiation to transport energy outward. Eventually this shuts off convection somewhere within the star, leading to formation of what is called a radiative barrier.
-
-The formation of the barrier ends the transport of D to the stellar center. The tiny bit of D left in the core is quickly consumed, and, without D burning to drive an entropy gradient, convection shuts off through the entire core. This is the physics behind the nearly-simultaneous end of central D burning and central convection that occurs near $0.6$ $M_\odot$ in Figure \ref{fig:kippenhahn_hosokawa09}. After this transition, the core is able to resume contraction, and D continues to burn as fast as it accretes. However, it now does so in a shell around the core rather than in the core.
-
-\subsection{Swelling}
-
-The next evolutionary phase, which occurs from $\approx 3-4$ $M_\odot$ in Figure \ref{fig:kippenhahn_hosokawa09}, is swelling. This phase is marked by a marked increase in the star's radius over a relative short period of time. The physical mechanism driving this is the radiative barrier discussed above. The radiative barrier forms because increasing temperatures drive decreasing opacities, allowing more rapid transport of energy by radiation. The decreased opacity allows the center of the star to lose entropy rapidly, and the entropy to be transported to the outer parts of the star via radiation. The result is a wave of luminosity and entropy that propagates outward through the star.
-
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{rt_hosokawa09}
-\caption[Protostellar mass-radius relation for different accretion rates]{
-\label{fig:rt_hosokawa09}
-Radius versus mass (top panel) and maximum temperature versus mass (bottom panel) for protostars accreting at different rates. The accretion rate is indicated by the line style, as illustrated in the top panel. For each accretion rate there are two lines, one thick and one thin. The thick line is for the observed Milky Way deuterium abundance, while the thin line is the result assuming zero deuterium abundance.
-}
-\end{marginfigure}
-
-Once the wave of luminosity and entropy gets near the stellar surface, which is not confined by the weight of overlying material, the surface undergoes a rapid expansion, leading to rapid swelling. The maximum radius, and the mass at which the swelling phase occurs, is a strong function of the accretion rate (Figure \ref{fig:rt_hosokawa09}). However, even at very low accretion rates, swelling does not occur until the mass exceeds $1$ $M_\odot$.
-
-\subsection{Contraction to the Main Sequence}
-
-The final stage of protostellar evolution is contraction to the main sequence. Once the entropy wave hits the surface, the star is able to begin losing energy and entropy fairly quickly, and it resumes contraction. This marks the final phase of protostellar evolution, visible above $\approx 4$ $M_\odot$ in Figure \ref{fig:kippenhahn_hosokawa09}. Contraction ends once the core temperature becomes hot enough to ignite hydrogen, landing the star at least on the main sequence.
-
-\section{Observable Evolution of Protostars}
-
-
-We have just discussed the interior behavior of an evolving protostar. While this is important, it is also critical to predict the observable properties of the star during this evolutionary sequence. In particular, we wish to understand the star's luminosity and effective temperature, which dictate its location in the HR diagram. The required values can simply be read off from the evolutionary models (Figure \ref{fig:pms_siess00}), giving rise to a track of luminosity versus effective temperature in the HR diagram.
-
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{pms_siess00}
-\caption[Pre-main sequence evolutionary tracks]{
-\label{fig:pms_siess00}
-Solid lines show tracks taken by stars of varying masses, from $0.1$ $M_\odot$ (rightmost line) to $7.0$ $M_\odot$ (leftmost line) in the theoretical HR diagram of luminosity versus effective temperature. Stars begin at the upper right of the tracks and evolve to the lower left; tracks end at the main sequence. Dashed lines represent isochrones corresponding to $10^6$, $10^7$, and $10^8$ yr, from top right to bottom left. Figure from \citet{siess00a}.
-}
-\end{marginfigure}
-
-The two most important applications of models of this sort is in determining the mass and age distributions of young stars. The former is critical to determining the IMF, as discussed in Chapter \ref{ch:imf_th}, while the latter is critical to questions of both how clusters form, and to the problems of disk dispersal and planet formation (Chapters \ref{ch:late_disk} and \ref{ch:planets}).
-
-\subsection{The Birthline}
-
-Before delving into the tracks themselves, we have to ask what is actually observable. As long as a star is accreting from its parent core, it will probably not be visible in the optical, due to the high opacity of the dusty gas in the core. Thus we are most concerned with stars' appearance in the HR diagram only after they have finished their main accretion phase. We refer to stars that are still accreting and thus not generally optically-observable as protostars, and those that are in this post-accretion phase as pre-main sequence stars. 
-
-For stars below $\sim 1$ $M_\odot$, examining Figure \ref{fig:kippenhahn_hosokawa09}, we see that the transition from protostar to pre-main sequence star will occur some time after the onset of deuterium burning, either during the core or shell burning phases depending on the mass and accretion history. More massive stars will become visible only during KH contraction, or even after the onset of hydrogen burning. The lowest mass stars might be observable even before the start of deuterium burning. However, for the majority of the pre-main sequence stars that we can observe, they first become visible during the D burning phase.
-
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{birthline_palla90}
-\caption[The protostellar birthline]{
-\label{fig:birthline_palla90}
-Thin lines show tracks taken by stars of varying masses (indicated by the annotation, in $M_\odot$) in the theoretical HR diagram of luminosity versus effective temperature. Stars begin at the upper right of the tracks and evolve to the lower left; tracks end at the main sequence. The thick line crossing the tracks is the birthline, the point at which the stars stop accreting and become optically visible. Squares and circles represent the properties of observed young stars. Figure taken from \citet{palla90a}.
-}
-\end{marginfigure}
-
-Since there is a strict mass-radius relation during core deuterium burning (with some variation due to varying accretion rates), there must be a corresponding relationship between $L$ and $T$, just like the main sequence. We call this line in the HR diagram, on which protostars first appear, the birthline; it was first described by \citet{palla90a} (Figure \ref{fig:birthline_palla90}). Since young stars are larger and more luminous that main sequence stars of the same mass, this line lies at higher $L$ and lower $T$ than the main sequence.
-
-\subsection{The Hayashi Track}
-
-Now that we understand what is observable, let us turn to the tracks themselves. The tracks shown in Figures \ref{fig:pms_siess00} and \ref{fig:birthline_palla90} show several distinct features. One is that, for low mass stars, the initial phases of evolution in the HR diagram are nearly vertically, i.e., at constant $T_{\rm eff}$. The vertical tracks for different masses are very close together. This vertical part of the evolution is called the Hayashi track, after its discoverer, who predicted it theoretically \citep{hayashi61a}. For low mass stars, the majority of the Hayashi track lies after the birthline, so it is directly observable.
-
-The origin of the Hayashi track is in the physics of opacity in stellar atmospheres at low temperature. At temperatures below about $10^4$ K, hydrogen becomes neutral, and the only free electrons available come from metal atoms with lower ionization energies. Some of these electrons become bound with hydrogen atoms, forming H$^-$, and this ion is the dominant source of opacity.  Thus the opacity depends on the number of free electrons provided by metal atoms, which in turn depends extremely sensitively on the temperature.
-
-If the temperature falls too low, the opacity will be so low that, even integrating through the rest of the star's mass, the optical depth to infinity will be $<2/3$. Since the photosphere must always be defined by a surface of optical depth unity, this effectively establishes a minimum surface temperature for the star required to maintain $\tau \approx 1$. This minimum temperature depends weakly on the star's mass and radius, but to good approximation it is simply $T_{\rm min} = T_{\rm H} = 3500$ K, where $T_{\rm H}$ is the Hayashi temperature. Low mass protostars, due to their large radii, wind up right against this limit, which is why they all contract along vertical tracks that are packed close together in $T_{\rm eff}$.
-
-We can make this argument a bit more quantitative as follows. Let us approximate the stellar photosphere at radius $R$ as producing blackbody emission and obeying a simple ideal gas law equation of state. In this case we have
+Plugging this into the condition for optical depth unity, we derive the characteristic density at which the gas transitions from optically thin to optically thick:
 \begin{eqnarray}
-\label{eq:bb}
-\log L & = & 4 \log T_R - 2 \log R + \mbox{constant} \\
-\label{eq:idealgas}
-\log P_R & = & \log \rho_R + \log T_R + \mbox{constant},
+\rho_{\tau\sim 1} & = & \frac{1}{4\pi} C_2^{-2} \frac{\mu G}{\kappa_{\rm P}^2 k_B T} \\
+& = & 
+1.5\times 10^{-13}\mbox{ g cm}^{-3}\,  C_2^{-2} \left(\frac{100 \kappa_{\rm P}}{\mbox{cm}^2\mbox{ g}^{-1}}\right)^{-2} \left(\frac{T}{10\mbox{ K}}\right)^{-1}
 \end{eqnarray}
-where the subscript $R$ indicates that a quantity is to be evaluated at the stellar outer radius, and we are writing things in terms of logarithms rather than powerlaw scalings for future convenience. Now let us consider a star that is a polytrope, following $P\propto K_P \rho^{(n+1)/n}$. The polytropic constant$K_P$ is related to the stellar mass and radius by
+This is not very different from the value for $\rho_{\rm thin}$, so in general for reasonable collapse conditions we expect that cores transition from isothermal to close to adiabatic at a density of $\sim 10^{-13}-10^{-14}$ g cm$^{-3}$.
+
+It is worth noting that ratio of $\rho_{\rm thin}$ to $\rho_{\tau\sim 1}$ depends extremely strongly on both $\kappa_{\rm P}$ (to the 4th power) and $T$ (to the 7th), so any small change in either can render them very different. For example, if the metallicity is super-solar then $\kappa_{\rm P}$ will be larger, which will increase $\rho_{\rm thin}$ and decrease $\rho_{\tau\sim 1}$.
+Similarly, if the region is somewhat warmer, for example due to the presence of nearby massive stars, then $\rho_{\rm thin}$ will increase and $\rho_{\tau\sim 1}$ will decrease.
+
+If $\rho_{\tau\sim 1} < \rho_{\rm thin}$, the collapsing gas will become optically thick before heating becomes faster than optically thin cooling. In this case we must compare the heating rate due to compression with the cooling rate due to optically thick cooling instead of optically thin cooling. Optically thick cooling is determined by the rate at which radiation can diffuse out of the core. If we have a central region of optical depth $\tau\gg 1$, the effective speed of the radiation moving through it is $c/\tau$, so the time required for the radiation to diffuse out is
 \begin{equation}
-K_P \propto M^{(n-1)/n}R^{(3-n)/n}.
+t_{\rm diff} = \frac{l\tau}{c} = \frac{\kappa_{\rm P} \rho l^2}{c}
 \end{equation}
-Thus we have
+where $l$ is the characteristic size of the core.
+
+Inside the optically thick region matter and radiation are in thermal balance, so the radiation energy density approaches the blackbody value $aT^4$. The radiation energy per unit mass is therefore $aT^4/\rho$. Putting all this together, and taking $l=2 R$ as we did before in computing $\rho_{\tau\sim 1}$, the optically thick cooling rate per unit mass is
 \begin{equation}
-\log K_P = \left(\frac{n-1}{n}\right) \log M + \left(\frac{3-n}{n}\right)\log R + \mbox{constant},
+\Lambda_{\rm thick} = \frac{aT^4/\rho}{t_{\rm diff}} = \frac{\sigma T^4}{\kappa_{\rm P} \rho^2 R^2},
 \end{equation}
-and the pressure scales with $M$ and $R$ as
+where $\sigma=ca/4$. If we equate $\Lambda_{\rm thick}$ and $\Gamma$, we get the characteristic density where the gas becomes non-isothermal in the optically thick regime
+\begin{eqnarray}
+\rho_{\rm thick} & = & \left(\frac{C_1^2 G \sigma^2 \mu^4 T^4}{4\pi^3 C_2^4 k_B^4 \kappa_{\rm P}^2}\right)^{1/3} \\
+& = & 5\times 10^{-14}\mbox{ g cm}^{-3}\, \frac{C_1^{2/3}}{C_2^{4/3}} 
+\left(\frac{100 \kappa_{\rm P}}{\mbox{cm}^2\mbox{ g}^{-1}}\right)^{-2/3} \left(\frac{T}{10\mbox{ K}}\right)^{4/3}.
+\end{eqnarray}
+This is much more weakly dependent on $\kappa_{\rm P}$ and $T$, so we can now make the somewhat more general statement that, even for supersolar metallicity or warmer regions, we expect a transition from isothermal to adiabatic behavior somewhere in the vicinity of $10^{-14}-10^{-13}$ g cm$^{-3}$.
+
+\subsection{The First Core}
+
+The transition to an adiabatic equation of state, with $\gamma>4/3$, means that the collapse must at least temporarily halt. The result will be a hydrostatic object that is supported by its own internal pressure. This object is known as the first core, or sometimes a Larson's first core, after Richard Larson, who first predicted this phenomenon.
+
+We can model the first core reasonably well as a simple polytrope, with index $n$ defined by $n=1/(\gamma-1)$. At low mass when the temperature in the first core is low $\gamma\approx 5/3$ and $n\approx 3/2$, and for a more massive, warmer core $\gamma \approx 7/5$ ($n\approx 5/2$). Since you have seen polytropes treated in stellar structure, we will simply quote the result. For a polytrope of central density $\rho_c$, the radius and mass are
+\begin{eqnarray}
+R & = & a \xi_1\\
+M & = & -4\pi a^3 \rho_c \left(\xi^2\frac{d\theta}{d\xi}\right)_1,
+\end{eqnarray}
+where $\xi=r/a$ is the dimensionless radius, $\theta = (\rho/\rho_c)^{1/n}$ is the dimensionless density, the subscript $1$ refers to the value at the edge of the sphere (where $\theta=0$), the factors $\xi_1$ and $(\xi\, d\theta/d\xi)_1$ can be determined by integrating the Lane-Emden equation, and the scale factor $a$ is defined by
 \begin{equation}
-\label{eq:polytrope}
-\log P = \left(\frac{n-1}{n}\right) \log M + \left(\frac{3-n}{n}\right) \log R + \left(\frac{n+1}{n}\right) \log \rho + \mbox{constant}.
+a^2 = \frac{(n+1) K}{4\pi G} \rho_c^{\frac{1-n}{n}}.
 \end{equation}
-Hydrostatic balance at the photosphere requires
+The factor $K = p/\rho^{\gamma}$ is the polytropic constant, which is determined by the specific entropy of the gas.
+
+For our first core, the specific entropy will just be determined by the density at which the gas transitions from isothermal to adiabatic. If we let $\rho_{\rm ad}$ be the density at which the gas becomes adiabatic, then the pressure at this density is $p = \rho_{\rm ad} c_{s0}^2$, where $c_{s0}$ is the sound speed in the isothermal phase, and $K = c_{s0}^2 \rho_{\rm ad}^{1-\gamma}$. For $\gamma=5/3$ ($n=1.5$) we have $\xi_1=3.65$ and $(\xi\, d\theta/d\xi)_1=-2.71$, and plugging in we get
+\begin{eqnarray}
+R & = & 2.2\mbox{ AU}\left(\frac{10^{10}\rho_c}{\mbox{g cm}^{-3}}\right)^{1/6} \left(\frac{T}{10\mbox{ K}}\right)^{1/2} \left(\frac{10^{13}\rho_{\rm ad}}{\mbox{  cm}^{-3}}\right)^{-1/3} \\
+M & = & 0.059\msun \left(\frac{10^{10}\rho_c}{\mbox{g cm}^{-3}}\right)^{7/6} \left(\frac{T}{10\mbox{ K}}\right)^{1/2} \left(\frac{10^{13} \rho_{\rm ad}}{\mbox{g cm}^{-3}}\right)^{-1/3}.
+\end{eqnarray}
+The choice of $\rho_c$ will be justified in a moment.
+
+We can obtain very similar numbers by plugging in for $\gamma=7/5$ ($n=2.5$). These results show that the first core is an object a few AU in size, with a mass of a few hundredths of a solar mass.
+
+\subsection{Second Collapse}
+
+The first core is a very short-lived phase in the evolution of the protostar. To see why, let us estimate its temperature. The temperature inside the sphere rises as $T\propto \rho^{\gamma-1}$, so the central temperature is
 \begin{equation}
-\frac{dP}{dr} = \rho_R \frac{GM}{R^2} \qquad\Longrightarrow\qquad
-P_R = \frac{GM}{R^2} \int_R^\infty \rho \, dr,
+T_c = T_0 \left(\frac{\rho_c}{\rho_{\rm ad}}\right)^{\gamma-1},
 \end{equation}
-where $P_R$ is the pressure at the photosphere and we are approximating the $GM/R^2$ is essentially constant through the photosphere. The photosphere is defined by the condition
+where $T_0$ is the temperature in the isothermal phase. Thus the central temperature will be higher than the boundary temperature by a factor that is determined by how high the central density has risen, which in turn will be determined by the amount of mass that has accumulated on the core.
+
+In general we have $M\propto \rho_c^{(3+n)/(2n)}$, or $M\propto \rho_c^{(3\gamma-2)/2}$. We also have $T_c\propto \rho_c^{\gamma-1}$. Combining these results, we get
 \begin{equation}
-\kappa \int_R^\infty \rho\,dr \approx 1,
+T_c \propto M^{(2\gamma-2)/(3\gamma-2)}.
 \end{equation}
-where we are also approximating $\kappa$ as constant, so putting this together we have
+The exponent is $0.44$ for $\gamma=5/3$ and $0.36$ for $\gamma=7/5$. 
+
+Plugging in some numbers, $M = 0.06\msun$, $\rho_{\rm ad}=10^{-13}$ g cm$^{-3}$, and $\gamma=5/3$ gives $\rho_c = 10^{-10}$ g cm$^{-3}$ and $T_c=1000$ K. Thus we see that by the time anything like $0.1$ $\msun$ of material has accumulated on the first core, compression will have caused its central temperature to rise to $1000$ K or more.
+
+This causes yet another change in the thermodynamics of the gas, because all the hydrogen is still molecular, and molecular hydrogen has a binding energy of $4.5$ eV. In comparison, the kinetic energy per molecule for molecular hydrogen at a temperature $T$ is $3 k_B T = 0.26 T_3$ eV, where $T_3=T/(1000\mbox{ K})$. At 1000 K this means that the mean molecule still has only $\sim 5\%$ of the kinetic energy that would be required to dissociate it. However, there is a non-negligible tail of the Maxwellian distribution that is moving fast enough for collisions to produce dissociation. Each of these dissociative collisions removes $4.5$ eV from the kinetic energy budget of the gas and puts it into chemical energy instead. Since dissociations are occurring on the tail of the Maxwellian, any slight increase in the temperature dramatically increases the dissociation rate, moving even more kinetic energy into chemical energy.
+
+This effectively acts as a thermostat for the gas, in much the same way that a boiling pot of water stays near the boiling temperature of water even when energy is added, because all the extra energy that is provided goes into changing the chemical state of the water rather than raising its temperature. Detailed numerical calculations of this effect show that at temperatures above $1000-2000$ K, the equation of state becomes closer to $T\propto \rho^{0.1}$, or $\gamma=1.1$. This is again below the critical value of $\gamma=4/3$ required to have a hydrostatic object, and as a result the center of the first core again goes into something like free-fall collapse.
+
+This is called the second collapse. The time required for it is set by the free-fall time at the central density of the first core, which is only a few years. This collapse continues until all the hydrogen dissociates. The hydrogen also ionizes during this collapse, since the ionization potential of $13.6$ eV isn't very different from the dissociation potential of $4.5$ eV. Only once all the hydrogen is dissociated and ionized can a new hydrostatic object form.
+
+At this point the gas is warmer than $\sim 10^4$ K, is fully ionized, and the new hydrostatic object is a true protostar. It is supported by degeneracy pressure at first when its mass is low, and then as more mass arrives it heats up and becomes supported by thermal pressure. 
+
+An important point to make there is that this discussion implies that brown dwarfs, at least those of sufficiently low mass, do not undergo a prompt second collapse. Instead, their first cores never accumulate enough mass to dissociate the molecules at their center. This isn't to say that dissociation never happens in them, and that second collapse never occurs. A brown dwarf-mass first core will still radiate from its surface and, lacking any internal energy source, this energy loss will have to be balanced by compression. As the gas compresses the temperature and entropy will rise, and, if the object does not become supported by degeneracy pressure first, the central temperature will eventually rise enough to produce second collapse. The difference for a brown dwarf is that this will only occur once slow radiative losses cause a temperature rise, which may take a very long time compared to formation. For stars, in contrast, there is enough mass to reach the critical temperature by compression during formation.
+
+\section{The Protostellar Envelope}
+
+Once a protostar is born at the center of a collapsing cloud, we can ask both about the structure immediately around it and about its internal structure. We defer the latter to Chapter \ref{ch:protostar_evol}, and focus here on the envelope around the newborn protostar.
+
+\subsection{Accretion Luminosity}
+
+The central driver of the behavior of the gas around the protostar is the radiation that it emits. At early times the star has not reached the main sequence or ignited any nuclear burning, so gravity is the only important energy source in the problem. Even if nuclear burning does start, we will see that it is negligible for low mass stars. The protostar is a hydrostatic object, although it undergoes secular contraction, so that gas striking its surface comes to a halt in an accretion shock. In this shock its kinetic energy is converted to heat, which is then radiated away.
+
+The detailed structure of the accretion shock was first worked out by \citet{stahler80a, stahler80b}. The summary is that the energy radiated away at the shock is roughly
 \begin{equation}
-P_R \approx \frac{GM}{R^2\kappa} \qquad\Longrightarrow\qquad
-\log P_R \approx \log M - 2 \log R - \log \kappa.
+L_{\rm acc} = \frac{G M_* \dot{M}_*}{R_*},
+\end{equation}
+where $M_*$, $\dot{M}_*$, and $R_*$ are the mass, accretion rate, and radius for the protostar.
+
+We will see in Chapter \ref{ch:protostar_evol} that $R_*$ is typically a few $\rsun$ (and indeed this is consistent with the observed radii of T Tauri stars). We have previously calculated typical accretion rates of $\dot{M}_*\sim 10^{-5}$ $\msun$ yr$^{-1}$ for low mass stars.
+Plugging in these numbers, we find
+\begin{equation}
+L_{\rm acc} = 30\lsun\, \dot{M}_{*,-5} M_{*,0} R_{*,1}^{-1},
+\end{equation}
+where $\dot{M}_{*,-5}=\dot{M}_*/(10^{-5}\msun\mbox{ yr}^{-1})$, $M_{*,0}=M_*/\msun$, and $R_{*,1}=R_*/(10\rsun)$.
+Thus a typical low mass protostar can easily put out many tens of $\lsun$ in accretion power, far greater than what it would produce from nuclear burning on the main sequence. 
+
+We can also estimate the effective temperature of the stellar surface due to accretion. The infalling gas arrives in free-fall at a velocity 
+\begin{equation}
+v_{\rm ff}=\sqrt{\frac{2GM_*}{R_*}} = 200\mbox{ km s}^{-1} \, M_{*,0}^{1/2} R_{*,1}^{-1/2}.
+\end{equation}
+The vastly exceeds the sound speed of a few km s$^{-1}$ in gas at a temperature of $\sim 10^3-10^4$ K, so the gas must decelerate in a strong shock with a Mach number of order 100. For a strong shock, one where the Mach number $\mathcal{M} \gg 1$, the Rankine-Hugoniot jump conditions tell us that the post-shock temperature is
+\begin{equation}
+T_2 = \frac{2\gamma(\gamma-1)}{(\gamma+1)^2} \mathcal{M}^2 T_1
+= \frac{2\gamma(\gamma-1)}{(\gamma+1)^2} \frac{v_{\rm shock}^2}{c_1^2} T_1
+= \frac{2(\gamma-1)}{(\gamma+1)^2} \frac{\mu}{k_B} v_{\rm shock}^2,
+\end{equation}
+where $c_1$ is the adiabatic sound speed in the pre-shock gas.
+
+Taking $v_{\rm shock}=v_{\rm ff}$, $\gamma=5/3$ for a monatomic gas, and $\mu=2.3\times 10^{-24}$ g for the pre-shock gas (assuming it to be neutral hydrogen), and plugging in we get
+\begin{equation}
+T_2 = 1.2\times 10^6 \, M_{*,0} R_{*,1}^{-1} \mbox{ K}.
+\end{equation}
+In other words, the post-shock gas is heated to temperatures such that it emits in UV and x-rays. The incoming gas will be extremely opaque to this radiation due to the opacity provided by both free-electrons and numerous lines of multiply ionized metal atoms such as iron. As a result all the radiation emitted by the post-shock gas will be absorbed in a small region immediately outside the shock and reprocessed until it becomes blackbody emission. The stellar surface therefore emits as a blackbody, whose temperature we can calculate in the standard way:
+\begin{eqnarray}
+L_{\rm acc} & = & 4\pi R_*^2 \sigma T_*^4 \\
+T_* & = & 4300 \dot{M}_{*,-5}^{1/4} M_{*,0}^{1/4} R_{*,1}^{-3/4} \mbox{ K}
+\end{eqnarray}
+Thus the star is effectively a blackbody at a surface temperature comparable to that of a main sequence star.
+
+\subsection{The Dust Destruction Front}
+
+Now let us consider the effect of this luminosity on the gas around the protostar. Consider a spherical black dust grain of radius $a$ some distance $r$ from the star. It absorbs radiation at a rate
+\begin{equation}
+\Gamma = \frac{L_{\rm acc}}{4\pi r^2} \pi a^2 = \pi a^2 \sigma T_*^4 \left(\frac{R_*}{r}\right)^2
+\end{equation}
+and radiates it at a rate
+\begin{equation}
+\Lambda = 4\pi a^2 \sigma T_d^4,
+\end{equation}
+where $T_d$ is the dust grain's temperature. Equating these two, the temperature of the grain is
+\begin{equation}
+T_d = \left(\frac{R_*}{2r}\right)^{1/2} T_*
 \end{equation}
 
-To make further progress, we will assume that we can approximate the opacity as some powerlaw in density and temperature, $\kappa \propto \rho T^b$. For a Kramers opacity, for example, $a=1$ and $b=-3.5$. Substituting this into the equation for $P_R$, we have
+Even the most refractory materials out of which interstellar dust is made, such as graphite and silicate grains, will vaporize at temperatures larger than $\sim 1000-1500$ K. The exact temperature depends on the chemical composition of the grains. Thus when $r/R_*$ is too large grains cannot survive. They get vaporized. We therefore expect the protostar to be surrounded by dust-free region.
+
+Since the ionizing radiation produced at the shock at the stellar surface all gets absorbed close to the shock, and the star is shining into this dust-free region as a blackbody at a temperature of only a few thousand K, the gas in this region is primarily neutral. Neutral atomic gas with no dust in it is essentially transparent to visible radiation, so in this region the opacity is tiny, and stellar radiation is able to free-stream outward. The dust-free neutral region is called the opacity gap.
+
+As one moves away from the star the equilibrium grain temperature drops, and eventually one reaches a surface where dust grains can exist. This is called the dust destruction radius, since incoming gas that reaches this radius has its grains destroyed. If we plug the grain destruction temperature into our equation for $T_d$, we can solve for the dust destruction radius:
 \begin{equation}
-\label{eq:opacity}
-\log P_R = \log M - 2\log R - \log \rho_R - b\log T_R + \mbox{constant}.
+r_d = \frac{R_*}{2} \left(\frac{T_*}{T_d}\right)^2 = 0.4 \,  T_{d,3}^{-2} \dot{M}_{*,-5}^{1/2} M_{*,0}^{1/2} R_{*,1}^{-1/2} \mbox{ AU},
+\end{equation}
+where $T_{d,3}=T_d/(1000\mbox{ K})$ is the dust destruction temperature in units of 1000 K. Thus the dust-free region extends to $\sim 1$ AU around an accreting protostar.
+
+\subsection{Temperature Structure and Observable Properties}
+
+Now let us consider the material beyond the dust destruction front. At the front the gas density is given roughly by the condition
+\begin{eqnarray}
+\dot{M}_* & = & 4\pi r_d^2 \rho v_{\rm ff} \\
+\rho & = & \frac{\dot{M}_*}{\sqrt{8 \pi^2 G M r_d^3}} \\
+& = & 4\times 10^{-13} \, \dot{M}_{*,-5}^{1/4} M_{*,0}^{-7/4} R_{*,1}^{3/4} T_{d,3}^3\mbox{ g cm}^{-3}.
+\end{eqnarray}
+Just inside the front, the stellar spectrum is nearly a blackbody at a temperature of a few thousand Kelvin, so the peak wavelength is
+\begin{equation}
+\lambda \approx \frac{hc}{4kT} = 440 \, \dot{M}_{*,-5}^{-1/4} M_{*,0}^{-1/4} R_{*,1}^{3/4}\mbox{ nm},
+\end{equation}
+in the visible.
+
+The opacity of gas with Milky Way dust composition at 440 nm is roughly $\kappa=8000$ cm$^2$ g$^{-1}$, so the mean free-path of a stellar photon moving through the dust destruction front is $(\kappa\rho)^{-1} \approx 3\times 10^8$ cm. This is a tiny length scale compared to any other scale in the problem, such as the size of the core, the size of the opacity gap, or even the radius of the protostar. 
+
+Thus all the starlight that strikes the dust destruction front will immediately be absorbed by the dust grains. They will re-emit it as thermal radiation with a peak wavelength determined by their blackbody temperature, which will be a factor of $\sim 4$ lower than the stellar surface temperature. At around 1.8 $\mu$m, a factor of 4 longer wavelength than the 440 nm we started with, the opacity is drops to around 1000 cm$^2$ g$^{-1}$, so the mean free path is a factor of 8 larger. Nonetheless, this is still tiny, so all the re-emitted radiation will also be absorbed.
+
+Since we are in a situation where all the radiation is absorbed and re-emitted many times, it is reasonable to treat this as a diffusion problem. Protostellar radiation free-streams from the surface, through the opacity gap, and is absorbed and thermalized at the dust destruction front. Then it must diffuse out through the dust envelope. This is essentially the same calculation that is made for radiation diffusing outward through a star, and the equation describing it is the same:
+\begin{equation}
+F = -\frac{c}{3\rho \kappa_R} \nabla E,
+\end{equation}
+where $F$ is the radiation flux, $E$ is the radiation energy density, and $\kappa_R$ here is the Rosseland mean opacity, meaning the mean of the frequency-dependent opacity using a weighting function that is equal to the temperature derivative of the Planck function. Note here that $\kappa_R$ is a function of $T$.
+
+The repeated absorption and re-emission of radiation forces it into thermal equilibrium with the gas, so $E$ is simple the energy density of a thermal radiation field at the gas temperature: $E=aT^4$, where $a$ is the radiation constant and $T$ is the temperature. Since no energy is added or removed from the radiation field as it diffuses outward through the envelope, $F=L_{\rm acc}/(4\pi r^2)$. Putting this together, we have
+\begin{equation}
+L_{\rm acc}=-\frac{16\pi car^2}{3\rho\kappa_R} T^3 \frac{dT}{dr}
 \end{equation}
 
-Equations (\ref{eq:bb}), (\ref{eq:idealgas}), (\ref{eq:polytrope}) and (\ref{eq:opacity}) constitute a system of four linear equations in the four unknowns $\log P_R$, $\log \rho_R$, $\log T_R$, and $\log L$. Solving this linear system yields the result
+For a given density structure and a model of dust grains that specifies $\kappa_R(T)$, this equation allows us to estimate the temperature structure in the protostellar envelope. For reasonable grain models we expect $\kappa_R\propto T^\alpha$ with $\alpha\approx 0.8$ in the temperature range of a few hundred K. Let us suppose that the density distribution in the envelope looks something like a powerlaw, so $\rho\propto r^{-k_{\rho}}$. Finally, let us also suppose that the temperature also behaves like a powerlaw in radius, $T\propto r^{-k_T}$. The left hand side of the equation is a constant, and we have now worked out how the right hand side varies with $r$. Plugging in all the radial dependences on the RHS, and knowing that they must sum to zero since the LHS is a constant, we get
 \begin{equation}
-\log L = \left(\frac{9 - 2 n + b}{2-n}\right) \log T_R - \left(\frac{2n-1}{2-n}\right) \log M + \mbox{constant}.
+k_T = \frac{k_{\rho} + 1}{4-\alpha}.
 \end{equation}
-This equation describes the shape of a track in the HR diagram, because it relates $\log L$ to $\log T_R$, the photospheric temperature. To see what it implies, we can assume that young low mass stars will be fully convective thanks to D burning, so $n\approx 1.5$.
 
-This leaves only $b$. As mentioned previously, the H$^{-}$ opacity has the property that it rises sharply with temperatures of a few thousand K, because at these temperatures collisional velocities are not high enough to dissociate H$^-$, but they are able to dissociate other atoms, which in turn produces free electrons that can yield H$^{-}$. The higher the temperature, the more free electrons available, and thus the higher the H$^{-}$ opacity. The net result is that, in this temperature range, $b$ takes on a fairly large value: $\sim 4-9$ depending on exactly where in the temperature range we are. Note that this is the opposite of the normal behavior for stellar opacities (e.g.\ Kramer's opacity), where the opacity falls with increasing temperature.
+Thus in the freely-falling part of the envelope, where $k_{\rho}\approx 3/2$, we have $k_T\approx 0.8$. In our fiducial example, where the temperature is 1000 K at 0.4 AU, we would expect the temperature to drop to 300 K at around 2 AU, to 100 K at around 8 AU, and back to the background temperature of 10 K at around 150 AU. In the outer part of the envelope the falloff in temperature can be either steeper or shallower depending on how the density falls off -- sharper density falloffs (larger $k_{\rho}$) lead to sharper temperature falls (larger $k_T$) as well.
 
-If we plug $b = 9$ and $n=1.5$ into the equation we have just derived, we find obtain
-\begin{equation}
-\log L = 30\log T_R - 4 \log M + \mbox{constant}.
-\end{equation}
-Using $b=4$ changes the 30 to a 20. Either way, we conclude that $\log L$ changes extremely steeply with $\log T_R$, which implies that the HR diagram track for stars with this low $T_{\rm eff}$ must be nearly vertical -- hence the Hayashi track. We also see that the location of the Hayashi tracks for stars of different masses will be slightly offset, because of the $4\log M$ term. This qualitatively explains what the numerical models produce.
+Of course this approximation only applies as long as the radiation is trapped by the dust, and the dust opacity is highest for high frequency radiation. Once the dust temperature falls off to less than $\sim 100$ K, depending on the size of the core, the radiation is free to escape instead. Even further in where the dust temperature is higher, long wavelength radiation can escape freely.
 
-\subsection{The Heyney Track}
+As a result the spectrum inside the core is never truly a blackbody, since radiation at long wavelengths never reaches thermal equilibrium. The emitted spectrum is also complicated by this behavior. We can think of this as follows: for a star, there is something close to a single well-defined photosphere at all frequencies because the density drops off sharply. For a dust cloud, on the other hand, the density drop is not sharp, and so the photosphere, the surface of optical depth unity (or 2/3 if you prefer) is in different places at different frequencies. At high frequencies it is near the core surface because the opacity is high, and at low frequencies the low opacity allows it to be much farther in. For this reason, centrally-heated cores do not emit as blackbodies.
 
-Contraction at nearly constant $T_{\rm eff}$ continues until the star contracts enough to raise its surface temperature above $T_{\rm H}$. This increase in temperature also causes the star to transition from convective to radiative, since the opacity drops with temperature at high temperatures, and a lower opacity lets radiation rather than convection carry the energy outward.
-
-In the HR diagram, the contraction and increase in $T_{\rm eff}$ produces a vaguely horizontal evolutionary track. This is called the Heyney track. The star continues to contract until its center becomes warm enough to allow H burning to begin.
-At that point it may contract a small additional amount, but the star is essentially on the main sequence. The total time required depends on the stellar mass, but it ranges from several hundred Myr for $0.1$ $\msun$ stars to essentially zero time for very massive stars, which reach the main sequence while still accreting.
-
-
+In order to truly determine the temperature distribution within a core it is necessary to either use a more sophisticated analytic treatment (for example one is given in \citealt{chakrabarti05a}) or to proceed numerically. If one wants a more sophisticated density structure that is not spherical, numerical methods are also required. Of course all of this only applies as long as a great deal of mass remains in the envelope, so that it is optically thick to both the star's direct radiation and to the re-radiated thermal radiation from the dust destruction front. In terms of our evolutionary classes, all of this applies to class 0 and class I sources.

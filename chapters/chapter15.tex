@@ -1,222 +1,208 @@
-\chapter{Protostellar Disks and Outflows: Observations}
-\label{ch:disks_obs}
+\chapter{The First Stars}
+\label{ch:first_stars}
 
 \marginnote{
 \textbf{Suggested background reading:}
 \begin{itemize}
-\item \href{http://adsabs.harvard.edu/abs/2014prpl.conf..173L}{Li, Z.-Y., et al. 2014, in ``Protostars and Planets VI", ed.~H.~Beuther et al., pp.~173-194}, sections 1-2 \nocite{li14a}
+\item \href{http://adsabs.harvard.edu/abs/2013RPPh...76k2901B}{Bromm, V. 2013, Rep.~Prog.~Phys., 76, 112901}, sections 1-5 \nocite{bromm13a}
 \end{itemize}
 \textbf{Suggested literature:}
 \begin{itemize}
-\item \href{http://adsabs.harvard.edu/abs/2012Natur.492...83T}{Tobin et al., 2012, Nature, 492, 83} \nocite{tobin12a}
+\item \href{http://adsabs.harvard.edu/abs/2011ApJ...737...75G}{Greif et al., 2011, ApJ, 737, 75} \nocite{greif11a}
 \end{itemize}
 }
 
-We now zoom in even further on the star formation process, and examine the dominant circumstellar structures found around young stars: accretion disks. We will spend two chapters on this subject. In the first we will discuss the observational phenomenology of disks, including the outflows they generate. There are a wide range of observational techniques for studying the properties of disks around young stars, and we will certainly not exhaust the list here. We will focus on a few of the most widely used methods, and develop an understanding of how they work and what we can learn from them.
+The previous chapter focused on massive stars in the present-day Universe, and in this chapter we consider how picture changes if we go back to the early Universe. The study of primordial star formation is a major topic in contemporary astrophysics, and this chapter will not provide a comprehensive review. The goal of the chapter is instead to understand how and why the picture we have outlined thus far changes in the very early Universe, and to sketch in broad outlines how the process of star formation transitioned from that found in the early Universe to that found today. The products of such early star formation are often referred to as population III stars, following the Galactic astronomy nomenclature that metal-rich disk stars like the Sun are population I and metal-poor stars found primarily in the Galactic halo, which are presumed to be older, are population II. Population III stars would then be the oldest stars, which are completely metal-free. Unlike for most other topics covered in this book, there are almost no observations that provide useful constraints on the first stars themselves -- no population III stars have ever been observed, and for reasons we discuss below it is possible that none ever will be, except perhaps via their deaths in supernova explosions. Thus this chapter will be primarily theoretical.
 
-\section{Observing Disks}
+\section{Cosmological Context}
 
-\subsection{Dust at Optical Wavelengths}
-
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{proplyds1}
-\includegraphics[width=\linewidth]{proplyds2}
-%\includegraphics[width=\linewidth]{proplyds3}
-\caption[Protostellar disks in absorption in the ONC]{
-\label{fig:proplyds}
-Two disks in the Orion Nebula seen in absorption against the nebula using \textit{HST}. Taken from \url{http://hubblesite.org/newscenter/archive/releases/1995/45/image/g/}.
-}
-\end{marginfigure}
-
-The first idea that might occur to an astronomer who wants to study disks would be to work in the optical. The main challenge to that is that for the most part disks do not emit optical light, because they are too cool. This leaves only a couple of options in the optical. One is that we can detect the disk in scattered starlight. This is very hard, because the light is very faint, and the geometry has to be just right. Polarization can help in this case, since the scatter light will be polarized. There are a few examples of this.
-
-The other possibility for the optical is to work in absorption. This requires a bright, extended background source against which the disk can be detected in silhouette. Fortunately, massive young stars produce H~\textsc{ii} regions, which are bright diffuse sources, and can provide a nice backlight for absorption work. The most spectacular examples of this technique are in the Orion Nebula, as illustrated in Figure \ref{fig:proplyds}.
-
-In this case, since we are working in optical, we get excellent spatial resolution. The disks we see in this case are typically hundreds of AU in size. In such images we can also see very clearly that protostellar jets are launched perpendicular to the disks, confirmed the central role of disks in producing them, as we will discuss shortly.
-
-While the optical offers spectacular pictures, its restriction to the cases where we have favorable geometry, a nice backlight, or some combination of the two limits its usefulness as a general tool for studying disks. A further complication is that optical only lets us study disks once their parent cores, which are optically thick at optical wavelengths, have dissipated. This limits optical techniques to studying the later stages of disk evolution.
-
-
-\subsection{Dust Emission in the Infrared and Sub-mm}
-
-A much more broadly used technique is to detect the dust in a disk in the infrared or sub-mm. As discussed in Chapter \ref{ch:obsstars}, young stars often show significantly more IR and sub-mm emission that would be expected from a bare stellar photosphere. The natural candidate for producing this emission is warm dust grains near the star. The fact that we see the stellar photosphere at all, and that it is not hugely reddened, implies that the grains cannot be in any sort of shell or spherical distribution. A disk is the natural candidate geometry.
-
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{HLTau_nrao}
-\caption[ALMA image of the disk around HL Tau]{
-\label{fig:hltau_nrao}
-An ALMA image of the disk around the young star HL Tau. The image shows dust continuum emission. Image from \url{https://public.nrao.edu/static/pr/planet-formation-alma.html}.
-}
-\end{marginfigure}
-
-In some cases we can spatially resolve a disk in IR or sub-mm observations (Figure \ref{fig:hltau_nrao}), and in some cases the disks are unresolved. In either case, in order to interpret these images, we need to think a bit about which parts of the disk we expect to see at which wavelengths. Consider a geometrically thin disk of material of surface density $\Sigma(\varpi)$ and temperature $T(\varpi)$ beginning at a radius $\varpi_0$ around the star and extending out to radius $\varpi_1$. The dust has opacity $\kappa_\lambda$ at wavelength $\lambda$. The entire disk is inclined relative to our line of sight at angle $\theta$. The flux we receive from the disk at wavelength $\lambda$ is
+We begin our discussion by setting the cosmological context for the formation of the first stars. In the modern $\Lambda$CDM cosmology\footnote{For those concerned with such details: the numerical evaluations in this section are all computed for a cosmology with Hubble constant $H_0=71$ km s$^{-1}$ Mpc$^{-1}$ and densities $\Omega_b = 0.04$, $\Omega_{\rm DM} = 0.23$, and $\Omega_\Lambda = 0.73$ for baryons, dark matter, and cosmological constant, respectively.}, the Universe begins in a nearly homogenous state, with baryons and dark matter distributed nearly uniformly. The baryonic matter consists of approximately 90\% hydrogen and 10\% helium-4 (by number, not by mass), with about 1 deuterium and helium-3 per $\sim 10^5$ H atoms, and even smaller amounts of heavier elements. As the Universe expands, gravity amplifies the tiny inhomogeneities that are present. The dark matter, which dominates the mass, collapses into halos -- virialized, self-gravitating structures -- that drag the ordinary baryonic matter into them. Collapse and virialization occur when the dark matter and baryons reach a characteristic density that is $\approx 200$ times the mean density of the Universe at whatever cosmic epoch is being considered. Once halos virialize, they obey a mass-radius relation \citep{barkana01a}
 \begin{equation}
-F_{\lambda} = \int I_{\lambda}\, d\Omega,
+R_{\rm vir} \approx 290\,\mathrm{pc} \left(\frac{M_h}{10^6\,M_\odot}\right)^{1/3} \left(\frac{1+z}{10}\right)^{-1} \left(\frac{\Delta_c}{200}\right)^{-1/3},
 \end{equation}
-where $I_{\lambda}$ is the intensity emitted by a portion of the disk at wavelength $\lambda$, and the integral goes over the solid angle $\Omega$ occupied by the disk.
+where $M_h$ is the mass of the halo, $z$ is the redshift, and $\Delta_c$ is the overdensity of the halo after it virializes.
 
-To evaluate this, note the ring of material at radius $\varpi$ has an area $2\pi \varpi \,d\varpi$. It is inclined relative to the line of sight by $\theta$, however, so its projected area is $2\pi \varpi \cos\theta\, d\varpi$. The case $\theta=0$ corresponds to the ring being seen perfectly face-on, and the case $\theta=1$ corresponds to perfectly edge-on, and gives 0 in the limit of an infinitely thin disk. This is the projected area, and to covert this to a projected solid angle we divide by $D^2$, where $D$ is the distance to the disk. Thus the flux is
+The dark matter is collisionless, but the baryons that fall into a halo are not. As they fall to the center of the halo they will shock, converting their gravitational potential energy to thermal energy. After they settle into hydrostatic balance, they will be in a state of virial equilibrium, with a thermal energy equal to half their gravitational potential energy. The thermal energy per particle is $\approx k_B T$, and if we equate this with half the gravitational potential energy $G M_h m_{\rm H}/R_{\rm vir}$, we obtain
 \begin{equation}
-F_{\lambda} = \frac{2\pi \cos\theta}{D^2} \int_{\varpi_0}^{\varpi_1} I_\lambda(\varpi) \varpi\, d\varpi.
+T_{\rm vir} \approx \frac{G M_h m_{\rm H}}{2R_{\rm vir} k_B} \approx 900\,K 
+\left(\frac{M_h}{10^6\,M_\odot}\right)^{2/3} \left(\frac{1+z}{10}\right)^{} \left(\frac{\Delta_c}{200}\right)^{1/3},
 \end{equation}
+where we refer to $T_{\rm vir}$ as the virial temperature. Thus gas falling into a $\sim 10^6$ $M_\odot$ dark matter halo will be shock-heated to $\approx 1000$ K. This temperature is low enough that the gas will not be ionized, and will instead remain as neutral H and He. It is in halos like this where the first stars are thought to form.
 
-To make further progress we must specify the intensity, which is a function of $\Sigma$ and $T$. The optical depth of the disk will be
-\begin{equation}
-\tau_{\lambda} = \frac{\kappa_{\lambda}\Sigma}{\cos\theta}
-\end{equation}
-Note that the inclination factor $\cos\theta$ appears on the bottom here, as it should: for $\theta=0$, face-on, we just get the ordinary surface density, but that gets boosted as we incline the disk. The intensity produced by a slab of material of uniform temperature $T$ and optical depth $\tau_{\lambda}$ is
-\begin{equation}
-I_{\lambda} = B_{\lambda}(T) \left(1-e^{-\tau_{\lambda}}\right),
-\end{equation}
-where $B_{\lambda}(T)$ is the Planck function. Plugging this in, we have
-\begin{equation}
-F_{\lambda} = \frac{2\pi \cos\theta}{D^2} \int_{\varpi_0}^{\varpi_1} B_{\lambda}(T) \left[1-\exp\left(-\frac{\kappa_{\lambda}\Sigma}{\cos\theta}\right)\right] \varpi\, d\varpi.
-\end{equation}
 
-For a given disk model it is clearly straightforward to evaluate this integral to obtain the emitted flux. However, the model is underspecified, in the sense that we are fitting only one function, $F_{\lambda}$, and we have two free-functions to use: $T(\varpi)$ and $\Sigma(\varpi)$. This is even if we assume that the opacity is known, which we will see is not a great assumption.
+\section{Chemistry and Thermodynamics of Primordial Gas}
 
-In order to deduce things like $\Sigma$ and $T$ we need to have a physical model of how the disk behaves, and to deduce either $\Sigma$, $T$, or a relationship between them in order to obtain strong constraints on either one from an observed SED. In general such models can be quite complicated, because the disk's temperature distribution depends on both internal heating via viscous dissipation, and external illumination due to the star. Problem set 4 contains a problem in whuch such a model is developed. Even without such a sophisticated model, however, it is possible to learn very interesting things simply from the behavior of the flux in certain limits.
+\subsection{The Role of H$_2$}
 
-\paragraph{The optically thick limit.}
+\marginnote{This statement ignores the 21 cm hyperfine transition of neutral hydrogen. However, this transition has such a low emission rate, and the photons it produces are of such low energy, that it is irrelevant for cooling.}
+The temperature of $\sim 1000$ K for primordial gas falling into dark matter halos is significant, because gas at these temperatures is much too cool to produce appreciable emission from neutral hydrogen or helium. The lowest-lying excited state of H is $E = (3/4)\cdot 13.6$ eV above ground, corresponding to a temperature $T = E/k_B = 1.2\times 10^5$ K. The lowest-lying excited states of He are at similar energies. Thus there will be no significant excitation of these states in gas at temperatures of $\sim 1000$ K, and correspondingly no cooling. Since there are essentially no heavier elements in primordial gas (excepting trace amounts of Li, which also don't provide significant cooling), this means that gas falling into early, small dark matter halos cannot cool easily. This makes the situation very different from that found in present-day star forming regions, where, as we saw in Chapter \ref{ch:microphysics}, gas is able to cool on timescales many orders of magnitude smaller than the dynamical time.
 
-First, suppose that the disk is optically thick at some wavelength, i.e.\ $\tau_{\lambda} = \kappa_{\lambda}\Sigma/\cos\theta \gg 1$. This is likely to be true for shorter (e.g.\ near-IR) wavelengths, where the opacity is high, and where most emission is coming form close to the star where the surface density is highest. In this case it is reasonable to set the exponential factor to 0, and we are simply left with the integral of the Planck function of the disk temperature over radius.
+If the gas could not cool at all, that would be the end of the story. Gas would fall into small halos, form hydrostatic structures, and then nothing would happen. However, there is another cooling pathway to consider: formation of H$_2$ and cooling by H$_2$ radiation. The lowest lying state of H$_2$ that can radiate, the $J=2$ rotational level\footnote{Recall that transitions with $\Delta J=1$ are forbidden in homonuclear molecules due to symmetry.}, is $\approx 500$ K above ground. This makes it ineffective as a coolant in the modern Universe, where CO and C$^+$ lower the temperature well below 100 K. However, in the absence of these alternatives, H$_2$ radiation potentially provides a way of cooling the gas in a primordial halo to well below the virial temperature, thereby making it possible for the gas to collapse. This route to cooling requires that H$_2$ form, and this is a challenge. Recall from our discussion of H$_2$ formation in Chapter \ref{ch:microphysics} that H$_2$ formation in the gas phase is very slow due to its symmetry, which forbids electric dipole radiation. In the present-day Universe this problem is circumvented by dust grains that act as catalysts, with H$_2$ forming on their surfaces. In primordial gas, however, there are no elements capable of forming solids under interstellar conditions, and thus no grains. How can H$_2$ form under such conditions?
 
-Note that in this limit $\Sigma$ drops out, which makes intuitive sense: if the disk is optically thick then we only get to see its surface, and adding or removing material beneath this surface won't change the amount of light we see. Substituting in the Planck function, in the optically thick case we now have
-\begin{equation}
-F_{\lambda} = \frac{4\pi\cos\theta}{D^2} \frac{hc^2}{\lambda^5} \int_{\varpi_0}^{\varpi_1} \frac{\varpi}{\exp[hc/(k_B T)]-1}\,d\varpi.
-\end{equation}
-
-If we further assume that the temperature varies with radius as a powerlaw, $T=T_0(\varpi/\varpi_0)^{-q}$, then we can evaluate the integral via the substitution
-\begin{equation}
-x=\left(\frac{hc}{\lambda k_B T_0}\right)^{1/q} \frac{\varpi}{\varpi_0},
-\end{equation}
-which gives
+The answer is that an alternative catalyst is needed, and one is available: free electrons. When the Universe recombined at $z\approx 1100$, leading the emission of the cosmic microwave background, not all electrons recombined with protons to form H~\textsc{i}. A small fraction are left free. These can catalyze the formation of H$_2$ via the reaction pathway
 \begin{eqnarray}
-F_{\lambda} & = & 
-\frac{4\pi \cos\theta}{D^2} \frac{hc^2}{\lambda^5} \left(\frac{\varpi_0}{x_0}\right)^2 \int_{x_0}^{x_1} \frac{x}{\exp(x^q)-1}\,dx \\
-& = & 
-\frac{4\pi \cos\theta}{D^2} \frac{hc^2}{\lambda^5} \left(\frac{hc}{\lambda k_B \varpi_0^q T_0}\right)^{-2/q} \int_{x_0}^{x_1} \frac{x}{\exp(x^q)-1}\,dx,
+\mathrm{H} + e^- & \rightarrow & \mathrm{H}^- + h\nu \\
+\mathrm{H}^- + \mathrm{H} & \rightarrow & \mathrm{H}_2 + e^-.
 \end{eqnarray}
-and $x_0$ and $x_1$ are obtained by plugging $\varpi_0$ and $\varpi_1$ into the expression for $x$.
+In the first step, the H captures a free electron and radiates away excess energy -- the H$^-$ binding energy is 0.77 eV \citep{weisner64a}. Since the system is not symmetric, dipole radiation is possible, and the rate coefficient, while not particularly high, is not terribly low either: $k_{-} \approx 1.1\times 10^{-16}(T/100\,\mathrm{K})^{0.88}$ cm$^3$ s$^{-1}$ \citep{glover08a}. In the second step, H$^{-}$ interacts with neutral hydrogen to form H$_2$, and the excess binding energy goes into kinetic energy of the recoiling free electron. The rate coefficient for this reaction is been measured by laboratory experiment \citep{kreckel10a}; it reaches a maximum of $k_2 \approx 4.6\times 10^{-9}$ cm$^3$ s$^{-1}$ at around 100 K, and falls gradually to $k_2\approx 2.4\times 10^{-9}$ cm$^3$ s$^{-1}$ at 1000 K and $k_2\approx 3.0\times 10^{-10}$ cm$^3$ s$^{-1}$ at $10^4$ K.
 
-If we look at the part of the SED where emission is dominated neither by the inner edge of the disk nor the outer optically thin parts, which will be the case over most of the IR, then we can set $x_0\approx 0$ and $x_1\approx \infty$ in the integral. In this case the integral is simply a numerical function of $q$ alone. Since the integral then does not depend on the wavelength, our expression for $F_{\lambda}$ immediately tells us the wavelength-dependence of the emission:
+The efficiency of this formation channel depends on two factors. One obvious one is the availability of free electrons to act as catalysts. The second is the branching ratio for H$^-$ to be destroyed by forming H$_2$, rather than by the other main mechanism of H$^-$ destruction, which is photodetachment:
 \begin{equation}
-\lambda F_{\lambda} \propto \lambda^{(2-4q)/q}.
+\mathrm{H}^- + h\nu \rightarrow \mathrm{H} + e^{-}.
 \end{equation}
+This mechanism is simply the inverse of the first reaction in H$_2$ formation via $e^-$ catalysis, and can occur for any photon with an energy $>0.77$ eV, the binding energy of H$^-$. At redshifts above $z\sim 100$, the cosmic microwave background is sufficiently rich in such photons that it effectively suppresses H$_2$ formation via this channel, but at lower redshifts the photodetachment rate falls, and H$_2$ formation via the H$^-$ channel becomes the dominant formation mechanism.
 
-Conversely, this means that if we observe the SED of the disk at relatively short wavelengths, for example near-IR, we can invert the wavelength dependence to deduce how the temperature falls with radius. If we also know the distance $D$ and the inclination $\theta$, we can also clearly deduce the combination of variables $\varpi_0^q T_0$ from the observed value of $F_\lambda$.
+\subsection{Thermal and Chemical Evolution}
 
-\paragraph{The optically thin limit.}
-
-Now let us consider the opposite limit, of an optically thin disk. This limit is likely to hold at long wavelengths, such as far-IR and sub-mm, where the dust opacity is low, and where most emission comes from the outer disk where the surface density is low.
-In the optically thin limit, we can take
-\begin{equation}
-1-\exp\left(-\frac{\kappa_{\lambda}\Sigma}{\cos\theta}\right) \approx \frac{\kappa_{\lambda}\Sigma}{\cos\theta},
-\end{equation}
-and substituting this into our integral for the flux gives
-\begin{equation}
-F_{\lambda} = \frac{2\pi}{D^2} \int_{\varpi_0}^{\varpi_1} B_{\lambda}(T) \kappa_{\lambda}\Sigma \varpi\,d\varpi.
-\end{equation}
-Note that in this case the inclination factor $\cos\theta$ drops out, which makes sense: if the disk is optically thin we see all the material in it, so how it is oriented on the sky doesn't matter.
-
-Even more simplification is possible if we concentrate on emission at wavelengths sufficiently long that we are on the Rayleigh-Jeans tail of the Planck function. This will be true for most sub-mm work, for example: at 1 mm, $hc/(k_B\lambda) = 14$ K, and even the cool outer parts of the disk will be warm enough for emission at this wavelength to fall into the low-energy powerlaw part of the Planck function. In the Rayleigh-Jeans limit
-\begin{equation}
-B_{\lambda}(T) \approx \frac{2c k_B T}{\lambda^4},
-\end{equation}
-and substituting this in gives
-\begin{equation}
-F_{\lambda} = \frac{4\pi c k_B \kappa_{\lambda}}{D^2\lambda^4} \int_{\varpi_0}^{\varpi_1} \Sigma T \varpi \,d\varpi.
-\end{equation}
-
-Note that, again, all the wavelength-dependent terms are now outside the integral, and we therefore again expect to be able to predict the wavelength-dependence of the emission without knowing anything about the disk's density or temperature structure. If the dust opacity varies as $\kappa_\lambda\propto \lambda^{-\beta}$, then we have
-\begin{equation}
-\lambda F_\lambda \propto \lambda^{-3-\beta}.
-\end{equation}
-
-This is a particularly important result because it means that we can use the sub-mm SED of a protostellar disk to measure the wavelength-dependence of the dust opacity. In the ISM, $\beta$ is generally observed to be $2$ in diffuse regions, going down to $\sim 1$ as we go to dense regions. The powerlaw index describing how $\kappa_{\lambda}$ varies with $\lambda$ is determined primarily by the size distribution of the dust grains, with larger grains giving smaller $\beta$. This means that reductions in $\beta$ indicate grain growth, an important prelude to planet formation.
-
-One big caveat here is that this only applies in the optically thin limit, and at shorter wavelengths one is probing closer to the star, where the gas is closer to optically thick. This can fool us into thinking we're seeing grain growth. To see why, note that for $\beta=1-2$, the typical values for non-disk interstellar grains, we expect $\lambda F_{\lambda}$ to vary as a powerlaw with index between $-4$ and $-5$ in the optically thin limit. Smaller $\beta$, which we expect to occur when grains grow, would make this value shallower.
-
-However, recall that in the optically thick limit $\lambda F_\lambda \propto \lambda^{(2-4q)/q}$, where $q$ is the powerlaw index describing how the temperature varies with radius. The value of $q$ depends on the thermal structure of the disk, but for observed optically thick sources values of $q$ in the range $0.5-1$ are commonly inferred. In this case $\lambda F_{\lambda}$ varies as a powerlaw with index between $0$ and $-2$. In other words, a transition from optically thin to optically thick {\it also} causes the SED to flatten. Thus, when we see a flattening, we have to be very careful to be sure that it is due to changes in the grain population and not in the optical depth.
-
-The best way to get around this is with spatially resolved observations, which let us look at a single radius in the disk, thereby getting rid of the effects of radial temperature variation.
-
-\paragraph{Mass estimates.}
-
-By combining the optically thin and optically thick parts of these curves, it is also possible to obtain estimates of the mass of disks, provided that we think we understand the properties of the dust. The general procedure is to observe the disk in the IR, where it is assumed to be optically thick. As discussed earlier, this lets us figure out $q$ and $\varpi_0^q T_0$. This means that the temperature distribution $T(\varpi)$ can be considered known. If one plugs this into the equation for the optically thin flux,
-\begin{equation}
-F_{\lambda} = \frac{4\pi c k_B \kappa_{\lambda}}{D^2\lambda^4} \int_{\varpi_0}^{\varpi_1} \Sigma T \varpi \,d\varpi,
-\end{equation}
-then the only remaining unknowns are $\kappa_{\lambda}$ and $\Sigma$. If one assumes a known $\kappa_\lambda$ (a questionable assumption), then $\Sigma$ is the only unknown.
-
-The problem in this case is no longer underdetermined. The flux $F_{\lambda}$ is one known function, and it determined the unknown function $\Sigma(\varpi)$ uniquely through an integral equation. This can be solved numerically to obtain $\Sigma(\varpi)$, which in turn gives the disk mass. Typical T Tauri disk masses determined via this technique range from $10^{-3}-10^{-1}$ $\msun$, although with an obviously large uncertainty coming from the unknown grain properties, and from the need to convert a dust mass into a total mass.
-
-\subsection{Disks in Molecular Lines}
-
-The optical and IR / sub-mm continuum techniques both target the dust, but they do not directly tell us about the gas in disks, which dominates the mass. To observe the gas we must detect line emission. The lines detected can be in the infrared, which will mostly tell us about the warm portions of the disk very close to the star, or in the radio / sub-mm, which can tell us about the cool material far from the star.
-
-For the former case, lines that have been detected include the vibrational and ro-vibrational transitions of CO, OH, water, and molecular hydrogen. These generally probe regions within a few tenths of an AU of the star, simply because of the high temperatures required for the upper levels to be significantly populated. One particularly important use of these techniques is to infer the inner radii at which disks become truncated. Since this is line emission, we determine the velocity of the gas. If we assume that rotation near the star is Keplerian, and we can measure the stellar mass and inclination by other means, then the maximum measured rotation velocity directly tells us innermost radius at which there is a dense disk. Using this technique suggests that disks are truncated at inner radii of $\sim 0.04$ AU (Figure \ref{fig:diskradius_najita07}).
+Armed with an understanding of how H$_2$ can form, we can now understand in rough outline the chemical and thermal processes that lead to the formation of a primordial star. These processes are summarized in the Figures below.
 
 \begin{figure}
-\includegraphics[width=\linewidth]{diskradius_najita07}
-\caption[Inner disk radii from CO line emission]{
-\label{fig:diskradius_najita07}
-The top panel shows inner truncation radii of disks as inferred from the maximum velocity of CO vibrational emission. For comparison, the bottom panel shows the radial distribution of the hot Jupiter expolanets known at the time \citep{najita07a}.
+\includegraphics[width=\linewidth]{omukai05a}
+\caption[Heating and cooling processes in primordial gas]{
+\label{fig:omukai05a}
+Results from a calculation of heating and cooling rates for processes operating in primordial gas of varying density, located at the center of a collapsing cloud; figure taken from \citet{omukai05a}. The processes included are heating by gravitational compression (black line), cooling by H$_2$ line (cyan) and continuum (solid blue) emission, cooling by HD emission (dot-dashed blue), and heating / cooling by collisional formation / dissociation of H$_2$ (dotted red). For each process, the value on the vertical axis indicates the rate of energy gain or less per unit mass per unit time.
 }
 \end{figure}
 
-For the sub-mm and radio, detections have mostly involved CO and its isotopologues. The main advantage of this data, as opposed to the dust continuum, is that we obtain kinematic information. This can then be used to determine whether the (usually) poorly-resolved objects we see in the continuum have a velocity structure consistent with Keplerian rotation.  Figure \ref{fig:diskvel_tobin12} shows an example. Note that higher velocity emission tends to come from closer to the star, exactly as would be expected for a Keplerian disk. Indeed, when one fits the data to Keplerian rotation curves, they are entirely consistent. The number of sources for which this analysis has been done is not large, but it is growing.
+\begin{figure}
+\includegraphics[width=\linewidth]{omukai05b}
+\caption[Density-temperature evolution in primordial gas]{
+\label{fig:omukai05b}
+Density-temperature evolution of gas at the center of a collapsing cloud; figure taken from \citet{omukai05a}. Black dashed and solid lines show the trajectory of gas in the density-temperature plane, for different metallicities from primordial ($[{\rm Z}/{\rm H}] = -\infty$) to Solar ($[{\rm Z}/{\rm H}] = 0$). Dotted lines show loci of constant Jeans mass, as indicated. The red dashed line shows the point in density-temperature space where the center of the gas cloud becomes optically thick to its own cooling radiation.
+}
+\end{figure}
+
+Gas enters a $\sim 10^6$ $M_\odot$ halo at $z\sim 20-30$, shocks and virializes at temperatures of thousands of K. The gas begins to form a trace amount of H$_2$ via the H$^{-}$ channel, typically no more than one H$_2$ per $\sim 10^3$ H atoms. This in turn allows the gas to cool via H$_2$ line emission. As the gas cools, its density rises to maintain approximate hydrostatic balance in the halo. This continues until the gas reaches a temperature of $\approx 200$ K, about half the temperature of the lowest-lying excited state of H$_2$; radiation by H$_2$ cannot easily cool the gas below this point, because gas at these temperatures is too cool for collisions to excite the $J=2$ state from which radiation occurs. Cooling is also slowed by critical density effects. At low densities, as gas first begins to cool in the halo, the cooling rate increases with density as $n^2$, because the density is below the H$_2$ critical density of $\approx 10^4$ cm$^{-3}$. Once the density exceeds this density, cooling slows. For this reason gas tends to linger at at a density of $n\sim 10^4$ cm$^{-3}$ and a temperature $T\sim 200$ K, leading to a phase known as the loitering phase of primordial star formation. During and after the loitering phase the density gradually rises as more gas cools and compresses the densest regions that have begun to collapse. The temperature gradually rises as well, because radiative emission is unable to keep up with heating from gravitational compression.
+
+This phase ends once the density reaches $\sim 10^8$ cm$^{-3}$. At this density, another H$_2$ formation channel appears: the three-body reaction
+\begin{equation}
+{\rm H} + {\rm H} + {\rm H} \rightarrow {\rm H}_2 + {\rm H}.
+\end{equation}
+The reaction overcomes the symmetry problem by a trick of timing. When two H atoms collide, they can temporarily form an excited compound system, but because they cannot radiate they soon separate and become unbound again. However, if while they are in this short-lived compound state they are hit by a \textit{third} hydrogen atom, they can give their excess energy to the third atom, which carries it away as kinetic energy, leaving bound H$_2$ behind. Because this process effectively requires a three-way collision, its rate varies with density as $n^3$, making it extremely density-sensitive. This is why it only becomes to be significant at densities $\sim 10^8$ cm$^{-3}$. Once the density reaches this point, however, this process rapidly increases the H$_2$ fraction from $\sim 10^{-3}$ to near unity. The exact thermal and density evolution during this phase is somewhat uncertain, as there are two competing processes. The increase in H$_2$ fraction dramatically increases the cooling rate. On the other hand, each H$_2$ formation event produces an H atom recoiling with $4.5$ eV of energy. This is quickly and efficiently thermalized, providing a strong heating source. However, once the density reaches $n\sim 10^{12}$ cm$^{-3}$, the gas must heat up fairly strongly, because the H$_2$ lines become optically thick, suppressing further radiative cooling. At this point the evolution becomes quite similar to that in present-day star formation, a topic that we defer to Chapter \ref{ch:protostar_form}.
+
+
+\section{The IMF of the First Stars}
+
+We have established that the formation of the first stars happens at characteristically much higher temperatures than the formation of present-day stars, due to the absence of cooling from metal lines. We therefore turn to the question of how this will affect the properties of the stars that result, in particular their IMF. This is a question of great importance for cosmic chemical evolution, since the nucleosynthetic yield of these first stars will depend strongly on their masses.
+
+\subsection{Fragmentation}
+
+\marginnote{In many ways the situation for primordial star formation is simpler than for the present-day case, and this is one of them: in Chapters \ref{ch:imf_th} and \ref{ch:massivestar}, we saw that radiative feedback from stars plays a critical role in regulating the temperature evolution of the gas, and thus in regulating how it fragments. For primordial star formation this effect is substantially less important because only photons that are capable of ionizing neutral hydrogen or of exciting the Lyman-Werner transitions of H$_2$ can be absorbed by the gas, and there is no dust to absorb the remaining photons and couple them to the gas. Thus radiative heating is much less important for primordial stars than for present-day ones, though ionizing photons can be important, as will be discussed in the next section.} The first question in addressing the IMF of primordial stars is how and whether the gas from which they form will fragment. Here we can bring to bear much of the same theoretical machinery we developed in Chapter \ref{ch:imf_th}. Recall that, for non-isothermal gas, we expect fragmentation to be particularly pronounced at densities and temperatures where the temperature has a minimum. Primordial gas is clearly far from isothermal as it evolves, and the most obvious minimum in Figure \ref{fig:omukai05b} is that associated with the loitering phase, at a temperature of $T\approx 200$ K and a density of $n\approx 10^4$ cm$^{-3}$, when H$_2$ cooling is suppressed because the gas is too cool to excite the $J=2$ rotational level, and because the gas is beginning to exceed the critical density of that transition. The Bonnor-Ebert mass at this density and temperature is
+\begin{equation}
+M_{\rm BE} = 1.18 \frac{c_s^3}{\sqrt{G^3\rho}} = 380\,M_\odot \left(\frac{T}{200\,\mathrm{K}}\right)^{3/2} \left(\frac{n}{10^4\,\mathrm{cm}^{-3}}\right)^{-1/2},
+\end{equation}
+where the numerical evaluation of the sound speed is for primordial gas which has a mass of $1.22m_{\rm H}=2.0\times 10^{-24}$ g per H nucleus. This high mass led most early authors working on the first stars to believe that they would be quite massive, typically more than 100 $M_\odot$.
+
+Subsequent work has muddied this picture, and the true IMF of the first stars is still subject to extensive theoretical debate. The key question is whether the ``protostellar core" produced during the loitering phase subsequently collapses monolithically or nearly so, or whether it fragments to much lower masses as it collapses. Fragmentation prior to the formation of a disk appears to be uncommon, but once a rotationally-supported accretion disk forms the situation changes, and becomes much more analogous the case of present-day massive stars discussed in in Chapter \ref{ch:massivestar}. The most commonly-seen outcome of fragmentation is formation of binaries with relatively large mass ratios \citep[e.g.,][]{stacy13a}. This would still leave the typical outcome of population III star formation extremely massive compared to the typical outcome of present-day star formation. On other hand, some simulations suggest that the disks fragment to produce small objects as well, some of which can be ejected via dynamical interactions \citep{clark11a, greif11a}; Figure \ref{fig:greif11a} shows an example. If this is the case, then, while some population III stars would be quite massive, others could be smaller than $1$ $M_\odot$. However, it is far from clear what the true IMF of the first stars might be, and the fact that we have never observed metal-free stars suggests that, very few or none were formed with masses small enough such that they might still be in existence today. This in itself implies that the mass function was shifted to considerably higher values than what we observe today.
 
 \begin{figure}
-\includegraphics[width=\linewidth]{diskvel_tobin12}
-\caption[$^{13}$CO channel maps of the disk in L1527]{
-\label{fig:diskvel_tobin12}
-Observed $^{13}$CO line emission from the disk in the core L1527. In each panel, grayscale shows dust continuum emission, white plus signs mark the location of the star, and the red and blue contours show the emission observed in the indicated velocity range. Black ovals show the observational beam, and red and blue arrows show the axis defined by an observed molecular outflow \citep{tobin12a}.
+\includegraphics[width=\linewidth]{popIIIfrag_greif11}
+\caption[Disk fragmentation around a primordial star]{
+\label{fig:greif11a}
+Results from a simulation of the formation of primordial stars by \citet{greif11a}, reproduced from their Figure 8. The images show the density in 2000 AU-sized regions in 5 different primordial halos, at a time 1000 years after formation of the first star in the simulation. Black dots, crosses, and stars indicate stars with masses $<1$ $M_\odot$, $1-3$ $M_\odot$, and $>3$ $M_\odot$, respectively.
 }
 \end{figure}
 
 
+\subsection{Feedback}
 
-\section{Observations of Outflows}
+While the IMF of primordial stars at low masses depends largely on fragmentation, the IMF at high masses may well be shaped by feedback processes. Here it is instructive to compare to the case of present-day massive star formation. The absence of dust capable of absorbing non-ionizing photons means that radiation pressure is a somewhat smaller concern, though not a completely negligible one, since for very massive stars a significant fraction of the momentum budget of their radiation fields emerges in photons with energies above the hydrogen ionization threshold. Similarly, massive primordials stars means that they will lack the fast radiatively-driven winds produced by present-day massive stars; such winds at driven by multiple resonant scattering of stellar photons off metal atoms in wind that have many closely-spaced levels, and primordial stars lack such atoms.
 
-\subsection{Outflows in the Optical}
-
-In addition to observing the disks themselves, we can observe the outflows that they drive. Outflows were first noticed in the 1950s based on optical observations by Herbig and Haro, working independently. The class of objects they discovered are known as Herbig-Haro, or HH, objects in their honor. HH objects were first seen as small patches of optical emission containing both continuum and a number of lines, most prominently H$\alpha$. The H$\alpha$ indicates the presence of ionization, but, unlike the large ionized regions generated by massive stars, where all species are highly ionized, HH objects also show signs of emission from neutral or weakly ionized species such as O~\textsc{i} and N~\textsc{ii}.
-
-The standard interpretation of this sort of ionization structure is that we are seeing a fast shock. The shocked material is ionized, producing H$\alpha$ emission as it recombines. Both upstream and downstream of the shock itself, however, there is neutral material that is warm, either because it has had a chance to recombine but not to cool (for the downstream gas) or because it has been pre-heated by radiation from the shock (for the upstream gas). This produces the neutral or weakly ionized emission lines.
-
-More sensitive measurements in the 1970s revealed that the bright emission knots Herbig and Haro saw are in fact connected by linear structures that also emit in optical, just with lower surface brightness. We can also see bow shocks at the heads of jets, where the plough into dense molecular gas (Figure \ref{fig:hhjet}).
-
-\begin{figure}
-\includegraphics[width=\linewidth]{hhjet}
-\caption[Herbig-Haro jets from \textit{HST}]{
-\label{fig:hhjet}
-Herbig-Haro jets imaged with the Hubble Space Telescope. Two jets are visible; one is at the tip of the ``pillar" near the top of the image, and another is near the edge of the structure in the middle-left part of the image. Bow shocks from the jets are clearly visible. Taken from \url{http://hubblesite.org/newscenter/archive/releases/2010/13/image/a/}.
-}
-\end{figure}
-
-Today our interpretation of the HH knots is that they are locations where the jet has either encountered a dense region of interstellar material, producing a strong shock and bright emission, or where some variation in the velocity or mass flux being launched into the jet has caused an internal shock. The weaker emission in between the knots is caused by the interaction of the jet with a lower density environment. One can also detect this component in radio free-free emission, produced by electrons in the jet plasma.
-
-The HH objects move fast enough to produce noticeable shifts in position and / or brightness over spans of $\sim 10$ years. The inferred velocities are typically hundreds of km s$^{-1}$. These velocities are also consistent with what we infer from Doppler shifts in cases where the jets is partly oriented toward us.
-
-An important point is that these HH jets are usually bipolar, meaning that there is a clear driving star at the base of two HH objects propagating in opposite directions. Sometimes the knots of emission are even mirror symmetric, suggesting that they are produced by variations in the outflow velocity or mass flux originating at the point where the jet is launched.
-
-Estimates of the density of the outflowing material based on models of the shocks suggest mass fluxes that range from $10^{-6}$ $\msun$ yr$^{-1}$ in class 0 sources, dropping to $10^{-8}-10^{-7}$ $\msun$ yr$^{-1}$ for classical T Tauri stars / class I sources. The inferred momentum flux is therefore of order $10^{-6}-10^{-3}$ $\msun$ km s$^{-1}$ yr$^{-1}$. These estimates are quite uncertainty however, since they are based on shock diagnostics, and tell us relatively little about the material in between the bright HH knots.
+On the other hand, photoionization feedback seems likely to work for primordial stars in much the same way as it does for present-day ones, with the exception that the initial conditions for star formation are quite different. Moreover, feedback from non-ionizing photons with energies in the range $\approx 11-13.6$ eV, i.e., where they can be absorbed in the H$_2$ Lyman-Werner bands, can be significant as well. Analytic models and simulations suggest that these mechanisms might be able to evaporate the disks around primordial stars, limiting their maximum masses to tens of $M_\odot$ \citep{mckee08a, hosokawa11b, stacy12a}. The problem remains very much under investigation, however.
 
 
-\subsection{Outflows in the Radio}
+\section{The Transition to Modern Star Formation}
 
-Optical and near-IR emission traces the regions where strong shocks heat the gas enough to excite transitions at these wavelengths. However, the jets of fast moving material only show the tip of the iceberg as far as the outflow is concerned. Observations in molecular lines reveal that narrow optical HH jets are accompanied by a much wider-angle, slower-moving, and more massive molecular outflow (Figure \ref{fig:molecular_outflow}).
+Not long after the first stars form, they will begin to change the environments around them, starting the process of transitioning to the modern mode of star formation that is the focus of the remainder of this book. The final topic in this chapter is how that transition happens.
 
-\begin{figure}
-\includegraphics[width=\linewidth]{molecular_outflow}
-\caption[A molecular outflow in HH111]{
-\label{fig:molecular_outflow}
-Color shows an \textit{HST} image of the jet HH111. The green contours superimposed show an outflow detected as emission in the CO $J=1\rightarrow 0$ line at a velocity of 6 km s$^{-1}$ relative to the bulk of the material in the region. The yellow star marks the position of the driving source. The outflow is $\approx 0.2$ pc long. \citep{mckee07a}. 
-}
-\end{figure}
+\subsection{Ionization Evolution}
 
-Molecular observations show large masses of molecular gas moving at $\sim 10$ km s$^{-1}$ -- the velocity is based on the Doppler shifts of the molecular lines used to observe the outflow. Again, we generally see a bipolar morphology. Depending on the outflow direction, this can consist of two lobes pointing in opposite directions on the sky, two lobes in the same position on the sky but with distinct red- and blue-shifted components, or some combination of the two.
+The first way that a transition away from population III star formation can occur is for the metal-free gas entering a halo to have a significantly higher abundance of electrons than the very low values expected to be be left over from the epoch of recombination. If this occurs, H$_2$ formation will occur significantly faster, the gas will cool earlier, and fragmentation to lower masses is much more likely. Stars resulting from this process are referred to as population III.2, while those formed in the truly primordial mode described above are referred to as population III.1.
 
-Despite their lower velocities, these wind components actually contain the bulk of the outflow momentum, typically $10^{-4}-10^{-1}$ $\msun$ km s$^{-1}$ yr$^{-1}$, depending on the luminosity of the driving source. The molecular outflows are thought to consist primarily not of material ejected directly by the launching mechanism, but of ambient gas that has been swept up by this gas as it flows outward. The interaction is via shocks that can radiate, so energy is not conserved, but momentum is. This entrainment explains why the velocities of this material are so low compared to the material in the jets.
+An enhanced electron abundance could happen in several ways. One is for star formation to take place in gas that has already been photoionized by a population III.1 star. This seems unlikely while the population III.1 star is still shining, since its would likely heat the ionized gas to temperatures sufficient to prevent star formation. If the population III.1 star then explodes as a supernova this will pollute the gas with metals, leading to a population II star, as we discuss below. On the other hand, if the population III.1 star instead collapses directly to a black hole, without dispersing any metals, then any gas remaining in its halo would be ripe for population III.2 star formation.
+
+\subsection{Chemical Evolution}
+\label{ssec:chemevol}
+
+Once a population III.1 or III.2 star explodes as a supernova, it disperses metals into the surrounding ISM, triggering a transition from population III to population II star formation. An outstanding question in this field is what level of metal enrichment is sufficient to produce this transition. Observationally, as of this writing, the most carbon-poor known star has a carbon abundance $\approx 4.5 \times 10^{-5}$ times that of the Sun \citep{caffau11a}, while the most iron-poor contains $<10^{-7}$ of the Solar iron abundance \citep{keller14a}. That both stars continue to exist today implies that it must be possible to from stars with masses well under $1$ $M_\odot$ with such low chemical abundances. In discussing this, it is helpful to consider two roles that metals have played in our discussion thus far. First, metals in the gas phase provide an important coolant for the ISM, allowing gas to cool on less than a dynamical timescale. Second, metals in the form of dust grains provide cooling at high densities where the dust and gas become collisionally-coupled, and also provide surfaces to catalyze chemical reactions, particularly H$_2$ formation.
+
+\paragraph{Metal Line Cooling}
+
+The distinguishing characteristic of modern star formation is the ability of star-forming gas to cool much faster than a dynamical time. Metal line cooling becomes significant when there are enough metals to make this possible, at which point they supplant H$_2$ cooling and trigger a transition to a more modern star formation mode. We can analytically estimate the metallicity required to achieve this, following the original calculation by \citet{bromm01a}, by comparing the rate of metal line cooling to the rate of heating due to adiabatic compression that we expect for baryons at the center of a virialized dark matter halo.
+
+Let $e$ be the thermal energy per unit mass of a particular gas parcel, and let $\Gamma$ and $\Lambda$ be the rates of change in $e$ due to heating and cooling processes, i.e.
+\begin{equation}
+\frac{de}{dt} = \Gamma - \Lambda.
+\end{equation}
+As the gas collapses it will heat up due to adiabatic compression. The first law of thermodynamics tells us that the heating rate due to this process is
+\begin{equation}
+\label{eq:gamma_ad}
+\Gamma = -p \frac{d}{dt}\left(\frac{1}{\rho}\right),
+\end{equation}
+where $\rho$ and $p=\rho c_s^2$ are the gas density and pressure, and $c_s$ is the isothermal sound speed. Since $1/\rho$ is the specific volume, meaning the volume per unit mass occupied by the gas, this term is just $p\,dV$, the work done on the gas in compressing it. If the gas is collapsing in free-fall, the compression time scale is about the free-fall timescale $t_{\rm ff} = \sqrt{3\pi/32G\rho}$, so we expect
+\begin{equation}
+\Gamma \approx k_B T \sqrt{\frac{32 G n}{3\pi \mu m_{\rm H}}},
+\end{equation}
+where $n$ is the number density of H nuclei and $\mu$ is the mean mass per H nucleus in units of $m_{\rm H}$; for near-primordial composition $\mu = 1.22$.
+
+We must compare this to the rate of cooling due to metal lines. In the very metal-poor gas with which we are concerned we do not expect appreciable numbers of molecules to form (due to both absence of dust shielding and the long timescales required for chemical reactions when the constituent atoms are scarce), and we must therefore consider cooling via atomic lines. The two most important cooling species are C$^+$ and O.\footnote{Recall from Section \ref{ssec:cochemistry} that carbon is primarily ionized under interstellar conditions because its ionization potential is smaller than that of hydrogen; in contrast, O has a higher ionization potential than H, and is largely neutral.} The former provides cooling mainly through its $158$ $\mu$m fine structure line, while the latter cools via a pair of lines at 63 and 145 $\mu$m. These transitions are generally optically thin, and their critical densities are high enough that we can treat them as being in the low-density limit. Recalling the discussion in Section \ref{ssec:molecular_lines}, and in particular Equation \ref{eq:cool_lowden}, the rate of cooling per unit mass in this limit can be written as
+\begin{equation}
+\Lambda = \frac{1}{\rho}n_X E A e^{-E/kT} \frac{n}{n_{\rm crit}} = \frac{n_X E k_{u\ell}}{\mu m_{\rm H}} e^{-E/k_B T},
+\end{equation}
+where here $n_X$ is the number density of the cooling species (either C$^+$ or O), $n$ is the number density of the primary collision partner (atomic hydrogen), $E$ is the energy of the cooling level, $A$ is the Einstein $A$ for the transition, $k_{u\ell}$ is the collisional de-excitation rate from the upper to the lower level, and $T$ is the temperature. Note that, in the second equality, the value of the Einstein coefficient and the number density of H have both dropped out. This is as we should expect: at low densities, cooling occurs when a hydrogen atom collides with a metal atom and excites it; the metal atom then radiates long before its next collision. Consequently, the cooling rate does not depend on exactly how long the metal atom takes to radiate (the Einstein $A$ coefficient), only on the timescale between H atoms colliding with other atoms (hence the dependence on $n_X$ but not on $n$), the collisional excitation probability (the factor $k_{u\ell} e^{-E/k_B T}$), and the energy lost per excitation ($E$).
+
+For the lines with which we are concerned, $E/k_B = 91$ K, 228 K, and 327 K for the C$^+$ 158 $\mu$m, O 63 $\mu$m, and O 145 $\mu$m lines, respectively. The corresponding collisional de-excitation rate coefficients for collisions with H are $k_{u\ell}\approx 8\times 10^{-10}$, $5\times 10^{-10}$, and $7\times 10^{-10}$ cm$^3$ s$^{-1}$ at temperatures $\sim 1000$ K.\footnote{These rate coefficients are taken from the \href{http://home.strw.leidenuniv.nl/~moldata/}{Leiden Atomic and Molecular Database} -- \citet{schoier05a}; original data are from \citet{launay77a} and \citet{barinovs05a} for C$^+$, and from \citet{abrahamsson07a} for O.} For simplicity, let us assume that the C and O abundances are simply given by their Milky Way values scaled by a metallicity factor; specifically, we can take $n_{\rm C}/n = 2\times 10^{-4} Z'$ and $n_{\rm O}/n = 4\times 10^{-4} Z'$, where $Z'$ is the metallicity normalized to Solar. Finally, let us adopt a temperature $T \gg 300$ K, so that we can treat the $e^{-E/kT}$ factors for all three lines as unity; this isn't strictly true, but for a rough estimate it is sufficient. Under these assumptions, and plugging in the quantities given above, we can write the cooling rate as
+\begin{equation}
+\Lambda = \Lambda_0 n Z',
+\end{equation}
+with $\Lambda_0 \approx 0.01$ erg cm$^3$ g$^{-1}$ s$^{-1}$.
+
+Equating the heating rate $\Gamma$ and the cooling rate $\Lambda$, we find that metal-induced radiative cooling is able to match heating when
+\begin{equation}
+Z' = \frac{k_B T}{\Lambda_0} \sqrt{\frac{32 G}{3\pi \mu m_{\rm H} n}} = 4.5\times 10^{-4} \left(\frac{T}{1000\,\mathrm{K}}\right)\left(\frac{n}{100\,\mathrm{cm}^{-3}}\right)^{-1/2}.
+\end{equation}
+For the numerical evaluation we have plugged in typical densities and temperatures near the centers of virialized halos with mass $\sim 10^6$ $M_\odot$. Thus we expect that metal line cooling will become significant above metallicities of $Z'\sim 10^{-3.5}$.
+
+
+\paragraph{Dust Effects}
+
+The second channel through which metals affect the behavior of interstellar gas is by forming dust grains, which can serve as both radiators and chemical catalysts for the formation of molecules, particularly H$_2$. We defer the question of when dust becomes important as a catalyst to the next problem set, and here focus on the role of dust as a radiator. Dust is particularly important in this role because dust grains, as solid particles, can radiate continuum radiation rather than being limited to emission at particular frequencies. This makes them much more efficient than gas at coupling to a radiation field, either via emission or absorption. In our discussion of the IMF in Chapters \ref{ch:imf_th} and \ref{ch:massivestar}, we focused on the latter effect, but before star formation begins in a region and produces a significant radiation field to absorb, the former effect is more important. Dust provides a potential mechanism to cool interstellar gas far beyond what would be possible with either H$_2$ or atomic line emission.
+
+Because dust is such an efficient radiator, the bottleneck in dust cooling of the gas is usually the rate at which energy can be transmitted from the gas to the dust via collisions, not the rate at which dust can radiate it (though this can cease to be true if the dust becomes optically thick.) The grain-gas transfer rate in turn is limited by the total cross sectional area of dust grains available for collision. Since collisions are fastest when the density is high, we will focus on a high density regime when the gas has been fully converted to H$_2$, if only by three-body reactions occurring in the gas phase. To compute when dust cooling becomes important, let us consider a simplified problem\footnote{A more complete treatment of this problem may be found in \citet{schneider06a} and \citet{schneider12a}.}: suppose that we have a population of spherical dust grains with radius $a$, floating in a sea of hydrogen molecules with temperature $T$ and number density $n$. Since the velocities are grains are generally much smaller than those of individual hydrogen atoms, we can consider the grains at rest. We expect the rate at which hydrogen atoms strike a single dust grain to be of order $n\sigma v$, where $\sigma \approx \pi a^2$ is the grain cross section and $v\approx \sqrt{kT/\mu m_{\rm H}}$ is the thermal velocity of the particles; for fully-molecular gas of primordial composition, $\mu \approx 2.3$. Detailed integration over a Maxwellian distribution of gas velocities \citep{draine11a} gives a collision rate
+\begin{equation}
+\mbox{collision rate / grain} = n \sqrt{\frac{8 k_B T}{\pi \mu m_{\rm H}}} \pi a^2,
+\end{equation}
+in line with this expectation.
+
+The rate of collisions per unit gas mass is simply this multiplied by the number of dust grains per unit total (gas plus dust) mass. Let $m_{\rm gr}$ be the mass per grain, and let $\mathcal{D}$ be the ratio of dust mass to gas mass density, i.e., for every 1 g of gas, there are $\mathcal{D}$ g of dust present. Thus the rate of grain-gas collisions per unit mass is given by
+\begin{equation}
+\mbox{collision rate / mass} =  n \sqrt{\frac{8 k_B T}{\pi \mu m_{\rm H}}} \pi a^2 \left(\frac{\mathcal{D}}{m_{\rm gr}}\right)
+\equiv n \mathcal{D} \sqrt{\frac{8 k_B T}{\pi \mu m_{\rm H}}} \mathcal{S}
+\end{equation}
+where we have defined the quantity $\mathcal{S} = \pi a^2/m_{\rm gr}$ as the dust cross section per unit dust mass, which is a function only of the grains themselves (their density, composition, geometry, etc.) and not of their abundance. The value of $\mathcal{S}$ is quite uncertain; we have a reasonable estimate of it for present-day interstellar dust, but it is likely to be quite different for the case relevant for the population III to population II transition, because at such early times any grains present are probably those that have condensed directly out of supernova ejecta, rather than the mix of grains produced by supernovae, AGB and red giant stars, and \textit{in situ} processing in the interstellar medium that exists in the present-day Universe. \citet{schneider12a} suggests values $\mathcal{S} \sim 10^5$ cm$^2$ g$^{-1}$, but this should be taken with considerable caution.
+
+The rate of energy transfer should be proportional to this rate times the mean energy transfer per collision. Again integrating over a Maxwellian distribution of hydrogen atom velocities, the mean energy per hydrogen atom striking the grain is $2k_B T.$\footnote{The value $2k_B T$ is slightly higher than the canonical $(3/2) k_B T$ per particle in a Maxwellian distribution because faster-moving hydrogen atoms are more likely to collide with a grain, and thus the average kinetic energy of colliding particles is slightly higher than the average kinetic energy of all particles.}  If grain-gas collisions were perfectly elastic then there would be no energy transfer between the two, and if it were perfectly inelastic then the net energy transfer would be $2k_B T$ in the limit where the dust temperature $T_d \ll T$. We interpolate between these two extremes by writing the mean energy transfer per dust-gas collision as
+\begin{equation}
+\left\langle\Delta E\right\rangle = 2\alpha k_B (T - T_d),
+\end{equation}
+where $\alpha = 0$ corresponds to perfect elasticity, $\alpha=1$ to perfect inelasticity, and we have written the temperature dependence as proportional to $T-T_d$ to properly capture the effect that energy should flow from gas to trains for $T > T_d$ and from grains to gas for $T < T_d$, and that there should be no net energy transfer if $T=T_d$. The quantity $\alpha$ is known as the accommodation coefficient, and laboratory measurements and theoretical calculations suggest that it is of order $\sim 0.5$.
+
+Putting this together, the rate of energy transfer from gas to grains per unit gas mass, and thus the rate of dust cooling, will be given by
+\begin{equation}
+\Lambda = 2 \alpha n \mathcal{D} \mathcal{S} \sqrt{\frac{8 k_B T}{\pi \mu m_{\rm H}}} k_B (T-T_d).
+\end{equation}
+If we now equate this cooling rate with the heating rate derived above (equation \ref{eq:gamma_ad}), we find that they become equal at a dust-to-gas ratio
+\begin{equation}
+\mathcal{D} = \frac{1}{\alpha \mathcal{S}} \sqrt{\frac{G}{3 n k_B T}}
+\end{equation}
+where for simplicity we have assumed $T \gg T_d$.
+
+For dust cooling to be effective, it must kick in before the system becomes completely optically thick at a density $n\sim 10^{12}$ cm$^{-3}$. Thus to get the minimum value of $\mathcal{D}$ for which dust cooling matters, we will use this value of $n$. Consulting the zero-metallicity case shown in Figure \ref{fig:omukai05b}, the temperature at this density range is $T\sim 1000$ K. Plugging in these values, along with the fiducial values of $\alpha$ and $\mathcal{S}$ discussed above, we have
+\begin{equation}
+\mathcal{D} \approx 8\times 10^{-9}\left(\frac{0.5}{\alpha}\right)
+\left(\frac{10^5\mbox{ cm}^2\mbox{ g}^{-1}}{\mathcal{S}}\right)
+\left(\frac{n}{10^{12}\mbox{ cm}^{-3}}\right)^{-1/2} \left(\frac{T}{1000\mbox{ K}}\right)^{-1/2},
+\end{equation}
+or about $10^6$ times smaller than the Solar neighborhood value $\mathcal{D} \approx 0.01$. A further complication in making use of this value is that this estimate is phrased in terms of the dust to gas ratio, but we have little idea how to translate this into a metallicity, which is the quantity that we can measure in surviving stars. The dust-to-metals ratio in the present-day Universe is a result of a competition between grain production in supernovae and evolved stars and grain destruction (and possibly also grain growth) in the interstellar medium. It is observed to be roughly constant down to metallicities of $\sim 10\%$ of Solar, but to fall below unity below that \citep{remy-ruyer14a}. At the time of the transition from primordial to modern star formation, supernovae will have occurred, but it is not clear which other processes might have, and there is no observational guidance to be had.
+
 

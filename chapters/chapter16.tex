@@ -1,479 +1,222 @@
-\chapter{Protostellar Disks and Outflows: Theory}
-\label{ch:disks_theory}
+\chapter{Protostellar Disks and Outflows: Observations}
+\label{ch:disks_obs}
 
 \marginnote{
 \textbf{Suggested background reading:}
 \begin{itemize}
-\item \href{http://adsabs.harvard.edu/abs/2014prpl.conf..173L}{Li, Z.-Y., et al. 2014, in ``Protostars and Planets VI", ed.~H.~Beuther et al., pp.~173-194}, sections 3-6 \nocite{li14a}
+\item \href{http://adsabs.harvard.edu/abs/2014prpl.conf..173L}{Li, Z.-Y., et al. 2014, in ``Protostars and Planets VI", ed.~H.~Beuther et al., pp.~173-194}, sections 1-2 \nocite{li14a}
 \end{itemize}
 \textbf{Suggested literature:}
 \begin{itemize}
-\item \href{http://adsabs.harvard.edu/abs/2013MNRAS.432.3320S}{Seifried, D., et al., 2013, MNRAS, 432, 3320} \nocite{seifried13a}
+\item \href{http://adsabs.harvard.edu/abs/2012Natur.492...83T}{Tobin et al., 2012, Nature, 492, 83} \nocite{tobin12a}
 \end{itemize}
 }
 
-The previous chapter introduced observations of protostellar disks and their outflows. This companion chapter reviews theoretical models of such disks, with particular attention to how they form, why they accrete, and why they launch outflows.
+We now zoom in even further on the star formation process, and examine the dominant circumstellar structures found around young stars: accretion disks. We will spend two chapters on this subject. In the first we will discuss the observational phenomenology of disks, including the outflows they generate. There are a wide range of observational techniques for studying the properties of disks around young stars, and we will certainly not exhaust the list here. We will focus on a few of the most widely used methods, and develop an understanding of how they work and what we can learn from them.
 
-\section{Disk Formation}
+\section{Observing Disks}
 
-\subsection{The Angular Momentum of Protostellar Cores}
+\subsection{Dust at Optical Wavelengths}
 
-To understand why disks form, we must start with the question of angular momentum. Stars form from protostellar cores, so we begin our study with the question of how much angular momentum cores typically contain. To determine this observationally, one maps a core in an optically thin tracer and measures the mean velocity on every line of sight through the core. If there is a systematic gradient in the mean velocity, that is indicative of some net rotation. Doing this for a sample of cores yields a distribution of rotation rates.
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{proplyds1}
+\includegraphics[width=\linewidth]{proplyds2}
+%\includegraphics[width=\linewidth]{proplyds3}
+\caption[Protostellar disks in absorption in the ONC]{
+\label{fig:proplyds}
+Two disks in the Orion Nebula seen in absorption against the nebula using \textit{HST}. Taken from \url{http://hubblesite.org/newscenter/archive/releases/1995/45/image/g/}.
+}
+\end{marginfigure}
 
-It is most convenient to express the resulting distribution dimensionlessly, in terms of the ratio of kinetic energy in rotation to gravitational binding energy. If the angular velocity of the rotation is $\Omega$ and the moment of inertia of the core is $I$, this is
+The first idea that might occur to an astronomer who wants to study disks would be to work in the optical. The main challenge to that is that for the most part disks do not emit optical light, because they are too cool. This leaves only a couple of options in the optical. One is that we can detect the disk in scattered starlight. This is very hard, because the light is very faint, and the geometry has to be just right. Polarization can help in this case, since the scatter light will be polarized. There are a few examples of this.
+
+The other possibility for the optical is to work in absorption. This requires a bright, extended background source against which the disk can be detected in silhouette. Fortunately, massive young stars produce H~\textsc{ii} regions, which are bright diffuse sources, and can provide a nice backlight for absorption work. The most spectacular examples of this technique are in the Orion Nebula, as illustrated in Figure \ref{fig:proplyds}.
+
+In this case, since we are working in optical, we get excellent spatial resolution. The disks we see in this case are typically hundreds of AU in size. In such images we can also see very clearly that protostellar jets are launched perpendicular to the disks, confirmed the central role of disks in producing them, as we will discuss shortly.
+
+While the optical offers spectacular pictures, its restriction to the cases where we have favorable geometry, a nice backlight, or some combination of the two limits its usefulness as a general tool for studying disks. A further complication is that optical only lets us study disks once their parent cores, which are optically thick at optical wavelengths, have dissipated. This limits optical techniques to studying the later stages of disk evolution.
+
+
+\subsection{Dust Emission in the Infrared and Sub-mm}
+
+A much more broadly used technique is to detect the dust in a disk in the infrared or sub-mm. As discussed in Chapter \ref{ch:obsstars}, young stars often show significantly more IR and sub-mm emission that would be expected from a bare stellar photosphere. The natural candidate for producing this emission is warm dust grains near the star. The fact that we see the stellar photosphere at all, and that it is not hugely reddened, implies that the grains cannot be in any sort of shell or spherical distribution. A disk is the natural candidate geometry.
+
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{HLTau_nrao}
+\caption[ALMA image of the disk around HL Tau]{
+\label{fig:hltau_nrao}
+An ALMA image of the disk around the young star HL Tau. The image shows dust continuum emission. Image from \url{https://public.nrao.edu/static/pr/planet-formation-alma.html}.
+}
+\end{marginfigure}
+
+In some cases we can spatially resolve a disk in IR or sub-mm observations (Figure \ref{fig:hltau_nrao}), and in some cases the disks are unresolved. In either case, in order to interpret these images, we need to think a bit about which parts of the disk we expect to see at which wavelengths. Consider a geometrically thin disk of material of surface density $\Sigma(\varpi)$ and temperature $T(\varpi)$ beginning at a radius $\varpi_0$ around the star and extending out to radius $\varpi_1$. The dust has opacity $\kappa_\lambda$ at wavelength $\lambda$. The entire disk is inclined relative to our line of sight at angle $\theta$. The flux we receive from the disk at wavelength $\lambda$ is
 \begin{equation}
-\beta = \frac{(1/2)I\Omega^2}{a G M^2/R},
+F_{\lambda} = \int I_{\lambda}\, d\Omega,
 \end{equation}
-where $a$ is our usual numerical factor that depends on the mass distribution. For a sphere of uniform density $\rho$, we get
+where $I_{\lambda}$ is the intensity emitted by a portion of the disk at wavelength $\lambda$, and the integral goes over the solid angle $\Omega$ occupied by the disk.
+
+To evaluate this, note the ring of material at radius $\varpi$ has an area $2\pi \varpi \,d\varpi$. It is inclined relative to the line of sight by $\theta$, however, so its projected area is $2\pi \varpi \cos\theta\, d\varpi$. The case $\theta=0$ corresponds to the ring being seen perfectly face-on, and the case $\theta=1$ corresponds to perfectly edge-on, and gives 0 in the limit of an infinitely thin disk. This is the projected area, and to covert this to a projected solid angle we divide by $D^2$, where $D$ is the distance to the disk. Thus the flux is
 \begin{equation}
-\beta = \frac{1}{4\pi G \rho}\Omega^2 = \frac{\Omega^2 R^3}{3 G M}
+F_{\lambda} = \frac{2\pi \cos\theta}{D^2} \int_{\varpi_0}^{\varpi_1} I_\lambda(\varpi) \varpi\, d\varpi.
 \end{equation}
-Thus we can estimate $\beta$ simply given the density of a core and its measured velocity gradient. Observed values of $\beta$ typically a few percent \citep[e.g.,][]{goodman93a}.
 
-This implies that cores are not primarily supported by rotation. In fact, we can understand the observed rotation rates as being a property of the turbulence. Although cores are primarily thermally-supported, they do still have some turbulent motions present at transsonic or subsonic levels. Since most of the power in this turbulence is on large scales, there is likely to be a net gradient. When one performs the experiment of generating random turbulent velocity fields with a variety of power spectra and analyzing them as an observer would, the result is a $\beta$ distribution that agrees very well with the observed one \citep{burkert00a}.
-
-\subsection{Rotating Collapse: the Hydrodynamic Case}
-
-Given this small amount of rotation, how can we expect it to affect the collapse? Let us take the simplest case of a cloud in solid body rotation at a rate $\Omega$. Consider a fluid element that is initially at some distance $r_0$ from the axis of rotation. We will consider it to be in the equatorial plane, since fluid elements at equal radius above the plane have less angular momentum, and thus will fall into smaller radii.
-
-Its initial angular momentum in the direction along the rotation axis is $j=r_0^2\Omega$. If pressure forces are insignificant for this fluid element, it will travel ballistically, and its specific angular momentum and energy will remain constant as it travels. At its closest approach to the central star plus disk, its radius is $r_{\rm min}$ and by conservation of energy its velocity is $v_{\rm max} = \sqrt{2 G M_*/r_{\rm min}}$, where $M_*$ is the mass of the star plus the disk material interior to this fluid element's position.
-Conservation of angular momentum them implies that $j=r_{\rm min} v_{\rm max}$.
-
-Combining these two equations for the two unknowns $r_{\rm min}$ and $v_{\rm max}$, we have
+To make further progress we must specify the intensity, which is a function of $\Sigma$ and $T$. The optical depth of the disk will be
 \begin{equation}
-r_{\rm min} = \frac{r_0^4 \Omega^2}{G M_*} = \frac{4\pi \rho \beta r_0^4}{M_*},
+\tau_{\lambda} = \frac{\kappa_{\lambda}\Sigma}{\cos\theta}
 \end{equation}
-where we have substituted in for $\Omega^2$ in terms of $\beta$. This tells us the radius at which infalling material must go into a disk because conservation of angular momentum and energy will not let it get any closer.
-
-We can equate the stellar mass $M_*$ with the mass that started off interior to this fluid element's position -- this amounts to assuming that the collapse is perfectly inside-out, and that the mass that collapses before this fluid element's all makes it onto the star. If we make this approximation, then $M_*=(4/3)\pi \rho r_0^3$, and we get
+Note that the inclination factor $\cos\theta$ appears on the bottom here, as it should: for $\theta=0$, face-on, we just get the ordinary surface density, but that gets boosted as we incline the disk. The intensity produced by a slab of material of uniform temperature $T$ and optical depth $\tau_{\lambda}$ is
 \begin{equation}
-r_{\rm min} = 3 \beta r_0,
+I_{\lambda} = B_{\lambda}(T) \left(1-e^{-\tau_{\lambda}}\right),
 \end{equation}
-i.e., the radius at which the fluid element settles into a disk is simply proportional to $\beta$ times a numerical factor of order unity.
-
-We shouldn't take the factor too seriously, since of course real clouds aren't uniform spheres in solid body rotation, but the result that rotation starts to influence collapse and force disk formation at a radius that is a few percent of the core radius is interesting. It implies that for cores that are $\sim 0.1$ pc in size and have $\beta$ values typical of what is observed, they should start to become rotationally flattened at radii of several hundred AU. This should be the typical size scale of protostellar disks in the hydrodynamic regime.
-
-\subsection{Rotating Collapse: the Magnetohydrodynamic Case}
-
-Magnetic fields can greatly complicate this picture, due to magnetic braking. As a core contracts, rotation wants to spin it up, but this in turn twists up the magnetic field. This creates a tension force that opposes the rotation rate, and tries to keep the core rotating as a solid body.
-
-To analyze this effect, let us work in cylindrical coordinates $(\varpi, \phi, z)$. Consider a fluid element in a disk at a distance $\varpi$ from the star, whose dimensions are $d\varpi$, $d\phi$, $dz$ in the $\varpi$, $\phi$, and $z$ directions. The fluid element is rotating around the star with a velocity $v_{\phi}$ in the $\phi$ direction. The fluid element is threaded by a magnetic field $\vecB=(B_\varpi, B_\phi, B_z)$. For future convenience we define the poloidal component of the field to be
+where $B_{\lambda}(T)$ is the Planck function. Plugging this in, we have
 \begin{equation}
-\vecB_p = (B_\varpi, B_z),
+F_{\lambda} = \frac{2\pi \cos\theta}{D^2} \int_{\varpi_0}^{\varpi_1} B_{\lambda}(T) \left[1-\exp\left(-\frac{\kappa_{\lambda}\Sigma}{\cos\theta}\right)\right] \varpi\, d\varpi.
 \end{equation}
-i.e., it is the component of the field not associated with wrapping around the rotation axis. The $\phi$ component of the field is called the toroidal component, since it represents the part of the field that is wrapped in the rotation direction. If you draws a two-dimensional plot of the system in the $(\varpi, z)$-plane, the poloidal component is the one on the page, and the toroidal component is the one going into or out of the page.
 
-We will assume that both the fluid and the magnetic field are axisymmetric, so that they do not vary with $\phi$, although the field does have a $\phi$ component. The magnetic field exerts a Lorentz force per unit volume on the fluid element, given by
+For a given disk model it is clearly straightforward to evaluate this integral to obtain the emitted flux. However, the model is underspecified, in the sense that we are fitting only one function, $F_{\lambda}$, and we have two free-functions to use: $T(\varpi)$ and $\Sigma(\varpi)$. This is even if we assume that the opacity is known, which we will see is not a great assumption.
+
+In order to deduce things like $\Sigma$ and $T$ we need to have a physical model of how the disk behaves, and to deduce either $\Sigma$, $T$, or a relationship between them in order to obtain strong constraints on either one from an observed SED. In general such models can be quite complicated, because the disk's temperature distribution depends on both internal heating via viscous dissipation, and external illumination due to the star. Problem set 4 contains a problem in whuch such a model is developed. Even without such a sophisticated model, however, it is possible to learn very interesting things simply from the behavior of the flux in certain limits.
+
+\paragraph{The optically thick limit.}
+
+First, suppose that the disk is optically thick at some wavelength, i.e.\ $\tau_{\lambda} = \kappa_{\lambda}\Sigma/\cos\theta \gg 1$. This is likely to be true for shorter (e.g.\ near-IR) wavelengths, where the opacity is high, and where most emission is coming form close to the star where the surface density is highest. In this case it is reasonable to set the exponential factor to 0, and we are simply left with the integral of the Planck function of the disk temperature over radius.
+
+Note that in this limit $\Sigma$ drops out, which makes intuitive sense: if the disk is optically thick then we only get to see its surface, and adding or removing material beneath this surface won't change the amount of light we see. Substituting in the Planck function, in the optically thick case we now have
+\begin{equation}
+F_{\lambda} = \frac{4\pi\cos\theta}{D^2} \frac{hc^2}{\lambda^5} \int_{\varpi_0}^{\varpi_1} \frac{\varpi}{\exp[hc/(k_B T)]-1}\,d\varpi.
+\end{equation}
+
+If we further assume that the temperature varies with radius as a powerlaw, $T=T_0(\varpi/\varpi_0)^{-q}$, then we can evaluate the integral via the substitution
+\begin{equation}
+x=\left(\frac{hc}{\lambda k_B T_0}\right)^{1/q} \frac{\varpi}{\varpi_0},
+\end{equation}
+which gives
 \begin{eqnarray}
-\mathbf{f} & = & \frac{1}{4\pi} \left[(\nabla\times\vecB)\times \vecB\right] \\
-& = & \frac{1}{4\pi} \left[\frac{B_\varpi}{\varpi} \frac{\partial(\varpi B_\phi)}{\partial \varpi} + B_z  \frac{\partial B_\phi}{\partial z}\right] \hat{\phi}\\
-& = & \frac{1}{4\pi\varpi} \vecB_p \cdot \nabla_p (\varpi B_{\phi}) \hat{\phi},
+F_{\lambda} & = & 
+\frac{4\pi \cos\theta}{D^2} \frac{hc^2}{\lambda^5} \left(\frac{\varpi_0}{x_0}\right)^2 \int_{x_0}^{x_1} \frac{x}{\exp(x^q)-1}\,dx \\
+& = & 
+\frac{4\pi \cos\theta}{D^2} \frac{hc^2}{\lambda^5} \left(\frac{hc}{\lambda k_B \varpi_0^q T_0}\right)^{-2/q} \int_{x_0}^{x_1} \frac{x}{\exp(x^q)-1}\,dx,
 \end{eqnarray}
-where all the components except the $\phi$ one vanish by symmetry, and in the final step we have defined the poloidal gradient as $\nabla_p = (\partial/\partial\varpi, \partial/\partial z)$, i.e., it is just the components of the gradient in the $\varpi$ and $z$ directions.
+and $x_0$ and $x_1$ are obtained by plugging $\varpi_0$ and $\varpi_1$ into the expression for $x$.
 
-The rate of change of the momentum associated with the Lorentz force alone is
+If we look at the part of the SED where emission is dominated neither by the inner edge of the disk nor the outer optically thin parts, which will be the case over most of the IR, then we can set $x_0\approx 0$ and $x_1\approx \infty$ in the integral. In this case the integral is simply a numerical function of $q$ alone. Since the integral then does not depend on the wavelength, our expression for $F_{\lambda}$ immediately tells us the wavelength-dependence of the emission:
 \begin{equation}
-\frac{\partial}{\partial t}(\rho \vecv) = \mathbf{f},
-\end{equation}
-so writing down the $\phi$ component of this equation and multiplying on both sides by $\varpi$, we have
-\begin{equation}
-\frac{\partial}{\partial t} (\rho v_{\phi} \varpi) = \frac{1}{4\pi} \vecB_p\cdot\nabla_p(\varpi B_\phi)
-\end{equation}
-The left hand side of this equation just represents the time rate of change of the angular momentum per unit volume $\rho v_{\phi} \varpi$, while the right hand side represents the torque per unit volume exerted by the field.
-
-Given this equation, how quickly can a magnetic field stop rotation? We can define a magnetic braking time by
-\begin{equation}
-t_{\rm br} = \frac{\rho v_{\phi} \varpi}{\frac{\partial}{\partial t} (\rho v_{\phi} \varpi)}
-= \frac{4 \pi \rho v_{\phi} \varpi}{\vecB_p \cdot\nabla_p (\varpi B_\phi)}
-\end{equation}
-To evaluate this timescale, consider the case of a fluid elements that is part of a collapsing cloud, and is trying to rotate at a velocity $v_{\phi}$ equal to the Keplerian velocity, i.e.,
-\begin{equation}
-v_{\phi} = \sqrt{\frac{GM}{\varpi}},
-\end{equation}
-where $M$ is the mass interior to the fluid element.
-
-If we started with a uniform cloud of density $\rho$, the mass interior to our element is $M\approx (4\pi/3) \rho \varpi^3$, so $v_\phi \approx \sqrt{(4\pi/3) G \rho \varpi^2}$. Plugging this into the timescale, we get
-\begin{equation}
-t_{\rm br} \approx \frac{(4\pi \rho)^{3/2} G^{1/2} \varpi^2}{\vecB_p \cdot\nabla_p (\varpi B_\phi)}
+\lambda F_{\lambda} \propto \lambda^{(2-4q)/q}.
 \end{equation}
 
-To see what this at the order of magnitude level, let us suppose that the poloidal and toroidal components of the field are comparable, and that the characteristic length scale on which the field varies is $\varpi$, i.e.\ the field is fairly smooth on all scales smaller than the size of the region that is currently collapsing. In this case $\vecB_p \cdot \nabla_p (\varpi B_\phi) \sim B^2$, so the time scale we wind up with is
-\begin{eqnarray}
-t_{\rm br} & \sim & \frac{G^{1/2}\rho^{3/2} \varpi^2}{B^2} \\
-& \sim & \frac{(G\rho)^{1/2} \varpi^2}{v_A^2} \\
-& \sim & \frac{t_{\rm cr}^2}{t_{\rm ff}},
-\end{eqnarray}
-where we are dropping constants of order unity, in the second step we wrote $B$ in terms of the Alfven speed $v_A = B/\sqrt{4\pi \rho}$, and in the final step we wrote $t_{\rm cr} = \varpi/v_A$, where $t_{\rm cr}$ is the Alfven crossing time of the cloud.
+Conversely, this means that if we observe the SED of the disk at relatively short wavelengths, for example near-IR, we can invert the wavelength dependence to deduce how the temperature falls with radius. If we also know the distance $D$ and the inclination $\theta$, we can also clearly deduce the combination of variables $\varpi_0^q T_0$ from the observed value of $F_\lambda$.
 
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{magdisk1_hennebelle08}
-\includegraphics[width=\linewidth]{magdisk2_hennebelle08}
-\caption[Simulations of magnetized rotating collapse]{
-\label{fig:magdisk_hennebelle}
-Results from a simulation of magnetized rotating collapse \citep{hennebelle08c}. The top panel shows the magnetic field structure; solid lines are poloidal magnetic field lines, while color indicates the azimuthally-averaged total magnetic field strength, on a scale from $0-3.5$ mG. The bottom panel shows the density (color) and velocity (arrows) structure at a slightly later time in the simulation. The structure in the mid-plane is a non-rotating pseudo-disk.
+\paragraph{The optically thin limit.}
+
+Now let us consider the opposite limit, of an optically thin disk. This limit is likely to hold at long wavelengths, such as far-IR and sub-mm, where the dust opacity is low, and where most emission comes from the outer disk where the surface density is low.
+In the optically thin limit, we can take
+\begin{equation}
+1-\exp\left(-\frac{\kappa_{\lambda}\Sigma}{\cos\theta}\right) \approx \frac{\kappa_{\lambda}\Sigma}{\cos\theta},
+\end{equation}
+and substituting this into our integral for the flux gives
+\begin{equation}
+F_{\lambda} = \frac{2\pi}{D^2} \int_{\varpi_0}^{\varpi_1} B_{\lambda}(T) \kappa_{\lambda}\Sigma \varpi\,d\varpi.
+\end{equation}
+Note that in this case the inclination factor $\cos\theta$ drops out, which makes sense: if the disk is optically thin we see all the material in it, so how it is oriented on the sky doesn't matter.
+
+Even more simplification is possible if we concentrate on emission at wavelengths sufficiently long that we are on the Rayleigh-Jeans tail of the Planck function. This will be true for most sub-mm work, for example: at 1 mm, $hc/(k_B\lambda) = 14$ K, and even the cool outer parts of the disk will be warm enough for emission at this wavelength to fall into the low-energy powerlaw part of the Planck function. In the Rayleigh-Jeans limit
+\begin{equation}
+B_{\lambda}(T) \approx \frac{2c k_B T}{\lambda^4},
+\end{equation}
+and substituting this in gives
+\begin{equation}
+F_{\lambda} = \frac{4\pi c k_B \kappa_{\lambda}}{D^2\lambda^4} \int_{\varpi_0}^{\varpi_1} \Sigma T \varpi \,d\varpi.
+\end{equation}
+
+Note that, again, all the wavelength-dependent terms are now outside the integral, and we therefore again expect to be able to predict the wavelength-dependence of the emission without knowing anything about the disk's density or temperature structure. If the dust opacity varies as $\kappa_\lambda\propto \lambda^{-\beta}$, then we have
+\begin{equation}
+\lambda F_\lambda \propto \lambda^{-3-\beta}.
+\end{equation}
+
+This is a particularly important result because it means that we can use the sub-mm SED of a protostellar disk to measure the wavelength-dependence of the dust opacity. In the ISM, $\beta$ is generally observed to be $2$ in diffuse regions, going down to $\sim 1$ as we go to dense regions. The powerlaw index describing how $\kappa_{\lambda}$ varies with $\lambda$ is determined primarily by the size distribution of the dust grains, with larger grains giving smaller $\beta$. This means that reductions in $\beta$ indicate grain growth, an important prelude to planet formation.
+
+One big caveat here is that this only applies in the optically thin limit, and at shorter wavelengths one is probing closer to the star, where the gas is closer to optically thick. This can fool us into thinking we're seeing grain growth. To see why, note that for $\beta=1-2$, the typical values for non-disk interstellar grains, we expect $\lambda F_{\lambda}$ to vary as a powerlaw with index between $-4$ and $-5$ in the optically thin limit. Smaller $\beta$, which we expect to occur when grains grow, would make this value shallower.
+
+However, recall that in the optically thick limit $\lambda F_\lambda \propto \lambda^{(2-4q)/q}$, where $q$ is the powerlaw index describing how the temperature varies with radius. The value of $q$ depends on the thermal structure of the disk, but for observed optically thick sources values of $q$ in the range $0.5-1$ are commonly inferred. In this case $\lambda F_{\lambda}$ varies as a powerlaw with index between $0$ and $-2$. In other words, a transition from optically thin to optically thick {\it also} causes the SED to flatten. Thus, when we see a flattening, we have to be very careful to be sure that it is due to changes in the grain population and not in the optical depth.
+
+The best way to get around this is with spatially resolved observations, which let us look at a single radius in the disk, thereby getting rid of the effects of radial temperature variation.
+
+\paragraph{Mass estimates.}
+
+By combining the optically thin and optically thick parts of these curves, it is also possible to obtain estimates of the mass of disks, provided that we think we understand the properties of the dust. The general procedure is to observe the disk in the IR, where it is assumed to be optically thick. As discussed earlier, this lets us figure out $q$ and $\varpi_0^q T_0$. This means that the temperature distribution $T(\varpi)$ can be considered known. If one plugs this into the equation for the optically thin flux,
+\begin{equation}
+F_{\lambda} = \frac{4\pi c k_B \kappa_{\lambda}}{D^2\lambda^4} \int_{\varpi_0}^{\varpi_1} \Sigma T \varpi \,d\varpi,
+\end{equation}
+then the only remaining unknowns are $\kappa_{\lambda}$ and $\Sigma$. If one assumes a known $\kappa_\lambda$ (a questionable assumption), then $\Sigma$ is the only unknown.
+
+The problem in this case is no longer underdetermined. The flux $F_{\lambda}$ is one known function, and it determined the unknown function $\Sigma(\varpi)$ uniquely through an integral equation. This can be solved numerically to obtain $\Sigma(\varpi)$, which in turn gives the disk mass. Typical T Tauri disk masses determined via this technique range from $10^{-3}-10^{-1}$ $\msun$, although with an obviously large uncertainty coming from the unknown grain properties, and from the need to convert a dust mass into a total mass.
+
+\subsection{Disks in Molecular Lines}
+
+The optical and IR / sub-mm continuum techniques both target the dust, but they do not directly tell us about the gas in disks, which dominates the mass. To observe the gas we must detect line emission. The lines detected can be in the infrared, which will mostly tell us about the warm portions of the disk very close to the star, or in the radio / sub-mm, which can tell us about the cool material far from the star.
+
+For the former case, lines that have been detected include the vibrational and ro-vibrational transitions of CO, OH, water, and molecular hydrogen. These generally probe regions within a few tenths of an AU of the star, simply because of the high temperatures required for the upper levels to be significantly populated. One particularly important use of these techniques is to infer the inner radii at which disks become truncated. Since this is line emission, we determine the velocity of the gas. If we assume that rotation near the star is Keplerian, and we can measure the stellar mass and inclination by other means, then the maximum measured rotation velocity directly tells us innermost radius at which there is a dense disk. Using this technique suggests that disks are truncated at inner radii of $\sim 0.04$ AU (Figure \ref{fig:diskradius_najita07}).
+
+\begin{figure}
+\includegraphics[width=\linewidth]{diskradius_najita07}
+\caption[Inner disk radii from CO line emission]{
+\label{fig:diskradius_najita07}
+The top panel shows inner truncation radii of disks as inferred from the maximum velocity of CO vibrational emission. For comparison, the bottom panel shows the radial distribution of the hot Jupiter expolanets known at the time \citep{najita07a}.
 }
-\end{marginfigure}
+\end{figure}
 
-If a cloud starts out with a magnetic field near equipartition with gravity and thermal energies, we expect $t_{\rm ff} \sim t_{\rm cr}$, so this means that $t_{\rm br}\sim t_{\rm cr}$. This is an order of magnitude calculation, but its implication is clear: if we have a field that is even marginally wound up, such that the poloidal and toroidal components become comparable, this field is capable of stopping Keplerian rotation in a time scale comparable to the collapse or crossing time. This can effectively prevent formation of a Keplerian disk at all if the magnetic field is strong enough. Indeed, this is what simulations seem to show happening (Figure \ref{fig:magdisk_hennebelle}).
+For the sub-mm and radio, detections have mostly involved CO and its isotopologues. The main advantage of this data, as opposed to the dust continuum, is that we obtain kinematic information. This can then be used to determine whether the (usually) poorly-resolved objects we see in the continuum have a velocity structure consistent with Keplerian rotation.  Figure \ref{fig:diskvel_tobin12} shows an example. Note that higher velocity emission tends to come from closer to the star, exactly as would be expected for a Keplerian disk. Indeed, when one fits the data to Keplerian rotation curves, they are entirely consistent. The number of sources for which this analysis has been done is not large, but it is growing.
 
-\subsection{The Magnetic Braking Problem and Possible Solutions}
-
-The calculation of magnetic braking calculation we have just performed presents us with a fundamental problem: it naively seems like magnetic fields should prevent disks from forming at all, but we observe that they do. We even observe disks present in class 0 sources, where the majority of the gas is still in the envelope. So how can we get out of this? This is not a completely solved problem, but we can make a few observations about what a solution might look like.
-
-We can first ask whether ion-neutral drift might offer a way out. Recall in Chapter \ref{ch:magnetic}, we showed that, at the densities and velocities typical of protostellar cores, ion-neutral drift should allow gas to decouple from the magnetic field on scales below $L_{\mathrm{AD}} \sim 0.05$ pc. One might expect that this would make it possible to form disks below the decoupling scale. However, simulations suggest that this solution does not work. The flux that is released from the gas by ion-neutral drift does not disappear. Instead, it builds up flux tubes near the star with relatively little mass on them, and these flux tubes prevent a disk from forming (Figure \ref{fig:magdisk_krasnopolsky12}).
-
-A more promising solution appears to be misalignment between the rotation axis of the gas and the magnetic field, or, more generally, the presence of turbulence in the collapsing gas. In simulations where the gas is turbulent, the magnetic field lines tend to be bent or misaligned relative to the disk, and this greatly reduces the efficiency of magnetic braking. However, the problem of how disks form is still not fully solved.
-
-\section{Disk Evolution}
-
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{magdisk_krasnopolsky12}
-\caption[Simulations of magnetized rotating collapse with non-ideal MHD]{
-\label{fig:magdisk_krasnopolsky12}
-Results from a simulation of magnetized rotating collapse including the effects of ion-neutral drift and Ohmic dissipation \citep{krasnopolsky12a}. Lengths on the axes are in units of cm. Colors and contours show the density in the equatorial plane, on a logarithmic scale from $10^{-16.5}$ to $10^{-12.5}$ g cm$^{-3}$. Arrows show velocity vectors.
+\begin{figure}
+\includegraphics[width=\linewidth]{diskvel_tobin12}
+\caption[$^{13}$CO channel maps of the disk in L1527]{
+\label{fig:diskvel_tobin12}
+Observed $^{13}$CO line emission from the disk in the core L1527. In each panel, grayscale shows dust continuum emission, white plus signs mark the location of the star, and the red and blue contours show the emission observed in the indicated velocity range. Black ovals show the observational beam, and red and blue arrows show the axis defined by an observed molecular outflow \citep{tobin12a}.
 }
-\end{marginfigure}
+\end{figure}
 
-Given that disks exist, we wish to understand how the evolve, and how they accrete onto their parent stars. In this section we will sketch a basic theory for how disks behave.
 
-\subsection{Steady Thin Disks}
 
-\paragraph{Evolution equations.}
+\section{Observations of Outflows}
 
-Consider a thin disk of surface density $\Sigma$ orbiting at an angular velocity $\Omega$. We take the disk to be cylindrically symmetric, so that $\Sigma$ and $\Omega$ are functions of the radius $r$ only. We assume it is very thin in the vertical direction, so we only need to solve the equations in the plane $z=0$. In addition to its orbital velocity $v_{\phi}=r\Omega$, the gas has a radial velocity $v_r$, which we assume is much less than $v_{\phi}$. This allows the gas to accrete onto a central object.
+\subsection{Outflows in the Optical}
 
-For this system, the general equation of mass conservation is
-\begin{equation}
-\frac{\partial}{\partial t}\rho + \nabla\cdot(\rho \vecv) = \frac{\partial}{\partial t}\rho + \frac{1}{r} \frac{\partial}{\partial r}(r \rho v_r) = 0,
-\end{equation}
-where we have written out the divergence for cylindrical coordinates, and we have used the cylindrical symmetry of the problem to drop the components of the divergence in the $z$ and $\phi$ directions. Since we have a thin disk, the volume density is $\Sigma \delta(z)$, i.e.\ it is zero off the plane, infinite in the plane, and integrates to $\Sigma$. Integrating the mass conservation equation over $z$ then immediately gives
-\begin{equation}
-\frac{\partial}{\partial t}\Sigma + \frac{1}{r} \frac{\partial}{\partial r}(r \Sigma v_r) = 0.
-\end{equation}
-This equation just says that the change in the surface density at some point is equal to the net rate of radial mass flow into or out of it.
+In addition to observing the disks themselves, we can observe the outflows that they drive. Outflows were first noticed in the 1950s based on optical observations by Herbig and Haro, working independently. The class of objects they discovered are known as Herbig-Haro, or HH, objects in their honor. HH objects were first seen as small patches of optical emission containing both continuum and a number of lines, most prominently H$\alpha$. The H$\alpha$ indicates the presence of ionization, but, unlike the large ionized regions generated by massive stars, where all species are highly ionized, HH objects also show signs of emission from neutral or weakly ionized species such as O~\textsc{i} and N~\textsc{ii}.
 
-It is convenient to introduce the mass accretion rate $\dot{M}=-2\pi r \Sigma v_r$, which represents the rate of inward mass flux across the cylinder at radius $r$. With this definition, the mass conservation equation becomes
-\begin{equation}
-\frac{\partial}{\partial t}\Sigma - \frac{1}{2\pi r} \frac{\partial}{\partial r}\dot{M} = 0.
-\end{equation}
+The standard interpretation of this sort of ionization structure is that we are seeing a fast shock. The shocked material is ionized, producing H$\alpha$ emission as it recombines. Both upstream and downstream of the shock itself, however, there is neutral material that is warm, either because it has had a chance to recombine but not to cool (for the downstream gas) or because it has been pre-heated by radiation from the shock (for the upstream gas). This produces the neutral or weakly ionized emission lines.
 
-Next we can write down the Navier-Stokes equation for the fluid,
-\begin{equation}
-\rho\left(\frac{\partial}{\partial t}\vecv + \vecv\cdot\nabla\vecv\right) = -\nabla p - \rho\nabla\psi + \nabla\cdot \vecT,
-\end{equation}
-where $p$ is the pressure, $\psi$ is the gravitational potential, and $\vecT$ is the viscous stress tensor. The first thing we can do is integrate over $z$, which gives
-\begin{equation}
-\Sigma \left(\frac{\partial}{\partial t}\vecv + \vecv\cdot\nabla\vecv\right) = -\nabla P - \Sigma \nabla\psi + \int \nabla\cdot \vecT\,dz,
-\end{equation}
-where $P$ is the vertically-integrated pressure.
+More sensitive measurements in the 1970s revealed that the bright emission knots Herbig and Haro saw are in fact connected by linear structures that also emit in optical, just with lower surface brightness. We can also see bow shocks at the heads of jets, where the plough into dense molecular gas (Figure \ref{fig:hhjet}).
 
-Now consider the $\phi$ component of this equation. This is particularly simple, because all $\phi$ derivatives vanish due to symmetry, and the pressure and gravitational forces therefore drop out. This gives
-\begin{equation}
-\Sigma \left[\frac{\partial}{\partial t} v_\phi + \frac{v_r}{r} \frac{\partial}{\partial r}(rv_\phi)\right] = \int \frac{1}{r^2} \frac{\partial}{\partial r}(r^ 2 T_{r\phi})\,dz.
-\end{equation}
-Note there is some subtlety here in writing out the gradient of a tensor in cylindrical coordinates. Frank Shu's fluid dynamics book has a handy reference at the end for vector and tensor operations in non-Cartesian coordinate systems.
-
-If we multiply through by $2\pi r^2$, we get
-\begin{equation}
-2\pi r \Sigma \left(\frac{\partial}{\partial t} j + v_r \frac{\partial}{\partial r}j\right) = \int \frac{\partial}{\partial r}(2\pi r^ 2 T_{r\phi})\,dz = \frac{\partial}{\partial r} \mathcal{T}
-\end{equation}
-where we have defined $j=rv_\phi$ as the angular momentum per unit mass of the material and
-\begin{equation}
-\mathcal{T} = 2\pi r \int r T_{r\phi}\, dz.
-\end{equation}
-Thus we see that this represents an evolution equation for the angular momentum of the gas. The factor $2\pi r \Sigma$ is just the mass per unit radius in a thin ring, so $2\pi r\Sigma j$ is the angular momentum in the ring.
-
-The quantity $\mathcal{T}$ represents the torque exerted on the ring due to viscosity. This is clear if we examine its components. The viscous stress tensor component $T_{r\phi}$ represents the force per unit area created by viscosity. This is multiplied by $r$, so we have $rT_{r\phi}$, which is just the torque per unit area, since it is a force times a lever arm. Finally, this is multiplied by $2\pi r$ and integrated over $z$, which is just the area of the cylindrical surface over which this torque is applied. Thus, $\mathcal{T}$ is the total torque. We take its derivative with respect to $r$ to obtain the difference in torque between the ring immediately interior to the one we are considering and the ring immediately exterior to it. 
-
-Suppose we look for solutions of this equation in which the angular momentum per unit mass at a given location stays constant, i.e., $\partial j/\partial t=0$. This will be the case, for example, of a disk where the azimuthal motion is purely Keplerian at all times. In this case the evolution equation just becomes
-\begin{equation}
--\dot{M} \frac{\partial j}{\partial r} = \frac{\partial \mathcal{T}}{\partial r}.
-\end{equation}
-
-This equation describes a relationship between the accretion rate and the viscous torques in a disk. Its physical meaning is that the accretion rate $\dot{M}$ is controlled by the rate at which viscous torques remove angular momentum from material closer to the star and give it to material further out.
-
-The equation is particularly useful if we demand that our disk be in Keplerian rotation. In this case, we know $j=\sqrt{G M r}$, where $M$ is the mass of the central star, so this equation immediately tells us the relationship between the accretion rate and the viscous torque.
-
-To make further progress, let us write down the viscous stress $T_{r\phi}$ a little more specifically. We will assume that the gas in the disk is Newtonian, meaning that the viscous stress is proportional to the rate of strain in the fluid. We want to know $T_{r\phi}$, meaning the force per unit area in the $\phi$ direction, exerted on the radial face of a fluid element. Consider an observer in a frame comoving with the orbiting fluid at some particular distance $r$ from the star, and consider a fluid element that is initially on the same radial ray as the observer, but a distance $dr$ further from the star.
-
-If the rotation is solid body, then the fluid element and the observer will always lie on the same radial ray, so there is no strain, and there will be no viscous stress. On the other hand, if there is differential rotation, such that the fluid further the star has a longer orbital period (as we expect for Keplerian motion), the fluid element will gradually fall behind the observer. This represents a strain in the fluid.
-
-How quickly does the element fall behind? The difference in angular velocity between the observer and the fluid element is $d\Omega = (d\Omega/dr) dr$, and so the difference in spatial velocity is $r (d\Omega/dr) dr$. The rate of strain is defined as one over the time it takes the fluid element to be displaced a distance $dr$ downstream from the observer, i.e.\ the time it takes for the differential rotation to stretch the fluid in between by an amount of order unity. Thus, the rate of strain is $r (d\Omega/dr) dr/dr = r (d\Omega/dr)$.
-
-The viscous stress is equal to this rate of strain times the dynamic viscosity $\mu$, i.e.
-\begin{equation}
-T_{r\phi} = \mu r \frac{d\Omega}{dr} = \rho \nu r \frac{d\Omega}{dr},
-\end{equation}
-where $\nu=\mu/\rho$ is the kinematic viscosity, which will be more convenient to work with. If we plug this into our definition of the viscous torque, we get
-\begin{equation}
-\mathcal{T} = 2\pi r \int r T_{r\phi}\, dz = 2\pi r^3 \Sigma \nu \frac{d\Omega}{dr}.
-\end{equation}
-This combined with the equation giving the relationship between $\dot{M}$ and $d\mathcal{T}/dr$ immediately give us the accretion rate for any steady disk of known surface density and angular momentum profile $j(r)$.
-
-The most interesting case in star formation is for $j$ and $\Omega$ corresponding to Keplerian rotation, $j=\sqrt{GMr}$ and $\Omega=\sqrt{GM/r^3}$. (If we were interested in galactic disks, we might instead have considered a flat rotation curve, $j\propto r$). If we now combine the continuity equation
-\begin{equation}
-\frac{\partial}{\partial t}\Sigma - \frac{1}{2\pi r} \frac{\partial}{\partial r}\dot{M} = 0,
-\end{equation}
-the angular momentum equation
-\begin{equation}
--\dot{M} \frac{\partial j}{\partial r} = \frac{\partial \mathcal{T}}{\partial r},
-\end{equation}
-and plug in the Keplerian values of $j$ and $\Omega$, a little algebra shows that the resulting equation is
-\begin{equation}
-\frac{\partial \Sigma}{\partial t} = \frac{3}{r} \frac{\partial}{\partial r} \left[r^{1/2} \frac{\partial}{\partial r}\left(\nu \Sigma r^{1/2}\right)\right],
-\end{equation}
-and the corresponding equation for the radial drift velocity is
-\begin{equation}
-v_r = -\frac{3}{\Sigma r^{1/2}} \frac{\partial}{\partial r}(\nu \Sigma r^{1/2}).
-\end{equation}
-
-These equations can be solved numerically for a given value of $\alpha$, and they can be solved analytically in special cases, but it is useful to examine their general behavior first. First, note that the equation for $\Sigma$ involves something that looks like a time derivative equals a second spatial derivative. This is the form of a diffusion equation. Physically, it means that if we start with a sharply peaked $\Sigma$, say a surface density that looks like a ring, viscosity will spread it out. In fact, the case in which $\nu$ is constant and $\Sigma\propto \delta(r-R_0)$ at time 0 can be solved analytically (Figure \ref{fig:viscring}).
-
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{viscring}
-\caption[Viscous ring evolution]{
-\label{fig:viscring}
-Analytic solution for the viscous ring of material with constant kinematic viscosity $\nu$. At time $t=0$, the column density distribution is $\Sigma = \Sigma_0 \delta(r-R_0)$. Colored lines show the surface density distribution at later dimensionless times, as indicated in the legend. The analytic solution shown is that of \citet{pringle81a}.
+\begin{figure}
+\includegraphics[width=\linewidth]{hhjet}
+\caption[Herbig-Haro jets from \textit{HST}]{
+\label{fig:hhjet}
+Herbig-Haro jets imaged with the Hubble Space Telescope. Two jets are visible; one is at the tip of the ``pillar" near the top of the image, and another is near the edge of the structure in the middle-left part of the image. Bow shocks from the jets are clearly visible. Taken from \url{http://hubblesite.org/newscenter/archive/releases/2010/13/image/a/}.
 }
-\end{marginfigure}
+\end{figure}
+
+Today our interpretation of the HH knots is that they are locations where the jet has either encountered a dense region of interstellar material, producing a strong shock and bright emission, or where some variation in the velocity or mass flux being launched into the jet has caused an internal shock. The weaker emission in between the knots is caused by the interaction of the jet with a lower density environment. One can also detect this component in radio free-free emission, produced by electrons in the jet plasma.
+
+The HH objects move fast enough to produce noticeable shifts in position and / or brightness over spans of $\sim 10$ years. The inferred velocities are typically hundreds of km s$^{-1}$. These velocities are also consistent with what we infer from Doppler shifts in cases where the jets is partly oriented toward us.
+
+An important point is that these HH jets are usually bipolar, meaning that there is a clear driving star at the base of two HH objects propagating in opposite directions. Sometimes the knots of emission are even mirror symmetric, suggesting that they are produced by variations in the outflow velocity or mass flux originating at the point where the jet is launched.
+
+Estimates of the density of the outflowing material based on models of the shocks suggest mass fluxes that range from $10^{-6}$ $\msun$ yr$^{-1}$ in class 0 sources, dropping to $10^{-8}-10^{-7}$ $\msun$ yr$^{-1}$ for classical T Tauri stars / class I sources. The inferred momentum flux is therefore of order $10^{-6}-10^{-3}$ $\msun$ km s$^{-1}$ yr$^{-1}$. These estimates are quite uncertainty however, since they are based on shock diagnostics, and tell us relatively little about the material in between the bright HH knots.
 
 
-How quickly to do rings spread, and does mass move inward? To answer that, we must evaluate $\partial \mathcal{T}/\partial r$ under the assumption that $\Sigma$ and $\nu$ are relatively constant with radius, so we can take them out of the derivative, and that the disk is in steady state. We'll again assume a Keplerian background rotation to evaluate $\Omega$. Under these assumptions
-\begin{equation}
-\frac{d\mathcal{T}}{dr} = 2\pi \Sigma \nu \frac{d}{dr}\left(r^3 \frac{d\Omega}{dr}\right) = -3\pi\Sigma \nu \frac{d}{dr}(r^2\Omega) = -3\pi \Sigma \nu \frac{dj}{dr}.
-\end{equation}
+\subsection{Outflows in the Radio}
 
-In this case the angular momentum evolution equation trivially reduces to
-\begin{equation}
-\dot{M} = 3\pi\Sigma\nu,
-\end{equation}
-i.e.\ the accretion rate is just proportional to the viscosity and the disk surface density. The radial velocity of the material under these assumptions is
-\begin{equation}
-v_r = -\frac{3}{2} \frac{\nu}{r}.
-\end{equation}
-The time required for a given fluid element to reach the star, therefore, is $t_{\rm acc}\sim r/v_r \sim r^2/\nu$.
+Optical and near-IR emission traces the regions where strong shocks heat the gas enough to excite transitions at these wavelengths. However, the jets of fast moving material only show the tip of the iceberg as far as the outflow is concerned. Observations in molecular lines reveal that narrow optical HH jets are accompanied by a much wider-angle, slower-moving, and more massive molecular outflow (Figure \ref{fig:molecular_outflow}).
 
-\paragraph{The $\alpha$ model.}
-
-Before delving into the physical origin of the viscosity, it is helpful to non-dimensionalize the problem a bit. We will write down the viscosity in terms of a dimensionless number called $\alpha$, following the original model first described by \citet{shakura73a}. The model is fairly straightforward. The viscous stress we are trying to compute $T_{r\phi}$ has units of a pressure, so let us normalize it to the disk pressure. This is not as arbitrary as it sounds. If, for example, the mechanism responsible for producing fast angular momentum transport is fluctuating magnetic fields, then we would expect the strength of this effect to scale with the energy density in the magnetic field, which is in turn proportional to the magnetic pressure. Similar arguments can be made for other plausible mechanisms.
-
-The $\alpha$-disk ansatz is simply to set
-\begin{equation}
-T_{r\phi} = -\alpha p \frac{r/\Omega}{d\Omega/dr},
-\end{equation}
-where the dimensionless factor $\frac{r/\Omega}{d\Omega/dr}$ is inserted purely for convenience. This is equivalent to setting
-\begin{equation}
-\nu = \frac{T_{r\phi}}{\rho r (d\Omega/dr)} = \frac{\alpha c_s^2}{\Omega} = \alpha c_s H,
-\end{equation}
-where $c_s$ is the sound speed in the disk and $H = c_s/\Omega$ is the disk scale height. Note that $c_s$ and $H$ include both thermal pressure and magnetic pressure.
-
-If we now substitute this into our simplified expression for $\dot{M}$, we get an accretion rate
-\begin{equation}
-\dot{M} = 3\pi \Sigma \alpha c_s H = 3\pi \Sigma \alpha \frac{c_s^2}{\Omega}
-\end{equation}
-This if we know the disk thermal structure, i.e.\ we know $c_s$ and $H$, and we know its surface density $\Sigma$, then $\alpha$ tells us its accretion rate.
-
-The physical meaning of this result becomes a bit clearer if we put in an order of magnitude estimate that $\Sigma \approx M_d / R_d^2$, where $M_d$ and $R_d$ are the disk mass and radius. Putting this in we have
-\begin{equation}
-\dot{M} \approx \alpha \frac{M_d}{R_d^2} \frac{c_s^2}{\Omega}
-\end{equation}
-If we define $t_{\rm acc} = M_d/\dot{M}$ as the accretion timescale (i.e.\ the characteristic time to accrete the entire disk), $t_{\rm cross} = R_d/c_s$ as the sound crossing time of the disk, and $t_{\rm orb} = 2\pi/\Omega$ as the disk orbital period, then with a little algebra it is easy to show that this expression reduces to
-\begin{equation}
-t_{\rm acc} = \frac{1}{\alpha} \left(\frac{t_{\rm cross}}{t_{\rm orb}}\right)^2 t_{\rm orb}.
-\end{equation}
-Thus this expression says that the time required to drain the disk is of order $(1/\alpha)(t_{\rm cross}/t_{\rm orb})^2$ orbits. Note that $t_{\rm orb} \ll t_{\rm cross}$, because orbital speeds are highly supersonic (as they must be for a thin disk to form). In a disk with $\alpha = 1$ it takes this ratio squared orbits to drain the disk, and with $\alpha < 1$ it takes longer.
-
-Based on observations of the accretion rates in disks and these properties, \citet{hartmann98a} estimate that $\alpha \sim 10^{-2}$ in nearby T Tauri star disks. It is probably larger at earlier phases in the star formation process.
-
-\subsection{Physical Origins of Disk Viscosity}
-
-We have established that there must be a viscous mechanism to transport angular momentum and mass through accretion disks, and we have even estimated its strength from observations, but we have not yet specified what that mechanism is.
-
-\paragraph{Ordinary fluid viscosity.}
-
-The obvious place to start is to examine the ordinary hydrodynamic viscosity we expect all fluids to have. The kinematic viscosity of a diffuse gas is $\nu = 2\overline{u}\lambda$, where $\overline{u}$ is the RMS particle speed and $\lambda$ is the mean free path.
-Let us consider a protostellar accretion disk with the typical properties density $n=10^{12}$ cm$^{-3}$ and temperature 100 K. In this case the velocity $\overline{u} = 0.6$ km s$^{-1}$, and assuming a particle-particle cross section of $\sigma=(1\mbox{ nm})^2$, the mean free path is $\lambda \sim 1/(n\sigma)=100$ cm, and $\nu \sim 10^8$ cm$^{-2}$ s.
-
-We can put this in terms of $\alpha$ if we remember that $\nu = \alpha (c_s^2/\Omega)$. Just us consider material at a temperature of 100 K that is orbiting 100 AU from a 1 $\msun$ star. In this case we have $c_s = 0.6$ km s$^{-1}$ and $\Omega = 6.3\times 10^{-3}$ yr$^{-1}$, and we have $\alpha \approx 6\times 10^{-12}$.
-
-This obviously a problem. Suppose the gas starts out $\sim 100$ AU from the star. The time required for the gas to accrete is then $t_{\rm acc}\sim r^2/\nu \sim (100\mbox{ AU})^2/\nu \sim 10^{22}$ s, or just shy of $10^{15}$ yr. In other words, longer than the age of the universe. The obvious conclusion from this is that ordinary hydrodynamic viscosity is completely ineffective at producing accretion. If that were the only source of angular momentum transport in a disk, then stars would never form. Something else must be at work.
-
-\paragraph{Turbulent hydrodynamic viscosity.}
-
-One possible explanation solution to this problem is turbulent hydrodynamic viscosity. If there are large-scale radial motions within a disk, then the effective value of $\overline{u}\lambda$ could be significantly larger than the microphysical one we calculated. In effect, these motions will mix material from different radii within the disk, exchanging angular momentum between inner and outer parts of the disk.
-
-This would require the existence of an instability capable of generating and sustaining large radial turbulent motions. Although several such mechanisms have been proposed, it is essentially impossible to determine the amount of angular momentum transport that will be produced based on purely analytic calculations. That is because the transport will depend on the non-linear saturation amplitude of any instability, which is not something that one can generally determine analytically.
-
-Numerical simulations have been attempted, and seem to find that hydrodynamic mechanisms do not produce significant angular momentum transport, but they may be compromised by limited resolution. In a numerical simulation, the maximum possible Reynolds number is set by the ratio of the size of the computational domain to the size of a grid cell, since flows are always smoothed on the grid scale. Even for the largest calculations ever performed this is at most a few thousand, whereas we have seen that the Reynolds numbers in real astrophysical systems are typically $\sim 10^9$. Thus, if the saturation were Reynolds number-dependent, numerical simulations would not get it right.
-
-The question of whether hydrodynamic mechanisms could be responsible for angular momentum transport is sufficiently complex and interesting that the latest frontier is laboratory experiment. Researchers construct counter-rotating cylinders filled with a fluid, and set the cylinders rotating to produce a Keplerian-like rotation profile. They then measure the force exerted on the inner and outer cylinders to measure the rate of angular momentum transport. The laboratory experiments can reach Reynolds numbers of $\sim 10^6$, and seem to find negligible transport, $\alpha < 10^{-6}$ \citep{ji06a}. Given these results, most researchers are convinced that purely hydrodynamic mechanisms cannot explain the observed lifetimes and rates of angular momentum transport in disks. Instead, some other mechanism is required.
-
-\paragraph{Magneto-rotational instability.}
-
-Magnetic fields offer one opportunity for angular momentum transport. We have already mentioned magnetic braking as a possibility, but that requires that the matter be well-coupled to the field, and that the field be dragged inward into the disk so that there is a large net flux. This may not happen due to non-ideal MHD effects, however.
-
-Another mechanism is possible that does not require a large net flux, and that allows weaker (although not zero) coupling. This is the magneto-rotational instability (MRI), first discovered mathematically by \citet{chandrasekhar61a}, and later re-discovered and applied to astrophysical systems by \citet{balbus91a}. The full theory of MRI has been explored extensively both analytically and numerically.
-
-The basic idea is that magnetic field lines threading the disk connect annuli at different radii. As the disk rotates and the annuli shear, this stretches the magnetic field line connecting them. This causes an opposing magnetic tension, which attempts to force the two points to stay close together, and thus to force them into co-rotation. This speeds up the outermost fluid element, which is falling behind, and slows down the innermost one, and thus it moves angular momentum outward. However, when you remove angular momentum from a fluid element it tends to fall toward the center, so the innermost fluid element falls even closer to the star. Similarly, the outermost fluid element gains angular momentum, and so it wants to move outward. This increases the tension even more, and the system goes unstable due to this positive feedback loop.
-
-Simulators are still working to try to come up with a general result about the value of $\alpha$ produced by the MRI, but in at least some cases $\alpha$ as high as $0.1$ seems to be possible. This would nicely explain the observed accretion rates and lifetimes of T Tauri star disks.
-
-MRI is not the end of the story, however. The problem with MRI is that it only operates as long as matter is sufficiently coupled to the magnetic field, which in turn depends on its ionization state. MRI will only operate if the mechanism we have described is able to generate turbulent fluctuations in the magnetic field to transport angular momentum. In turn, this requires that no non-ideal mechanism, of which there are several possibilities, be able to smooth out the field over the scale of the accretion disk.
-
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{mri_sano02}
-\caption[Maxwell stress in non-ideal MHD simulations of the MRI]{
-\label{fig:mri_sano02}
-Results from a series of simulation of magneto-rotational instability with non-ideal MHD by \citet{sano02a}. The $y$ axis shows the mean Maxwell stress measured in the simulation once it reaches statistical steady state, normalized by the gas pressure. This is roughly the same as $\alpha$. Simulations are shown at a range of magnetic Reynolds numbers $\mbox{Re}_{\mathrm{M}}$. Different values of the parameter $X_0$ correspond to different strengths of Hall diffusivity.
+\begin{figure}
+\includegraphics[width=\linewidth]{molecular_outflow}
+\caption[A molecular outflow in HH111]{
+\label{fig:molecular_outflow}
+Color shows an \textit{HST} image of the jet HH111. The green contours superimposed show an outflow detected as emission in the CO $J=1\rightarrow 0$ line at a velocity of 6 km s$^{-1}$ relative to the bulk of the material in the region. The yellow star marks the position of the driving source. The outflow is $\approx 0.2$ pc long. \citep{mckee07a}. 
 }
-\end{marginfigure}
+\end{figure}
 
-The question of how well coupled the gas and the field are turns on details of the ionization structure of the disk, and the calculation is extremely sensitive. Turbulence requires large values of the magnetic Reynolds number $\mbox{Re}_{\rm M} = v_A^2 /(\eta\Omega)$, where $v_A$ is the Alfven speed and $\eta$ is the magnetic diffusivity. Numerical experiments suggest that MRI shuts of when $\mbox{Re}_{\rm M} < 3000$ (Figure \ref{fig:mri_sano02}).
+Molecular observations show large masses of molecular gas moving at $\sim 10$ km s$^{-1}$ -- the velocity is based on the Doppler shifts of the molecular lines used to observe the outflow. Again, we generally see a bipolar morphology. Depending on the outflow direction, this can consist of two lobes pointing in opposite directions on the sky, two lobes in the same position on the sky but with distinct red- and blue-shifted components, or some combination of the two.
 
-The diffusivity, in turn, depends on the electron fraction: $\eta = c^2/(4\pi \sigma_e)$, where $\sigma_e = n_e e^2/(m_e \nu_c)$ is the conductivity and $\nu_c$ is the frequency of electron-neutral collisions. If there are few electrons, $\sigma_e$ is small and $\eta$ is large, making $\mbox{Re}_{\rm M}$ small. This means that, in order to know where and whether MRI will operate, we need to know the ionization fraction in the disk.
-
-This is an incredibly complex problem, because the ionization is generally non-thermal, non-LTE, and it only takes a tiny number of electrons to make MRI operate: an electron fraction $\sim 10^{-9}$ is sufficient. In the very inner disk near the star, where the temperature is $\sim 2000$ K, thermal ionization of alkali metals will provide the necessary electrons. In regions where the disk column density is $\lesssim 100$ g cm$^{-2}$, x-rays from the central star and cosmic rays can penetrate the disk, providing free electrons. However, for comparison the estimated column density of the minimum mass Solar nebula (the minimum mass required to make all the planets) is 1700 g cm$^{-2}$ at 1 AU, and the equilibrium temperature is $\ll 2000$ K.
-
-In such high column density, cool regions, the electron fraction depends on such complex questions as the mean size of dust grains (since these can absorb free electrons) and the rate of vertical transport of electrons from the surface layers down to the disk midplane. One possible result of this is that MRI would operate only at the surface of disk, leaving the midplane a ``dead zone". Another possibility is that there may be radial dead zones with no MRI. Material would move inward to such regions, but then get stuck there, potentially making accretion bursty.
-
-\paragraph{Gravitational transport mechanisms.}
-
-Magnetic fields provide on potential source of transport, but, as we have seen, they may fail if the gas is not sufficiently ionized. If the accretion rate onto the disk is large enough, it is also possible that MRI may operate, but not may not provide sufficiently rapid angular momentum transport to stop gas from building up the disk -- this is likely to occur particularly for massive stars. In this case, mass can build up in the disk, leading to gravitational instability.
-
-We can understand when gravitational instability is likely to set in using our theory of disks. Recall that we showed in the previous class that we can write the accretion rate as
-\begin{equation}
-\dot{M} = 3\pi \alpha \Sigma \frac{c_s^2}{\Omega}.
-\end{equation}
-Since we are interested in gravitational stability, let us introduce the Toomre $Q$ parameter,
-\begin{equation}
-Q = \frac{\Omega c_s}{\pi G \Sigma}
-\end{equation}
-where we have $\Omega$ rather than $2\Omega$ because the rotation curve is Keplerian rather than flat as in a galactic disk, and where we are assuming the non-thermal velocity dispersion in the disk is subsonic. Solving for $\Sigma$ in terms of $Q$ and re-arranging, we obtain
-\begin{equation}
-\dot{M} = \frac{3\alpha}{Q} \frac{c_s^3}{G}.
-\end{equation}
-
-Thus we see that, if $Q > 1$ (i.e.\ the disk is gravitationally stable) and $\alpha < 1$ (as we expect for MRI or almost any other local transport mechanism), the maximum rate at which the disk can move matter inward is roughly $c_s^3/G$. This is also the characteristic rate at which matter falls onto the disk from a thermally-supported core, provided that we use the sound speed in the core rather than in the disk.
-
-Normally disks are somewhat warmer than the cores around them, both because the star shines on the disk and because viscous dissipation in the disk releases heat. However, what this result shows is that, in any regions where the disk is not significantly warmer than the core that is feeding it (e.g.\ the outer parts of the disk where stellar and viscous heating are small), the disk cannot transport matter inward as quickly as it is fed. The result will be that the surface density will rise and $Q$ will decrease, giving rise to gravitational instability.
-
-This can in turn generate transport of angular momentum via gravitational torques. Transport of this sort comes in two flavors: local and global. Local instability happens when the disk clumps up on small scales due to its own gravity. This depends on the Toomre $Q$ of the disk. If $Q\sim 1$, which can occur either if the disk is massive or cold, it will begin to clump up. These clumps can transport angular momentum by interacting with one another gravitationally, sending mass inward and angular momentum outward. However, this clumping will heat the gas via the release of gravitational potential energy, which in turn tends to drive $Q$ back to higher values.
-
-What happens then depends on how the gas radiates away the excess energy. If the radiation rate is too low, the gas will heat up until it smoothes out, and the Toomre $Q$ will be pushed up. If it is too high, the gas will fragment entirely and collapse into bound objects in the disk -- something like what happens in a galactic disk. If it is in between, the disk can enter a state of sustained gravitationally-driven turbulence in which there is no fragmentation but the rate of heating by compression balances the rate of radiation, and there is a net transport of mass and angular momentum.
-
-The global variety of gravitational instability occurs when the disk clumps up on scales comparable to the entire disk, and it can be an outcome of the local instability if the fragments that form tend to be massive. This occurs when the disk mass becomes comparable to the mass of the star it is orbiting; instability sets in at disk masses of $30-50\%$ of the total system mass. This generally manifests as the appearance of spiral arms.
-
-These instabilities transport angular momentum because the disk is no longer axisymmetric, and instead has a significant moment arm that can exert torques, or on which torques can be exerted. Transport of angular momentum can then occur in several ways. If there is an envelope outside the disk, the disk can spin up the envelope, sending angular momentum outward in that way.
-
-The disk can also transfer angular momentum to the star by forcing the star to move away from the center of mass. In this configuration the disk develops a one-armed spiral, and the star in effect goes into a binary orbit with the overdensity in the disk. In this case angular momentum is transported inward rather than out, with the excess angular momentum going into orbital motion of the star. This phenomenon is known as the Sling instability \citet{shu90a}.
-
-\section{Outflow Launching}
-
-The final topic for this chapter is how and why disks launch the ubiquitous jets and winds that observations reveal. The topic of jets is not limited to the star formation context, of course, and much of the theory for it was originally developed in the context of active galactic nuclei and compact objects. We will only scratch the surface of this theory here. Our goal is just to get a general understanding of how and why we expect winds to be launched from disks, and what general properties we expect them to have.
-
-\subsection{Mechanisms}
-
-We begin by considering what mechanisms could be responsible for launching winds. We can start by discarding the two mechanisms that we usually invoke to explain the winds of main sequence stars. All main sequence stars, including the Sun, produce winds. For low mass stars like the Sun, the driving mechanism is thermal. MHD waves propagating into the low-density solar corona heat the gas to temperatures of up to $\sim 10^6$ K. The high pressure in the hot region drives flows of gas outward; for the Sun, the mass loss rate is roughly $10^{-14}$ $\msun$ yr$^{-1}$, and the mechanical luminosity is $\sim 10^{-4}$ $\lsun$.
-
-In contrast, the mechanical power input required to explain the observed outflows from young stars is closer to $\sim 0.1$ $\lsun$. This is far greater than the thermal energy available in the hot x-ray corona of the star -- a corona capable of providing this much power would exceed the total stellar bolometric output.
-
-For massive main sequence stars, the main driving mechanism is the pressure exerted by stellar photons on the gas. The problem with this mechanism for protostellar outflows is apparent from the outflow momentum plot: the outflow momentum is generally $1-2$ orders of magnitude larger than $L/c$. In contrast, for the winds of main sequence stars the outflow momentum flux is always $\lesssim L/c$. Thus the stellar photon field does not have enough momentum to drive the observed outflows of young stars.
-
-As a further point, neither the thermal winds of low mass main sequence stars, nor the radiatively-driven winds of massive ones, show highly collimated features like the HH jets.
-
-Having discarded these two mechanisms, we must seek an alternative source of energy. The most natural one is the gravitational potential energy being liberated by the accretion flow, which, combined with magnetic fields, can produce highly collimated outflows. The question then becomes exactly how the combination of gravitational power and magnetic fields produces the observed outflows.
-
-\subsection{Stability Analysis for Magnetocentrifugal Winds}
-
-There are a range of theoretical models for the exact mechanism by which winds are launched. However, the general picture of all of these mechanisms is to combine centrifugal force with magnetic fields. Consider a disk of material in Keplerian orbit, and consider an open field line passing through the disk; here by ``open" we mean that the field line does not loop back into the disk, but instead goes out, formally to infinity. We write the field in the vicinity of the disk as the sum of a poloidal and a toroidal component,
-\begin{equation}
-\vecB = \vecB_p + B_\phi \hat{e}_\phi
-\end{equation}
-The field exerts negligible forces within the disk, but for the much lower-density region above the disk (the corona), magnetic forces are non-negligible.
-
-Let us consider a test fluid element that is, for whatever reason, lofted slightly above the disk, into the corona. We will assume ideal MHD, so the fluid element is constrained to move only along the field line. We can think of the test fluid element as a bead stuck on a wire. We will further assume that the density of material above the disk is very small, so that magnetic forces dominate and the field simply rotates as a rigid body. Now let us consider how this fluid element will evolve in time.
-
-In a frame co-rotating with the launch point of the fluid element, there are two potentials to worry about: the gravitational potential of the central star, and the centrifugal potential that arises from the fact that we have chosen to work in a rotating reference frame. The former is simply the usual
-\begin{equation}
-V_{g} = -\frac{GM_*}{\sqrt{\varpi^2 + z^2}},
-\end{equation}
-where $M_*$ is the star's mass, and we are working in cylindrical coordinates. For the latter, we are working in a frame rotating at an angular velocity equal to the Keplerian value at the fluid element's launch point $\varpi_0$, which is $\Omega = \sqrt{GM_*/\varpi_0^3}$. The centrifugal potential is therefore
-\begin{equation}
-V_c = -\frac{1}{2}\Omega^2 \varpi^2 = -\frac{1}{2} G M_* \frac{\varpi^2}{\varpi_0^3}.
-\end{equation}
-Thus the total potential is
-\begin{equation}
-V = -\frac{GM_*}{\varpi_0} \left[\frac{1}{2}\left(\frac{\varpi}{\varpi_0}\right)^2 + \frac{\varpi_0}{\sqrt{\varpi^2+z^2}} \right].
-\end{equation}
-
-To determine the evolution of the test fluid element, we must consider the forces associated with this potential. The force per unit mass  is simply minus the gradient of the potential, and thus we have
-\begin{equation}
-\mathbf{f} = -\nabla V = -GM_* \left\{ \varpi \left[\frac{1}{(\varpi^2+z^2)^{3/2}} - \frac{1}{\varpi_0^3}\right]\hat{e}_\varpi + \frac{z}{(\varpi^2+z^2)^{3/2}} \hat{e}_z \right\}
-\end{equation}
-If we plug in our starting point, $\varpi = \varpi_0$ and $z=0$, we see that the gradient is exactly zero, which is what we expect: the starting point is, by assumption, in equilibrium between centrifugal and gravitational forces.
-
-Now let us consider our perturbed fluid element. It has been moved a distance $ds$ from its starting point, and it is moving along the field line, which has radial and vertical components $B_\varpi$ and $B_z$. For convenience, let us define the angle of the field line relative to the horizontal by
-\begin{equation}
-\cos \theta = \frac{B_\varpi}{\sqrt{B_\varpi^2 + B_z^2}},
-\end{equation}
-so that the coordinates of the displaced fluid elements are $\varpi = \varpi_0 + \cos\theta \, ds$ and $z = \sin\theta \, ds$. To determine the force experienced by the fluid element, we simply plug these coordinates into $\mathbf{f}$ and expand to first order:
-\begin{equation}
-d\mathbf{f} = \frac{GM_*}{\varpi_0^3} \left(3 \cos\theta\,\hat{e}_\varpi - \sin\theta\,\hat{e}_z\right) ds
-\end{equation}
-
-We are interested in the component of this force parallel to the field line, since the fluid element is constrained to move along the field line. That is, we are interested in
-\begin{equation}
-df_\parallel = d\mathbf{f} \cdot (\cos\theta\,\hat{e}_\varpi +  \sin \theta\,\hat{e}_z) = \frac{GM_*}{\varpi_0^3} \left(3\cos^2 \theta - \sin^2 \theta\right) ds.
-\end{equation}
-The force is therefore positive, indicating that it is pushing the fluid element further away from the launch point, if
-\begin{equation}
-3 \cos^2 \theta - \sin^2 \theta > 0
-\qquad\Longrightarrow\qquad
-\tan\theta < \sqrt{3}
-\qquad\Longrightarrow\qquad
-\theta < 60^\circ
-\end{equation}
-
-We have therefore derived a condition under which a disk threaded by open field lines will be unstable to the formation of a wind. If the field lines make an angle of $<60^\circ$ off the plane, then any fluid element that is lofted infinitesimally above the disk will be forced further down the field line by the centrifugal force, forming a wind.
-
-\subsection{Properties of the Wind}
-
-We have shown that disks threaded by open field lines are unstable to wind formation if the open field lines make an angle of $60^\circ$ or less relative to the disk plane. What are the properties of the wind that is launched by this process?
-
-We can derive many properties of the wind from the following elementary consideration. We have thus far assumed that the field lines above and below the disk are perfectly rigid, but of course that cannot be strictly true out to infinite radius. If we choose a large enough radius, then maintaining perfect solid body rotation would require a velocity larger than the speed of light, which is obviously forbidden by special relativity. However, there is an even more restrictive limit: the field line can remain rigid only as long as the matter attached to it has negligible inertia. If the inertia of the material is significant, it will slow down the field lines, causing them to deviate from rigid rotation.
-
-Recalling our dimensional analysis of the MHD equations, the relative importance of the terms describing inertia and magnetic force is determined by the Alfv\'en Mach number,
-\begin{equation}
-\mathcal{M}_A \sim \frac{v}{v_A},
-\end{equation}
-where $v_A = B/\sqrt{4\pi \rho}$ is the Alfv\'{e}n speed. The material starts at zero velocity, and accelerates as it moves outward, so that $\mathcal{M}_A$ increases along any given field line. We expect that the field lines will cease to be rigid once the material along them is accelerated to a velocity such that $\mathcal{M}_A \sim 1$. This transition between sub- and super-Alfv\'{e}nic motion will occur at a critical radius $\varpi_A$ (which is not necessarily the same along every field line), called the Alfv\'{e}n radius.
-
-Once the field line starts to unwind at $\varpi_A$, it will no longer be able to impart significant angular momentum or energy to the fluid parcels that travel along it -- it's like the rigid wires that are accelerating the beads beginning to bend. We therefore expect the terminal velocity of the wind to be of order the wind speed at $\varpi_A$, which is
-\begin{equation}
-v_\infty \sim \Omega_0 \varpi_A \sim v_{K,0} \frac{\varpi_A}{\varpi_0},
-\end{equation}
-where $\Omega_0$ is the angular velocity at the launch point, and $v_{K,0}$ is the Keplerian velocity at that point. Thus the wind speed is comparable to the Keplerian speed times a factor of order the ratio of the Alfv\'{e}n radius to the launch radius.
-
-The specific angular momentum of the material ejected in the wind will be
-\begin{equation}
-j_w \sim \varpi_A v_\infty \sim v_{K,0} \frac{\varpi_A^2}{\varpi_0}.
-\end{equation}
-For comparison, the specific angular momentum of the material that remains in the disk is
-\begin{equation}
-j_d = v_{K,0} \varpi_0.
-\end{equation}
-Thus the specific angular momentum of wind material exceeds that of disk material by a factor of
-\begin{equation}
-\frac{j_w}{j_d} \sim \frac{\varpi_A^2}{\varpi_0}^2.
-\end{equation}
-One factor of $\varpi_A/\varpi_0$ comes from the greater level arm of the material being launched into the wind, and the second factor comes from the greater velocity.
-
-If the wind is predominantly responsible for removing the angular momentum of the disk and allowing accretion, this implies that the rates of mass accretion and wind launch must be related by
-\begin{equation}
-\dot{M}_a \sim \frac{\varpi_A^2}{\varpi_0^2} \dot{M}_w.
-\end{equation}
-Thus wind launching provides an efficient means to allow accretion, since for even a relatively modest Alfv\'{e}n radius, say $\varpi_A/\varpi_0 \sim 3$, it will enable accretion to occur using only $\sim 1/10$ of the available accreting mass.
-
-Of course we have not self-consistently calculated $\varpi_A$, and we will not do so in class. Schematically, one must do so by taking a wind mass launching rate (called the mass loading) as a function of radius, and then self-consistently solving for the structure of the magnetic field and the velocity above the disk. The Alfv\'{e}n radius then appears as a critical point of the solution along each streamline / magnetic field line. The first such self-consistent calculation was provided by \citet{blandford82a}, although this calculation still had to leave the mass loading as a free parameter.
-
+Despite their lower velocities, these wind components actually contain the bulk of the outflow momentum, typically $10^{-4}-10^{-1}$ $\msun$ km s$^{-1}$ yr$^{-1}$, depending on the luminosity of the driving source. The molecular outflows are thought to consist primarily not of material ejected directly by the launching mechanism, but of ambient gas that has been swept up by this gas as it flows outward. The interaction is via shocks that can radiate, so energy is not conserved, but momentum is. This entrainment explains why the velocities of this material are so low compared to the material in the jets.
 
