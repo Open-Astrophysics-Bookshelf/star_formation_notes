@@ -1,0 +1,137 @@
+\chapter{Statistical Mechanics of Multi-Level Atoms and Molecules}
+\label{app:multilevel_atoms}
+
+This appendix provides a full mathematical treatment of the statistics of multi-level atoms and molecules out of thermodynamic equilibrium, including the effects of a background radiation field. This appendix is intended as a reference rather than a full derivation, and so at several points we assert results without proof. Full demonstrations of these results can be found in standard references such as \citet{rybicki86a}, \citet{shu91a}, or \citet{draine11a}.
+
+\section{Matter-Radiation Interaction}
+
+A general radiation field can be specified in terms of the radiation intensity $I(\nu, \mathbf{n})$ at any point in space $\mathbf{x}$ and time $t$; here $\nu$ is the frequency of radiation and $\mathbf{n}$ is a unit vector specifying the direction of radiation propagation. The intensity specifies the amount of radiant energy per unit area per unit frequency per unit solid angle. An alternative representation of the radiation field, which is more useful when dealing with problems in statistical mechanics, is the photon occupation number, defined by
+\begin{equation}
+n_\gamma(\nu, \mathbf{n}) = \frac{c^2}{2h\nu^3} I(\nu, \mathbf{n}).
+\end{equation}
+Physically, the photon occupation number is the number of quanta (photons) in a particular mode, and is dimensionless. In local thermodynamic equilibrium (LTE) at temperature $T$, the radiation intensity in all directions $\mathbf{n}$ is given by the Planck function
+\begin{equation}
+I(\nu,\mathbf{n}) = B_\nu(T) = \frac{2h\nu^3}{c^2}\frac{1}{e^{h\nu/k_B T} - 1}.
+\end{equation}
+The equivalent photon occupation number is
+\begin{equation}
+\label{eq:ngamma_LTE}
+n_{\gamma,\rm LTE}(\nu,\mathbf{n}) = \frac{1}{e^{h\nu/k_B T} - 1}.
+\end{equation}
+
+For non-relativistic problems, the rates at which photons are emitted or absorbed by atoms undergoing a particular quantum mechanical transition does not depend upon the direction of photon propagation, and thus it is convenient to average over the direction $\mathbf{n}$. We define the directionally-integrated photon occupation number by
+\begin{equation}
+\langle n_\gamma\rangle(\nu) = \int n_\gamma(\nu, \mathbf{n}) \, d\Omega,
+\end{equation}
+where the integral is over all directions $\mathbf{n}$.
+
+Now consider a particle of species $X$ with two quantum states that we will denote $u$ and $\ell$, with energies $E_u$ and $E_\ell$, ordered so that $E_u > E_\ell$. The states have degeneracies $g_u$ and $g_\ell$, respectively. Particles in state $u$ can spontaneously emit photons and transition to state $\ell$ with an $e$-folding timescale $A_{u\ell}$. Formally, if $n_u$ is the number density of particles in state $u$, then
+\begin{equation}
+\left(\frac{dn_u}{dt}\right)_{\rm spon.~emiss.} = -n_u A_{u\ell}.
+\end{equation}
+Particles in state $\ell$ can also absorb photons at frequencies $\nu$ near $\nu_{u\ell} = (E_u-E_\ell)/h$ and transition to state $u$, and the absorption rate is proportional to $\langle n_\gamma\rangle(\nu_{u\ell})$ and $n_\ell$, where $n_\ell$ is the number density of particles in state $\ell$. Finally, the presence of photons with frequencies near $\nu_{u\ell}$ can cause stimulated emission, whereby particles in state $u$ emit a photon and transition to state $\ell$; again, the rate at which this process occurs must be proportional to both $\langle n_\gamma\rangle(\nu_{u\ell})$ and $n_u$. We write the rates of these two processes as $(dn_u/dt)_{\rm abs.} \propto n_\ell \langle n_\gamma\rangle(\nu_{u\ell})$ and $(dn_u/dt)_{\rm stim.~emiss.} \propto -n_u \langle n_\gamma\rangle(\nu_{u\ell})$. Putting these processes together, the total rate of change of $n_u$ is given by
+\begin{eqnarray}
+\frac{dn_u}{dt} & = & \left(\frac{dn_u}{dt}\right)_{\rm spon.~emiss.} + \left(\frac{dn_u}{dt}\right)_{\rm stim.~emiss.} + \left(\frac{dn_u}{dt}\right)_{\rm abs.} \\
+& = & -n_u A_{u\ell} - C_{u\ell} n_u \langle n_\gamma\rangle(\nu_{u\ell}) + C_{\ell u} n_\ell \langle n_\gamma\rangle(\nu_{u\ell}),
+\label{eq:dnudt}
+\end{eqnarray}
+where the two constants of proportionality $C_{u\ell}$ and $C_{\ell u}$ are to be determined.
+
+Consider a region where the number density of particles is so low that collisions occur negligibly often. However, the particles can still be in LTE with the radiation field. Let $n_\ell$ be the number density of particles in state $\ell$. In LTE the values of $n_u$ and $n_\ell$ must be related by the usual Boltzmann factor, so
+\begin{equation}
+n_u = \frac{g_u}{g_\ell} e^{-h\nu_{u\ell}/k_B T} n_\ell.
+\end{equation}
+The directionally-averaged photon occupation number must take on its LTE value
+\begin{equation}
+\langle n_\gamma\rangle(\nu) = \frac{1}{e^{h\nu/k_B T} - 1}.
+\end{equation}
+Inserting these values of $n_u$ and $\langle n_\gamma\rangle$ into equation (\ref{eq:dnudt}), and noting that we must have $dn_u/dt = 0$ for a system in LTE, we have
+\begin{equation}
+-\frac{g_u}{g_\ell} e^{-h\nu_{u\ell}/k_B T} \left(A_{u\ell} + \frac{C_{u\ell}}{e^{h\nu/k_B T} - 1}\right) + \frac{C_{\ell u} }{e^{h\nu_{u\ell}/k_B T} - 1} = 0.
+\end{equation}
+For temperatures $T$ such that $h\nu_{u\ell} \ll k_B T$, all the exponential terms approach unity, and thus the two terms proportional to $C_{u\ell}$ and $C_{\ell u}$ are far larger than the term proportional to $A_{u\ell}$. Dropping this term, we immediately see that the equation can be satisfied only if
+\begin{equation}
+C_{\ell u} = \frac{g_u}{g_\ell} C_{u\ell}.
+\end{equation} Conversely, for temperatures $T$ such that $h\nu_{u\ell} \gg k_B T$, the terms in the exponentials are large. We can therefore drop the $-1$ terms in the denominators, and neglect $C_{u\ell}/e^{h\nu_{u\ell}/k_B T}$ in comparison to $A_{u\ell}$. Doing so, we immediately obtain
+\begin{equation}
+C_{\ell u} = \frac{g_u}{g_\ell} A_{u\ell}.
+\end{equation}
+
+Inserting these results into our expressions for the rates of stimulated emission and absorption, we finally have
+\begin{eqnarray}
+\left(\frac{dn_u}{dt}\right)_{\rm stim.~emiss.} & = & n_u \langle n_\gamma\rangle(\nu_{u\ell}) A_{u\ell} \\
+\left(\frac{dn_u}{dt}\right)_{\rm abs.} & = & \frac{g_u}{g_\ell} n_\ell \langle n_\gamma\rangle(\nu_{u\ell}) A_{u\ell}.
+\end{eqnarray}
+
+\section{Statistical Equilibrium for Multi-Level Systems}
+
+Now let us consider some species with a series of possible quantum states. We number them $0, 1, 2, \ldots$ in order of increasing energy, so state $0$ is the ground state. We denote the energy and degeneracy of state $i$ as $E_i$ and $g_i$ respectively. We write the energy difference between any two states as $E_{ij} = E_i - E_j$,  the corresponding frequency as $\nu_{ij} = E_{ij}/h$, and we write the Einstein spontaneous emission coefficient for transitions from state $i$ to state $j$ as $A_{ij}$. The species of interest as number density $n$, and we let $n_i$ be the number density of that species in state $i$. Finally, the species of interest can undergo collisions with another species or with itself, and these can cause state transitions as well. We let $n_c$ be the number density of colliders, and we let $k_{ij}$ be the collision rate coefficient connecting any two states, so that the rate of collisionally-induced transitions from state $i$ to state $j$ is given by $n_i n_c k_{ij}$.
+
+Given this setup, we can write out the rates of all processes that induce changes in the number density of any quantum state. Specifically, the rates of collisional transitions out of and into state $i$ are
+\begin{eqnarray}
+\left(\frac{dn_i}{dt}\right)_{\rm coll.~out} & = & -n_i n_c \sum_j k_{ij} \\
+\left(\frac{dn_i}{dt}\right)_{\rm coll.~in} & = & n_c \sum_j n_j k_{ji}.
+\end{eqnarray}
+Here the first expression is a sum over the rate of collisional transitions from state $i$ to all other states, while the second is a sum over the rate of collisional transitions from all other states to state $i$. By convention we take $k_{ii} = 0$, i.e., we set the rate of collisional transitions from a state to itself to zero. The corresponding rates of transition out of and into state $i$ via spontaneous emission are
+\begin{eqnarray}
+\left(\frac{dn_i}{dt}\right)_{\rm spon.~emiss.~out} & = & -n_i \sum_j A_{ij} \\
+\left(\frac{dn_i}{dt}\right)_{\rm spon.~emiss.~in} & = & \sum_j n_j A_{ji},
+\end{eqnarray}
+where we adopt the convention that $A_{ij} = 0$ for $i \leq j$, i.e., the spontaneous transition rate from a lower energy state to a higher energy one is zero. Finally, the expressions for stimulated emission- and absorption-induced transitions are
+\begin{eqnarray}
+\left(\frac{dn_i}{dt}\right)_{\rm stim.~emiss.~out} & = & -n_i \sum_j A_{ji} \langle n_{\gamma,ji}\rangle \\
+\left(\frac{dn_i}{dt}\right)_{\rm stim.~emiss.~in} & = & \sum_j n_j A_{ji} \langle n_{\gamma,ji}\rangle \\
+\left(\frac{dn_i}{dt}\right)_{\rm abs.~out} & = & -n_i \sum_j \frac{g_j}{g_i} A_{ij} \langle n_{\gamma,ij}\rangle \\
+\left(\frac{dn_i}{dt}\right)_{\rm abs.~in} & = & \sum_j \frac{g_i}{g_j} n_j A_{ij} \langle n_{\gamma,ij}\rangle,
+\end{eqnarray}
+where for convenience we have introduced the shorthand $\langle n_{\gamma,ij}\rangle \equiv \langle n_{\gamma}\rangle(\nu_{ij})$. Note that, per our convention that $A_{ij}$ is non-zero only for $i > j$, the terms in the sums for stimulated emission are non-zero only for states $j > i$, while the terms in the sums for absorption are non-zero only for states $j < i$.
+
+Combining all of the above expressions, we can write out the full rate of change for the number density of particles in each state $i$ as
+\begin{eqnarray}
+\frac{dn_i}{dt} & = & \sum_j n_j\left[n_c k_{ji} + \left(1+\langle n_{\gamma,ji}\rangle\right) A_{ji}\right] +
+ \sum_j n_j \frac{g_i}{g_j} \langle n_{\gamma,ij} A_{ij}
+\nonumber \\
+& & \qquad {} - n_i \sum_j \left[n_c k_{ij} + \left(1+\langle n_{\gamma,ij}\right) A_{ij}\right] 
+\nonumber \\
+& & \qquad {} -
+ n_i \sum_j \frac{g_j}{g_i} \langle n_{\gamma,ji}\rangle A_{ji}.
+\label{eq:stat_eq}
+\end{eqnarray}
+If the system is in statistical equilibrium (but not necessarily LTE), then $dn_i/dt = 0$ for all states $i$. In this case the set of equations \ref{eq:stat_eq} represents a set of linear equations to be solved for the unknown number densities $n_i$. With some algebraic manipulation, one can express this system as a matrix equation
+\begin{equation}
+\mathbf{M} \cdot \mathbf{n} = \mathbf{n},
+\end{equation}
+where $\mathbf{n} = (n_0, n_1, n_2, \ldots)$ is the vector of number densities, and the matrix $\mathbf{M}$ has elements
+\begin{equation}
+M_{ij} = \frac{n_c k_{ji} + \left(1 + \langle n_{\gamma,ji}\rangle\right) A_{ji} + \frac{g_i}{g_j} \langle n_{\gamma,ij}\rangle A_{ij}}
+{ \sum_\ell \left[n_c k_{i\ell} + \left(1 + \langle n_{\gamma,i\ell}\rangle\right) A_{i\ell} + \frac{g_\ell}{g_i} \langle n_{\gamma,\ell i}\rangle A_{\ell i}\right] }.
+\end{equation}
+The matrix $\mathbf{M}$ is therefore specified entirely in terms of the known rate coefficients, degeneracies, and radiation fields, and the problem of finding the level populations $\mathbf{n}$ therefore reduces to that of finding the eigenvector of $\mathbf{M}$ that has an eigenvalue of unity.
+
+\section{Critical Densities for Multi-Level Systems}
+
+Chapter \ref{ch:obscol} gives a derivation of the critical density for two-level systems. Armed with the formalism of the previous section, we can generalize this to many-level systems. Consider some level $i$ which has the property that it is populated primarily from below, meaning that transitions into the state via collisional excitation or radiative absorption from lower levels occur much more often than transitions into the state via radiative decays or collisional de-excitations of higher levels, or transitions out of the state to higher levels via collisions or absorptions. In this case, the time rate of change of the level population reduces to
+\begin{eqnarray}
+\frac{dn_i}{dt} & = & \sum_{j<i} n_j n_c k_{ji} + \sum_{j<i} n_j \frac{g_i}{g_j} \langle n_{\gamma,ij}\rangle A_{ij}
+\nonumber \\
+& & {} - n_i \sum_{j<i} \left[n_c k_{ij} + \left(1+\langle n_{\gamma,ij}\rangle\right)A_{ij}\right].
+\end{eqnarray}
+Here the first term describes collisional excitation into state $i$ from lower levels, the second describes the rate of radiative excitation into state $i$ from lower levels, and the final term describes depopulation of state $i$ via collisions, spontaneous emission, and stimulated emission.
+
+If the system is in steady state, then $dn_i/dt = 0$, and we have
+\begin{equation}
+\label{eq:nsteady}
+n_i = \frac{\sum_{j<i} n_j n_c k_{ji} + \sum_{j<i} n_j \frac{g_i}{g_j} \langle n_{\gamma,ij}\rangle A_{ij}}{\sum_{j<i} \left[n_c k_{ij} + \left(1 + \langle n_{\gamma,ij}\rangle\right)A_{ij}\right]}.
+\end{equation}
+In analogy with the case of a two-level system, we now define the critical density for state $i$ via
+\begin{equation}
+n_{{\rm crit},i} = \frac{\sum_{j<i} \left(1 + \langle n_{\gamma,ij}\rangle\right) A_{ij}}{\sum_{j<i} k_{ij}},
+\end{equation}
+i.e., the critical density is the rate of radiative de-excitation divided by the rate of collisional de-excitation. The sole differences between this and the two-level critical density defined by equation (\ref{eq:ncrit}) are that this expression sums over all states into which radiative and collisional de-excitation can occur, and that it contains an extra factor of $ \left(1 + \langle n_{\gamma,ij}\rangle\right)$ in order to properly account for enhancements in the radiative de-excitation rate due to stimulated emission.
+
+Substituting in this definition of $n_{{\rm crit},i}$ into equation (\ref{eq:nsteady}) for the steady state population gives
+\begin{equation}
+n_i = \left(\frac{n_c}{n_c+n_{{\rm crit},i}}\right) \frac{\sum_{j<i} n_j k_{ji}}{\sum_{j<i} k_{ij}}
++ \left(\frac{n_{{\rm crit},i}}{n_c+n_{{\rm crit},i}}\right) \frac{\sum_{j<i} n_j \frac{g_i}{g_j} \langle n_{\gamma,ij}\rangle A_{ij}}{\sum_{j<i} \left(1+\langle n_{\gamma,ij}\rangle\right) A_{ij}}.
+\end{equation}
+Examining this expression, one can see that the generalized $n_{{\rm crit},i}$ plays much the same role as $n_{\rm crit}$ for a two-level system. In the limit $n_c \gg n_{{\rm crit},i}$, the first term dominates and the second is negligible. In this case the level population is simply set by collisional effects, and radiative effects become irrelevant. Given the relationships between the various collision rate coefficients $k_{ij}$ (c.f. equation \ref{eq:detailed_balance}), this implies that the level population goes to the usual Boltzmann distribution at the gas temperature $T$. Conversely, if $n_c \ll n_{{\rm crit},i}$, the first term is negligible and the second one dominates, so the level population is determined solely by the radiation field. In the absence of an external radiation field (i.e., $\langle n_{\gamma,ij}\rangle \rightarrow 0$), level $i$ becomes depopulated and thus the excitation is sub-thermal. If the radiation field follows a blackbody distribution (i.e., $\langle n_{\gamma,ij}\rangle$ has the value given by equation \ref{eq:ngamma_LTE}), then one can show that the result is that the levels are populated following a Boltzmann distribution at the radiation field temperature.

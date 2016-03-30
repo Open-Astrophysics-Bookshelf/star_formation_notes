@@ -89,13 +89,13 @@ The advantages of this compared to dust thermal emission are threefold. First, s
 
 Much of what we know about star forming gas comes from observations of line emission. These are usually the most complex measurements in terms of the modeling and theory required to understand them. However, they are also by far the richest in terms of the information they provide. They are also among the most sensitive, since the lines can be very bright compared to continuum emission. Indeed, the great majority of what we know about the ISM beyond the local group comes from studying emission in the rotational lines of the CO molecule, because these (plus the C~\textsc{ii} line found in atomic regions) are by far the easiest types of emission to detect from the cold ISM.
 
-The simplest line-emitting system is an atom or molecule with exactly two energy states, but this example contains most of the concepts we will need. In practice we're usually concerned with molecules rather than atoms, because in the dense parts of the ISM where stars form, most of the gas forms molecules.
+The simplest line-emitting system is an atom or molecule with exactly two energy states, but this example contains most of the concepts we will need. The generalization of these results to a multi-level system is given in Appendix \ref{app:multilevel_atoms}.
 
 \paragraph{Einstein Coefficients and Collision Rates}
 
-Consider an atom or molecule of species $X$ with two states are separated by an energy $E$. Suppose we have a gas of such particles with number density $n_X$ at temperature $T$. The number density of atoms in the ground state is $n_0$ and the number density in the excited state is $n_1$. At first suppose that this system does not radiate. In this case collisions between the atoms will eventually bring the two energy levels into thermal equilibrium, and it is straightforward to compute $n_0$ and $n_1$. They just follow a Maxwellian distribution, so $n_1/n_0 = e^{-E/k_B T}$, and thus we have $n_0 = n_X /Z$ and $n_1 = n_X e^{-E/k_B T}/Z$, where $Z=1+e^{-E/k_B T}$ is the partition function.
+Consider an atom or molecule of species $X$ with two non-degenerate states that are separated by an energy $E$. Suppose we have a gas of such particles with number density $n_X$ at temperature $T$. The number density of atoms in the ground state is $n_0$ and the number density in the excited state is $n_1$. At first suppose that this system does not radiate. In this case collisions between the atoms will eventually bring the two energy levels into thermal equilibrium, and it is straightforward to compute $n_0$ and $n_1$. They just follow a Maxwellian distribution, so $n_1/n_0 = e^{-E/k_B T}$, and thus we have $n_0 = n_X /Z$ and $n_1 = n_X e^{-E/k_B T}/Z$, where $Z=1+e^{-E/k_B T}$ is the partition function.
 
-Now let us consider radiative transitions between these states. There are three processes: spontaneous emission, stimulated emission, and absorption, which are described by the three Einstein coefficients. In studying star formation, we can often ignore stimulated emission and absorption, because the ambient radiation field is so weak that these processes occur at negligible rates. The exception to this is when lines become optically thick, so there are a lot of line photons bouncing around trapped inside a structure, or when the frequency of the transition in question is at very low energy, and interactions with CMB photons become significant. However, for simplicity we will begin by just focusing on spontaneous emission and ignoring absorption and stimulated emission.
+Now let us consider radiative transitions between these states. There are three processes: spontaneous emission, stimulated emission, and absorption, which are described by the three Einstein coefficients. In studying star formation, we can often ignore stimulated emission and absorption, because the ambient radiation field is so weak that these processes occur at negligible rates. The exception to this is when lines become optically thick, so there are a lot of line photons bouncing around trapped inside a structure, or when the frequency of the transition in question is at very low energy, and interactions with CMB photons become significant. However, for simplicity we will begin by just focusing on spontaneous emission and ignoring absorption and stimulated emission. The full statistical mechanics problem including these processes is discussed in Appendix \ref{app:multilevel_atoms}.
 
 An atom in the excited state can spontaneously emit a photon and decay to the ground state. The rate at which this happens is described by the Einstein coefficient $A_{10}$, which has units of s$^{-1}$. Its meaning is simply that a population of $n_1$ atoms in the excited state will decay to the ground state by spontaneous emission at a rate 
 \begin{equation}
@@ -126,6 +126,7 @@ However, we also know that the equilibrium distribution is a Maxwellian, so $n_1
 \begin{eqnarray}
 n n_0 (k_{01} - k_{10} e^{-E/k_B T}) & = & 0 \\
 k_{01} & = & k_{10} e^{-E/k_B T}.
+\label{eq:detailed_balance}
 \end{eqnarray}
 This argument applies equally well between a pair of levels even for a complicated molecule with many levels instead of just 2. Thus, we only need to know the rate of collisional excitation or de-excitation between any two levels to know the reverse rate.
 
@@ -141,7 +142,12 @@ n_1 A_{10} + n n_1 k_{10} -n n_0 k_{01} & = & 0 \\
 \end{eqnarray}
 This physical meaning of this expression is clear. If radiation is negligible compared to collisions, i.e., $A_{10} \ll k_{10} n$, then the ratio of level populations approaches the Maxwellian ratio $e^{-E/k_B T}$. As radiation becomes more important, i.e., $A_{10}/(k_{10} n)$ get larger, the fraction in the upper level drops -- the level population is sub-thermal. This is because radiative decays remove molecules from the upper state faster than collisions re-populate it.
 
-Since the collision rate depends on density and the radiative decay rate does not, the balance between these two processes depends on density. This make it convenient to introduce a critical density $n_{\rm crit}$, defined by $n_{\rm crit} = A_{10} / k_{10}$, so that
+Since the collision rate depends on density and the radiative decay rate does not, the balance between these two processes depends on density. This make it convenient to introduce a critical density $n_{\rm crit}$, defined by
+\begin{equation}
+\label{eq:ncrit}
+n_{\rm crit} = \frac{A_{10}}{k_{10}},
+\end{equation}
+so that
 \begin{equation}
 \frac{n_1}{n_0} = e^{-E/k_B T} \frac{1}{1+n_{\rm crit}/n}.
 \end{equation}
