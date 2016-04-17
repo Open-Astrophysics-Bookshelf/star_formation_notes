@@ -1,222 +1,251 @@
-\chapter{Protostellar Disks and Outflows: Observations}
-\label{ch:disks_obs}
+\chapter{Protostar Formation}
+\label{ch:protostar_form}
 
 \marginnote{
 \textbf{Suggested background reading:}
 \begin{itemize}
-\item \href{http://adsabs.harvard.edu/abs/2014prpl.conf..173L}{Li, Z.-Y., et al. 2014, in ``Protostars and Planets VI", ed.~H.~Beuther et al., pp.~173-194}, sections 1-2 \nocite{li14a}
+\item \href{http://adsabs.harvard.edu/abs/2014prpl.conf..173L}{Dunham, M.~M., et al. 2014, in ``Protostars and Planets VI", ed.~H.~Beuther et al., pp.~195-218}, sections 1-4 \nocite{dunham14a}
 \end{itemize}
 \textbf{Suggested literature:}
 \begin{itemize}
-\item \href{http://adsabs.harvard.edu/abs/2012Natur.492...83T}{Tobin et al., 2012, Nature, 492, 83} \nocite{tobin12a}
+\item \href{http://adsabs.harvard.edu/abs/2013ApJ...763....6T}{Tomida, K., et al., 2013, ApJ, 763, 6} \nocite{tomida13a}
 \end{itemize}
 }
 
-We now zoom in even further on the star formation process, and examine the dominant circumstellar structures found around young stars: accretion disks. We will spend two chapters on this subject. In the first we will discuss the observational phenomenology of disks, including the outflows they generate. There are a wide range of observational techniques for studying the properties of disks around young stars, and we will certainly not exhaust the list here. We will focus on a few of the most widely used methods, and develop an understanding of how they work and what we can learn from them.
+The next two chapters focus on the structure and evolution of protostars. Our goal will be to understand when and why collapse stops to form a pressure-supported object, and how those objects subsequently evolve into main sequence stars. This chapter focuses on the dynamics and thermal behavior of the material at the center of a collapsing core as it settles into something we can describe as a star, and on the structure of the envelope around this protostar. Chapter \ref{ch:protostar_evol} is focused on the evolution of this object, both internally and in its appearance on the HR diagram. 
 
-\section{Observing Disks}
+\section{Thermodynamics of a Collapsing Core}
 
-\subsection{Dust at Optical Wavelengths}
+We will begin by considering what happens at the center of a collapsing core where the density in the center is rising rapidly as it collapses. We would like to understand the structure forming at the center of this collapsing object.
 
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{proplyds1}
-\includegraphics[width=\linewidth]{proplyds2}
-%\includegraphics[width=\linewidth]{proplyds3}
-\caption[Protostellar disks in absorption in the ONC]{
-\label{fig:proplyds}
-Two disks in the Orion Nebula seen in absorption against the nebula using \textit{HST}. Taken from \url{http://hubblesite.org/newscenter/archive/releases/1995/45/image/g/}.
-}
-\end{marginfigure}
+\subsection{The Isothermal-Adiabatic Transition}
 
-The first idea that might occur to an astronomer who wants to study disks would be to work in the optical. The main challenge to that is that for the most part disks do not emit optical light, because they are too cool. This leaves only a couple of options in the optical. One is that we can detect the disk in scattered starlight. This is very hard, because the light is very faint, and the geometry has to be just right. Polarization can help in this case, since the scatter light will be polarized. There are a few examples of this.
+The first important point to make is the assumption of isothermality for cores that we have been making must break down at some point. Even at low density there are minor deviations from isothermality that result from the changeover in heating and cooling processes, but these are fairly minor, in the sense that they are unable to significantly affect collapse. For example, the proposed \citet{larson05a} EOS only gets as stiff as $T\propto \rho^{0.07}$ at high density, corresponding to a polytrope $P\propto \rho^{\gamma}$ with $\gamma=1.07$. Since $\gamma=4/3$ is the dividing line between equations of state that are and are not stable against collapse, $\gamma=1.07$ is still in the unstable regime.
 
-The other possibility for the optical is to work in absorption. This requires a bright, extended background source against which the disk can be detected in silhouette. Fortunately, massive young stars produce H~\textsc{ii} regions, which are bright diffuse sources, and can provide a nice backlight for absorption work. The most spectacular examples of this technique are in the Orion Nebula, as illustrated in Figure \ref{fig:proplyds}.
+In contrast, if the gas is not able to radiate at all, it will behave adiabatically. This means it will approach a polytrope with $\gamma=7/5$ or $5/3$, depending on whether the gas temperature is high enough to excite the internal quantum mechanical states of H$_2$ or not. (In actuality the $\gamma$ for H$_2$ is more complicated than that, but that doesn't really matter for our purposes.) Either one is $>4/3$, and thus sufficient to halt collapse.
 
-In this case, since we are working in optical, we get excellent spatial resolution. The disks we see in this case are typically hundreds of AU in size. In such images we can also see very clearly that protostellar jets are launched perpendicular to the disks, confirmed the central role of disks in producing them, as we will discuss shortly.
+Let us make some estimates of when deviations from isothermality that are significant enough to put us into this regime will occur. Since we are dealing with the collapse of the first region to fall in, we can probably safely assume that this material has very low angular momentum and treat the collapse as spherical -- higher angular momentum material will only fall in later, since removal of angular momentum by the disk takes a while. The behavior of this material has been studied by a number of authors, going all the way back to \citet{larson69a}, but the treatment here follows that of \citet{masunaga98a} and \citet{masunaga00a}.
 
-While the optical offers spectacular pictures, its restriction to the cases where we have favorable geometry, a nice backlight, or some combination of the two limits its usefulness as a general tool for studying disks. A further complication is that optical only lets us study disks once their parent cores, which are optically thick at optical wavelengths, have dissipated. This limits optical techniques to studying the later stages of disk evolution.
-
-
-\subsection{Dust Emission in the Infrared and Sub-mm}
-
-A much more broadly used technique is to detect the dust in a disk in the infrared or sub-mm. As discussed in Chapter \ref{ch:obsstars}, young stars often show significantly more IR and sub-mm emission that would be expected from a bare stellar photosphere. The natural candidate for producing this emission is warm dust grains near the star. The fact that we see the stellar photosphere at all, and that it is not hugely reddened, implies that the grains cannot be in any sort of shell or spherical distribution. A disk is the natural candidate geometry.
-
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{HLTau_nrao}
-\caption[ALMA image of the disk around HL Tau]{
-\label{fig:hltau_nrao}
-An ALMA image of the disk around the young star HL Tau. The image shows dust continuum emission. Image from \url{https://public.nrao.edu/static/pr/planet-formation-alma.html}.
-}
-\end{marginfigure}
-
-In some cases we can spatially resolve a disk in IR or sub-mm observations (Figure \ref{fig:hltau_nrao}), and in some cases the disks are unresolved. In either case, in order to interpret these images, we need to think a bit about which parts of the disk we expect to see at which wavelengths. Consider a geometrically thin disk of material of surface density $\Sigma(\varpi)$ and temperature $T(\varpi)$ beginning at a radius $\varpi_0$ around the star and extending out to radius $\varpi_1$. The dust has opacity $\kappa_\lambda$ at wavelength $\lambda$. The entire disk is inclined relative to our line of sight at angle $\theta$. The flux we receive from the disk at wavelength $\lambda$ is
+At high densities inside a core immediately before a central star forms and begins to radiate, the dominant source of energy is adiabatic compression of the gas. We therefore have a situation much like that considered in Section \ref{ssec:chemevol} for the first stars. We let  $e$ be the thermal energy per unit mass of a particular gas parcel and $\Gamma$ and $\Lambda$ be the rates of change in $e$ due to heating and cooling processes, so
 \begin{equation}
-F_{\lambda} = \int I_{\lambda}\, d\Omega,
+\frac{de}{dt} = \Gamma - \Lambda.
 \end{equation}
-where $I_{\lambda}$ is the intensity emitted by a portion of the disk at wavelength $\lambda$, and the integral goes over the solid angle $\Omega$ occupied by the disk.
-
-To evaluate this, note the ring of material at radius $\varpi$ has an area $2\pi \varpi \,d\varpi$. It is inclined relative to the line of sight by $\theta$, however, so its projected area is $2\pi \varpi \cos\theta\, d\varpi$. The case $\theta=0$ corresponds to the ring being seen perfectly face-on, and the case $\theta=1$ corresponds to perfectly edge-on, and gives 0 in the limit of an infinitely thin disk. This is the projected area, and to covert this to a projected solid angle we divide by $D^2$, where $D$ is the distance to the disk. Thus the flux is
+For gas collapsing on a free-fall timescale, we showed in Section \ref{ssec:chemevol} that the heating rate is roughly $c_s^2/t_{\rm ff}$. To be definite we write this out as
 \begin{equation}
-F_{\lambda} = \frac{2\pi \cos\theta}{D^2} \int_{\varpi_0}^{\varpi_1} I_\lambda(\varpi) \varpi\, d\varpi.
+\Gamma = C_1 c_s^2 \sqrt{4\pi G\rho},
 \end{equation}
+where $C_1$ is a constant of order unity that will depend on the exact collapse solution, and the factor of $\sqrt{4\pi}$ has been inserted for future convenience.
 
-To make further progress we must specify the intensity, which is a function of $\Sigma$ and $T$. The optical depth of the disk will be
+The main cooling source is thermal emission by dust grains, which at the high densities with which we are concerned are thermally very well coupled to the gas. Let us first consider the gas where the gas is optically thin to this thermal radiation. In this case the cooling rate per unit mass is simply given by the rate of thermal emission,
 \begin{equation}
-\tau_{\lambda} = \frac{\kappa_{\lambda}\Sigma}{\cos\theta}
+\Lambda_{\rm thin} = 4\kappa_{\rm P} \sigma T^4,
 \end{equation}
-Note that the inclination factor $\cos\theta$ appears on the bottom here, as it should: for $\theta=0$, face-on, we just get the ordinary surface density, but that gets boosted as we incline the disk. The intensity produced by a slab of material of uniform temperature $T$ and optical depth $\tau_{\lambda}$ is
-\begin{equation}
-I_{\lambda} = B_{\lambda}(T) \left(1-e^{-\tau_{\lambda}}\right),
-\end{equation}
-where $B_{\lambda}(T)$ is the Planck function. Plugging this in, we have
-\begin{equation}
-F_{\lambda} = \frac{2\pi \cos\theta}{D^2} \int_{\varpi_0}^{\varpi_1} B_{\lambda}(T) \left[1-\exp\left(-\frac{\kappa_{\lambda}\Sigma}{\cos\theta}\right)\right] \varpi\, d\varpi.
-\end{equation}
+where $\sigma$ is the Stefan-Boltzmann constant and $\kappa_{\rm P}$ is the Planck mean opacity of the dust grains. As long as $\Lambda \gtrsim \Gamma$, the gas will remain isothermal. (Strictly speaking if $\Lambda > \Gamma$ the gas will cool, but that's because we've left out other sources of heating, such as cosmic rays and the fact that the protostar is bathed in a background IR radiation field from other stars.)
 
-For a given disk model it is clearly straightforward to evaluate this integral to obtain the emitted flux. However, the model is underspecified, in the sense that we are fitting only one function, $F_{\lambda}$, and we have two free-functions to use: $T(\varpi)$ and $\Sigma(\varpi)$. This is even if we assume that the opacity is known, which we will see is not a great assumption.
-
-In order to deduce things like $\Sigma$ and $T$ we need to have a physical model of how the disk behaves, and to deduce either $\Sigma$, $T$, or a relationship between them in order to obtain strong constraints on either one from an observed SED. In general such models can be quite complicated, because the disk's temperature distribution depends on both internal heating via viscous dissipation, and external illumination due to the star. Problem set 4 contains a problem in whuch such a model is developed. Even without such a sophisticated model, however, it is possible to learn very interesting things simply from the behavior of the flux in certain limits.
-
-\paragraph{The optically thick limit.}
-
-First, suppose that the disk is optically thick at some wavelength, i.e.\ $\tau_{\lambda} = \kappa_{\lambda}\Sigma/\cos\theta \gg 1$. This is likely to be true for shorter (e.g.\ near-IR) wavelengths, where the opacity is high, and where most emission is coming form close to the star where the surface density is highest. In this case it is reasonable to set the exponential factor to 0, and we are simply left with the integral of the Planck function of the disk temperature over radius.
-
-Note that in this limit $\Sigma$ drops out, which makes intuitive sense: if the disk is optically thick then we only get to see its surface, and adding or removing material beneath this surface won't change the amount of light we see. Substituting in the Planck function, in the optically thick case we now have
-\begin{equation}
-F_{\lambda} = \frac{4\pi\cos\theta}{D^2} \frac{hc^2}{\lambda^5} \int_{\varpi_0}^{\varpi_1} \frac{\varpi}{\exp[hc/(k_B T)]-1}\,d\varpi.
-\end{equation}
-
-If we further assume that the temperature varies with radius as a powerlaw, $T=T_0(\varpi/\varpi_0)^{-q}$, then we can evaluate the integral via the substitution
-\begin{equation}
-x=\left(\frac{hc}{\lambda k_B T_0}\right)^{1/q} \frac{\varpi}{\varpi_0},
-\end{equation}
-which gives
+If we equate the heating and cooling rates, using for $T$ the temperature in the isothermal gas, we therefore will obtain a characteristic density beyond which the gas can no longer remain isothermal. Doing so gives
 \begin{eqnarray}
-F_{\lambda} & = & 
-\frac{4\pi \cos\theta}{D^2} \frac{hc^2}{\lambda^5} \left(\frac{\varpi_0}{x_0}\right)^2 \int_{x_0}^{x_1} \frac{x}{\exp(x^q)-1}\,dx \\
-& = & 
-\frac{4\pi \cos\theta}{D^2} \frac{hc^2}{\lambda^5} \left(\frac{hc}{\lambda k_B \varpi_0^q T_0}\right)^{-2/q} \int_{x_0}^{x_1} \frac{x}{\exp(x^q)-1}\,dx,
+\rho_{\rm thin} & = & \frac{4}{\pi} \frac{\kappa_{\rm P}^2 \sigma^2 \mu^2 T^4}{C_1^2 G k_B^2} \\
+& = & 5\times 10^{-15} \mbox{ g cm}^{-3}\, C_1^{-2} \left(\frac{100 \kappa_{\rm P}}{\mbox{cm}^2\mbox{ g}^{-1}}\right)^2 \left(\frac{T}{10\mbox{ K}}\right)^6,
 \end{eqnarray}
-and $x_0$ and $x_1$ are obtained by plugging $\varpi_0$ and $\varpi_1$ into the expression for $x$.
+where $\mu$ is the mean mass per particle and we have set $c_s\sqrt{k_B T/\mu}$. Thus we find that compressional heating and optically thin cooling to balance at about $10^{-14}$ g cm$^{-3}$.
 
-If we look at the part of the SED where emission is dominated neither by the inner edge of the disk nor the outer optically thin parts, which will be the case over most of the IR, then we can set $x_0\approx 0$ and $x_1\approx \infty$ in the integral. In this case the integral is simply a numerical function of $q$ alone. Since the integral then does not depend on the wavelength, our expression for $F_{\lambda}$ immediately tells us the wavelength-dependence of the emission:
+A second important density is the one at which the gas starts to become optically thick to its own re-emitted infrared radiation. Suppose that the optically thick region at the center of our core has some mean density $\rho$ and radius $R$. The condition that the optical depth across it be unity then reduces to
 \begin{equation}
-\lambda F_{\lambda} \propto \lambda^{(2-4q)/q}.
+2 \kappa \rho R \approx 1.
+\end{equation}
+If this central region corresponds to the size of the region that is no longer in free-fall collapse and is instead thermally supported, then its size must be comparable to the Jeans length at its lowest temperature, i.e.\ $R\sim \lambda_J = \sqrt{\pi c_s^2/(G\rho)}$. Thus we set
+\begin{equation}
+R = C_2 \frac{2\pi c_s}{\sqrt{4\pi G \rho}},
+\end{equation}
+where $C_2$ is again a constant of order unity, and Masunaga et al.\ find based on numerical results that $C_2\approx 0.75$.
+
+Plugging this into the condition for optical depth unity, we derive the characteristic density at which the gas transitions from optically thin to optically thick:
+\begin{eqnarray}
+\rho_{\tau\sim 1} & = & \frac{1}{4\pi} C_2^{-2} \frac{\mu G}{\kappa_{\rm P}^2 k_B T} \\
+& = & 
+1.5\times 10^{-13}\mbox{ g cm}^{-3}\,  C_2^{-2} \left(\frac{100 \kappa_{\rm P}}{\mbox{cm}^2\mbox{ g}^{-1}}\right)^{-2} \left(\frac{T}{10\mbox{ K}}\right)^{-1}
+\end{eqnarray}
+This is not very different from the value for $\rho_{\rm thin}$, so in general for reasonable collapse conditions we expect that cores transition from isothermal to close to adiabatic at a density of $\sim 10^{-13}-10^{-14}$ g cm$^{-3}$.
+
+It is worth noting that ratio of $\rho_{\rm thin}$ to $\rho_{\tau\sim 1}$ depends extremely strongly on both $\kappa_{\rm P}$ (to the 4th power) and $T$ (to the 7th), so any small change in either can render them very different. For example, if the metallicity is super-solar then $\kappa_{\rm P}$ will be larger, which will increase $\rho_{\rm thin}$ and decrease $\rho_{\tau\sim 1}$.
+Similarly, if the region is somewhat warmer, for example due to the presence of nearby massive stars, then $\rho_{\rm thin}$ will increase and $\rho_{\tau\sim 1}$ will decrease.
+
+If $\rho_{\tau\sim 1} < \rho_{\rm thin}$, the collapsing gas will become optically thick before heating becomes faster than optically thin cooling. In this case we must compare the heating rate due to compression with the cooling rate due to optically thick cooling instead of optically thin cooling. Optically thick cooling is determined by the rate at which radiation can diffuse out of the core. If we have a central region of optical depth $\tau\gg 1$, the effective speed of the radiation moving through it is $c/\tau$, so the time required for the radiation to diffuse out is
+\begin{equation}
+t_{\rm diff} = \frac{l\tau}{c} = \frac{\kappa_{\rm P} \rho l^2}{c}
+\end{equation}
+where $l$ is the characteristic size of the core.
+
+Inside the optically thick region matter and radiation are in thermal balance, so the radiation energy density approaches the blackbody value $aT^4$. The radiation energy per unit mass is therefore $aT^4/\rho$. Putting all this together, and taking $l=2 R$ as we did before in computing $\rho_{\tau\sim 1}$, the optically thick cooling rate per unit mass is
+\begin{equation}
+\Lambda_{\rm thick} = \frac{aT^4/\rho}{t_{\rm diff}} = \frac{\sigma T^4}{\kappa_{\rm P} \rho^2 R^2},
+\end{equation}
+where $\sigma=ca/4$. If we equate $\Lambda_{\rm thick}$ and $\Gamma$, we get the characteristic density where the gas becomes non-isothermal in the optically thick regime
+\begin{eqnarray}
+\rho_{\rm thick} & = & \left(\frac{C_1^2 G \sigma^2 \mu^4 T^4}{4\pi^3 C_2^4 k_B^4 \kappa_{\rm P}^2}\right)^{1/3} \\
+& = & 5\times 10^{-14}\mbox{ g cm}^{-3}\, \frac{C_1^{2/3}}{C_2^{4/3}} 
+\left(\frac{100 \kappa_{\rm P}}{\mbox{cm}^2\mbox{ g}^{-1}}\right)^{-2/3} \left(\frac{T}{10\mbox{ K}}\right)^{4/3}.
+\end{eqnarray}
+This is much more weakly dependent on $\kappa_{\rm P}$ and $T$, so we can now make the somewhat more general statement that, even for supersolar metallicity or warmer regions, we expect a transition from isothermal to adiabatic behavior somewhere in the vicinity of $10^{-14}-10^{-13}$ g cm$^{-3}$.
+
+\subsection{The First Core}
+
+The transition to an adiabatic equation of state, with $\gamma>4/3$, means that the collapse must at least temporarily halt. The result will be a hydrostatic object that is supported by its own internal pressure. This object is known as the first core, or sometimes a Larson's first core, after Richard Larson, who first predicted this phenomenon.
+
+We can model the first core reasonably well as a simple polytrope, with index $n$ defined by $n=1/(\gamma-1)$. At low mass when the temperature in the first core is low $\gamma\approx 5/3$ and $n\approx 3/2$, and for a more massive, warmer core $\gamma \approx 7/5$ ($n\approx 5/2$). Since you have seen polytropes treated in stellar structure, we will simply quote the result. For a polytrope of central density $\rho_c$, the radius and mass are
+\begin{eqnarray}
+R & = & a \xi_1\\
+M & = & -4\pi a^3 \rho_c \left(\xi^2\frac{d\theta}{d\xi}\right)_1,
+\end{eqnarray}
+where $\xi=r/a$ is the dimensionless radius, $\theta = (\rho/\rho_c)^{1/n}$ is the dimensionless density, the subscript $1$ refers to the value at the edge of the sphere (where $\theta=0$), the factors $\xi_1$ and $(\xi\, d\theta/d\xi)_1$ can be determined by integrating the Lane-Emden equation, and the scale factor $a$ is defined by
+\begin{equation}
+a^2 = \frac{(n+1) K}{4\pi G} \rho_c^{\frac{1-n}{n}}.
+\end{equation}
+The factor $K = p/\rho^{\gamma}$ is the polytropic constant, which is determined by the specific entropy of the gas.
+
+For our first core, the specific entropy will just be determined by the density at which the gas transitions from isothermal to adiabatic. If we let $\rho_{\rm ad}$ be the density at which the gas becomes adiabatic, then the pressure at this density is $p = \rho_{\rm ad} c_{s0}^2$, where $c_{s0}$ is the sound speed in the isothermal phase, and $K = c_{s0}^2 \rho_{\rm ad}^{1-\gamma}$. For $\gamma=5/3$ ($n=1.5$) we have $\xi_1=3.65$ and $(\xi\, d\theta/d\xi)_1=-2.71$, and plugging in we get
+\begin{eqnarray}
+R & = & 2.2\mbox{ AU}\left(\frac{10^{10}\rho_c}{\mbox{g cm}^{-3}}\right)^{1/6} \left(\frac{T}{10\mbox{ K}}\right)^{1/2} \left(\frac{10^{13}\rho_{\rm ad}}{\mbox{  cm}^{-3}}\right)^{-1/3} \\
+M & = & 0.059\msun \left(\frac{10^{10}\rho_c}{\mbox{g cm}^{-3}}\right)^{7/6} \left(\frac{T}{10\mbox{ K}}\right)^{1/2} \left(\frac{10^{13} \rho_{\rm ad}}{\mbox{g cm}^{-3}}\right)^{-1/3}.
+\end{eqnarray}
+The choice of $\rho_c$ will be justified in a moment.
+
+We can obtain very similar numbers by plugging in for $\gamma=7/5$ ($n=2.5$). These results show that the first core is an object a few AU in size, with a mass of a few hundredths of a solar mass.
+
+\subsection{Second Collapse}
+
+The first core is a very short-lived phase in the evolution of the protostar. To see why, let us estimate its temperature. The temperature inside the sphere rises as $T\propto \rho^{\gamma-1}$, so the central temperature is
+\begin{equation}
+T_c = T_0 \left(\frac{\rho_c}{\rho_{\rm ad}}\right)^{\gamma-1},
+\end{equation}
+where $T_0$ is the temperature in the isothermal phase. Thus the central temperature will be higher than the boundary temperature by a factor that is determined by how high the central density has risen, which in turn will be determined by the amount of mass that has accumulated on the core.
+
+In general we have $M\propto \rho_c^{(3+n)/(2n)}$, or $M\propto \rho_c^{(3\gamma-2)/2}$. We also have $T_c\propto \rho_c^{\gamma-1}$. Combining these results, we get
+\begin{equation}
+T_c \propto M^{(2\gamma-2)/(3\gamma-2)}.
+\end{equation}
+The exponent is $0.44$ for $\gamma=5/3$ and $0.36$ for $\gamma=7/5$. 
+
+Plugging in some numbers, $M = 0.06\msun$, $\rho_{\rm ad}=10^{-13}$ g cm$^{-3}$, and $\gamma=5/3$ gives $\rho_c = 10^{-10}$ g cm$^{-3}$ and $T_c=1000$ K. Thus we see that by the time anything like $0.1$ $\msun$ of material has accumulated on the first core, compression will have caused its central temperature to rise to $1000$ K or more.
+
+This causes yet another change in the thermodynamics of the gas, because all the hydrogen is still molecular, and molecular hydrogen has a binding energy of $4.5$ eV. In comparison, the kinetic energy per molecule for molecular hydrogen at a temperature $T$ is $3 k_B T = 0.26 T_3$ eV, where $T_3=T/(1000\mbox{ K})$. At 1000 K this means that the mean molecule still has only $\sim 5\%$ of the kinetic energy that would be required to dissociate it. However, there is a non-negligible tail of the Maxwellian distribution that is moving fast enough for collisions to produce dissociation. Each of these dissociative collisions removes $4.5$ eV from the kinetic energy budget of the gas and puts it into chemical energy instead. Since dissociations are occurring on the tail of the Maxwellian, any slight increase in the temperature dramatically increases the dissociation rate, moving even more kinetic energy into chemical energy.
+
+This effectively acts as a thermostat for the gas, in much the same way that a boiling pot of water stays near the boiling temperature of water even when energy is added, because all the extra energy that is provided goes into changing the chemical state of the water rather than raising its temperature. Detailed numerical calculations of this effect show that at temperatures above $1000-2000$ K, the equation of state becomes closer to $T\propto \rho^{0.1}$, or $\gamma=1.1$. This is again below the critical value of $\gamma=4/3$ required to have a hydrostatic object, and as a result the center of the first core again goes into something like free-fall collapse.
+
+This is called the second collapse. The time required for it is set by the free-fall time at the central density of the first core, which is only a few years. This collapse continues until all the hydrogen dissociates. The hydrogen also ionizes during this collapse, since the ionization potential of $13.6$ eV isn't very different from the dissociation potential of $4.5$ eV. Only once all the hydrogen is dissociated and ionized can a new hydrostatic object form.
+
+At this point the gas is warmer than $\sim 10^4$ K, is fully ionized, and the new hydrostatic object is a true protostar. It is supported by degeneracy pressure at first when its mass is low, and then as more mass arrives it heats up and becomes supported by thermal pressure. 
+
+An important point to make there is that this discussion implies that brown dwarfs, at least those of sufficiently low mass, do not undergo a prompt second collapse. Instead, their first cores never accumulate enough mass to dissociate the molecules at their center. This isn't to say that dissociation never happens in them, and that second collapse never occurs. A brown dwarf-mass first core will still radiate from its surface and, lacking any internal energy source, this energy loss will have to be balanced by compression. As the gas compresses the temperature and entropy will rise, and, if the object does not become supported by degeneracy pressure first, the central temperature will eventually rise enough to produce second collapse. The difference for a brown dwarf is that this will only occur once slow radiative losses cause a temperature rise, which may take a very long time compared to formation. For stars, in contrast, there is enough mass to reach the critical temperature by compression during formation.
+
+\section{The Protostellar Envelope}
+
+Once a protostar is born at the center of a collapsing cloud, we can ask both about the structure immediately around it and about its internal structure. We defer the latter to Chapter \ref{ch:protostar_evol}, and focus here on the envelope around the newborn protostar.
+
+\subsection{Accretion Luminosity}
+
+The central driver of the behavior of the gas around the protostar is the radiation that it emits. At early times the star has not reached the main sequence or ignited any nuclear burning, so gravity is the only important energy source in the problem. Even if nuclear burning does start, we will see that it is negligible for low mass stars. The protostar is a hydrostatic object, although it undergoes secular contraction, so that gas striking its surface comes to a halt in an accretion shock. In this shock its kinetic energy is converted to heat, which is then radiated away.
+
+The detailed structure of the accretion shock was first worked out by \citet{stahler80a, stahler80b}. The summary is that the energy radiated away at the shock is roughly
+\begin{equation}
+L_{\rm acc} = \frac{G M_* \dot{M}_*}{R_*},
+\end{equation}
+where $M_*$, $\dot{M}_*$, and $R_*$ are the mass, accretion rate, and radius for the protostar.
+
+We will see in Chapter \ref{ch:protostar_evol} that $R_*$ is typically a few $\rsun$ (and indeed this is consistent with the observed radii of T Tauri stars). We have previously calculated typical accretion rates of $\dot{M}_*\sim 10^{-5}$ $\msun$ yr$^{-1}$ for low mass stars.
+Plugging in these numbers, we find
+\begin{equation}
+L_{\rm acc} = 30\lsun\, \dot{M}_{*,-5} M_{*,0} R_{*,1}^{-1},
+\end{equation}
+where $\dot{M}_{*,-5}=\dot{M}_*/(10^{-5}\msun\mbox{ yr}^{-1})$, $M_{*,0}=M_*/\msun$, and $R_{*,1}=R_*/(10\rsun)$.
+Thus a typical low mass protostar can easily put out many tens of $\lsun$ in accretion power, far greater than what it would produce from nuclear burning on the main sequence. 
+
+We can also estimate the effective temperature of the stellar surface due to accretion. The infalling gas arrives in free-fall at a velocity 
+\begin{equation}
+v_{\rm ff}=\sqrt{\frac{2GM_*}{R_*}} = 200\mbox{ km s}^{-1} \, M_{*,0}^{1/2} R_{*,1}^{-1/2}.
+\end{equation}
+The vastly exceeds the sound speed of a few km s$^{-1}$ in gas at a temperature of $\sim 10^3-10^4$ K, so the gas must decelerate in a strong shock with a Mach number of order 100. For a strong shock, one where the Mach number $\mathcal{M} \gg 1$, the Rankine-Hugoniot jump conditions tell us that the post-shock temperature is
+\begin{equation}
+T_2 = \frac{2\gamma(\gamma-1)}{(\gamma+1)^2} \mathcal{M}^2 T_1
+= \frac{2\gamma(\gamma-1)}{(\gamma+1)^2} \frac{v_{\rm shock}^2}{c_1^2} T_1
+= \frac{2(\gamma-1)}{(\gamma+1)^2} \frac{\mu}{k_B} v_{\rm shock}^2,
+\end{equation}
+where $c_1$ is the adiabatic sound speed in the pre-shock gas.
+
+Taking $v_{\rm shock}=v_{\rm ff}$, $\gamma=5/3$ for a monatomic gas, and $\mu=2.3\times 10^{-24}$ g for the pre-shock gas (assuming it to be neutral hydrogen), and plugging in we get
+\begin{equation}
+T_2 = 1.2\times 10^6 \, M_{*,0} R_{*,1}^{-1} \mbox{ K}.
+\end{equation}
+In other words, the post-shock gas is heated to temperatures such that it emits in UV and x-rays. The incoming gas will be extremely opaque to this radiation due to the opacity provided by both free-electrons and numerous lines of multiply ionized metal atoms such as iron. As a result all the radiation emitted by the post-shock gas will be absorbed in a small region immediately outside the shock and reprocessed until it becomes blackbody emission. The stellar surface therefore emits as a blackbody, whose temperature we can calculate in the standard way:
+\begin{eqnarray}
+L_{\rm acc} & = & 4\pi R_*^2 \sigma T_*^4 \\
+T_* & = & 4300 \dot{M}_{*,-5}^{1/4} M_{*,0}^{1/4} R_{*,1}^{-3/4} \mbox{ K}
+\end{eqnarray}
+Thus the star is effectively a blackbody at a surface temperature comparable to that of a main sequence star.
+
+\subsection{The Dust Destruction Front}
+
+Now let us consider the effect of this luminosity on the gas around the protostar. Consider a spherical black dust grain of radius $a$ some distance $r$ from the star. It absorbs radiation at a rate
+\begin{equation}
+\Gamma = \frac{L_{\rm acc}}{4\pi r^2} \pi a^2 = \pi a^2 \sigma T_*^4 \left(\frac{R_*}{r}\right)^2
+\end{equation}
+and radiates it at a rate
+\begin{equation}
+\Lambda = 4\pi a^2 \sigma T_d^4,
+\end{equation}
+where $T_d$ is the dust grain's temperature. Equating these two, the temperature of the grain is
+\begin{equation}
+T_d = \left(\frac{R_*}{2r}\right)^{1/2} T_*
 \end{equation}
 
-Conversely, this means that if we observe the SED of the disk at relatively short wavelengths, for example near-IR, we can invert the wavelength dependence to deduce how the temperature falls with radius. If we also know the distance $D$ and the inclination $\theta$, we can also clearly deduce the combination of variables $\varpi_0^q T_0$ from the observed value of $F_\lambda$.
+Even the most refractory materials out of which interstellar dust is made, such as graphite and silicate grains, will vaporize at temperatures larger than $\sim 1000-1500$ K. The exact temperature depends on the chemical composition of the grains. Thus when $r/R_*$ is too large grains cannot survive. They get vaporized. We therefore expect the protostar to be surrounded by dust-free region.
 
-\paragraph{The optically thin limit.}
+Since the ionizing radiation produced at the shock at the stellar surface all gets absorbed close to the shock, and the star is shining into this dust-free region as a blackbody at a temperature of only a few thousand K, the gas in this region is primarily neutral. Neutral atomic gas with no dust in it is essentially transparent to visible radiation, so in this region the opacity is tiny, and stellar radiation is able to free-stream outward. The dust-free neutral region is called the opacity gap.
 
-Now let us consider the opposite limit, of an optically thin disk. This limit is likely to hold at long wavelengths, such as far-IR and sub-mm, where the dust opacity is low, and where most emission comes from the outer disk where the surface density is low.
-In the optically thin limit, we can take
+As one moves away from the star the equilibrium grain temperature drops, and eventually one reaches a surface where dust grains can exist. This is called the dust destruction radius, since incoming gas that reaches this radius has its grains destroyed. If we plug the grain destruction temperature into our equation for $T_d$, we can solve for the dust destruction radius:
 \begin{equation}
-1-\exp\left(-\frac{\kappa_{\lambda}\Sigma}{\cos\theta}\right) \approx \frac{\kappa_{\lambda}\Sigma}{\cos\theta},
+r_d = \frac{R_*}{2} \left(\frac{T_*}{T_d}\right)^2 = 0.4 \,  T_{d,3}^{-2} \dot{M}_{*,-5}^{1/2} M_{*,0}^{1/2} R_{*,1}^{-1/2} \mbox{ AU},
 \end{equation}
-and substituting this into our integral for the flux gives
+where $T_{d,3}=T_d/(1000\mbox{ K})$ is the dust destruction temperature in units of 1000 K. Thus the dust-free region extends to $\sim 1$ AU around an accreting protostar.
+
+\subsection{Temperature Structure and Observable Properties}
+
+Now let us consider the material beyond the dust destruction front. At the front the gas density is given roughly by the condition
+\begin{eqnarray}
+\dot{M}_* & = & 4\pi r_d^2 \rho v_{\rm ff} \\
+\rho & = & \frac{\dot{M}_*}{\sqrt{8 \pi^2 G M r_d^3}} \\
+& = & 4\times 10^{-13} \, \dot{M}_{*,-5}^{1/4} M_{*,0}^{-7/4} R_{*,1}^{3/4} T_{d,3}^3\mbox{ g cm}^{-3}.
+\end{eqnarray}
+Just inside the front, the stellar spectrum is nearly a blackbody at a temperature of a few thousand Kelvin, so the peak wavelength is
 \begin{equation}
-F_{\lambda} = \frac{2\pi}{D^2} \int_{\varpi_0}^{\varpi_1} B_{\lambda}(T) \kappa_{\lambda}\Sigma \varpi\,d\varpi.
+\lambda \approx \frac{hc}{4kT} = 440 \, \dot{M}_{*,-5}^{-1/4} M_{*,0}^{-1/4} R_{*,1}^{3/4}\mbox{ nm},
 \end{equation}
-Note that in this case the inclination factor $\cos\theta$ drops out, which makes sense: if the disk is optically thin we see all the material in it, so how it is oriented on the sky doesn't matter.
+in the visible.
 
-Even more simplification is possible if we concentrate on emission at wavelengths sufficiently long that we are on the Rayleigh-Jeans tail of the Planck function. This will be true for most sub-mm work, for example: at 1 mm, $hc/(k_B\lambda) = 14$ K, and even the cool outer parts of the disk will be warm enough for emission at this wavelength to fall into the low-energy powerlaw part of the Planck function. In the Rayleigh-Jeans limit
+The opacity of gas with Milky Way dust composition at 440 nm is roughly $\kappa=8000$ cm$^2$ g$^{-1}$, so the mean free-path of a stellar photon moving through the dust destruction front is $(\kappa\rho)^{-1} \approx 3\times 10^8$ cm. This is a tiny length scale compared to any other scale in the problem, such as the size of the core, the size of the opacity gap, or even the radius of the protostar. 
+
+Thus all the starlight that strikes the dust destruction front will immediately be absorbed by the dust grains. They will re-emit it as thermal radiation with a peak wavelength determined by their blackbody temperature, which will be a factor of $\sim 4$ lower than the stellar surface temperature. At around 1.8 $\mu$m, a factor of 4 longer wavelength than the 440 nm we started with, the opacity is drops to around 1000 cm$^2$ g$^{-1}$, so the mean free path is a factor of 8 larger. Nonetheless, this is still tiny, so all the re-emitted radiation will also be absorbed.
+
+Since we are in a situation where all the radiation is absorbed and re-emitted many times, it is reasonable to treat this as a diffusion problem. Protostellar radiation free-streams from the surface, through the opacity gap, and is absorbed and thermalized at the dust destruction front. Then it must diffuse out through the dust envelope. This is essentially the same calculation that is made for radiation diffusing outward through a star, and the equation describing it is the same:
 \begin{equation}
-B_{\lambda}(T) \approx \frac{2c k_B T}{\lambda^4},
+F = -\frac{c}{3\rho \kappa_R} \nabla E,
 \end{equation}
-and substituting this in gives
+where $F$ is the radiation flux, $E$ is the radiation energy density, and $\kappa_R$ here is the Rosseland mean opacity, meaning the mean of the frequency-dependent opacity using a weighting function that is equal to the temperature derivative of the Planck function. Note here that $\kappa_R$ is a function of $T$.
+
+The repeated absorption and re-emission of radiation forces it into thermal equilibrium with the gas, so $E$ is simple the energy density of a thermal radiation field at the gas temperature: $E=aT^4$, where $a$ is the radiation constant and $T$ is the temperature. Since no energy is added or removed from the radiation field as it diffuses outward through the envelope, $F=L_{\rm acc}/(4\pi r^2)$. Putting this together, we have
 \begin{equation}
-F_{\lambda} = \frac{4\pi c k_B \kappa_{\lambda}}{D^2\lambda^4} \int_{\varpi_0}^{\varpi_1} \Sigma T \varpi \,d\varpi.
+L_{\rm acc}=-\frac{16\pi car^2}{3\rho\kappa_R} T^3 \frac{dT}{dr}
 \end{equation}
 
-Note that, again, all the wavelength-dependent terms are now outside the integral, and we therefore again expect to be able to predict the wavelength-dependence of the emission without knowing anything about the disk's density or temperature structure. If the dust opacity varies as $\kappa_\lambda\propto \lambda^{-\beta}$, then we have
+For a given density structure and a model of dust grains that specifies $\kappa_R(T)$, this equation allows us to estimate the temperature structure in the protostellar envelope. For reasonable grain models we expect $\kappa_R\propto T^\alpha$ with $\alpha\approx 0.8$ in the temperature range of a few hundred K. Let us suppose that the density distribution in the envelope looks something like a powerlaw, so $\rho\propto r^{-k_{\rho}}$. Finally, let us also suppose that the temperature also behaves like a powerlaw in radius, $T\propto r^{-k_T}$. The left hand side of the equation is a constant, and we have now worked out how the right hand side varies with $r$. Plugging in all the radial dependences on the RHS, and knowing that they must sum to zero since the LHS is a constant, we get
 \begin{equation}
-\lambda F_\lambda \propto \lambda^{-3-\beta}.
+k_T = \frac{k_{\rho} + 1}{4-\alpha}.
 \end{equation}
 
-This is a particularly important result because it means that we can use the sub-mm SED of a protostellar disk to measure the wavelength-dependence of the dust opacity. In the ISM, $\beta$ is generally observed to be $2$ in diffuse regions, going down to $\sim 1$ as we go to dense regions. The powerlaw index describing how $\kappa_{\lambda}$ varies with $\lambda$ is determined primarily by the size distribution of the dust grains, with larger grains giving smaller $\beta$. This means that reductions in $\beta$ indicate grain growth, an important prelude to planet formation.
+Thus in the freely-falling part of the envelope, where $k_{\rho}\approx 3/2$, we have $k_T\approx 0.8$. In our fiducial example, where the temperature is 1000 K at 0.4 AU, we would expect the temperature to drop to 300 K at around 2 AU, to 100 K at around 8 AU, and back to the background temperature of 10 K at around 150 AU. In the outer part of the envelope the falloff in temperature can be either steeper or shallower depending on how the density falls off -- sharper density falloffs (larger $k_{\rho}$) lead to sharper temperature falls (larger $k_T$) as well.
 
-One big caveat here is that this only applies in the optically thin limit, and at shorter wavelengths one is probing closer to the star, where the gas is closer to optically thick. This can fool us into thinking we're seeing grain growth. To see why, note that for $\beta=1-2$, the typical values for non-disk interstellar grains, we expect $\lambda F_{\lambda}$ to vary as a powerlaw with index between $-4$ and $-5$ in the optically thin limit. Smaller $\beta$, which we expect to occur when grains grow, would make this value shallower.
+Of course this approximation only applies as long as the radiation is trapped by the dust, and the dust opacity is highest for high frequency radiation. Once the dust temperature falls off to less than $\sim 100$ K, depending on the size of the core, the radiation is free to escape instead. Even further in where the dust temperature is higher, long wavelength radiation can escape freely.
 
-However, recall that in the optically thick limit $\lambda F_\lambda \propto \lambda^{(2-4q)/q}$, where $q$ is the powerlaw index describing how the temperature varies with radius. The value of $q$ depends on the thermal structure of the disk, but for observed optically thick sources values of $q$ in the range $0.5-1$ are commonly inferred. In this case $\lambda F_{\lambda}$ varies as a powerlaw with index between $0$ and $-2$. In other words, a transition from optically thin to optically thick {\it also} causes the SED to flatten. Thus, when we see a flattening, we have to be very careful to be sure that it is due to changes in the grain population and not in the optical depth.
+As a result the spectrum inside the core is never truly a blackbody, since radiation at long wavelengths never reaches thermal equilibrium. The emitted spectrum is also complicated by this behavior. We can think of this as follows: for a star, there is something close to a single well-defined photosphere at all frequencies because the density drops off sharply. For a dust cloud, on the other hand, the density drop is not sharp, and so the photosphere, the surface of optical depth unity (or 2/3 if you prefer) is in different places at different frequencies. At high frequencies it is near the core surface because the opacity is high, and at low frequencies the low opacity allows it to be much farther in. For this reason, centrally-heated cores do not emit as blackbodies.
 
-The best way to get around this is with spatially resolved observations, which let us look at a single radius in the disk, thereby getting rid of the effects of radial temperature variation.
-
-\paragraph{Mass estimates.}
-
-By combining the optically thin and optically thick parts of these curves, it is also possible to obtain estimates of the mass of disks, provided that we think we understand the properties of the dust. The general procedure is to observe the disk in the IR, where it is assumed to be optically thick. As discussed earlier, this lets us figure out $q$ and $\varpi_0^q T_0$. This means that the temperature distribution $T(\varpi)$ can be considered known. If one plugs this into the equation for the optically thin flux,
-\begin{equation}
-F_{\lambda} = \frac{4\pi c k_B \kappa_{\lambda}}{D^2\lambda^4} \int_{\varpi_0}^{\varpi_1} \Sigma T \varpi \,d\varpi,
-\end{equation}
-then the only remaining unknowns are $\kappa_{\lambda}$ and $\Sigma$. If one assumes a known $\kappa_\lambda$ (a questionable assumption), then $\Sigma$ is the only unknown.
-
-The problem in this case is no longer underdetermined. The flux $F_{\lambda}$ is one known function, and it determined the unknown function $\Sigma(\varpi)$ uniquely through an integral equation. This can be solved numerically to obtain $\Sigma(\varpi)$, which in turn gives the disk mass. Typical T Tauri disk masses determined via this technique range from $10^{-3}-10^{-1}$ $\msun$, although with an obviously large uncertainty coming from the unknown grain properties, and from the need to convert a dust mass into a total mass.
-
-\subsection{Disks in Molecular Lines}
-
-The optical and IR / sub-mm continuum techniques both target the dust, but they do not directly tell us about the gas in disks, which dominates the mass. To observe the gas we must detect line emission. The lines detected can be in the infrared, which will mostly tell us about the warm portions of the disk very close to the star, or in the radio / sub-mm, which can tell us about the cool material far from the star.
-
-For the former case, lines that have been detected include the vibrational and ro-vibrational transitions of CO, OH, water, and molecular hydrogen. These generally probe regions within a few tenths of an AU of the star, simply because of the high temperatures required for the upper levels to be significantly populated. One particularly important use of these techniques is to infer the inner radii at which disks become truncated. Since this is line emission, we determine the velocity of the gas. If we assume that rotation near the star is Keplerian, and we can measure the stellar mass and inclination by other means, then the maximum measured rotation velocity directly tells us innermost radius at which there is a dense disk. Using this technique suggests that disks are truncated at inner radii of $\sim 0.04$ AU (Figure \ref{fig:diskradius_najita07}).
-
-\begin{figure}
-\includegraphics[width=\linewidth]{diskradius_najita07}
-\caption[Inner disk radii from CO line emission]{
-\label{fig:diskradius_najita07}
-The top panel shows inner truncation radii of disks as inferred from the maximum velocity of CO vibrational emission. For comparison, the bottom panel shows the radial distribution of the hot Jupiter expolanets known at the time \citep{najita07a}.
-}
-\end{figure}
-
-For the sub-mm and radio, detections have mostly involved CO and its isotopologues. The main advantage of this data, as opposed to the dust continuum, is that we obtain kinematic information. This can then be used to determine whether the (usually) poorly-resolved objects we see in the continuum have a velocity structure consistent with Keplerian rotation.  Figure \ref{fig:diskvel_tobin12} shows an example. Note that higher velocity emission tends to come from closer to the star, exactly as would be expected for a Keplerian disk. Indeed, when one fits the data to Keplerian rotation curves, they are entirely consistent. The number of sources for which this analysis has been done is not large, but it is growing.
-
-\begin{figure}
-\includegraphics[width=\linewidth]{diskvel_tobin12}
-\caption[$^{13}$CO channel maps of the disk in L1527]{
-\label{fig:diskvel_tobin12}
-Observed $^{13}$CO line emission from the disk in the core L1527. In each panel, grayscale shows dust continuum emission, white plus signs mark the location of the star, and the red and blue contours show the emission observed in the indicated velocity range. Black ovals show the observational beam, and red and blue arrows show the axis defined by an observed molecular outflow \citep{tobin12a}.
-}
-\end{figure}
-
-
-
-\section{Observations of Outflows}
-
-\subsection{Outflows in the Optical}
-
-In addition to observing the disks themselves, we can observe the outflows that they drive. Outflows were first noticed in the 1950s based on optical observations by Herbig and Haro, working independently. The class of objects they discovered are known as Herbig-Haro, or HH, objects in their honor. HH objects were first seen as small patches of optical emission containing both continuum and a number of lines, most prominently H$\alpha$. The H$\alpha$ indicates the presence of ionization, but, unlike the large ionized regions generated by massive stars, where all species are highly ionized, HH objects also show signs of emission from neutral or weakly ionized species such as O~\textsc{i} and N~\textsc{ii}.
-
-The standard interpretation of this sort of ionization structure is that we are seeing a fast shock. The shocked material is ionized, producing H$\alpha$ emission as it recombines. Both upstream and downstream of the shock itself, however, there is neutral material that is warm, either because it has had a chance to recombine but not to cool (for the downstream gas) or because it has been pre-heated by radiation from the shock (for the upstream gas). This produces the neutral or weakly ionized emission lines.
-
-More sensitive measurements in the 1970s revealed that the bright emission knots Herbig and Haro saw are in fact connected by linear structures that also emit in optical, just with lower surface brightness. We can also see bow shocks at the heads of jets, where the plough into dense molecular gas (Figure \ref{fig:hhjet}).
-
-\begin{figure}
-\includegraphics[width=\linewidth]{hhjet}
-\caption[Herbig-Haro jets from \textit{HST}]{
-\label{fig:hhjet}
-Herbig-Haro jets imaged with the Hubble Space Telescope. Two jets are visible; one is at the tip of the ``pillar" near the top of the image, and another is near the edge of the structure in the middle-left part of the image. Bow shocks from the jets are clearly visible. Taken from \url{http://hubblesite.org/newscenter/archive/releases/2010/13/image/a/}.
-}
-\end{figure}
-
-Today our interpretation of the HH knots is that they are locations where the jet has either encountered a dense region of interstellar material, producing a strong shock and bright emission, or where some variation in the velocity or mass flux being launched into the jet has caused an internal shock. The weaker emission in between the knots is caused by the interaction of the jet with a lower density environment. One can also detect this component in radio free-free emission, produced by electrons in the jet plasma.
-
-The HH objects move fast enough to produce noticeable shifts in position and / or brightness over spans of $\sim 10$ years. The inferred velocities are typically hundreds of km s$^{-1}$. These velocities are also consistent with what we infer from Doppler shifts in cases where the jets is partly oriented toward us.
-
-An important point is that these HH jets are usually bipolar, meaning that there is a clear driving star at the base of two HH objects propagating in opposite directions. Sometimes the knots of emission are even mirror symmetric, suggesting that they are produced by variations in the outflow velocity or mass flux originating at the point where the jet is launched.
-
-Estimates of the density of the outflowing material based on models of the shocks suggest mass fluxes that range from $10^{-6}$ $\msun$ yr$^{-1}$ in class 0 sources, dropping to $10^{-8}-10^{-7}$ $\msun$ yr$^{-1}$ for classical T Tauri stars / class I sources. The inferred momentum flux is therefore of order $10^{-6}-10^{-3}$ $\msun$ km s$^{-1}$ yr$^{-1}$. These estimates are quite uncertainty however, since they are based on shock diagnostics, and tell us relatively little about the material in between the bright HH knots.
-
-
-\subsection{Outflows in the Radio}
-
-Optical and near-IR emission traces the regions where strong shocks heat the gas enough to excite transitions at these wavelengths. However, the jets of fast moving material only show the tip of the iceberg as far as the outflow is concerned. Observations in molecular lines reveal that narrow optical HH jets are accompanied by a much wider-angle, slower-moving, and more massive molecular outflow (Figure \ref{fig:molecular_outflow}).
-
-\begin{figure}
-\includegraphics[width=\linewidth]{molecular_outflow}
-\caption[A molecular outflow in HH111]{
-\label{fig:molecular_outflow}
-Color shows an \textit{HST} image of the jet HH111. The green contours superimposed show an outflow detected as emission in the CO $J=1\rightarrow 0$ line at a velocity of 6 km s$^{-1}$ relative to the bulk of the material in the region. The yellow star marks the position of the driving source. The outflow is $\approx 0.2$ pc long. \citep{mckee07a}. 
-}
-\end{figure}
-
-Molecular observations show large masses of molecular gas moving at $\sim 10$ km s$^{-1}$ -- the velocity is based on the Doppler shifts of the molecular lines used to observe the outflow. Again, we generally see a bipolar morphology. Depending on the outflow direction, this can consist of two lobes pointing in opposite directions on the sky, two lobes in the same position on the sky but with distinct red- and blue-shifted components, or some combination of the two.
-
-Despite their lower velocities, these wind components actually contain the bulk of the outflow momentum, typically $10^{-4}-10^{-1}$ $\msun$ km s$^{-1}$ yr$^{-1}$, depending on the luminosity of the driving source. The molecular outflows are thought to consist primarily not of material ejected directly by the launching mechanism, but of ambient gas that has been swept up by this gas as it flows outward. The interaction is via shocks that can radiate, so energy is not conserved, but momentum is. This entrainment explains why the velocities of this material are so low compared to the material in the jets.
-
+In order to truly determine the temperature distribution within a core it is necessary to either use a more sophisticated analytic treatment (for example one is given in \citealt{chakrabarti05a}) or to proceed numerically. If one wants a more sophisticated density structure that is not spherical, numerical methods are also required. Of course all of this only applies as long as a great deal of mass remains in the envelope, so that it is optically thick to both the star's direct radiation and to the re-radiated thermal radiation from the dust destruction front. In terms of our evolutionary classes, all of this applies to class 0 and class I sources.

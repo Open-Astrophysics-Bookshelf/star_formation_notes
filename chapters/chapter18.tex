@@ -1,251 +1,265 @@
-\chapter{Protostar Formation}
-\label{ch:protostar_form}
+\chapter{Massive Star Formation}
+\label{ch:massivestar}
 
 \marginnote{
 \textbf{Suggested background reading:}
 \begin{itemize}
-\item \href{http://adsabs.harvard.edu/abs/2014prpl.conf..173L}{Dunham, M.~M., et al. 2014, in ``Protostars and Planets VI", ed.~H.~Beuther et al., pp.~195-218}, sections 1-4 \nocite{dunham14a}
+\item \href{http://adsabs.harvard.edu/abs/2014prpl.conf....3D}{Tan, J.~C., et al. 2014, in "Protostars and Planets VI", ed.~H.~Beuther et al., pp.~149-172} \nocite{tan14a}
 \end{itemize}
 \textbf{Suggested literature:}
 \begin{itemize}
-\item \href{http://adsabs.harvard.edu/abs/2013ApJ...763....6T}{Tomida, K., et al., 2013, ApJ, 763, 6} \nocite{tomida13a}
+\item \href{http://adsabs.harvard.edu/abs/2013ApJ...766...97M}{Myers, A.~T., et al. 2013, ApJ, 766, 97} \nocite{myers13a}
 \end{itemize}
 }
 
-The next two chapters focus on the structure and evolution of protostars. Our goal will be to understand when and why collapse stops to form a pressure-supported object, and how those objects subsequently evolve into main sequence stars. This chapter focuses on the dynamics and thermal behavior of the material at the center of a collapsing core as it settles into something we can describe as a star, and on the structure of the envelope around this protostar. Chapter \ref{ch:protostar_evol} is focused on the evolution of this object, both internally and in its appearance on the HR diagram. 
+This chapter will focus on the particular problem of massive stars. Massive stars are extremely rare -- those above 10 $\msun$ constitute only about $10\%$ of all stars formed by mass, and only about $0.2\%$ by number -- but their huge energetic output gives them an importance disproportionate to their numbers. This energetic output also creates unique questions regarding the process by which massive stars form, such that the formation of massive stars is an area of study unto itself.
 
-\section{Thermodynamics of a Collapsing Core}
+\section{Observational Phenomenology}
 
-We will begin by considering what happens at the center of a collapsing core where the density in the center is rising rapidly as it collapses. We would like to understand the structure forming at the center of this collapsing object.
+\subsection{Challenges}
 
-\subsection{The Isothermal-Adiabatic Transition}
+Unfortunately, our observational knowledge of massive star formation is much more limited than our knowledge of the analogous processes governing the formation of Solar mass stars stars. The difficulty is four-fold. First, because massive stars are rare, purely on statistical grounds locations of massive star formation are likely to be much further from Earth than sites of low mass star formation. Indeed, the nearest region of massive star formation, in the Orion cloud, is 400 pc away. Many regions of study are even further, typically $1-2$ kpc. The largest clusters, where massive star formation is most active, are located in the great molecular ring at 3 kpc from the Galactic center, about 5 kpc from us. In contrast, many of the best studied regions of low mass star formation, such as the Taurus cloud, are only $\sim 100-150$ pc from Earth. The larger distance means that we can resolve only large physical scales, and that we need proportionally more telescope time to do so.
 
-The first important point to make is the assumption of isothermality for cores that we have been making must break down at some point. Even at low density there are minor deviations from isothermality that result from the changeover in heating and cooling processes, but these are fairly minor, in the sense that they are unable to significantly affect collapse. For example, the proposed \citet{larson05a} EOS only gets as stiff as $T\propto \rho^{0.07}$ at high density, corresponding to a polytrope $P\propto \rho^{\gamma}$ with $\gamma=1.07$. Since $\gamma=4/3$ is the dividing line between equations of state that are and are not stable against collapse, $\gamma=1.07$ is still in the unstable regime.
+This unfortunately compounds the second challenge: crowding and confusion. Massive stars are generally found in massive star clusters. Whether this is a physical necessity or simply a result of statistics -- i.e., can massive stars only form in clusters, or is it simply improbable that a small cluster will harbor a very rare, massive star -- is a matter of hot debate. Regardless of the outcome of that debate, the clustered environment means that extreme spatial resolution is needed to avoid confusion. For example, at the center of the Orion Nebula Cluster, where the Trapezium stars are located, the stellar density is $\sim 10^5$ pc$^{-3}$ \citep{hillenbrand98a}, so the typical interstellar distance is only $0.02$ pc, or about 5000 AU. In terms of angular resolution, at the 400 pc distance to Orion this is about $10"$. The same cluster at the distance of 2 kpc has a mean angular separation between stars at its center of $2"$. Such resolutions are in reach for the highest resolution radio and sub-mm interferometers, and in the optical from HST or ground-based systems with AO, but are not far from the limits. This means that confusion is a constant worry.
 
-In contrast, if the gas is not able to radiate at all, it will behave adiabatically. This means it will approach a polytrope with $\gamma=7/5$ or $5/3$, depending on whether the gas temperature is high enough to excite the internal quantum mechanical states of H$_2$ or not. (In actuality the $\gamma$ for H$_2$ is more complicated than that, but that doesn't really matter for our purposes.) Either one is $>4/3$, and thus sufficient to halt collapse.
+The third challenge is this obscuration. As we shall see, the typical region of massive star formation has a surface density of $\sim 1$ g cm$^{-2}$. For a standard Milky Way extinction curve, including the effects of ice mantles on the dust grains, this corresponds to visual extinction $A_V\approx 500$ mag. Even at K band, the extinction is only a factor of $\sim 10$ smaller, so $A_K\approx 50$ mag. Obviously this means that optical observations are fairly useless until the tail end of the star formation process, when the vast majority of the gas has been cleared away. Even near-IR is essentially impossible, except in absorption. Only far-IR or radio and sub-mm observations are possible during most of the star formation process. This limitation to long wavelengths of course compounds the problem of confusion, since it means that we can get high resolution only via radio interferometers.
 
-Let us make some estimates of when deviations from isothermality that are significant enough to put us into this regime will occur. Since we are dealing with the collapse of the first region to fall in, we can probably safely assume that this material has very low angular momentum and treat the collapse as spherical -- higher angular momentum material will only fall in later, since removal of angular momentum by the disk takes a while. The behavior of this material has been studied by a number of authors, going all the way back to \citet{larson69a}, but the treatment here follows that of \citet{masunaga98a} and \citet{masunaga00a}.
+The final problem is timescales. As discussed in Chapter \ref{ch:feedback}, feedback from massive stars rapidly destroys the environment in which they form. For example, once they become optically revealed, the disks around massive stars probably survive $\lesssim 10^5$ yr, as opposed to $>10^6$ yr for low mass stars. Thus we have a very limited window in which we can observe massive star formation underway. We essentially can only see massive star formation happening when it is still in the embedded phase. In terms of our classification scheme, massive stars only have a class 0 and a class I phase, not the longer class II or class III phases.
 
-At high densities inside a core immediately before a central star forms and begins to radiate, the dominant source of energy is adiabatic compression of the gas. We therefore have a situation much like that considered in Section \ref{ssec:chemevol} for the first stars. We let  $e$ be the thermal energy per unit mass of a particular gas parcel and $\Gamma$ and $\Lambda$ be the rates of change in $e$ due to heating and cooling processes, so
+\subsection{Massive Clumps}
+
+Given these challenges, what do we know? Observational surveys generally find sites of massive star formation by exploiting the fact that they have huge far-IR fluxes, and that they also show signs of maser emission. The maser emission is produced by strong shocks in high density gas, which are probably produced by the outflows of massive stars travelling at speeds up to $\sim 1000$ km s$^{-1}$ -- the escape speed from the stellar surface.
+
+Regions that show these characteristics are characterized by extremely surface densities, typically $\sim 0.1-1$ g cm$^{-2}$. This much higher that the typical surface density in regions of low mass star formation, which is generally closer to $\sim 0.01 - 0.1$ g cm$^{-2}$. One can also detect these regions in infrared absorption against the background starlight, for example using the 8 $\mu$m band on \textit{Spitzer}. The classes of object discovered this way are called infrared dark clouds, IRDCs, and they seem to be about the same objects as the gas clumps detected in mm dust emission. Figure \ref{fig:irdc_rathborne05} shows an example.
+
+\begin{figure}
+\includegraphics[width=\linewidth]{irdc_rathborne05}
+\caption[IR and mm images of an IRDC]{
+\label{fig:irdc_rathborne05}
+A typical infrared dark cloud (IRDC) \citep{rathborne06a}. The left image shows \textit{Spitzer}/IRAC (near-IR), where the cloud is seen in absorption agains the galactic background, while the right image shows \textit{Spitzer}/MIPS (mid-IR), where parts are seen in absorption and parts in emission. The white contours, which are the same in both panels, show mm continuum emission.
+}
+\end{figure}
+
+The typical clump forming a massive star cluster, detected with either technique, seems to have a mass of a few thousand $\msun$, and a radius of $\sim 1-2$ pc. Recall from our discussion of Larson's Laws in Chapter \ref{ch:gmcs} that the statement that clouds have uniform surface density is equivalent to the combination of virial balance and the linewidth-size relation. The higher surface density of massive star-forming regions compared to the bulk of the material in GMCs implies either that these regions are not in virial balance, that they are not on the linewidth-size relation, or both. When we observe these regions using a molecular tracer, we find that these clumps {\it do} appear to be roughly virial, but that they are off the linewidth-size relation seen for other material in molecular clouds.
+
+The origin of these large velocity dispersions is an interesting problem. They could be driven by gravitational collapse, of course, but that would only supply energy for one crossing time or so, and then would lead to global collapse. We know from galactic-scale surveys, however, that this gas cannot form stars rapidly any more than can the lower density material in GMCs. Otherwise the star formation rate would be too high to compared to what we observe. This suggests that these regions must be stabilized by internal feedback or disrupted by feedback in only $\sim 1$ crossing time, before they have the opportunity to go into a global collapse that converts most of the gas mass to stars.
+
+\subsection{Massive Cores}
+\label{ssec:massivecores}
+
+If one zooms in a bit more using an interferometer, to $\sim 0.1$ pc scales, one can find objects that are $\sim 100$ $\msun$ in mass and $\sim 0.1$ pc in radius. These are centrally concentrated, and appear to be forming stars. Their velocity dispersions are also about one is needed for them to be in virial balance, around 1 km s$^{-1}$. As with their parent clumps, such large velocity dispersions on such small scales puts them well off the linewidth-size relation seen in most material in GMCs. We refer to objects with these characteristics as massive cores. Figure \ref{fig:massivecore_butler12} shows an example.
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{massivecore_butler12}
+\caption[A massive core in IR absorption]{
+\label{fig:massivecore_butler12}
+A massive protostellar core seen in IR absorption \citep{butler12a}. Colors indicate the inferred column density in g cm$^{-2}$. Pixels marked with white dots are lower limits. The black circle shows a radius enclosing $60$ $M_\odot$, and the red circle shows the core radius inferred by fitting a core plus envelope model to the azimuthally-averaged surface density distribution.
+}
+\end{marginfigure}
+
+In some cases we detect no mid-IR emission from massive cores, which indicates that any stars within them cannot yet be massive stars. However, even in cases with no mid-IR, there are signs of active protostellar outflows, in the form of SiO emission \citep[e.g.,][]{motte07a}. The statistics indicate that the starless phase for a massive core is at most $\sim 1000$ yr, implying that once a massive core is assembled it starts forming stars immediately, or even that star formation begins as it is being assembled.
+
+It is instructive to do some simple dimensional analysis for these objects. A region with a mass of $100$ $\msun$ and a radius of $0.1$ pc has a mean density of about $10^{-18}$ g cm$^{-3}$, or $n\sim 10^6$ cm$^{-3}$, and a free-fall time of $5\times 10^4$ yr. Thus we should expect one of these cores to form stars in $\sim 10^5$ yr, and to do so at an accretion rate $\dot{M}\approx M/t_{\rm ff} \approx 10^{-3}$ $\msun$ yr$^{-1}$. This is vastly higher than the expected accretion rates in the regions of low mass star formation close to Earth, and much larger than $c_s^3/G$ where $c_s$ is the thermal sound speed. 
+
+It is also useful to phrase the accretion rate in terms of a velocity dispersion. Suppose we have a core in rough virial balance, so that
 \begin{equation}
-\frac{de}{dt} = \Gamma - \Lambda.
+\alpha_{\rm vir} = \frac{5 \sigma^2 R}{G M} \approx 1,
 \end{equation}
-For gas collapsing on a free-fall timescale, we showed in Section \ref{ssec:chemevol} that the heating rate is roughly $c_s^2/t_{\rm ff}$. To be definite we write this out as
+where the 1D velocity dispersion $\sigma$ here now includes contributions from both thermal and non-thermal motions. The density is $\rho=3 M/(4\pi R^3)$, so the free-fall time is
 \begin{equation}
-\Gamma = C_1 c_s^2 \sqrt{4\pi G\rho},
+t_{\rm ff} = \sqrt{\frac{3\pi}{32 G \rho}} = \sqrt{\frac{\pi R^3}{8 G M}}.
 \end{equation}
-where $C_1$ is a constant of order unity that will depend on the exact collapse solution, and the factor of $\sqrt{4\pi}$ has been inserted for future convenience.
-
-The main cooling source is thermal emission by dust grains, which at the high densities with which we are concerned are thermally very well coupled to the gas. Let us first consider the gas where the gas is optically thin to this thermal radiation. In this case the cooling rate per unit mass is simply given by the rate of thermal emission,
+If the core collapses in free-fall, the accretion rate is
 \begin{equation}
-\Lambda_{\rm thin} = 4\kappa_{\rm P} \sigma T^4,
+\dot{M} \approx \frac{M}{t_{\rm ff}} = \sqrt{\frac{8 G M^3}{\pi R^3}} = \sqrt{\frac{1000}{\pi\alpha_{\rm vir}^3}} \frac{\sigma^3}{G}.
 \end{equation}
-where $\sigma$ is the Stefan-Boltzmann constant and $\kappa_{\rm P}$ is the Planck mean opacity of the dust grains. As long as $\Lambda \gtrsim \Gamma$, the gas will remain isothermal. (Strictly speaking if $\Lambda > \Gamma$ the gas will cool, but that's because we've left out other sources of heating, such as cosmic rays and the fact that the protostar is bathed in a background IR radiation field from other stars.)
+Thus, the accretion rate will be roughly $\sim 10 \sigma^3/G$.
 
-If we equate the heating and cooling rates, using for $T$ the temperature in the isothermal gas, we therefore will obtain a characteristic density beyond which the gas can no longer remain isothermal. Doing so gives
-\begin{eqnarray}
-\rho_{\rm thin} & = & \frac{4}{\pi} \frac{\kappa_{\rm P}^2 \sigma^2 \mu^2 T^4}{C_1^2 G k_B^2} \\
-& = & 5\times 10^{-15} \mbox{ g cm}^{-3}\, C_1^{-2} \left(\frac{100 \kappa_{\rm P}}{\mbox{cm}^2\mbox{ g}^{-1}}\right)^2 \left(\frac{T}{10\mbox{ K}}\right)^6,
-\end{eqnarray}
-where $\mu$ is the mean mass per particle and we have set $c_s\sqrt{k_B T/\mu}$. Thus we find that compressional heating and optically thin cooling to balance at about $10^{-14}$ g cm$^{-3}$.
+\section{Fragmentation}
 
-A second important density is the one at which the gas starts to become optically thick to its own re-emitted infrared radiation. Suppose that the optically thick region at the center of our core has some mean density $\rho$ and radius $R$. The condition that the optical depth across it be unity then reduces to
+\subsection{Massive Core Fragmentation}
+
+Given that we see these massive cores, can we understand how they turn into massive stars? The first thing that happens when one of these cores begins to collapse is that it will be subject to fragmentation. In effect, because it is so much larger than a thermal Jeans mass, a 100 $\msun$ massive core has the potential to become a small cluster rather than a single star or star system. On the other hand, both radiative heating and magnetic fields are capable of suppressing fragmentation. So what happens?
+
+This still a very active area of research, but recent work by \citet{commercon11c} and \citet{myers13a} that includes radiative transfer and magnetic fields suggests that a combination of the two is very effective at suppressing fragmentation of massive protostellar cores. The basic mechanism is quite analogous to the way that radiation feedback can shape the IMF overall: rapid accretion gives rise to a high accretion luminosity, which in turn heats the gas and raises the Jeans mass. Magnetic fields enhance this effect in two ways. First, by providing a convenient way of getting rid of angular momentum (as we will discuss further in Chapter \ref{ch:disks_theory}), they enhance the accretion rate. Second, they tend to stabilize the more distant, cooler parts of the core that are less heated by the radiation. These low-density regions may be Jeans unstable, but they are also magnetically subcritical and thus cannot fragment and collapse. Figure \ref{fig:msf_myers13} shows an example simulation.
+
+\begin{figure}
+\includegraphics[width=\linewidth]{msf_myers13}
+\caption[Simulations of massive star formation with magnetic fields and radiation]{
+\label{fig:msf_myers13}
+Three simulations of the collapse of a 300 $M_\odot$ massive core by \citet{myers13a}. The color scale shows the projected gas density, and white points are stars, with the size indicating the mass. The three simulations use identical initial conditions, but different physics. The left panel uses radiative transfer but no magnetic fields, the middle uses magnetic fields but no radiation, and the right panel includes both magnetic fields and radiation.
+}
+\end{figure}
+
+\subsection{Massive Binaries}
+
+As discussed in Chapter \ref{ch:imf_obs}, massive stars are overwhelmingly members of binary or higher multiple star systems. Why this should be is obviously an interesting question, and related to the topic of fragmentation. Binaries can form in two ways. One way of making binaries is what we can call direct fragmentation: a collapsing gas core breaks up into two or more pieces during collapse. This possibility is closely related to the discussion of the IMF, in that it depends on the thermodynamics of the gas and its turbulent motions. The other possibility is disk fragmentation, in which material collapses into a disk and that disk then fragments. Direct fragmentation almost has to be the origin for wide period binaries, those with separations $\gtrsim 1000$ AU, the typical size of a protostellar disk. It could also be the origin for close ones. However, it is suggestive that the mass ratio distribution is somewhat different for close binaries than for distant ones.
+
+There have been several numerical studies of the circumstances under which a core is expected to undergo fragmentation to produce a binary. Generally speaking, the amount of fragmentation appears to depend on the amount of initial turbulence in the core. Two important parameters controlling when and whether this happens are rate of rotation and the strength of the magnetic field in the initial cloud. A third parameter that becomes relevant in disks is the relationship between gas density and temperature.
+
+\citet{machida08b} varied the rotation rate and magnetic field strength in clouds and found that they could draw boundaries in parameter space determining where various types of fragmentation occur. Higher rotation rates and weaker magnetic fields favor direct fragmentation, while slower rotation rates and stronger magnetic fields favor no fragmentation. Disk fragmentation appears to occur at intermediate values. Of course real cores have some level of turbulence, even if they are subsonic, and it is not entirely clear how to translate these conditions into probabilities of binary formation for turbulent cores.
+
+The nature of disk fragmentation and its relationship with the thermal properties of the gas has been clarified in a series of papers by \citet{kratter06a} and \citet{kratter08a, kratter10a}. These authors point out that the behavior of a collapsing, rotating, non-magnetic core can be described in terms of two dimensionless numbers:
 \begin{equation}
-2 \kappa \rho R \approx 1.
+\xi \equiv \frac{\dot{M} G}{c_s^3} \qquad\qquad \Gamma = \frac{\dot{M}}{M_{*d}\Omega_{k,\rm in}} = \frac{\dot{M} \langle j\rangle_{\rm in}}{G^2 M_{*d}^3}.
 \end{equation}
-If this central region corresponds to the size of the region that is no longer in free-fall collapse and is instead thermally supported, then its size must be comparable to the Jeans length at its lowest temperature, i.e.\ $R\sim \lambda_J = \sqrt{\pi c_s^2/(G\rho)}$. Thus we set
+Here $\dot{M}$ is the rate at which matter falls onto the edge of the disk, $c_s$ is the sound speed in the disk, $M_{*d}$ is the total mass of the disk and the star it orbits, $\Omega_{k,\rm in}$ is the Keplerian angular frequency of matter entering the disk and $\langle j\rangle_{\rm in}$ is the mean specific angular momentum of matter entering the disk.
+
+The meanings of these two dimensionless numbers are straightforward. The first, $\xi$, takes the ratio of the accretion rate to the characteristic thermal accretion rate $c_s^3/G$. This is (up to factors of order unity) the accretion rate for a singular isothermal sphere or a Bonnor-Ebert sphere, and it is also the characteristic accretion rate through an isothermal disk, as we will see in Chapter \ref{ch:disks_theory}. The second parameter, $\Gamma$, is a measure of the angular momentum content of the accretion. The quantity $\dot{M}/\Omega_{k,\rm in}$ is (neglecting a factor of $2\pi$) the amount of mass added per orbital period at the disk outer edge. Thus $\Gamma$ measures the fraction by which accretion changes the total disk plus star mass per disk orbital period. High angular momentum flows have large rotation periods, so they produce larger values of $\Gamma$ at the same total accretion rate.
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{diskfrag_kratter10}
+\caption[Parameter study of disk fragmentation]{
+\label{fig:diskfrag_kratter10}
+Results of a series of simulations of disk fragmentation by \citet{kratter10a}. Points show the accretion rate parameter $\xi$ and the rotation parameter $\Gamma$ for the simulations, with the type of point indicating the outcome: a single star, a multiple system, or a binary system. The shaded region is forbidden, because cores in that region are unable to collapse.
+}
+\end{marginfigure}
+
+Intuitively, we expect that disk fragmentation is likely for high values of $\xi$ and low values of $\Gamma$, because both favor higher surface densities in the disk. High $\xi$ favors high disk surface density because it corresponds to matter entering the disk faster, and low $\Gamma$ favors higher surface density because it tends to make the disk more compact (since the circularization radius of the accreting material increases and $\Gamma$ does). This is exactly what a series of numerical simulations shows, as illustrated in Figure \ref{fig:diskfrag_kratter10}.
+
+These results are very nice because they quite naturally explain why binaries are much more common among high mass stars. We showed in Section \ref{ssec:massivecores} that typical accretion rates onto massive stars are $\sim 10 \sigma^3/G$, where $\sigma$ is the velocity dispersion in the protostellar core. The parameter $\xi$ is determined by the accretion rate normalized to $c_s^3/G$ (where $c_s$ is the disk sound speed, recall), and thus we have
 \begin{equation}
-R = C_2 \frac{2\pi c_s}{\sqrt{4\pi G \rho}},
+\xi \sim 10\left(\frac{\sigma}{c_s}\right)^3.
 \end{equation}
-where $C_2$ is again a constant of order unity, and Masunaga et al.\ find based on numerical results that $C_2\approx 0.75$.
+For a massive core, the disk sound speed $c_s$ is enhanced compared to that in the core due to the radiation from the star, but much less than $\sigma$ is enhanced. Typical outer disk temperatures for massive star disks are $\sim 100$ K, corresponding to $c_s \sim 0.6$ km s$^{-1}$, whereas $\sigma \sim 1$ km s$^{-1}$, giving $\xi \gg 1$. Thus disk fragmentation is essentially inevitable.
 
-Plugging this into the condition for optical depth unity, we derive the characteristic density at which the gas transitions from optically thin to optically thick:
-\begin{eqnarray}
-\rho_{\tau\sim 1} & = & \frac{1}{4\pi} C_2^{-2} \frac{\mu G}{\kappa_{\rm P}^2 k_B T} \\
-& = & 
-1.5\times 10^{-13}\mbox{ g cm}^{-3}\,  C_2^{-2} \left(\frac{100 \kappa_{\rm P}}{\mbox{cm}^2\mbox{ g}^{-1}}\right)^{-2} \left(\frac{T}{10\mbox{ K}}\right)^{-1}
-\end{eqnarray}
-This is not very different from the value for $\rho_{\rm thin}$, so in general for reasonable collapse conditions we expect that cores transition from isothermal to close to adiabatic at a density of $\sim 10^{-13}-10^{-14}$ g cm$^{-3}$.
+A second effect that enhances massive star binary is N-body processing. Young clusters are born far from dynamically-relaxed, and thus there is an initial period where stars may have close encounters with one another. During this phase, encounters between binary systems, between binaries and single stars, and between three single stars can all serve to create or destroy binaries, or to modify their properties. The study of exactly how this happens is a huge topic into which we will not delve, beyond making a few general observations.
 
-It is worth noting that ratio of $\rho_{\rm thin}$ to $\rho_{\tau\sim 1}$ depends extremely strongly on both $\kappa_{\rm P}$ (to the 4th power) and $T$ (to the 7th), so any small change in either can render them very different. For example, if the metallicity is super-solar then $\kappa_{\rm P}$ will be larger, which will increase $\rho_{\rm thin}$ and decrease $\rho_{\tau\sim 1}$.
-Similarly, if the region is somewhat warmer, for example due to the presence of nearby massive stars, then $\rho_{\rm thin}$ will increase and $\rho_{\tau\sim 1}$ will decrease.
+The main effects of this N-body processing are as follows: (1) wide binaries will tend to be widened and disrupted; (2) tight binaries will tend to get tighter; (3) three-body interactions may occur that will tend to preferentially keep more massive stars in binaries, thus favoring equal mass ratios. The line between close and wide binaries depends on the velocity -- binaries with orbital velocities greater than the cluster velocity dispersion are close, others are wide. All of these effects will tend to increase the binary fraction for more massive stars relative to less massive ones; the third effect does so by creating new massive binaries, and the first two favor massive binaries because a higher mass produces a higher orbital velocity, and thus a wider range of separations that can be considered close.
 
-If $\rho_{\tau\sim 1} < \rho_{\rm thin}$, the collapsing gas will become optically thick before heating becomes faster than optically thin cooling. In this case we must compare the heating rate due to compression with the cooling rate due to optically thick cooling instead of optically thin cooling. Optically thick cooling is determined by the rate at which radiation can diffuse out of the core. If we have a central region of optical depth $\tau\gg 1$, the effective speed of the radiation moving through it is $c/\tau$, so the time required for the radiation to diffuse out is
+\section{Barriers to Accretion}
+
+\subsection{Evolution of Massive Protostars}
+
+Massive stars are not only somewhat different from low mass stars in terms of their parent cores, but also in their internal evolution. At accretion rates of $\sim 10^{-4}-10^{-3}$ $\msun$ yr$^{-1}$, forming a $10-100$ $\msun$ star takes of order $10^5$ yr, not that different than the time require to make a low mass star.
+
+However, massive stars are very different than low mass ones in terms of the timescales that govern their thermal evolution. A more complete discussion of protostellar evolution appears in Chapter \ref{ch:protostar_evol}, but for now we note that the Kelvin-Helmholtz time in a star is
 \begin{equation}
-t_{\rm diff} = \frac{l\tau}{c} = \frac{\kappa_{\rm P} \rho l^2}{c}
+t_{\rm KH} = \frac{GM^2}{RL}.
 \end{equation}
-where $l$ is the characteristic size of the core.
+Evaluating this for main sequence values of $M$, $R$, and $L$, for a zero age main sequence (ZAMS) star of mass $1$ $\msun$, $t_{\rm KH} = 50$ Myr.  For a protostar where $R$ and $L$ are both larger (see Chapter \ref{ch:protostar_evol}), this drops to $\sim 1$ Myr. On the other hand, to put some numbers on this for a massive star, a 50 $\msun$ ZAMS star has a radius of $10.7$ $\rsun$ and a luminosity of $3.5\times 10^5$ $\lsun$. For this star $t_{\rm KH}=20$ kyr, even without putting in a larger radius because it is pre-main sequence. Since this is less than the $\sim 10^5$ yr required to form the star, we expect that massive stars will be able to reach thermal equilibrium, and thus contract to the main sequence, while forming, whereas low mass stars will not.
 
-Inside the optically thick region matter and radiation are in thermal balance, so the radiation energy density approaches the blackbody value $aT^4$. The radiation energy per unit mass is therefore $aT^4/\rho$. Putting all this together, and taking $l=2 R$ as we did before in computing $\rho_{\tau\sim 1}$, the optically thick cooling rate per unit mass is
+The rapid contraction to the main sequence has a few consequences. It means that the stars will have stronger winds, since the wind speed is linked to the Keplerian speed at the stellar surface and massive stars are able to shrink more. It also means that massive protostars will put out roughly the same amount of light as main sequence stars of the same mass, since they will rapidly contract down to similar sizes. This means that massive protostars have much higher luminosities than low mass ones, and that their luminosities are dominated by internal production within the star, rather than by accretion luminosity, which we will show in Chapter \ref{ch:protostar_form} is dominant for low mass stars. A third implication of the stars' comparatively small radii is that the effective temperature will be fairly high, so much of this light will emerge as ionizing radiation, even while the star is still forming.
+
+The fact that massive protostars settle onto the main sequence while forming raises interesting problems for how they are able to keep accreting.
+
+\subsection{Winds}
+
+One thing that one might worry about is that the main sequence winds of a massive star, which are reasonably isotropic, might inhibit accretion. These winds may well start up while the star is still forming. However, this worry is fairly easy to dismiss.
+
+Main sequence O stars show wind speeds up to $\sim 1000$ km s$^{-1}$, with mass fluxes that are typically $\sim 10^{-7}$ $\msun$ yr$^{-1}$ or less. The mass flux is
 \begin{equation}
-\Lambda_{\rm thick} = \frac{aT^4/\rho}{t_{\rm diff}} = \frac{\sigma T^4}{\kappa_{\rm P} \rho^2 R^2},
+\dot{M} = 4\pi r^2 \rho v,
 \end{equation}
-where $\sigma=ca/4$. If we equate $\Lambda_{\rm thick}$ and $\Gamma$, we get the characteristic density where the gas becomes non-isothermal in the optically thick regime
-\begin{eqnarray}
-\rho_{\rm thick} & = & \left(\frac{C_1^2 G \sigma^2 \mu^4 T^4}{4\pi^3 C_2^4 k_B^4 \kappa_{\rm P}^2}\right)^{1/3} \\
-& = & 5\times 10^{-14}\mbox{ g cm}^{-3}\, \frac{C_1^{2/3}}{C_2^{4/3}} 
-\left(\frac{100 \kappa_{\rm P}}{\mbox{cm}^2\mbox{ g}^{-1}}\right)^{-2/3} \left(\frac{T}{10\mbox{ K}}\right)^{4/3}.
-\end{eqnarray}
-This is much more weakly dependent on $\kappa_{\rm P}$ and $T$, so we can now make the somewhat more general statement that, even for supersolar metallicity or warmer regions, we expect a transition from isothermal to adiabatic behavior somewhere in the vicinity of $10^{-14}-10^{-13}$ g cm$^{-3}$.
-
-\subsection{The First Core}
-
-The transition to an adiabatic equation of state, with $\gamma>4/3$, means that the collapse must at least temporarily halt. The result will be a hydrostatic object that is supported by its own internal pressure. This object is known as the first core, or sometimes a Larson's first core, after Richard Larson, who first predicted this phenomenon.
-
-We can model the first core reasonably well as a simple polytrope, with index $n$ defined by $n=1/(\gamma-1)$. At low mass when the temperature in the first core is low $\gamma\approx 5/3$ and $n\approx 3/2$, and for a more massive, warmer core $\gamma \approx 7/5$ ($n\approx 5/2$). Since you have seen polytropes treated in stellar structure, we will simply quote the result. For a polytrope of central density $\rho_c$, the radius and mass are
-\begin{eqnarray}
-R & = & a \xi_1\\
-M & = & -4\pi a^3 \rho_c \left(\xi^2\frac{d\theta}{d\xi}\right)_1,
-\end{eqnarray}
-where $\xi=r/a$ is the dimensionless radius, $\theta = (\rho/\rho_c)^{1/n}$ is the dimensionless density, the subscript $1$ refers to the value at the edge of the sphere (where $\theta=0$), the factors $\xi_1$ and $(\xi\, d\theta/d\xi)_1$ can be determined by integrating the Lane-Emden equation, and the scale factor $a$ is defined by
+so the associated ram pressure is
 \begin{equation}
-a^2 = \frac{(n+1) K}{4\pi G} \rho_c^{\frac{1-n}{n}}.
+P_{\rm wind} = \rho v^2 = \frac{\dot{M}_{\rm wind} v_{\rm wind}}{4\pi r^2}.
 \end{equation}
-The factor $K = p/\rho^{\gamma}$ is the polytropic constant, which is determined by the specific entropy of the gas.
-
-For our first core, the specific entropy will just be determined by the density at which the gas transitions from isothermal to adiabatic. If we let $\rho_{\rm ad}$ be the density at which the gas becomes adiabatic, then the pressure at this density is $p = \rho_{\rm ad} c_{s0}^2$, where $c_{s0}$ is the sound speed in the isothermal phase, and $K = c_{s0}^2 \rho_{\rm ad}^{1-\gamma}$. For $\gamma=5/3$ ($n=1.5$) we have $\xi_1=3.65$ and $(\xi\, d\theta/d\xi)_1=-2.71$, and plugging in we get
-\begin{eqnarray}
-R & = & 2.2\mbox{ AU}\left(\frac{10^{10}\rho_c}{\mbox{g cm}^{-3}}\right)^{1/6} \left(\frac{T}{10\mbox{ K}}\right)^{1/2} \left(\frac{10^{13}\rho_{\rm ad}}{\mbox{  cm}^{-3}}\right)^{-1/3} \\
-M & = & 0.059\msun \left(\frac{10^{10}\rho_c}{\mbox{g cm}^{-3}}\right)^{7/6} \left(\frac{T}{10\mbox{ K}}\right)^{1/2} \left(\frac{10^{13} \rho_{\rm ad}}{\mbox{g cm}^{-3}}\right)^{-1/3}.
-\end{eqnarray}
-The choice of $\rho_c$ will be justified in a moment.
-
-We can obtain very similar numbers by plugging in for $\gamma=7/5$ ($n=2.5$). These results show that the first core is an object a few AU in size, with a mass of a few hundredths of a solar mass.
-
-\subsection{Second Collapse}
-
-The first core is a very short-lived phase in the evolution of the protostar. To see why, let us estimate its temperature. The temperature inside the sphere rises as $T\propto \rho^{\gamma-1}$, so the central temperature is
+In contrast, the accretion flow has a mass flux of $10^{-4}-10^{-3}$ $\msun$ yr$^{-1}$, and if it arrives at free-fall its ram pressure is
 \begin{equation}
-T_c = T_0 \left(\frac{\rho_c}{\rho_{\rm ad}}\right)^{\gamma-1},
+P_{\rm infall} = \frac{\dot{M}_{\rm acc} v_{\rm ff}}{4\pi r^2}.
 \end{equation}
-where $T_0$ is the temperature in the isothermal phase. Thus the central temperature will be higher than the boundary temperature by a factor that is determined by how high the central density has risen, which in turn will be determined by the amount of mass that has accumulated on the core.
-
-In general we have $M\propto \rho_c^{(3+n)/(2n)}$, or $M\propto \rho_c^{(3\gamma-2)/2}$. We also have $T_c\propto \rho_c^{\gamma-1}$. Combining these results, we get
+Thus the ratio of the ram pressures is
 \begin{equation}
-T_c \propto M^{(2\gamma-2)/(3\gamma-2)}.
-\end{equation}
-The exponent is $0.44$ for $\gamma=5/3$ and $0.36$ for $\gamma=7/5$. 
-
-Plugging in some numbers, $M = 0.06\msun$, $\rho_{\rm ad}=10^{-13}$ g cm$^{-3}$, and $\gamma=5/3$ gives $\rho_c = 10^{-10}$ g cm$^{-3}$ and $T_c=1000$ K. Thus we see that by the time anything like $0.1$ $\msun$ of material has accumulated on the first core, compression will have caused its central temperature to rise to $1000$ K or more.
-
-This causes yet another change in the thermodynamics of the gas, because all the hydrogen is still molecular, and molecular hydrogen has a binding energy of $4.5$ eV. In comparison, the kinetic energy per molecule for molecular hydrogen at a temperature $T$ is $3 k_B T = 0.26 T_3$ eV, where $T_3=T/(1000\mbox{ K})$. At 1000 K this means that the mean molecule still has only $\sim 5\%$ of the kinetic energy that would be required to dissociate it. However, there is a non-negligible tail of the Maxwellian distribution that is moving fast enough for collisions to produce dissociation. Each of these dissociative collisions removes $4.5$ eV from the kinetic energy budget of the gas and puts it into chemical energy instead. Since dissociations are occurring on the tail of the Maxwellian, any slight increase in the temperature dramatically increases the dissociation rate, moving even more kinetic energy into chemical energy.
-
-This effectively acts as a thermostat for the gas, in much the same way that a boiling pot of water stays near the boiling temperature of water even when energy is added, because all the extra energy that is provided goes into changing the chemical state of the water rather than raising its temperature. Detailed numerical calculations of this effect show that at temperatures above $1000-2000$ K, the equation of state becomes closer to $T\propto \rho^{0.1}$, or $\gamma=1.1$. This is again below the critical value of $\gamma=4/3$ required to have a hydrostatic object, and as a result the center of the first core again goes into something like free-fall collapse.
-
-This is called the second collapse. The time required for it is set by the free-fall time at the central density of the first core, which is only a few years. This collapse continues until all the hydrogen dissociates. The hydrogen also ionizes during this collapse, since the ionization potential of $13.6$ eV isn't very different from the dissociation potential of $4.5$ eV. Only once all the hydrogen is dissociated and ionized can a new hydrostatic object form.
-
-At this point the gas is warmer than $\sim 10^4$ K, is fully ionized, and the new hydrostatic object is a true protostar. It is supported by degeneracy pressure at first when its mass is low, and then as more mass arrives it heats up and becomes supported by thermal pressure. 
-
-An important point to make there is that this discussion implies that brown dwarfs, at least those of sufficiently low mass, do not undergo a prompt second collapse. Instead, their first cores never accumulate enough mass to dissociate the molecules at their center. This isn't to say that dissociation never happens in them, and that second collapse never occurs. A brown dwarf-mass first core will still radiate from its surface and, lacking any internal energy source, this energy loss will have to be balanced by compression. As the gas compresses the temperature and entropy will rise, and, if the object does not become supported by degeneracy pressure first, the central temperature will eventually rise enough to produce second collapse. The difference for a brown dwarf is that this will only occur once slow radiative losses cause a temperature rise, which may take a very long time compared to formation. For stars, in contrast, there is enough mass to reach the critical temperature by compression during formation.
-
-\section{The Protostellar Envelope}
-
-Once a protostar is born at the center of a collapsing cloud, we can ask both about the structure immediately around it and about its internal structure. We defer the latter to Chapter \ref{ch:protostar_evol}, and focus here on the envelope around the newborn protostar.
-
-\subsection{Accretion Luminosity}
-
-The central driver of the behavior of the gas around the protostar is the radiation that it emits. At early times the star has not reached the main sequence or ignited any nuclear burning, so gravity is the only important energy source in the problem. Even if nuclear burning does start, we will see that it is negligible for low mass stars. The protostar is a hydrostatic object, although it undergoes secular contraction, so that gas striking its surface comes to a halt in an accretion shock. In this shock its kinetic energy is converted to heat, which is then radiated away.
-
-The detailed structure of the accretion shock was first worked out by \citet{stahler80a, stahler80b}. The summary is that the energy radiated away at the shock is roughly
-\begin{equation}
-L_{\rm acc} = \frac{G M_* \dot{M}_*}{R_*},
-\end{equation}
-where $M_*$, $\dot{M}_*$, and $R_*$ are the mass, accretion rate, and radius for the protostar.
-
-We will see in Chapter \ref{ch:protostar_evol} that $R_*$ is typically a few $\rsun$ (and indeed this is consistent with the observed radii of T Tauri stars). We have previously calculated typical accretion rates of $\dot{M}_*\sim 10^{-5}$ $\msun$ yr$^{-1}$ for low mass stars.
-Plugging in these numbers, we find
-\begin{equation}
-L_{\rm acc} = 30\lsun\, \dot{M}_{*,-5} M_{*,0} R_{*,1}^{-1},
-\end{equation}
-where $\dot{M}_{*,-5}=\dot{M}_*/(10^{-5}\msun\mbox{ yr}^{-1})$, $M_{*,0}=M_*/\msun$, and $R_{*,1}=R_*/(10\rsun)$.
-Thus a typical low mass protostar can easily put out many tens of $\lsun$ in accretion power, far greater than what it would produce from nuclear burning on the main sequence. 
-
-We can also estimate the effective temperature of the stellar surface due to accretion. The infalling gas arrives in free-fall at a velocity 
-\begin{equation}
-v_{\rm ff}=\sqrt{\frac{2GM_*}{R_*}} = 200\mbox{ km s}^{-1} \, M_{*,0}^{1/2} R_{*,1}^{-1/2}.
-\end{equation}
-The vastly exceeds the sound speed of a few km s$^{-1}$ in gas at a temperature of $\sim 10^3-10^4$ K, so the gas must decelerate in a strong shock with a Mach number of order 100. For a strong shock, one where the Mach number $\mathcal{M} \gg 1$, the Rankine-Hugoniot jump conditions tell us that the post-shock temperature is
-\begin{equation}
-T_2 = \frac{2\gamma(\gamma-1)}{(\gamma+1)^2} \mathcal{M}^2 T_1
-= \frac{2\gamma(\gamma-1)}{(\gamma+1)^2} \frac{v_{\rm shock}^2}{c_1^2} T_1
-= \frac{2(\gamma-1)}{(\gamma+1)^2} \frac{\mu}{k_B} v_{\rm shock}^2,
-\end{equation}
-where $c_1$ is the adiabatic sound speed in the pre-shock gas.
-
-Taking $v_{\rm shock}=v_{\rm ff}$, $\gamma=5/3$ for a monatomic gas, and $\mu=2.3\times 10^{-24}$ g for the pre-shock gas (assuming it to be neutral hydrogen), and plugging in we get
-\begin{equation}
-T_2 = 1.2\times 10^6 \, M_{*,0} R_{*,1}^{-1} \mbox{ K}.
-\end{equation}
-In other words, the post-shock gas is heated to temperatures such that it emits in UV and x-rays. The incoming gas will be extremely opaque to this radiation due to the opacity provided by both free-electrons and numerous lines of multiply ionized metal atoms such as iron. As a result all the radiation emitted by the post-shock gas will be absorbed in a small region immediately outside the shock and reprocessed until it becomes blackbody emission. The stellar surface therefore emits as a blackbody, whose temperature we can calculate in the standard way:
-\begin{eqnarray}
-L_{\rm acc} & = & 4\pi R_*^2 \sigma T_*^4 \\
-T_* & = & 4300 \dot{M}_{*,-5}^{1/4} M_{*,0}^{1/4} R_{*,1}^{-3/4} \mbox{ K}
-\end{eqnarray}
-Thus the star is effectively a blackbody at a surface temperature comparable to that of a main sequence star.
-
-\subsection{The Dust Destruction Front}
-
-Now let us consider the effect of this luminosity on the gas around the protostar. Consider a spherical black dust grain of radius $a$ some distance $r$ from the star. It absorbs radiation at a rate
-\begin{equation}
-\Gamma = \frac{L_{\rm acc}}{4\pi r^2} \pi a^2 = \pi a^2 \sigma T_*^4 \left(\frac{R_*}{r}\right)^2
-\end{equation}
-and radiates it at a rate
-\begin{equation}
-\Lambda = 4\pi a^2 \sigma T_d^4,
-\end{equation}
-where $T_d$ is the dust grain's temperature. Equating these two, the temperature of the grain is
-\begin{equation}
-T_d = \left(\frac{R_*}{2r}\right)^{1/2} T_*
+\frac{P_{\rm infall}}{P_{\rm wind}} = \frac{\dot{M}_{\rm acc} v_{\rm ff}}{\dot{M}_{\rm wind} v_{\rm wind}}.
 \end{equation}
 
-Even the most refractory materials out of which interstellar dust is made, such as graphite and silicate grains, will vaporize at temperatures larger than $\sim 1000-1500$ K. The exact temperature depends on the chemical composition of the grains. Thus when $r/R_*$ is too large grains cannot survive. They get vaporized. We therefore expect the protostar to be surrounded by dust-free region.
+Since $v_{\rm wind} \approx v_{\rm ff}$ at the stellar surface, and $\dot{M}_{\rm acc}$ is larger than $\dot{M}_{\rm wind}$ by a factor of $10^3-10^4$, the ram pressure of the infall is more than enough to stop the wind. Even if the wind and the infall encounter each other further from the star, the free-fall velocity only falls off as $r^{-1/2}$, so the wind would need to be able to push the infall out to $\sim 10^6-10^8$ stellar radii before it would be able to reverse the infall. For a 50 $\msun$ ZAMS star, $10^6$ stellar radii is roughly $0.25$ pc, i.e., bigger than the initial massive core.
 
-Since the ionizing radiation produced at the shock at the stellar surface all gets absorbed close to the shock, and the star is shining into this dust-free region as a blackbody at a temperature of only a few thousand K, the gas in this region is primarily neutral. Neutral atomic gas with no dust in it is essentially transparent to visible radiation, so in this region the opacity is tiny, and stellar radiation is able to free-stream outward. The dust-free neutral region is called the opacity gap.
+Thus, we generally do not expect main sequence stellar winds to inhibit accretion as long as material is left in the protostellar core. Of course the protostellar outflow carries much more momentum than the main sequence wind because it is hydromagnetically rather than radiatively driven (see Chapter \ref{ch:disks_theory}). However, it is also highly collimated, and so it does not prevent accretion over $4\pi$ sr any more than protostellar outflows from lower mass stars do. It will reduce the efficiency, but not by more than low mass star outflows do.
 
-As one moves away from the star the equilibrium grain temperature drops, and eventually one reaches a surface where dust grains can exist. This is called the dust destruction radius, since incoming gas that reaches this radius has its grains destroyed. If we plug the grain destruction temperature into our equation for $T_d$, we can solve for the dust destruction radius:
+\subsection{Ionization}
+
+A second feedback one can worry about is ionizing radiation. Massive stars put out a significant fraction of their power beyond the Lyman limit, and this can ionize hydrogen in the envelope around them. Since when hydrogen is ionized it heats up to $\sim 10$ km s$^{-1}$, gas that is ionized may be able to escape from the massive core, which only has an escape velocity of $\sim 1$ km s$^{-1}$.
+
+This does eventually happen, and it probably plays an important role in regulating the star formation efficiency in star clusters and on larger scales. However, one can show that, as long as the massive star is accreting quickly, this effect will not limit its ability to continue gaining mass. Problem set 4 contains a quantitative calculation of this result. Foreshadowing it here, at the accretion rates that we expect in massive cores, the ionizing radiation should all be trapped within a few stellar radii of the stellar surface. Since the escape velocity from the surface of a 50 $\msun$ ZAMS star is about $1000$ km s$^{-1}$, this gas will be trapped by the star's gravity, and will not escape. Thus ionization is an important feedback, but it is one that is likely most important after the massive star has gathered most of the mass around it and has stopped growing.
+
+That said, this omits the fact that there is likely to be lower density within the region cleared by the protostellar outflow, so ionizing radiation may be able to escape in some directions even while the star is growing. This may eventually reduce its mass supply, and it may cause asymmetric H~\textsc{ii} regions to form, where the ionized gas is confined in certain directions (for example close to the disk) while the ionizing photons escape and drive an outflow in other directions (for example along the polar axis).
+
+\subsection{Radiation Pressure}
+
+By far the biggest potential worry for massive star formation is not that ionizing radiation will heat the gas enough to allow it to escape, but the pressure exerted by radiation will halt accretion. The solution to this problem is the subject of the second paper for this week, but we can set it up here.
+
+Let us go back to our picture of the structure of the envelope of dusty gas around a protostar. There is a dust destruction radius where all direct starlight is absorbed, and outside that a diffusion region. The calculation of this radius is the same as for a low mass star, except that the luminosity is not mostly due to accretion. Equating heating and cooling gives
 \begin{equation}
-r_d = \frac{R_*}{2} \left(\frac{T_*}{T_d}\right)^2 = 0.4 \,  T_{d,3}^{-2} \dot{M}_{*,-5}^{1/2} M_{*,0}^{1/2} R_{*,1}^{-1/2} \mbox{ AU},
+\frac{L_*}{4\pi r_d^2} \pi a^2 = 4\pi a^2 \sigma T_d^4,
 \end{equation}
-where $T_{d,3}=T_d/(1000\mbox{ K})$ is the dust destruction temperature in units of 1000 K. Thus the dust-free region extends to $\sim 1$ AU around an accreting protostar.
-
-\subsection{Temperature Structure and Observable Properties}
-
-Now let us consider the material beyond the dust destruction front. At the front the gas density is given roughly by the condition
-\begin{eqnarray}
-\dot{M}_* & = & 4\pi r_d^2 \rho v_{\rm ff} \\
-\rho & = & \frac{\dot{M}_*}{\sqrt{8 \pi^2 G M r_d^3}} \\
-& = & 4\times 10^{-13} \, \dot{M}_{*,-5}^{1/4} M_{*,0}^{-7/4} R_{*,1}^{3/4} T_{d,3}^3\mbox{ g cm}^{-3}.
-\end{eqnarray}
-Just inside the front, the stellar spectrum is nearly a blackbody at a temperature of a few thousand Kelvin, so the peak wavelength is
+where $r_d$ and $T_d$ are the radius and temperature at the dust destruction front. Thus
 \begin{equation}
-\lambda \approx \frac{hc}{4kT} = 440 \, \dot{M}_{*,-5}^{-1/4} M_{*,0}^{-1/4} R_{*,1}^{3/4}\mbox{ nm},
+r_d = \sqrt{\frac{L_*}{16 \pi \sigma T_d^4}} = 25\mbox{ AU}\; L_{*,5}^{1/2} T_{d,3}^{-2},
 \end{equation}
-in the visible.
+where $L_{*,5} = L_*/(10^5\,\lsun)$ and $T_{d,3}=T_d/(1000\mbox{ K})$. The dust destruction radius is therefore a factor of $\sim 10$ larger than it is for a low mass star.
 
-The opacity of gas with Milky Way dust composition at 440 nm is roughly $\kappa=8000$ cm$^2$ g$^{-1}$, so the mean free-path of a stellar photon moving through the dust destruction front is $(\kappa\rho)^{-1} \approx 3\times 10^8$ cm. This is a tiny length scale compared to any other scale in the problem, such as the size of the core, the size of the opacity gap, or even the radius of the protostar. 
+Note that, strictly speaking, this expression implicitly assumes that the grain is a blackbody, which is not true for grains that are smaller than the wavelength of light that corresponds to the temperature $T_d$. Smaller grains radiate at less than the full blackbody rate, which tends to make $r_d$ larger. For simplicity we will ignore this effect.
 
-Thus all the starlight that strikes the dust destruction front will immediately be absorbed by the dust grains. They will re-emit it as thermal radiation with a peak wavelength determined by their blackbody temperature, which will be a factor of $\sim 4$ lower than the stellar surface temperature. At around 1.8 $\mu$m, a factor of 4 longer wavelength than the 440 nm we started with, the opacity is drops to around 1000 cm$^2$ g$^{-1}$, so the mean free path is a factor of 8 larger. Nonetheless, this is still tiny, so all the re-emitted radiation will also be absorbed.
+\paragraph{The dust destruction front.}
 
-Since we are in a situation where all the radiation is absorbed and re-emitted many times, it is reasonable to treat this as a diffusion problem. Protostellar radiation free-streams from the surface, through the opacity gap, and is absorbed and thermalized at the dust destruction front. Then it must diffuse out through the dust envelope. This is essentially the same calculation that is made for radiation diffusing outward through a star, and the equation describing it is the same:
+It is interesting to consider the force exerted by the radiation on the gas in two different regimes. One is at the dust destruction front, where the radiation still has a stellar spectrum and has not yet been down-shifted in frequency by the dust. At this front we can assume that essentially all the stellar radiation is absorbed in a thin region, so all of the momentum carried by the stellar radiation field will be transferred to the gas. Infall will reverse if this change in momentum is enough to reduce the infall velocity to zero.
+
+Let $\dot{M}$ be the mass accretion rate onto the star. An infalling shell of material striking the dust destruction front therefore carries an inward momentum flux
 \begin{equation}
-F = -\frac{c}{3\rho \kappa_R} \nabla E,
+\dot{p} = -\dot{M} v,
 \end{equation}
-where $F$ is the radiation flux, $E$ is the radiation energy density, and $\kappa_R$ here is the Rosseland mean opacity, meaning the mean of the frequency-dependent opacity using a weighting function that is equal to the temperature derivative of the Planck function. Note here that $\kappa_R$ is a function of $T$.
-
-The repeated absorption and re-emission of radiation forces it into thermal equilibrium with the gas, so $E$ is simple the energy density of a thermal radiation field at the gas temperature: $E=aT^4$, where $a$ is the radiation constant and $T$ is the temperature. Since no energy is added or removed from the radiation field as it diffuses outward through the envelope, $F=L_{\rm acc}/(4\pi r^2)$. Putting this together, we have
+where $v$ is the material's velocity, and we use the convention that $\dot{M}>0$ and $v>0$ correspond to inward motion. In comparison, the stellar radiation field carries a momentum flux
 \begin{equation}
-L_{\rm acc}=-\frac{16\pi car^2}{3\rho\kappa_R} T^3 \frac{dT}{dr}
+\dot{p} = \frac{L}{c}
 \end{equation}
+Strictly speaking this momentum is transferred to the dust grains, since they and not the gas absorb the radiation, but they are in turn coupled to the gas by collisions and magnetic fields, so they will in turn transfer it to the gas.
 
-For a given density structure and a model of dust grains that specifies $\kappa_R(T)$, this equation allows us to estimate the temperature structure in the protostellar envelope. For reasonable grain models we expect $\kappa_R\propto T^\alpha$ with $\alpha\approx 0.8$ in the temperature range of a few hundred K. Let us suppose that the density distribution in the envelope looks something like a powerlaw, so $\rho\propto r^{-k_{\rho}}$. Finally, let us also suppose that the temperature also behaves like a powerlaw in radius, $T\propto r^{-k_T}$. The left hand side of the equation is a constant, and we have now worked out how the right hand side varies with $r$. Plugging in all the radial dependences on the RHS, and knowing that they must sum to zero since the LHS is a constant, we get
+If we let $v_0$ be the velocity of the material just before it encounters the stellar radiation field and $v_1$ be its velocity after passing through the dust destruction front, then conservation of momentum implies that
 \begin{equation}
-k_T = \frac{k_{\rho} + 1}{4-\alpha}.
+\dot{M} v_1 = \dot{M} v_0 - \frac{L}{c}.
+\end{equation}
+The condition that $v_1 < 0$ (i.e.\ that the new velocity still be inward) then requires that
+\begin{equation}
+\dot{M} v_0 > \frac{L}{c}
+\end{equation}
+If we assume that the gas is arriving at free-fall before reaching the dust destruction front, then $v_0 = \sqrt{2 G M/r_d}$, and thus the mass flux must exceed
+\begin{equation}
+\dot{M} > \frac{L}{v_0 c} = \frac{L}{c} \sqrt{\frac{r_d}{2 G M_*}} = 8\times 10^{-5} \,\msun\mbox{ yr}^{-1} \, L_{*,5}^{3/2} T_{d,3}^{-1} M_{*,1}^{-1/2},
+\end{equation}
+where $M_{*,1}=M_*/(10\,\msun)$.
+
+This is less than the accretion rates we inferred for massive stars based on dimensional arguments, although maybe not by quite as much as one would like. Nonetheless, this seems to imply that matter will not be stopped at the dust destruction front if it arrives as quickly as expected. More detailed evaluations of this condition by \citet{mckee03a}, who in turn build off of \citet{wolfire87a}, generally find that this is not a problem.
+
+\paragraph{The envelope.}
+
+The second regime to think about this the dusty envelope, through which radiation must diffuse to escape. The radiation flux $F=L/(4\pi r^2)$, and this applies a force per unit mass to the gas
+\begin{equation}
+f_{\rm rad} = \frac{1}{c} \int \kappa_{\nu} F_{\nu} \, d\nu = \frac{1}{4\pi r^2 c} \int \kappa_{\nu} F_{\nu} \, d\nu,
+\end{equation}
+where the subscript $\nu$ indicates the frequency-dependent flux and opacity. Since the radiation field will be close to a black body in the envelope, we can replace the frequency integral with a Rosseland mean opacity:
+\begin{equation}
+f_{\rm rad} = \frac{\kappa_{\rm R} F}{c} = \frac{\kappa_{\rm R} L_*}{4\pi r^2 c}
 \end{equation}
 
-Thus in the freely-falling part of the envelope, where $k_{\rho}\approx 3/2$, we have $k_T\approx 0.8$. In our fiducial example, where the temperature is 1000 K at 0.4 AU, we would expect the temperature to drop to 300 K at around 2 AU, to 100 K at around 8 AU, and back to the background temperature of 10 K at around 150 AU. In the outer part of the envelope the falloff in temperature can be either steeper or shallower depending on how the density falls off -- sharper density falloffs (larger $k_{\rho}$) lead to sharper temperature falls (larger $k_T$) as well.
+Since the opacity of the gas to the reprocessed radiation field is much less than its opacity to direct stellar radiation (i.e.\ $\kappa_{\rm R}$ evaluated at temperatures $T<T_d$ is much smaller than $\kappa_{\nu}$ evaluated at the peak frequency of stellar output), this force is much less than that applied at the dust destruction front. Unlike at the dust destruction front, however, this force is not applied in a quick impulse. It is applied at every radius, and thus its cumulative effect can be much stronger than that at the dust destruction front.
 
-Of course this approximation only applies as long as the radiation is trapped by the dust, and the dust opacity is highest for high frequency radiation. Once the dust temperature falls off to less than $\sim 100$ K, depending on the size of the core, the radiation is free to escape instead. Even further in where the dust temperature is higher, long wavelength radiation can escape freely.
+If we think of things in terms of accelerations, the force applied in the dust envelope is much smaller, but it is applied to the gas for a much longer time, so that the total acceleration can be larger. The relevant comparison here is not to the momentum of the radiation field, but to the force of gravity exerted by the star, since we want to know whether the net acceleration is inward or outward.
 
-As a result the spectrum inside the core is never truly a blackbody, since radiation at long wavelengths never reaches thermal equilibrium. The emitted spectrum is also complicated by this behavior. We can think of this as follows: for a star, there is something close to a single well-defined photosphere at all frequencies because the density drops off sharply. For a dust cloud, on the other hand, the density drop is not sharp, and so the photosphere, the surface of optical depth unity (or 2/3 if you prefer) is in different places at different frequencies. At high frequencies it is near the core surface because the opacity is high, and at low frequencies the low opacity allows it to be much farther in. For this reason, centrally-heated cores do not emit as blackbodies.
+The condition that gravitational force be stronger than radiative force therefore reduces to
+\begin{equation}
+\frac{G M_*}{r^2} > \frac{\kappa_{\rm R} L_*}{4\pi r^2 c},
+\end{equation}
+or
+\begin{equation}
+\frac{L_*}{M_*} < \frac{4\pi G c}{\kappa_{\rm R}}.
+\end{equation}
+This is just the Eddington limit calculation, or it would be if we plugged in the electron scattering opacity for $\kappa_{\rm R}$.
+If we instead plug in a typical infrared dust opacity of a few cm$^2$ g$^{-1}$, we get
+\begin{equation}
+\left(\frac{L_*}{M_*}\right) = 1300 (\lsun/\msun) \,\kappa_{\rm R,1}^{-1},
+\end{equation}
+where $\kappa_{\rm R,1} = \kappa_{\rm R}/(10\mbox{ cm}^2\mbox{ g}^{-1})$.
+For comparison, our standard 50 $\msun$ ZAMS star has $L_*/M_*= 7100 (\lsun/\msun)$, i.e.\ it exceeds this limit. In fact, all ZAMS stars larger than $\sim 20$ $\msun$ do, which would seem at face value to suggest that it should not be possible to form stars above this limit by accretion.
 
-In order to truly determine the temperature distribution within a core it is necessary to either use a more sophisticated analytic treatment (for example one is given in \citealt{chakrabarti05a}) or to proceed numerically. If one wants a more sophisticated density structure that is not spherical, numerical methods are also required. Of course all of this only applies as long as a great deal of mass remains in the envelope, so that it is optically thick to both the star's direct radiation and to the re-radiated thermal radiation from the dust destruction front. In terms of our evolutionary classes, all of this applies to class 0 and class I sources.
+This argument led to all sorts of contortions trying to explain how massive stars could form -- models included trying to make them only in regions of dramatically reduced dust opacity, trying to make them by collisions of lower mass stars, and various other ideas. The solution in reality is much more prosaic: the real world is not spherically symmetric, and the argument I just made is.
+
+Multidimensional simulations show that, contrary to this naive calculation, radiation does not stop accretion in a real system. The main effect is that the ram pressure and the gas pressure can both be asymmetric, and they will conspire to be anti-correlated with one another because the radiation will escape by the path of least resistance. Thus it is misleading to compare the radiation and gravitational forces averaged over $4\pi$ sr. Accretion will continue as long as there are significant patches of solid angle where gravity wins. The disconnect between gravity and radiation can be created in any number of ways, including the presence of a disk, radiation-driven instabilities, and protostellar outflow cavities. Figure \ref{fig:msf_cunningham11} shows an example.
+
+\begin{figure}
+\includegraphics[width=\linewidth]{msf_cunningham11}
+\caption[Simulation of massive star formation with outflows]{
+\label{fig:msf_cunningham11}
+Two simulations of the formation of a massive star including protostellar outflows \citep{cunningham11a}. The top row shows a simulation with an outflow, while the lower shows one without. The panels show, from left to right, normalized volume density in a slice, ratio of radiation force to gravitational force, normalized projected density, and mass-weighted mean projected temperature. Note the general absence of regions with radiation force greater than gravitational force in the simulation with winds.
+}
+\end{figure}
+

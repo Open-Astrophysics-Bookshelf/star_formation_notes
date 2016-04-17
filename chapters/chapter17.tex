@@ -1,479 +1,359 @@
-\chapter{Protostellar Disks and Outflows: Theory}
-\label{ch:disks_theory}
+\chapter{Protostellar Evolution}
+\label{ch:protostar_evol}
 
 \marginnote{
 \textbf{Suggested background reading:}
 \begin{itemize}
-\item \href{http://adsabs.harvard.edu/abs/2014prpl.conf..173L}{Li, Z.-Y., et al. 2014, in ``Protostars and Planets VI", ed.~H.~Beuther et al., pp.~173-194}, sections 3-6 \nocite{li14a}
+\item \href{http://adsabs.harvard.edu/abs/2014prpl.conf..173L}{Dunham, M.~M., et al. 2014, in ``Protostars and Planets VI", ed.~H.~Beuther et al., pp.~195-218}, sections 5-9 \nocite{dunham14a}
 \end{itemize}
 \textbf{Suggested literature:}
 \begin{itemize}
-\item \href{http://adsabs.harvard.edu/abs/2013MNRAS.432.3320S}{Seifried, D., et al., 2013, MNRAS, 432, 3320} \nocite{seifried13a}
+\item \href{http://adsabs.harvard.edu/abs/2011ApJ...738..140H}{Hosokawa, T., Offner, S.~S.~R., \& Krumholz, M,~R., 2011, ApJ, 738, 140} \nocite{hosokawa11a}
 \end{itemize}
 }
 
-The previous chapter introduced observations of protostellar disks and their outflows. This companion chapter reviews theoretical models of such disks, with particular attention to how they form, why they accrete, and why they launch outflows.
+This chapter considers the behavior of the stellar objects that form at the centers of collapsing clouds. Our goal is to extend the theory of stellar structure to the case of protostars that are not yet on the main sequence. This calculation is not fundamentally different than the stellar structure calculations that we normally perform for main sequence stars. Indeed, as we will demonstrate in a moment, the same basic assumptions of hydrostatic balance and diffusion of energy through the star are valid in the pre-main sequence and main sequence cases. There are only two significant differences. First, the boundary conditions are obviously different, since protostars are gaining mass from the outside. Second, although the star is in hydrostatic balance, it need not be in long-term thermal balance. Given these points, let us discuss how we calculate the evolution of a protostar.
 
-\section{Disk Formation}
+\section{Fundamental Theory}
 
-\subsection{The Angular Momentum of Protostellar Cores}
+\subsection{Time Scales}
 
-To understand why disks form, we must start with the question of angular momentum. Stars form from protostellar cores, so we begin our study with the question of how much angular momentum cores typically contain. To determine this observationally, one maps a core in an optically thin tracer and measures the mean velocity on every line of sight through the core. If there is a systematic gradient in the mean velocity, that is indicative of some net rotation. Doing this for a sample of cores yields a distribution of rotation rates.
+Let us begin by justifying the statement that we can treat protostars using the same techniques we use for main sequence stars. The way we can check this is by evaluating two time scales: the mechanical time scale over which the star will reach mechanical equilibrium, and the Kelvin-Helmholtz time scale over which it reaches thermal equilibrium.
 
-It is most convenient to express the resulting distribution dimensionlessly, in terms of the ratio of kinetic energy in rotation to gravitational binding energy. If the angular velocity of the rotation is $\Omega$ and the moment of inertia of the core is $I$, this is
+The time to reach mechanical equilibrium is the sound crossing time, $t_s\sim R/c_s$. From the virial theorem we know that the RMS velocity inside the star must be of order $\sqrt{GM/R}$, and, since gas should be subsonic after it shocks at the stellar surface, this RMS velocity must be mostly thermal motion. Thus, $c_s\sim \sqrt{GM/R}$, and
 \begin{equation}
-\beta = \frac{(1/2)I\Omega^2}{a G M^2/R},
+t_s \sim \sqrt{\frac{R^3}{GM}} = 35\, M_0^{-1/2} R_1^{3/2}\mbox{ hours},
 \end{equation}
-where $a$ is our usual numerical factor that depends on the mass distribution. For a sphere of uniform density $\rho$, we get
+where $M_0 = M_* / \msun$ and $R_{*,1} = R/(10\rsun)$.
+
+In contrast, the time required to reach thermal equilibrium is the Kelvin-Helmholtz time, which is defined as roughly the time required for the star to radiate away its own binding energy:
 \begin{equation}
-\beta = \frac{1}{4\pi G \rho}\Omega^2 = \frac{\Omega^2 R^3}{3 G M}
+t_{\rm KH} = \frac{GM^2}{RL} = 3\times 10^5\, M_0^2 R_1^{-1} L_1^{-1}\mbox{ yr},
 \end{equation}
-Thus we can estimate $\beta$ simply given the density of a core and its measured velocity gradient. Observed values of $\beta$ typically a few percent \citep[e.g.,][]{goodman93a}.
+where $L_1 = L/(10 \lsun)$. Thus the star reaches mechanical equilibrium essentially instantaneously compared to the time required to reach thermal equilibrium. It is therefore reasonable to assume that at all times the star is in hydrostatic balance, and then to describe its subsequent evolution movement from one hydrostatic state to another, with the change in state dictated by the evolution of the energy and entropy of the gas. 
 
-This implies that cores are not primarily supported by rotation. In fact, we can understand the observed rotation rates as being a property of the turbulence. Although cores are primarily thermally-supported, they do still have some turbulent motions present at transsonic or subsonic levels. Since most of the power in this turbulence is on large scales, there is likely to be a net gradient. When one performs the experiment of generating random turbulent velocity fields with a variety of power spectra and analyzing them as an observer would, the result is a $\beta$ distribution that agrees very well with the observed one \citep{burkert00a}.
+For future reference, it is also useful to think about how long accretion will last. At an accretion rate of $10^{-5}$ $\msun$ yr$^{-1}$, the formation of a 1 $\msun$ star takes $10^5$ yr. Thus, the accretion time is generally shorter than the KH time, so that stars will cease accreting before they reach thermal equilibrium. Note that this is true only for low mass stars, not high mass ones as we discussed previously.
 
-\subsection{Rotating Collapse: the Hydrodynamic Case}
+\subsection{Evolution Equations}
 
-Given this small amount of rotation, how can we expect it to affect the collapse? Let us take the simplest case of a cloud in solid body rotation at a rate $\Omega$. Consider a fluid element that is initially at some distance $r_0$ from the axis of rotation. We will consider it to be in the equatorial plane, since fluid elements at equal radius above the plane have less angular momentum, and thus will fall into smaller radii.
+Now that we have shown that we can treat protostars as hydrostatic equilibrium objects, let us proceed to write down the evolution equations that govern the protostar. These should be familiar from stellar structure. An important caveat is that what we cover here represents an extremely simple approach to stellar structure, and that all of the complications that arise in real stellar structure calculations (e.g., rotation, convective overshooting, real stellar atmospheres, etc.) apply equally-well to protostellar evolution. The goal here is simply to sketch the basic theory, so that we can understand how it changes for protostars as opposed to main sequence stars.
 
-Its initial angular momentum in the direction along the rotation axis is $j=r_0^2\Omega$. If pressure forces are insignificant for this fluid element, it will travel ballistically, and its specific angular momentum and energy will remain constant as it travels. At its closest approach to the central star plus disk, its radius is $r_{\rm min}$ and by conservation of energy its velocity is $v_{\rm max} = \sqrt{2 G M_*/r_{\rm min}}$, where $M_*$ is the mass of the star plus the disk material interior to this fluid element's position.
-Conservation of angular momentum them implies that $j=r_{\rm min} v_{\rm max}$.
-
-Combining these two equations for the two unknowns $r_{\rm min}$ and $v_{\rm max}$, we have
+As in other stellar structure calculations, it is most convenient to work in Lagrangian coordinates, where we let $M_r$ be the mass interior to radius $r$, and then solve for stellar properties as a function of $M_r$. The first equation is the standard definition of mass in terms of density and radius:
 \begin{equation}
-r_{\rm min} = \frac{r_0^4 \Omega^2}{G M_*} = \frac{4\pi \rho \beta r_0^4}{M_*},
+\label{mass}
+\frac{\partial r}{\partial M_r} = \frac{1}{4\pi r^2 \rho}.
 \end{equation}
-where we have substituted in for $\Omega^2$ in terms of $\beta$. This tells us the radius at which infalling material must go into a disk because conservation of angular momentum and energy will not let it get any closer.
-
-We can equate the stellar mass $M_*$ with the mass that started off interior to this fluid element's position -- this amounts to assuming that the collapse is perfectly inside-out, and that the mass that collapses before this fluid element's all makes it onto the star. If we make this approximation, then $M_*=(4/3)\pi \rho r_0^3$, and we get
+The second equation is the equation of hydrostatic balance. In Eulerian coordinates it is
 \begin{equation}
-r_{\rm min} = 3 \beta r_0,
+\frac{\partial P}{\partial r} = -\frac{G M_r \rho}{r^2},
 \end{equation}
-i.e., the radius at which the fluid element settles into a disk is simply proportional to $\beta$ times a numerical factor of order unity.
-
-We shouldn't take the factor too seriously, since of course real clouds aren't uniform spheres in solid body rotation, but the result that rotation starts to influence collapse and force disk formation at a radius that is a few percent of the core radius is interesting. It implies that for cores that are $\sim 0.1$ pc in size and have $\beta$ values typical of what is observed, they should start to become rotationally flattened at radii of several hundred AU. This should be the typical size scale of protostellar disks in the hydrodynamic regime.
-
-\subsection{Rotating Collapse: the Magnetohydrodynamic Case}
-
-Magnetic fields can greatly complicate this picture, due to magnetic braking. As a core contracts, rotation wants to spin it up, but this in turn twists up the magnetic field. This creates a tension force that opposes the rotation rate, and tries to keep the core rotating as a solid body.
-
-To analyze this effect, let us work in cylindrical coordinates $(\varpi, \phi, z)$. Consider a fluid element in a disk at a distance $\varpi$ from the star, whose dimensions are $d\varpi$, $d\phi$, $dz$ in the $\varpi$, $\phi$, and $z$ directions. The fluid element is rotating around the star with a velocity $v_{\phi}$ in the $\phi$ direction. The fluid element is threaded by a magnetic field $\vecB=(B_\varpi, B_\phi, B_z)$. For future convenience we define the poloidal component of the field to be
+and converting to Lagrangian coordinates by dividing by the relationship between $r$ and $M_r$ gives
 \begin{equation}
-\vecB_p = (B_\varpi, B_z),
+\frac{\partial P}{\partial M_r} = -\frac{G M_r}{4\pi r^4}
 \end{equation}
-i.e., it is the component of the field not associated with wrapping around the rotation axis. The $\phi$ component of the field is called the toroidal component, since it represents the part of the field that is wrapped in the rotation direction. If you draws a two-dimensional plot of the system in the $(\varpi, z)$-plane, the poloidal component is the one on the page, and the toroidal component is the one going into or out of the page.
+Note that we have ignored radiation pressure in writing this equation, since it is significant only for very massive stars. I can be included in exactly the same manner as for massive main sequence stars.
 
-We will assume that both the fluid and the magnetic field are axisymmetric, so that they do not vary with $\phi$, although the field does have a $\phi$ component. The magnetic field exerts a Lorentz force per unit volume on the fluid element, given by
+The third equation is the equation of radiation diffusion:
+\begin{equation}
+F = \frac{L}{4\pi r^2} = -\frac{c}{3\rho\kappa} \frac{\partial E}{\partial r},
+\end{equation}
+where $F$ is the radiation flux, $L$ is the luminosity passing through radius $r$, and $\kappa$ is the Rosseland mean opacity of the gas. Writing $E=aT^4 = \sigma T^4/(4c)$ and again converting to Lagrangian coordinates by dividing by $\partial r/\partial M_r$ gives
+\begin{equation}
+T^3 \frac{\partial T}{\partial M_r} = - \frac{3\kappa L}{256 \pi^2 \sigma r^4}.
+\end{equation}
+This applies only as long as the protostar is stable against convection, $\partial s/\partial M_r > 0$, i.e.\ the entropy increases outward. If it is unstable to convection, we instead have
+\begin{equation}
+\frac{\partial s}{\partial M_r} = 0,
+\end{equation}
+or some more sophisticated treatment of convection based on mixing-length theory.
+
+Finally, the last equation describes how the internal energy of the fluid evolves:
+\begin{equation}
+\rho T\frac{\partial s}{\partial t} = \rho \epsilon - \frac{1}{r^2}\frac{\partial}{\partial r}(r^2 F),
+\end{equation}
+where $s$ is the entropy per unit mass of the gas and $\epsilon$ is the rate of nuclear energy generation per unit mass.  Substituting $L_r = 4 \pi r^2 F$ gives
+\begin{equation}
+\frac{\partial L}{\partial r} = 4\pi r^2 \rho \left(\epsilon - T\frac{\partial s}{\partial T}\right),
+\end{equation}
+and dividing once more by $\partial r/\partial M_r$ gives
+\begin{equation}
+\label{heat}
+\frac{\partial L}{\partial M_r} = \epsilon - T\frac{\partial s}{\partial t}.
+\end{equation}
+This is the only equation that is different from the case of a main sequence star. For a main sequence star, we simply assume that the entropy per unit mass is constant, so we drop the $\partial s/\partial t$ term.
+
+This constitutes four equations in the four unknowns $r$, $P$, $T$, and $L$.  We also require functions specifying the equation of state $P(\rho)$, the opacity $\kappa(\rho,T)$, the energy generation rate $\epsilon(\rho,T)$, and the entropy $s(\rho,T)$.
+The equation of state is just the ideal gas law
+\begin{equation}
+P = \frac{\rho k_B T}{\mu},
+\end{equation}
+where $\mu$ is the mean mass for particle. For fully ionized gas $\mu=0.61 m_H$, but in numerical calculations we generally use a numerically tabulated value of $\mu(\rho, T)$. Similarly, for constant $\mu$ the entropy is
+\begin{equation}
+s = \frac{k}{\mu} \ln \left(\frac{T^{3/2}}{\rho}\right) + \mbox{const},
+\end{equation}
+but, again, when $\mu$ is not constant $s$ must be tabulated numerically.
+
+\subsection{Boundary Conditions}
+
+The four structure equations require four boundary conditions to solve. Two are obvious: at $M_r=0$
 \begin{eqnarray}
-\mathbf{f} & = & \frac{1}{4\pi} \left[(\nabla\times\vecB)\times \vecB\right] \\
-& = & \frac{1}{4\pi} \left[\frac{B_\varpi}{\varpi} \frac{\partial(\varpi B_\phi)}{\partial \varpi} + B_z  \frac{\partial B_\phi}{\partial z}\right] \hat{\phi}\\
-& = & \frac{1}{4\pi\varpi} \vecB_p \cdot \nabla_p (\varpi B_{\phi}) \hat{\phi},
+r(0) & = & 0\\
+L(0) & = & 0.
 \end{eqnarray}
-where all the components except the $\phi$ one vanish by symmetry, and in the final step we have defined the poloidal gradient as $\nabla_p = (\partial/\partial\varpi, \partial/\partial z)$, i.e., it is just the components of the gradient in the $\varpi$ and $z$ directions.
+The remaining two are less obvious. Thus far everything we have written down is completely identical to the case of a main sequence star, except for the time derivative in the heat equation, but the remaining two boundary conditions, describing the pressure and luminosity at the edge of the star, are different.
 
-The rate of change of the momentum associated with the Lorentz force alone is
+The pressure at the edge of the star is set by requiring that the star's pressure be sufficient to bring the incoming mass flow to a halt at the stellar surface. The mass flux onto the star is
 \begin{equation}
-\frac{\partial}{\partial t}(\rho \vecv) = \mathbf{f},
+\dot{M} = 4\pi r^2 \rho v,
 \end{equation}
-so writing down the $\phi$ component of this equation and multiplying on both sides by $\varpi$, we have
+and the pressure at the stellar surface is therefore
 \begin{equation}
-\frac{\partial}{\partial t} (\rho v_{\phi} \varpi) = \frac{1}{4\pi} \vecB_p\cdot\nabla_p(\varpi B_\phi)
+P(M_*) = \rho v^2 = \frac{\dot{M} v}{4\pi r^2},
 \end{equation}
-The left hand side of this equation just represents the time rate of change of the angular momentum per unit volume $\rho v_{\phi} \varpi$, while the right hand side represents the torque per unit volume exerted by the field.
+where the right hand side is to be evaluated at $r=R_*$. If the incoming gas is in free-fall, then we can set $v = v_{\rm ff} = \sqrt{2GM_*/R_*}$, which gives
+\begin{equation}
+\label{pbound1}
+P(M_*) = \frac{\dot{M}}{4\pi} \sqrt{\frac{2 G M_*}{R_*^5}},
+\end{equation}
+where $M_*$ is the total stellar mass. 
 
-Given this equation, how quickly can a magnetic field stop rotation? We can define a magnetic braking time by
-\begin{equation}
-t_{\rm br} = \frac{\rho v_{\phi} \varpi}{\frac{\partial}{\partial t} (\rho v_{\phi} \varpi)}
-= \frac{4 \pi \rho v_{\phi} \varpi}{\vecB_p \cdot\nabla_p (\varpi B_\phi)}
-\end{equation}
-To evaluate this timescale, consider the case of a fluid elements that is part of a collapsing cloud, and is trying to rotate at a velocity $v_{\phi}$ equal to the Keplerian velocity, i.e.,
-\begin{equation}
-v_{\phi} = \sqrt{\frac{GM}{\varpi}},
-\end{equation}
-where $M$ is the mass interior to the fluid element.
+The final boundary condition is on the luminosity. For a non-accreting star it is simple: we require that $L(M_*)=4\pi R_* \sigma T(M_*)^4$, i.e.\ that the star radiate as a black body from its surface, or something somewhat more complicated involving a table lookup of a stellar atmosphere. For an accreting star it is more complicated, however, because the accreting gas carries energy, and the question becomes what fraction of this energy will be radiated away at the stellar surface and what fraction will be advected or radiated into the stellar interior.
 
-If we started with a uniform cloud of density $\rho$, the mass interior to our element is $M\approx (4\pi/3) \rho \varpi^3$, so $v_\phi \approx \sqrt{(4\pi/3) G \rho \varpi^2}$. Plugging this into the timescale, we get
+We will not derive these results in detail, just sketch out the issues. The boundary condition must take the form
 \begin{equation}
-t_{\rm br} \approx \frac{(4\pi \rho)^{3/2} G^{1/2} \varpi^2}{\vecB_p \cdot\nabla_p (\varpi B_\phi)}
+\label{lbound1}
+L(M_*) = L_{\rm acc} + L_{\rm bb} - L_{\rm in},
+\end{equation}
+where $L_{\rm acc}=G M_* \dot{M}_*/R_*$ is the kinetic energy of the accreting gas, $L_{\rm bb} = 4\pi R_*^2 \sigma T(M_*)^4$ represents the blackbody radiation from the stellar surface, and $L_{\rm in}$ represents the inward flux of energy due to advection and radiation from the shocked gas. One way to think about $L_{\rm in}$ is that it specifies what fraction of the kinetic energy of the accreting gas escapes promptly as radiation, with the remaining portion assumed to be advected into the stellar interior with the accreting gas.
+
+The correct value of $L_{\rm in}$ is a subtle question, since it depends on the structure of the shock at the stellar surface, and on its geometry. For spherical accretion, \citet{stahler80a, stahler80b, stahler81a} show that $L_{\rm in}\approx 3 L_{\rm acc}/4$. However, if the accretion is confined to a small portion of the stellar surface, for example by a magnetic field, some radiation may escape out the sides of the accretion shock, and $L_{\rm in}$ can be larger. Different authors make different assumptions about this, with those adopting values closer to the spherical case generally referred to as "hot accretion" models, and those adopting value with $L_{\rm in} = L_{\rm acc}$ or close to it referred to as "cold accretion" models. The hot versus cold terminology refers to the thermal energy content of the accreting gas. Whichever assumption one adopts, this constitutes the final boundary condition fully specifies the problem for an accreting protostar.
+
+The last two boundary conditions apply only as long as the star is accreting. After accretion stops, the boundary conditions change to their free-space forms, identical to what we would use for a main sequence star.
+To remind you of the pressure boundary condition, we start by noting that we can integrate the equation of hydrostatic balance to obtain
+\begin{equation}
+P(M_*) = \frac{G M_*}{R_*}^2 \int_{R_*}^{\infty} \rho \, dr.
+\end{equation}
+If $\kappa$ changes relatively little past the stellar photosphere, then 
+\begin{equation}
+\int _{R_*}^{\infty} \rho \, dr \approx \frac{\tau_{\rm phot}}{\kappa_{\rm phot}},
+\end{equation}
+where $\tau_{\rm phot}$ is the optical depth from infinity to the photosphere and $\kappa_{\rm phot}$ is the opacity at the edge of the photosphere. Since the edge of the star is roughly where $\tau_{\rm phot} = 2/3$, the boundary condition becomes
+\begin{equation}
+\label{pbound2}
+P(M_*) = \frac{2 G M_*}{3 R_*^2 \kappa_{\rm phot}}.
+\end{equation}
+In the non-accreting case the temperature boundary condition is simply that
+\begin{equation}
+\label{lbound2}
+L(M_*) = 4\pi R_*^2 \sigma T(M_*)^4.
 \end{equation}
 
-To see what this at the order of magnitude level, let us suppose that the poloidal and toroidal components of the field are comparable, and that the characteristic length scale on which the field varies is $\varpi$, i.e.\ the field is fairly smooth on all scales smaller than the size of the region that is currently collapsing. In this case $\vecB_p \cdot \nabla_p (\varpi B_\phi) \sim B^2$, so the time scale we wind up with is
+\subsection{Deuterium Burning}
+
+Before discussing how the structure equations can be solved numerically, it is worth delving a little further into the term $\epsilon$, representing nuclear energy generation. For a main sequence star, $\epsilon$ comes from fusion of hydrogen into helium, either via the pp-chain or the CNO cycle. However, hydrogen burning doesn't occur until just before the star reaches the main sequence.
+
+There is, however, an energetically-important nuclear reaction that can occur at lower temperatures, before the star is hot enough to burn hydrogen: fusion of deuterium, via the reaction
+\begin{equation}
+^2\mbox{H} + ^1\mbox{H} \rightarrow ^3\mbox{He} + \gamma.
+\end{equation}
+This reaction begins to occur at an appreciable rate once the temperature reaches $10^6$ K, and the reaction releases $5.5$ MeV per deuterium nucleus burned. The energy generation rate from deuterium fusion is reasonably well-approximated by
+\begin{equation}
+\epsilon \approx 
+\left\{
+\begin{array}{ll}
+0, & T < 10^6\mbox{ K} \\
+4.19\times 10^7\, [\mbox{D}/\mbox{H}] \rho_0 T_6^{11.8} \mbox{ erg g}^{-1}\mbox{ s}^{-1}
+\qquad & T > 10^6\mbox{ K},
+\end{array}
+\right.
+\end{equation}
+where $[\mbox{D}/\mbox{H}]\approx 2\times 10^{-5}$ is the ratio of D to H in the gas, $\rho_0=\rho/(1\mbox{ g cm}^{-3})$, and $T_6=T/(10^6\mbox{ K})$.
+
+Strictly speaking the expression we have for $T>10^6$ K is only valid for temperatures near $10^6$ K, but, as we shall see, this good enough for our purposes. If we wish to run a model past the start of H burning, we need an analogous expression for it, which is the same as one used for normal main sequence stellar structure calculations.
+
+\subsection{Numerical Solution}
+
+We have now fully specified the equations describing our protostar. To construct a numerical model, we need to specify the accretion rate $\dot{M}$ that appears in the boundary condition equations (\ref{pbound1}) and (\ref{lbound1}) describing the pressure and luminosity at the stellar surface. In general $\dot{M}$ can be a function of time, although usually it is taken to be constant until accretion halts at some specified final stellar mass $M_*$, at which point we switch to boundary conditions (\ref{pbound2}) and (\ref{lbound2}) for the boundary pressure and luminosity.
+
+We must also start with an initial condition, which we usually take to be a simple polytrope. This gives us initial profiles of $r$, $P$, $T$, and $L$, from which we can obtain other derived variables like $\rho$ and $s$, as a function of $M_r$. The choice of initial condition might matter a little or a lot, depending on the choice of boundary conditions, as we will see.
+
+Given these boundary conditions, we construct the solution at each time using a shooting method in much the same way as we would for a main sequence star. We first guess a central temperature $T$ and pressure $P$, which of course also gives us the central density $\rho$ and entropy $s$. Usually a good first guess is the value of $\rho$ and $s$ at the last time step.
+Then we integrate equations (\ref{mass}) - (\ref{heat}) outward in radius until we reach the outer mass shell $M_*$ (which is a function of time).
+
+To obtain the time derivative of the entropy term that appears in the internal energy equation (\ref{heat}), we just compute the difference between the entropy $s(M_r,t)$ for mass shell $M_r$ at the current time $t$ and the value for $s(M_r,t-\Delta t)$ that we had in the previous time step. In general the solution we have constructed will not satisfy the outer boundary conditions (\ref{pbound1}/\ref{pbound2}) and (\ref{lbound1}/\ref{lbound2}), so we must modify our guesses for $T$ and $P$ in the center and try again.
+
+We repeat this until we converge, and then we proceed to the next time step, adding new mass shells on the outside as necessary to account for new material deposited by accretion. We continue the calculation until the star's radius converges to its main sequence value. In this manner, we can generate a full evolutionary track for a given accretion rate.
+
+\section{Evolutionary Phases for Protostars}
+
+We have now outlined the basic equations describing protostellar evolution, as well as the numerical method used to solve them. We will now discuss the results of these calculations. There are generally a few distinct stages though with forming stars pass, which can be read off from how the radius evolves as the star gains mass. We will use as our primary example the case of a star undergoing hot accretion at $10^{-5}$ $M_\odot$ yr$^{-1}$, as illustrated in Figure \ref{fig:kippenhahn_hosokawa09}. However, note that the ordering of these phases we describe below can vary somewhat depending on the accretion rate and the boundary conditions assumed. Moreover, for low mass stars, some of the later phases may not occur at all, or occur only after the end of accretion.
+
+\begin{figure}
+\includegraphics[width=\linewidth]{kippenhahn_hosokawa09}
+\caption[Kippenhahn diagram for an accretion protostar]{
+\label{fig:kippenhahn_hosokawa09}
+Kippenhahn and composition diagrams for a protostar accreting at $10^{-5}$ $M_\odot$ yr$^{-1}$ \citep{hosokawa09a}. In the top panel, the thick curve shows the protostellar radius as a function of mass, and gray and white bands show convective and radiative regions, respectively. Hatched areas show regions of D and H burning, as indicated. Thin dotted lines show the radii containing $0.1$, $0.3$, $1$, $3$, and $10$ $M_\odot$, as indicated. Shaded regions show four evolutionary phases: (I) convection, (II) swelling, (III) KH-contraction, and (IV) the main sequence. In the lower panel, the solid line shows the mean deuterium fraction in the star, normalized to the starting value, while the dashed line shows the D fraction only considering the convective parts of the star. The dot-dashed line shows the maximum temperature.
+}
+\end{figure}
+
+\subsection{Initial Contraction}
+
+The initial phase of evolution is visible in Figure \ref{fig:kippenhahn_hosokawa09} as what takes place up to a mass of $\approx 0.2$ $M_\odot$ for the example shown. The first thing that happens during this phase is that the star reaches a radius that is a function solely of $M_*$ and $\dot{M}_*$. This occurs regardless of the initial radius with which we initiate the model, as long as we are using the hot accretion boundary condition. The physical reason for this behavior is easy to understand. The radius of the star is determined by the entropy profile $s(M_r)$. High entropy leads to high radius. Since the internal energy generated by the star is small compared to the accretion power when the stellar mass is low (i.e., $L_{\rm bb} \ll L_{\rm acc}$), once gas is incorporated into the star it does not lose significant energy by radiation. The only entropy it loses is due to the radiation that occurs at the shock on the star's surface. We could have guessed this result from the large value of $t_{\rm KH}$ compared to the accretion time -- in effect, this means that, once a fluid element reaches the stellar surface it will be buried and reach a nearly constant entropy quite quickly. Consequently, we can treat the material falling onto the star during this phase as having an entropy per unit mass that depends only on two factors: (1) the entropy it acquires by striking the stellar surface, and (2) how much it radiates before being buried.
+
+The latter factor is just determined by the accretion rate. Higher accretion rates bury accreted material more quickly, leaving it with higher entropy and producing larger radii. The former depends on the velocity of the infalling material just before it strikes the stellar surface, and thus on $v_{\rm ff}\propto \sqrt{M_*/R_*}$. However, this second factor self-regulates. If at fixed $M_*$, $R_*$ is very large, then $v_{\rm ff}$ is small, and the incoming material gains very little entropy in the shock. Small entropy leads to a smaller radius. Conversely, if $R_*$ is very small, then $v_{\rm ff}$ and the post-shock entropy will be large, and this will produce rapid swelling of the protostar. This effect means that the radius rapidly converges to a value that depends only on $M_*$ and $\dot{M}_*$.
+
+This self-regulation does not happen if the material is assumed to accretion cold. In this case, the radial evolution of the star is determined solely by the amount of entropy that is assumed to remain in the accretion flow when it joins onto the star. One common practice is to assume that the entropy of the accreting material is equal to the entropy of the gas already in the star, and, under this assumption, the choice of initial condition completely determines the subsequent evolution, since the choice of initial condition then determines the entropy content of the star thereafter.
+
+Regardless of the boundary condition assumed, during this phase there is no nuclear burning in the star, as the interior is too cold for any such activity. Since there is no nuclear burning, and this phase generally lasts much less than the Kelvin-Helmholtz timescale on which radiation changes the star's structure, during this phase the entropy content of the star is nearly constant. This phase can therefore be referred to as the adiabatic stage in the star's evolution.
+
+
+\subsection{Deuterium Ignition and Convection}
+
+In Figure \ref{fig:kippenhahn_hosokawa09}, the next evolutionary phase begins at $\approx 0.25$ $M_\odot$, and continues to $\approx 0.7$ $M_\odot$. This stage is marked by two distinct but interrelated phenomena: the onset of nuclear burning and the onset of convection. The driving force behind both phenomena is that, as the protostar gains mass, its interior temperature rises. Recall the results of our calculation from Chapter \ref{ch:protostar_form}: for a polytrope, which is not an unreasonable description of the accreting protostar, the central temperature rises with mass to the $T_c\propto M^{(2\gamma-2)/(3\gamma-2)}$. Thus even at fixed entropy the central temperature must rise as the star gains mass.
+
+Once $T_c$ reaches $\sim 10^6$ K, deuterium will ignite at the center of the protostar. This generally happens at a mass of hundredths to tenths of $M_\odot$, depending on the choice of accretion rate and boundary condition. This has two significant effects. The first is that deuterium acts as a thermostat for the star's center, much as hydrogen does in a main sequence star. Because the energy generation rate is so incredibly sensitive to $T$, any slight raise in the temperature causes it to jump enough to raise the pressure and adiabatically expand the star, reducing $T$. Thus, $T_c$ becomes fixed at $10^6$ K -- which is part of the reason we didn't need an expression for $\epsilon$ that would work at higher temperatures. The star adjusts its radius accordingly, which generally requires that the radius increase to keep $T_c$ nearly constant as the mass rises. Thus deuterium burning temporarily halts core contraction. Both effects are visible in Figure \ref{fig:kippenhahn_hosokawa09}. The halting of core contraction is apparent from the way the dotted lines showing constant mass enclosed bend upward at $\approx 0.3$ $M_\odot$, and the nearly constant core temperature is visible from the fact that, between $\approx 0.25$ $M_\odot$ and $3-4$ $M_\odot$, a factor of more than 10 in mass, the central temperature stays within a factor of 2 of $10^6$ K.
+
+The second effect of deuterium burning that it causes a rapid rise in the entropy at the center of the star: looking at the heat equation (\ref{heat}), we can see that if $\epsilon$ is large, then $\partial s/\partial t$ will be as well. This has the effect of starting up convection in the star. Before deuterium burning the star is generally stable against convection. That is because the entropy profile is determined by infall, and since shells that fall onto the star later arrive at higher velocities (due to the rising $M_*$), they have higher entropy. Thus $s$ is an increasing function of $M_r$, which is the condition for convective stability. Deuterium burning reverses this, and convection follows, eventually turning much of the star convective. This also ensures the star a continuing supply of deuterium fuel, since convection will drag gas from the outer parts of the star down to the core, where they can be burned.
+
+An important caveat here is that, although D burning encourages convection, it is not necessary for it. In the absence of D, or for very high accretion rates, the onset of convection is driven by the increasing luminosity of the stellar core as it undergoes KH contraction. This energy must be transported outwards, and as the star's mass rises and the luminosity goes up, eventually the energy that must be transported exceeds the ability of radiation to carry it. Convection results. For very high accretion rates, this effect drives the onset of convection even before the onset of D burning.
+
+A third effect of the deuterium thermostat is that it forces the star to obey a nearly-linear mass-radius relation, and thus to obey a particular relationship between accretion rate and accretion luminosity. One can show that for a polytrope the central temperature and surface escape speed are related by
+\begin{equation}
+\psi = \frac{GM}{R} = \frac{1}{2}v_{\rm esc}^2 = T_n \frac{k_B T_c}{\mu m_{\rm H}},
+\end{equation}
+where $T_c$ is the core temperature, $T_n$ is a dimensionless constant of order unity that depends only on the polytropic index, and $\mu$ is the mean mass per particle in units of hydrogen masses. For $n=3/2$, expected for a fully convective star, $T_n = 1.86$. Plugging in this value of $T_n$, $\mu=0.61$ (the mean molecular weight for a fully ionized gas of H and He in the standard abundance ratio), and $T_c = 10^6$ K, one obtains $\psi = 2.5\times 10^{14}$ erg g$^{-1}$ as the energy yield from accretion.
+
+\subsection{Deuterium Exhaustion and Formation of a Radiative Barrier}
+
+The next evolutionary phase, which runs from $\approx 0.6 - 3$ $M_\odot$ in Figure \ref{fig:kippenhahn_hosokawa09}, is marked by the exhaustion of deuterium in the stellar core. Deuterium can only hold up the star for a finite amount of time. The reason is simply that there isn't that much of it. Each deuterium burned provides $5.5$ MeV of energy, comparable the $7$ MeV per hydrogen  provided by burning hydrogen, but there are only $2\times 10^{-5}$ D nuclei per H nuclei. Thus, at fixed luminosity the ``main sequence" lifetime for D burning is shorter than that for H burning by a factor of $2\times 10^{-5} \times 5.5/7 = 1.6\times 10^{-5}$.
+
+We therefore see that, while a main sequence star can burn hydrogen for $\sim 10^{10}$ yr, a comparable pre-main sequence star of the same mass and luminosity burning deuterium can only do it for only a few times $10^5$ yr. To be more precise, the time required for a star to exhaust its deuterium is
+\begin{equation}
+t_{\rm D} = \frac{[\mbox{D}/\mbox{H}] \Delta E_{\rm D} M_*}{m_H L_*} = 1.5\times 10^6\mbox{ yr} \, M_{*,0} L_{*,0}^{-1}.
+\end{equation}
+Thus deuterium burning will briefly hold up a star's contraction, but cannot delay it for long. However, a brief note is in order here: while this delay is not long compared to the lifetime of a star, it is comparable to the formation time of the star. Recall that typical accretion rates are of order a few times $10^{-6}$ $\msun$ yr$^{-1}$, so a 1 $\msun$ star takes a few times $10^5$ yr to form. Thus stars may burn deuterium for most of the time they are accreting.
+
+The exhaustion of deuterium does not mean the end of deuterium burning, since fresh deuterium that is brought to the star as it continues accreting will still burning. Instead, the exhaustion of core deuterium happens for a more subtle reason. As the deuterium supply begins to run out, the rate of energy generation in the core becomes insufficient to prevent it from undergoing further contraction, leading to rising temperatures. The rise in central temperature lowers the opacity, which is govern by a Kramers' law: $\kappa \propto \rho T^{-3.5}$. This in turn makes it easier for radiation to transport energy outward. Eventually this shuts off convection somewhere within the star, leading to formation of what is called a radiative barrier.
+
+The formation of the barrier ends the transport of D to the stellar center. The tiny bit of D left in the core is quickly consumed, and, without D burning to drive an entropy gradient, convection shuts off through the entire core. This is the physics behind the nearly-simultaneous end of central D burning and central convection that occurs near $0.6$ $M_\odot$ in Figure \ref{fig:kippenhahn_hosokawa09}. After this transition, the core is able to resume contraction, and D continues to burn as fast as it accretes. However, it now does so in a shell around the core rather than in the core.
+
+\subsection{Swelling}
+
+The next evolutionary phase, which occurs from $\approx 3-4$ $M_\odot$ in Figure \ref{fig:kippenhahn_hosokawa09}, is swelling. This phase is marked by a marked increase in the star's radius over a relative short period of time. The physical mechanism driving this is the radiative barrier discussed above. The radiative barrier forms because increasing temperatures drive decreasing opacities, allowing more rapid transport of energy by radiation. The decreased opacity allows the center of the star to lose entropy rapidly, and the entropy to be transported to the outer parts of the star via radiation. The result is a wave of luminosity and entropy that propagates outward through the star.
+
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{rt_hosokawa09}
+\caption[Protostellar mass-radius relation for different accretion rates]{
+\label{fig:rt_hosokawa09}
+Radius versus mass (top panel) and maximum temperature versus mass (bottom panel) for protostars accreting at different rates. The accretion rate is indicated by the line style, as illustrated in the top panel. For each accretion rate there are two lines, one thick and one thin. The thick line is for the observed Milky Way deuterium abundance, while the thin line is the result assuming zero deuterium abundance.
+}
+\end{marginfigure}
+
+Once the wave of luminosity and entropy gets near the stellar surface, which is not confined by the weight of overlying material, the surface undergoes a rapid expansion, leading to rapid swelling. The maximum radius, and the mass at which the swelling phase occurs, is a strong function of the accretion rate (Figure \ref{fig:rt_hosokawa09}). However, even at very low accretion rates, swelling does not occur until the mass exceeds $1$ $M_\odot$.
+
+\subsection{Contraction to the Main Sequence}
+
+The final stage of protostellar evolution is contraction to the main sequence. Once the entropy wave hits the surface, the star is able to begin losing energy and entropy fairly quickly, and it resumes contraction. This marks the final phase of protostellar evolution, visible above $\approx 4$ $M_\odot$ in Figure \ref{fig:kippenhahn_hosokawa09}. Contraction ends once the core temperature becomes hot enough to ignite hydrogen, landing the star at least on the main sequence.
+
+\section{Observable Evolution of Protostars}
+
+
+We have just discussed the interior behavior of an evolving protostar. While this is important, it is also critical to predict the observable properties of the star during this evolutionary sequence. In particular, we wish to understand the star's luminosity and effective temperature, which dictate its location in the HR diagram. The required values can simply be read off from the evolutionary models (Figure \ref{fig:pms_siess00}), giving rise to a track of luminosity versus effective temperature in the HR diagram.
+
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{pms_siess00}
+\caption[Pre-main sequence evolutionary tracks]{
+\label{fig:pms_siess00}
+Solid lines show tracks taken by stars of varying masses, from $0.1$ $M_\odot$ (rightmost line) to $7.0$ $M_\odot$ (leftmost line) in the theoretical HR diagram of luminosity versus effective temperature. Stars begin at the upper right of the tracks and evolve to the lower left; tracks end at the main sequence. Dashed lines represent isochrones corresponding to $10^6$, $10^7$, and $10^8$ yr, from top right to bottom left. Figure from \citet{siess00a}.
+}
+\end{marginfigure}
+
+The two most important applications of models of this sort is in determining the mass and age distributions of young stars. The former is critical to determining the IMF, as discussed in Chapter \ref{ch:imf_th}, while the latter is critical to questions of both how clusters form, and to the problems of disk dispersal and planet formation (Chapters \ref{ch:late_disk} and \ref{ch:planets}).
+
+\subsection{The Birthline}
+
+Before delving into the tracks themselves, we have to ask what is actually observable. As long as a star is accreting from its parent core, it will probably not be visible in the optical, due to the high opacity of the dusty gas in the core. Thus we are most concerned with stars' appearance in the HR diagram only after they have finished their main accretion phase. We refer to stars that are still accreting and thus not generally optically-observable as protostars, and those that are in this post-accretion phase as pre-main sequence stars. 
+
+For stars below $\sim 1$ $M_\odot$, examining Figure \ref{fig:kippenhahn_hosokawa09}, we see that the transition from protostar to pre-main sequence star will occur some time after the onset of deuterium burning, either during the core or shell burning phases depending on the mass and accretion history. More massive stars will become visible only during KH contraction, or even after the onset of hydrogen burning. The lowest mass stars might be observable even before the start of deuterium burning. However, for the majority of the pre-main sequence stars that we can observe, they first become visible during the D burning phase.
+
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{birthline_palla90}
+\caption[The protostellar birthline]{
+\label{fig:birthline_palla90}
+Thin lines show tracks taken by stars of varying masses (indicated by the annotation, in $M_\odot$) in the theoretical HR diagram of luminosity versus effective temperature. Stars begin at the upper right of the tracks and evolve to the lower left; tracks end at the main sequence. The thick line crossing the tracks is the birthline, the point at which the stars stop accreting and become optically visible. Squares and circles represent the properties of observed young stars. Figure taken from \citet{palla90a}.
+}
+\end{marginfigure}
+
+Since there is a strict mass-radius relation during core deuterium burning (with some variation due to varying accretion rates), there must be a corresponding relationship between $L$ and $T$, just like the main sequence. We call this line in the HR diagram, on which protostars first appear, the birthline; it was first described by \citet{palla90a} (Figure \ref{fig:birthline_palla90}). Since young stars are larger and more luminous that main sequence stars of the same mass, this line lies at higher $L$ and lower $T$ than the main sequence.
+
+\subsection{The Hayashi Track}
+
+Now that we understand what is observable, let us turn to the tracks themselves. The tracks shown in Figures \ref{fig:pms_siess00} and \ref{fig:birthline_palla90} show several distinct features. One is that, for low mass stars, the initial phases of evolution in the HR diagram are nearly vertically, i.e., at constant $T_{\rm eff}$. The vertical tracks for different masses are very close together. This vertical part of the evolution is called the Hayashi track, after its discoverer, who predicted it theoretically \citep{hayashi61a}. For low mass stars, the majority of the Hayashi track lies after the birthline, so it is directly observable.
+
+The origin of the Hayashi track is in the physics of opacity in stellar atmospheres at low temperature. At temperatures below about $10^4$ K, hydrogen becomes neutral, and the only free electrons available come from metal atoms with lower ionization energies. Some of these electrons become bound with hydrogen atoms, forming H$^-$, and this ion is the dominant source of opacity.  Thus the opacity depends on the number of free electrons provided by metal atoms, which in turn depends extremely sensitively on the temperature.
+
+If the temperature falls too low, the opacity will be so low that, even integrating through the rest of the star's mass, the optical depth to infinity will be $<2/3$. Since the photosphere must always be defined by a surface of optical depth unity, this effectively establishes a minimum surface temperature for the star required to maintain $\tau \approx 1$. This minimum temperature depends weakly on the star's mass and radius, but to good approximation it is simply $T_{\rm min} = T_{\rm H} = 3500$ K, where $T_{\rm H}$ is the Hayashi temperature. Low mass protostars, due to their large radii, wind up right against this limit, which is why they all contract along vertical tracks that are packed close together in $T_{\rm eff}$.
+
+We can make this argument a bit more quantitative as follows. Let us approximate the stellar photosphere at radius $R$ as producing blackbody emission and obeying a simple ideal gas law equation of state. In this case we have
 \begin{eqnarray}
-t_{\rm br} & \sim & \frac{G^{1/2}\rho^{3/2} \varpi^2}{B^2} \\
-& \sim & \frac{(G\rho)^{1/2} \varpi^2}{v_A^2} \\
-& \sim & \frac{t_{\rm cr}^2}{t_{\rm ff}},
+\label{eq:bb}
+\log L & = & 4 \log T_R - 2 \log R + \mbox{constant} \\
+\label{eq:idealgas}
+\log P_R & = & \log \rho_R + \log T_R + \mbox{constant},
 \end{eqnarray}
-where we are dropping constants of order unity, in the second step we wrote $B$ in terms of the Alfven speed $v_A = B/\sqrt{4\pi \rho}$, and in the final step we wrote $t_{\rm cr} = \varpi/v_A$, where $t_{\rm cr}$ is the Alfven crossing time of the cloud.
-
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{magdisk1_hennebelle08}
-\includegraphics[width=\linewidth]{magdisk2_hennebelle08}
-\caption[Simulations of magnetized rotating collapse]{
-\label{fig:magdisk_hennebelle}
-Results from a simulation of magnetized rotating collapse \citep{hennebelle08c}. The top panel shows the magnetic field structure; solid lines are poloidal magnetic field lines, while color indicates the azimuthally-averaged total magnetic field strength, on a scale from $0-3.5$ mG. The bottom panel shows the density (color) and velocity (arrows) structure at a slightly later time in the simulation. The structure in the mid-plane is a non-rotating pseudo-disk.
-}
-\end{marginfigure}
-
-If a cloud starts out with a magnetic field near equipartition with gravity and thermal energies, we expect $t_{\rm ff} \sim t_{\rm cr}$, so this means that $t_{\rm br}\sim t_{\rm cr}$. This is an order of magnitude calculation, but its implication is clear: if we have a field that is even marginally wound up, such that the poloidal and toroidal components become comparable, this field is capable of stopping Keplerian rotation in a time scale comparable to the collapse or crossing time. This can effectively prevent formation of a Keplerian disk at all if the magnetic field is strong enough. Indeed, this is what simulations seem to show happening (Figure \ref{fig:magdisk_hennebelle}).
-
-\subsection{The Magnetic Braking Problem and Possible Solutions}
-
-The calculation of magnetic braking calculation we have just performed presents us with a fundamental problem: it naively seems like magnetic fields should prevent disks from forming at all, but we observe that they do. We even observe disks present in class 0 sources, where the majority of the gas is still in the envelope. So how can we get out of this? This is not a completely solved problem, but we can make a few observations about what a solution might look like.
-
-We can first ask whether ion-neutral drift might offer a way out. Recall in Chapter \ref{ch:magnetic}, we showed that, at the densities and velocities typical of protostellar cores, ion-neutral drift should allow gas to decouple from the magnetic field on scales below $L_{\mathrm{AD}} \sim 0.05$ pc. One might expect that this would make it possible to form disks below the decoupling scale. However, simulations suggest that this solution does not work. The flux that is released from the gas by ion-neutral drift does not disappear. Instead, it builds up flux tubes near the star with relatively little mass on them, and these flux tubes prevent a disk from forming (Figure \ref{fig:magdisk_krasnopolsky12}).
-
-A more promising solution appears to be misalignment between the rotation axis of the gas and the magnetic field, or, more generally, the presence of turbulence in the collapsing gas. In simulations where the gas is turbulent, the magnetic field lines tend to be bent or misaligned relative to the disk, and this greatly reduces the efficiency of magnetic braking. However, the problem of how disks form is still not fully solved.
-
-\section{Disk Evolution}
-
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{magdisk_krasnopolsky12}
-\caption[Simulations of magnetized rotating collapse with non-ideal MHD]{
-\label{fig:magdisk_krasnopolsky12}
-Results from a simulation of magnetized rotating collapse including the effects of ion-neutral drift and Ohmic dissipation \citep{krasnopolsky12a}. Lengths on the axes are in units of cm. Colors and contours show the density in the equatorial plane, on a logarithmic scale from $10^{-16.5}$ to $10^{-12.5}$ g cm$^{-3}$. Arrows show velocity vectors.
-}
-\end{marginfigure}
-
-Given that disks exist, we wish to understand how the evolve, and how they accrete onto their parent stars. In this section we will sketch a basic theory for how disks behave.
-
-\subsection{Steady Thin Disks}
-
-\paragraph{Evolution equations.}
-
-Consider a thin disk of surface density $\Sigma$ orbiting at an angular velocity $\Omega$. We take the disk to be cylindrically symmetric, so that $\Sigma$ and $\Omega$ are functions of the radius $r$ only. We assume it is very thin in the vertical direction, so we only need to solve the equations in the plane $z=0$. In addition to its orbital velocity $v_{\phi}=r\Omega$, the gas has a radial velocity $v_r$, which we assume is much less than $v_{\phi}$. This allows the gas to accrete onto a central object.
-
-For this system, the general equation of mass conservation is
+where the subscript $R$ indicates that a quantity is to be evaluated at the stellar outer radius, and we are writing things in terms of logarithms rather than powerlaw scalings for future convenience. Now let us consider a star that is a polytrope, following $P\propto K_P \rho^{(n+1)/n}$. The polytropic constant$K_P$ is related to the stellar mass and radius by
 \begin{equation}
-\frac{\partial}{\partial t}\rho + \nabla\cdot(\rho \vecv) = \frac{\partial}{\partial t}\rho + \frac{1}{r} \frac{\partial}{\partial r}(r \rho v_r) = 0,
+K_P \propto M^{(n-1)/n}R^{(3-n)/n}.
 \end{equation}
-where we have written out the divergence for cylindrical coordinates, and we have used the cylindrical symmetry of the problem to drop the components of the divergence in the $z$ and $\phi$ directions. Since we have a thin disk, the volume density is $\Sigma \delta(z)$, i.e.\ it is zero off the plane, infinite in the plane, and integrates to $\Sigma$. Integrating the mass conservation equation over $z$ then immediately gives
+Thus we have
 \begin{equation}
-\frac{\partial}{\partial t}\Sigma + \frac{1}{r} \frac{\partial}{\partial r}(r \Sigma v_r) = 0.
+\log K_P = \left(\frac{n-1}{n}\right) \log M + \left(\frac{3-n}{n}\right)\log R + \mbox{constant},
 \end{equation}
-This equation just says that the change in the surface density at some point is equal to the net rate of radial mass flow into or out of it.
-
-It is convenient to introduce the mass accretion rate $\dot{M}=-2\pi r \Sigma v_r$, which represents the rate of inward mass flux across the cylinder at radius $r$. With this definition, the mass conservation equation becomes
+and the pressure scales with $M$ and $R$ as
 \begin{equation}
-\frac{\partial}{\partial t}\Sigma - \frac{1}{2\pi r} \frac{\partial}{\partial r}\dot{M} = 0.
+\label{eq:polytrope}
+\log P = \left(\frac{n-1}{n}\right) \log M + \left(\frac{3-n}{n}\right) \log R + \left(\frac{n+1}{n}\right) \log \rho + \mbox{constant}.
+\end{equation}
+Hydrostatic balance at the photosphere requires
+\begin{equation}
+\frac{dP}{dr} = \rho_R \frac{GM}{R^2} \qquad\Longrightarrow\qquad
+P_R = \frac{GM}{R^2} \int_R^\infty \rho \, dr,
+\end{equation}
+where $P_R$ is the pressure at the photosphere and we are approximating the $GM/R^2$ is essentially constant through the photosphere. The photosphere is defined by the condition
+\begin{equation}
+\kappa \int_R^\infty \rho\,dr \approx 1,
+\end{equation}
+where we are also approximating $\kappa$ as constant, so putting this together we have
+\begin{equation}
+P_R \approx \frac{GM}{R^2\kappa} \qquad\Longrightarrow\qquad
+\log P_R \approx \log M - 2 \log R - \log \kappa.
 \end{equation}
 
-Next we can write down the Navier-Stokes equation for the fluid,
+To make further progress, we will assume that we can approximate the opacity as some powerlaw in density and temperature, $\kappa \propto \rho T^b$. For a Kramers opacity, for example, $a=1$ and $b=-3.5$. Substituting this into the equation for $P_R$, we have
 \begin{equation}
-\rho\left(\frac{\partial}{\partial t}\vecv + \vecv\cdot\nabla\vecv\right) = -\nabla p - \rho\nabla\psi + \nabla\cdot \vecT,
-\end{equation}
-where $p$ is the pressure, $\psi$ is the gravitational potential, and $\vecT$ is the viscous stress tensor. The first thing we can do is integrate over $z$, which gives
-\begin{equation}
-\Sigma \left(\frac{\partial}{\partial t}\vecv + \vecv\cdot\nabla\vecv\right) = -\nabla P - \Sigma \nabla\psi + \int \nabla\cdot \vecT\,dz,
-\end{equation}
-where $P$ is the vertically-integrated pressure.
-
-Now consider the $\phi$ component of this equation. This is particularly simple, because all $\phi$ derivatives vanish due to symmetry, and the pressure and gravitational forces therefore drop out. This gives
-\begin{equation}
-\Sigma \left[\frac{\partial}{\partial t} v_\phi + \frac{v_r}{r} \frac{\partial}{\partial r}(rv_\phi)\right] = \int \frac{1}{r^2} \frac{\partial}{\partial r}(r^ 2 T_{r\phi})\,dz.
-\end{equation}
-Note there is some subtlety here in writing out the gradient of a tensor in cylindrical coordinates. Frank Shu's fluid dynamics book has a handy reference at the end for vector and tensor operations in non-Cartesian coordinate systems.
-
-If we multiply through by $2\pi r^2$, we get
-\begin{equation}
-2\pi r \Sigma \left(\frac{\partial}{\partial t} j + v_r \frac{\partial}{\partial r}j\right) = \int \frac{\partial}{\partial r}(2\pi r^ 2 T_{r\phi})\,dz = \frac{\partial}{\partial r} \mathcal{T}
-\end{equation}
-where we have defined $j=rv_\phi$ as the angular momentum per unit mass of the material and
-\begin{equation}
-\mathcal{T} = 2\pi r \int r T_{r\phi}\, dz.
-\end{equation}
-Thus we see that this represents an evolution equation for the angular momentum of the gas. The factor $2\pi r \Sigma$ is just the mass per unit radius in a thin ring, so $2\pi r\Sigma j$ is the angular momentum in the ring.
-
-The quantity $\mathcal{T}$ represents the torque exerted on the ring due to viscosity. This is clear if we examine its components. The viscous stress tensor component $T_{r\phi}$ represents the force per unit area created by viscosity. This is multiplied by $r$, so we have $rT_{r\phi}$, which is just the torque per unit area, since it is a force times a lever arm. Finally, this is multiplied by $2\pi r$ and integrated over $z$, which is just the area of the cylindrical surface over which this torque is applied. Thus, $\mathcal{T}$ is the total torque. We take its derivative with respect to $r$ to obtain the difference in torque between the ring immediately interior to the one we are considering and the ring immediately exterior to it. 
-
-Suppose we look for solutions of this equation in which the angular momentum per unit mass at a given location stays constant, i.e., $\partial j/\partial t=0$. This will be the case, for example, of a disk where the azimuthal motion is purely Keplerian at all times. In this case the evolution equation just becomes
-\begin{equation}
--\dot{M} \frac{\partial j}{\partial r} = \frac{\partial \mathcal{T}}{\partial r}.
+\label{eq:opacity}
+\log P_R = \log M - 2\log R - \log \rho_R - b\log T_R + \mbox{constant}.
 \end{equation}
 
-This equation describes a relationship between the accretion rate and the viscous torques in a disk. Its physical meaning is that the accretion rate $\dot{M}$ is controlled by the rate at which viscous torques remove angular momentum from material closer to the star and give it to material further out.
-
-The equation is particularly useful if we demand that our disk be in Keplerian rotation. In this case, we know $j=\sqrt{G M r}$, where $M$ is the mass of the central star, so this equation immediately tells us the relationship between the accretion rate and the viscous torque.
-
-To make further progress, let us write down the viscous stress $T_{r\phi}$ a little more specifically. We will assume that the gas in the disk is Newtonian, meaning that the viscous stress is proportional to the rate of strain in the fluid. We want to know $T_{r\phi}$, meaning the force per unit area in the $\phi$ direction, exerted on the radial face of a fluid element. Consider an observer in a frame comoving with the orbiting fluid at some particular distance $r$ from the star, and consider a fluid element that is initially on the same radial ray as the observer, but a distance $dr$ further from the star.
-
-If the rotation is solid body, then the fluid element and the observer will always lie on the same radial ray, so there is no strain, and there will be no viscous stress. On the other hand, if there is differential rotation, such that the fluid further the star has a longer orbital period (as we expect for Keplerian motion), the fluid element will gradually fall behind the observer. This represents a strain in the fluid.
-
-How quickly does the element fall behind? The difference in angular velocity between the observer and the fluid element is $d\Omega = (d\Omega/dr) dr$, and so the difference in spatial velocity is $r (d\Omega/dr) dr$. The rate of strain is defined as one over the time it takes the fluid element to be displaced a distance $dr$ downstream from the observer, i.e.\ the time it takes for the differential rotation to stretch the fluid in between by an amount of order unity. Thus, the rate of strain is $r (d\Omega/dr) dr/dr = r (d\Omega/dr)$.
-
-The viscous stress is equal to this rate of strain times the dynamic viscosity $\mu$, i.e.
+Equations (\ref{eq:bb}), (\ref{eq:idealgas}), (\ref{eq:polytrope}) and (\ref{eq:opacity}) constitute a system of four linear equations in the four unknowns $\log P_R$, $\log \rho_R$, $\log T_R$, and $\log L$. Solving this linear system yields the result
 \begin{equation}
-T_{r\phi} = \mu r \frac{d\Omega}{dr} = \rho \nu r \frac{d\Omega}{dr},
+\log L = \left(\frac{9 - 2 n + b}{2-n}\right) \log T_R - \left(\frac{2n-1}{2-n}\right) \log M + \mbox{constant}.
 \end{equation}
-where $\nu=\mu/\rho$ is the kinematic viscosity, which will be more convenient to work with. If we plug this into our definition of the viscous torque, we get
+This equation describes the shape of a track in the HR diagram, because it relates $\log L$ to $\log T_R$, the photospheric temperature. To see what it implies, we can assume that young low mass stars will be fully convective thanks to D burning, so $n\approx 1.5$.
+
+This leaves only $b$. As mentioned previously, the H$^{-}$ opacity has the property that it rises sharply with temperatures of a few thousand K, because at these temperatures collisional velocities are not high enough to dissociate H$^-$, but they are able to dissociate other atoms, which in turn produces free electrons that can yield H$^{-}$. The higher the temperature, the more free electrons available, and thus the higher the H$^{-}$ opacity. The net result is that, in this temperature range, $b$ takes on a fairly large value: $\sim 4-9$ depending on exactly where in the temperature range we are. Note that this is the opposite of the normal behavior for stellar opacities (e.g.\ Kramer's opacity), where the opacity falls with increasing temperature.
+
+If we plug $b = 9$ and $n=1.5$ into the equation we have just derived, we find obtain
 \begin{equation}
-\mathcal{T} = 2\pi r \int r T_{r\phi}\, dz = 2\pi r^3 \Sigma \nu \frac{d\Omega}{dr}.
+\log L = 30\log T_R - 4 \log M + \mbox{constant}.
 \end{equation}
-This combined with the equation giving the relationship between $\dot{M}$ and $d\mathcal{T}/dr$ immediately give us the accretion rate for any steady disk of known surface density and angular momentum profile $j(r)$.
+Using $b=4$ changes the 30 to a 20. Either way, we conclude that $\log L$ changes extremely steeply with $\log T_R$, which implies that the HR diagram track for stars with this low $T_{\rm eff}$ must be nearly vertical -- hence the Hayashi track. We also see that the location of the Hayashi tracks for stars of different masses will be slightly offset, because of the $4\log M$ term. This qualitatively explains what the numerical models produce.
 
-The most interesting case in star formation is for $j$ and $\Omega$ corresponding to Keplerian rotation, $j=\sqrt{GMr}$ and $\Omega=\sqrt{GM/r^3}$. (If we were interested in galactic disks, we might instead have considered a flat rotation curve, $j\propto r$). If we now combine the continuity equation
-\begin{equation}
-\frac{\partial}{\partial t}\Sigma - \frac{1}{2\pi r} \frac{\partial}{\partial r}\dot{M} = 0,
-\end{equation}
-the angular momentum equation
-\begin{equation}
--\dot{M} \frac{\partial j}{\partial r} = \frac{\partial \mathcal{T}}{\partial r},
-\end{equation}
-and plug in the Keplerian values of $j$ and $\Omega$, a little algebra shows that the resulting equation is
-\begin{equation}
-\frac{\partial \Sigma}{\partial t} = \frac{3}{r} \frac{\partial}{\partial r} \left[r^{1/2} \frac{\partial}{\partial r}\left(\nu \Sigma r^{1/2}\right)\right],
-\end{equation}
-and the corresponding equation for the radial drift velocity is
-\begin{equation}
-v_r = -\frac{3}{\Sigma r^{1/2}} \frac{\partial}{\partial r}(\nu \Sigma r^{1/2}).
-\end{equation}
+\subsection{The Heyney Track}
 
-These equations can be solved numerically for a given value of $\alpha$, and they can be solved analytically in special cases, but it is useful to examine their general behavior first. First, note that the equation for $\Sigma$ involves something that looks like a time derivative equals a second spatial derivative. This is the form of a diffusion equation. Physically, it means that if we start with a sharply peaked $\Sigma$, say a surface density that looks like a ring, viscosity will spread it out. In fact, the case in which $\nu$ is constant and $\Sigma\propto \delta(r-R_0)$ at time 0 can be solved analytically (Figure \ref{fig:viscring}).
+Contraction at nearly constant $T_{\rm eff}$ continues until the star contracts enough to raise its surface temperature above $T_{\rm H}$. This increase in temperature also causes the star to transition from convective to radiative, since the opacity drops with temperature at high temperatures, and a lower opacity lets radiation rather than convection carry the energy outward.
 
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{viscring}
-\caption[Viscous ring evolution]{
-\label{fig:viscring}
-Analytic solution for the viscous ring of material with constant kinematic viscosity $\nu$. At time $t=0$, the column density distribution is $\Sigma = \Sigma_0 \delta(r-R_0)$. Colored lines show the surface density distribution at later dimensionless times, as indicated in the legend. The analytic solution shown is that of \citet{pringle81a}.
-}
-\end{marginfigure}
-
-
-How quickly to do rings spread, and does mass move inward? To answer that, we must evaluate $\partial \mathcal{T}/\partial r$ under the assumption that $\Sigma$ and $\nu$ are relatively constant with radius, so we can take them out of the derivative, and that the disk is in steady state. We'll again assume a Keplerian background rotation to evaluate $\Omega$. Under these assumptions
-\begin{equation}
-\frac{d\mathcal{T}}{dr} = 2\pi \Sigma \nu \frac{d}{dr}\left(r^3 \frac{d\Omega}{dr}\right) = -3\pi\Sigma \nu \frac{d}{dr}(r^2\Omega) = -3\pi \Sigma \nu \frac{dj}{dr}.
-\end{equation}
-
-In this case the angular momentum evolution equation trivially reduces to
-\begin{equation}
-\dot{M} = 3\pi\Sigma\nu,
-\end{equation}
-i.e.\ the accretion rate is just proportional to the viscosity and the disk surface density. The radial velocity of the material under these assumptions is
-\begin{equation}
-v_r = -\frac{3}{2} \frac{\nu}{r}.
-\end{equation}
-The time required for a given fluid element to reach the star, therefore, is $t_{\rm acc}\sim r/v_r \sim r^2/\nu$.
-
-\paragraph{The $\alpha$ model.}
-
-Before delving into the physical origin of the viscosity, it is helpful to non-dimensionalize the problem a bit. We will write down the viscosity in terms of a dimensionless number called $\alpha$, following the original model first described by \citet{shakura73a}. The model is fairly straightforward. The viscous stress we are trying to compute $T_{r\phi}$ has units of a pressure, so let us normalize it to the disk pressure. This is not as arbitrary as it sounds. If, for example, the mechanism responsible for producing fast angular momentum transport is fluctuating magnetic fields, then we would expect the strength of this effect to scale with the energy density in the magnetic field, which is in turn proportional to the magnetic pressure. Similar arguments can be made for other plausible mechanisms.
-
-The $\alpha$-disk ansatz is simply to set
-\begin{equation}
-T_{r\phi} = -\alpha p \frac{r/\Omega}{d\Omega/dr},
-\end{equation}
-where the dimensionless factor $\frac{r/\Omega}{d\Omega/dr}$ is inserted purely for convenience. This is equivalent to setting
-\begin{equation}
-\nu = \frac{T_{r\phi}}{\rho r (d\Omega/dr)} = \frac{\alpha c_s^2}{\Omega} = \alpha c_s H,
-\end{equation}
-where $c_s$ is the sound speed in the disk and $H = c_s/\Omega$ is the disk scale height. Note that $c_s$ and $H$ include both thermal pressure and magnetic pressure.
-
-If we now substitute this into our simplified expression for $\dot{M}$, we get an accretion rate
-\begin{equation}
-\dot{M} = 3\pi \Sigma \alpha c_s H = 3\pi \Sigma \alpha \frac{c_s^2}{\Omega}
-\end{equation}
-This if we know the disk thermal structure, i.e.\ we know $c_s$ and $H$, and we know its surface density $\Sigma$, then $\alpha$ tells us its accretion rate.
-
-The physical meaning of this result becomes a bit clearer if we put in an order of magnitude estimate that $\Sigma \approx M_d / R_d^2$, where $M_d$ and $R_d$ are the disk mass and radius. Putting this in we have
-\begin{equation}
-\dot{M} \approx \alpha \frac{M_d}{R_d^2} \frac{c_s^2}{\Omega}
-\end{equation}
-If we define $t_{\rm acc} = M_d/\dot{M}$ as the accretion timescale (i.e.\ the characteristic time to accrete the entire disk), $t_{\rm cross} = R_d/c_s$ as the sound crossing time of the disk, and $t_{\rm orb} = 2\pi/\Omega$ as the disk orbital period, then with a little algebra it is easy to show that this expression reduces to
-\begin{equation}
-t_{\rm acc} = \frac{1}{\alpha} \left(\frac{t_{\rm cross}}{t_{\rm orb}}\right)^2 t_{\rm orb}.
-\end{equation}
-Thus this expression says that the time required to drain the disk is of order $(1/\alpha)(t_{\rm cross}/t_{\rm orb})^2$ orbits. Note that $t_{\rm orb} \ll t_{\rm cross}$, because orbital speeds are highly supersonic (as they must be for a thin disk to form). In a disk with $\alpha = 1$ it takes this ratio squared orbits to drain the disk, and with $\alpha < 1$ it takes longer.
-
-Based on observations of the accretion rates in disks and these properties, \citet{hartmann98a} estimate that $\alpha \sim 10^{-2}$ in nearby T Tauri star disks. It is probably larger at earlier phases in the star formation process.
-
-\subsection{Physical Origins of Disk Viscosity}
-
-We have established that there must be a viscous mechanism to transport angular momentum and mass through accretion disks, and we have even estimated its strength from observations, but we have not yet specified what that mechanism is.
-
-\paragraph{Ordinary fluid viscosity.}
-
-The obvious place to start is to examine the ordinary hydrodynamic viscosity we expect all fluids to have. The kinematic viscosity of a diffuse gas is $\nu = 2\overline{u}\lambda$, where $\overline{u}$ is the RMS particle speed and $\lambda$ is the mean free path.
-Let us consider a protostellar accretion disk with the typical properties density $n=10^{12}$ cm$^{-3}$ and temperature 100 K. In this case the velocity $\overline{u} = 0.6$ km s$^{-1}$, and assuming a particle-particle cross section of $\sigma=(1\mbox{ nm})^2$, the mean free path is $\lambda \sim 1/(n\sigma)=100$ cm, and $\nu \sim 10^8$ cm$^{-2}$ s.
-
-We can put this in terms of $\alpha$ if we remember that $\nu = \alpha (c_s^2/\Omega)$. Just us consider material at a temperature of 100 K that is orbiting 100 AU from a 1 $\msun$ star. In this case we have $c_s = 0.6$ km s$^{-1}$ and $\Omega = 6.3\times 10^{-3}$ yr$^{-1}$, and we have $\alpha \approx 6\times 10^{-12}$.
-
-This obviously a problem. Suppose the gas starts out $\sim 100$ AU from the star. The time required for the gas to accrete is then $t_{\rm acc}\sim r^2/\nu \sim (100\mbox{ AU})^2/\nu \sim 10^{22}$ s, or just shy of $10^{15}$ yr. In other words, longer than the age of the universe. The obvious conclusion from this is that ordinary hydrodynamic viscosity is completely ineffective at producing accretion. If that were the only source of angular momentum transport in a disk, then stars would never form. Something else must be at work.
-
-\paragraph{Turbulent hydrodynamic viscosity.}
-
-One possible explanation solution to this problem is turbulent hydrodynamic viscosity. If there are large-scale radial motions within a disk, then the effective value of $\overline{u}\lambda$ could be significantly larger than the microphysical one we calculated. In effect, these motions will mix material from different radii within the disk, exchanging angular momentum between inner and outer parts of the disk.
-
-This would require the existence of an instability capable of generating and sustaining large radial turbulent motions. Although several such mechanisms have been proposed, it is essentially impossible to determine the amount of angular momentum transport that will be produced based on purely analytic calculations. That is because the transport will depend on the non-linear saturation amplitude of any instability, which is not something that one can generally determine analytically.
-
-Numerical simulations have been attempted, and seem to find that hydrodynamic mechanisms do not produce significant angular momentum transport, but they may be compromised by limited resolution. In a numerical simulation, the maximum possible Reynolds number is set by the ratio of the size of the computational domain to the size of a grid cell, since flows are always smoothed on the grid scale. Even for the largest calculations ever performed this is at most a few thousand, whereas we have seen that the Reynolds numbers in real astrophysical systems are typically $\sim 10^9$. Thus, if the saturation were Reynolds number-dependent, numerical simulations would not get it right.
-
-The question of whether hydrodynamic mechanisms could be responsible for angular momentum transport is sufficiently complex and interesting that the latest frontier is laboratory experiment. Researchers construct counter-rotating cylinders filled with a fluid, and set the cylinders rotating to produce a Keplerian-like rotation profile. They then measure the force exerted on the inner and outer cylinders to measure the rate of angular momentum transport. The laboratory experiments can reach Reynolds numbers of $\sim 10^6$, and seem to find negligible transport, $\alpha < 10^{-6}$ \citep{ji06a}. Given these results, most researchers are convinced that purely hydrodynamic mechanisms cannot explain the observed lifetimes and rates of angular momentum transport in disks. Instead, some other mechanism is required.
-
-\paragraph{Magneto-rotational instability.}
-
-Magnetic fields offer one opportunity for angular momentum transport. We have already mentioned magnetic braking as a possibility, but that requires that the matter be well-coupled to the field, and that the field be dragged inward into the disk so that there is a large net flux. This may not happen due to non-ideal MHD effects, however.
-
-Another mechanism is possible that does not require a large net flux, and that allows weaker (although not zero) coupling. This is the magneto-rotational instability (MRI), first discovered mathematically by \citet{chandrasekhar61a}, and later re-discovered and applied to astrophysical systems by \citet{balbus91a}. The full theory of MRI has been explored extensively both analytically and numerically.
-
-The basic idea is that magnetic field lines threading the disk connect annuli at different radii. As the disk rotates and the annuli shear, this stretches the magnetic field line connecting them. This causes an opposing magnetic tension, which attempts to force the two points to stay close together, and thus to force them into co-rotation. This speeds up the outermost fluid element, which is falling behind, and slows down the innermost one, and thus it moves angular momentum outward. However, when you remove angular momentum from a fluid element it tends to fall toward the center, so the innermost fluid element falls even closer to the star. Similarly, the outermost fluid element gains angular momentum, and so it wants to move outward. This increases the tension even more, and the system goes unstable due to this positive feedback loop.
-
-Simulators are still working to try to come up with a general result about the value of $\alpha$ produced by the MRI, but in at least some cases $\alpha$ as high as $0.1$ seems to be possible. This would nicely explain the observed accretion rates and lifetimes of T Tauri star disks.
-
-MRI is not the end of the story, however. The problem with MRI is that it only operates as long as matter is sufficiently coupled to the magnetic field, which in turn depends on its ionization state. MRI will only operate if the mechanism we have described is able to generate turbulent fluctuations in the magnetic field to transport angular momentum. In turn, this requires that no non-ideal mechanism, of which there are several possibilities, be able to smooth out the field over the scale of the accretion disk.
-
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{mri_sano02}
-\caption[Maxwell stress in non-ideal MHD simulations of the MRI]{
-\label{fig:mri_sano02}
-Results from a series of simulation of magneto-rotational instability with non-ideal MHD by \citet{sano02a}. The $y$ axis shows the mean Maxwell stress measured in the simulation once it reaches statistical steady state, normalized by the gas pressure. This is roughly the same as $\alpha$. Simulations are shown at a range of magnetic Reynolds numbers $\mbox{Re}_{\mathrm{M}}$. Different values of the parameter $X_0$ correspond to different strengths of Hall diffusivity.
-}
-\end{marginfigure}
-
-The question of how well coupled the gas and the field are turns on details of the ionization structure of the disk, and the calculation is extremely sensitive. Turbulence requires large values of the magnetic Reynolds number $\mbox{Re}_{\rm M} = v_A^2 /(\eta\Omega)$, where $v_A$ is the Alfven speed and $\eta$ is the magnetic diffusivity. Numerical experiments suggest that MRI shuts of when $\mbox{Re}_{\rm M} < 3000$ (Figure \ref{fig:mri_sano02}).
-
-The diffusivity, in turn, depends on the electron fraction: $\eta = c^2/(4\pi \sigma_e)$, where $\sigma_e = n_e e^2/(m_e \nu_c)$ is the conductivity and $\nu_c$ is the frequency of electron-neutral collisions. If there are few electrons, $\sigma_e$ is small and $\eta$ is large, making $\mbox{Re}_{\rm M}$ small. This means that, in order to know where and whether MRI will operate, we need to know the ionization fraction in the disk.
-
-This is an incredibly complex problem, because the ionization is generally non-thermal, non-LTE, and it only takes a tiny number of electrons to make MRI operate: an electron fraction $\sim 10^{-9}$ is sufficient. In the very inner disk near the star, where the temperature is $\sim 2000$ K, thermal ionization of alkali metals will provide the necessary electrons. In regions where the disk column density is $\lesssim 100$ g cm$^{-2}$, x-rays from the central star and cosmic rays can penetrate the disk, providing free electrons. However, for comparison the estimated column density of the minimum mass Solar nebula (the minimum mass required to make all the planets) is 1700 g cm$^{-2}$ at 1 AU, and the equilibrium temperature is $\ll 2000$ K.
-
-In such high column density, cool regions, the electron fraction depends on such complex questions as the mean size of dust grains (since these can absorb free electrons) and the rate of vertical transport of electrons from the surface layers down to the disk midplane. One possible result of this is that MRI would operate only at the surface of disk, leaving the midplane a ``dead zone". Another possibility is that there may be radial dead zones with no MRI. Material would move inward to such regions, but then get stuck there, potentially making accretion bursty.
-
-\paragraph{Gravitational transport mechanisms.}
-
-Magnetic fields provide on potential source of transport, but, as we have seen, they may fail if the gas is not sufficiently ionized. If the accretion rate onto the disk is large enough, it is also possible that MRI may operate, but not may not provide sufficiently rapid angular momentum transport to stop gas from building up the disk -- this is likely to occur particularly for massive stars. In this case, mass can build up in the disk, leading to gravitational instability.
-
-We can understand when gravitational instability is likely to set in using our theory of disks. Recall that we showed in the previous class that we can write the accretion rate as
-\begin{equation}
-\dot{M} = 3\pi \alpha \Sigma \frac{c_s^2}{\Omega}.
-\end{equation}
-Since we are interested in gravitational stability, let us introduce the Toomre $Q$ parameter,
-\begin{equation}
-Q = \frac{\Omega c_s}{\pi G \Sigma}
-\end{equation}
-where we have $\Omega$ rather than $2\Omega$ because the rotation curve is Keplerian rather than flat as in a galactic disk, and where we are assuming the non-thermal velocity dispersion in the disk is subsonic. Solving for $\Sigma$ in terms of $Q$ and re-arranging, we obtain
-\begin{equation}
-\dot{M} = \frac{3\alpha}{Q} \frac{c_s^3}{G}.
-\end{equation}
-
-Thus we see that, if $Q > 1$ (i.e.\ the disk is gravitationally stable) and $\alpha < 1$ (as we expect for MRI or almost any other local transport mechanism), the maximum rate at which the disk can move matter inward is roughly $c_s^3/G$. This is also the characteristic rate at which matter falls onto the disk from a thermally-supported core, provided that we use the sound speed in the core rather than in the disk.
-
-Normally disks are somewhat warmer than the cores around them, both because the star shines on the disk and because viscous dissipation in the disk releases heat. However, what this result shows is that, in any regions where the disk is not significantly warmer than the core that is feeding it (e.g.\ the outer parts of the disk where stellar and viscous heating are small), the disk cannot transport matter inward as quickly as it is fed. The result will be that the surface density will rise and $Q$ will decrease, giving rise to gravitational instability.
-
-This can in turn generate transport of angular momentum via gravitational torques. Transport of this sort comes in two flavors: local and global. Local instability happens when the disk clumps up on small scales due to its own gravity. This depends on the Toomre $Q$ of the disk. If $Q\sim 1$, which can occur either if the disk is massive or cold, it will begin to clump up. These clumps can transport angular momentum by interacting with one another gravitationally, sending mass inward and angular momentum outward. However, this clumping will heat the gas via the release of gravitational potential energy, which in turn tends to drive $Q$ back to higher values.
-
-What happens then depends on how the gas radiates away the excess energy. If the radiation rate is too low, the gas will heat up until it smoothes out, and the Toomre $Q$ will be pushed up. If it is too high, the gas will fragment entirely and collapse into bound objects in the disk -- something like what happens in a galactic disk. If it is in between, the disk can enter a state of sustained gravitationally-driven turbulence in which there is no fragmentation but the rate of heating by compression balances the rate of radiation, and there is a net transport of mass and angular momentum.
-
-The global variety of gravitational instability occurs when the disk clumps up on scales comparable to the entire disk, and it can be an outcome of the local instability if the fragments that form tend to be massive. This occurs when the disk mass becomes comparable to the mass of the star it is orbiting; instability sets in at disk masses of $30-50\%$ of the total system mass. This generally manifests as the appearance of spiral arms.
-
-These instabilities transport angular momentum because the disk is no longer axisymmetric, and instead has a significant moment arm that can exert torques, or on which torques can be exerted. Transport of angular momentum can then occur in several ways. If there is an envelope outside the disk, the disk can spin up the envelope, sending angular momentum outward in that way.
-
-The disk can also transfer angular momentum to the star by forcing the star to move away from the center of mass. In this configuration the disk develops a one-armed spiral, and the star in effect goes into a binary orbit with the overdensity in the disk. In this case angular momentum is transported inward rather than out, with the excess angular momentum going into orbital motion of the star. This phenomenon is known as the Sling instability \citet{shu90a}.
-
-\section{Outflow Launching}
-
-The final topic for this chapter is how and why disks launch the ubiquitous jets and winds that observations reveal. The topic of jets is not limited to the star formation context, of course, and much of the theory for it was originally developed in the context of active galactic nuclei and compact objects. We will only scratch the surface of this theory here. Our goal is just to get a general understanding of how and why we expect winds to be launched from disks, and what general properties we expect them to have.
-
-\subsection{Mechanisms}
-
-We begin by considering what mechanisms could be responsible for launching winds. We can start by discarding the two mechanisms that we usually invoke to explain the winds of main sequence stars. All main sequence stars, including the Sun, produce winds. For low mass stars like the Sun, the driving mechanism is thermal. MHD waves propagating into the low-density solar corona heat the gas to temperatures of up to $\sim 10^6$ K. The high pressure in the hot region drives flows of gas outward; for the Sun, the mass loss rate is roughly $10^{-14}$ $\msun$ yr$^{-1}$, and the mechanical luminosity is $\sim 10^{-4}$ $\lsun$.
-
-In contrast, the mechanical power input required to explain the observed outflows from young stars is closer to $\sim 0.1$ $\lsun$. This is far greater than the thermal energy available in the hot x-ray corona of the star -- a corona capable of providing this much power would exceed the total stellar bolometric output.
-
-For massive main sequence stars, the main driving mechanism is the pressure exerted by stellar photons on the gas. The problem with this mechanism for protostellar outflows is apparent from the outflow momentum plot: the outflow momentum is generally $1-2$ orders of magnitude larger than $L/c$. In contrast, for the winds of main sequence stars the outflow momentum flux is always $\lesssim L/c$. Thus the stellar photon field does not have enough momentum to drive the observed outflows of young stars.
-
-As a further point, neither the thermal winds of low mass main sequence stars, nor the radiatively-driven winds of massive ones, show highly collimated features like the HH jets.
-
-Having discarded these two mechanisms, we must seek an alternative source of energy. The most natural one is the gravitational potential energy being liberated by the accretion flow, which, combined with magnetic fields, can produce highly collimated outflows. The question then becomes exactly how the combination of gravitational power and magnetic fields produces the observed outflows.
-
-\subsection{Stability Analysis for Magnetocentrifugal Winds}
-
-There are a range of theoretical models for the exact mechanism by which winds are launched. However, the general picture of all of these mechanisms is to combine centrifugal force with magnetic fields. Consider a disk of material in Keplerian orbit, and consider an open field line passing through the disk; here by ``open" we mean that the field line does not loop back into the disk, but instead goes out, formally to infinity. We write the field in the vicinity of the disk as the sum of a poloidal and a toroidal component,
-\begin{equation}
-\vecB = \vecB_p + B_\phi \hat{e}_\phi
-\end{equation}
-The field exerts negligible forces within the disk, but for the much lower-density region above the disk (the corona), magnetic forces are non-negligible.
-
-Let us consider a test fluid element that is, for whatever reason, lofted slightly above the disk, into the corona. We will assume ideal MHD, so the fluid element is constrained to move only along the field line. We can think of the test fluid element as a bead stuck on a wire. We will further assume that the density of material above the disk is very small, so that magnetic forces dominate and the field simply rotates as a rigid body. Now let us consider how this fluid element will evolve in time.
-
-In a frame co-rotating with the launch point of the fluid element, there are two potentials to worry about: the gravitational potential of the central star, and the centrifugal potential that arises from the fact that we have chosen to work in a rotating reference frame. The former is simply the usual
-\begin{equation}
-V_{g} = -\frac{GM_*}{\sqrt{\varpi^2 + z^2}},
-\end{equation}
-where $M_*$ is the star's mass, and we are working in cylindrical coordinates. For the latter, we are working in a frame rotating at an angular velocity equal to the Keplerian value at the fluid element's launch point $\varpi_0$, which is $\Omega = \sqrt{GM_*/\varpi_0^3}$. The centrifugal potential is therefore
-\begin{equation}
-V_c = -\frac{1}{2}\Omega^2 \varpi^2 = -\frac{1}{2} G M_* \frac{\varpi^2}{\varpi_0^3}.
-\end{equation}
-Thus the total potential is
-\begin{equation}
-V = -\frac{GM_*}{\varpi_0} \left[\frac{1}{2}\left(\frac{\varpi}{\varpi_0}\right)^2 + \frac{\varpi_0}{\sqrt{\varpi^2+z^2}} \right].
-\end{equation}
-
-To determine the evolution of the test fluid element, we must consider the forces associated with this potential. The force per unit mass  is simply minus the gradient of the potential, and thus we have
-\begin{equation}
-\mathbf{f} = -\nabla V = -GM_* \left\{ \varpi \left[\frac{1}{(\varpi^2+z^2)^{3/2}} - \frac{1}{\varpi_0^3}\right]\hat{e}_\varpi + \frac{z}{(\varpi^2+z^2)^{3/2}} \hat{e}_z \right\}
-\end{equation}
-If we plug in our starting point, $\varpi = \varpi_0$ and $z=0$, we see that the gradient is exactly zero, which is what we expect: the starting point is, by assumption, in equilibrium between centrifugal and gravitational forces.
-
-Now let us consider our perturbed fluid element. It has been moved a distance $ds$ from its starting point, and it is moving along the field line, which has radial and vertical components $B_\varpi$ and $B_z$. For convenience, let us define the angle of the field line relative to the horizontal by
-\begin{equation}
-\cos \theta = \frac{B_\varpi}{\sqrt{B_\varpi^2 + B_z^2}},
-\end{equation}
-so that the coordinates of the displaced fluid elements are $\varpi = \varpi_0 + \cos\theta \, ds$ and $z = \sin\theta \, ds$. To determine the force experienced by the fluid element, we simply plug these coordinates into $\mathbf{f}$ and expand to first order:
-\begin{equation}
-d\mathbf{f} = \frac{GM_*}{\varpi_0^3} \left(3 \cos\theta\,\hat{e}_\varpi - \sin\theta\,\hat{e}_z\right) ds
-\end{equation}
-
-We are interested in the component of this force parallel to the field line, since the fluid element is constrained to move along the field line. That is, we are interested in
-\begin{equation}
-df_\parallel = d\mathbf{f} \cdot (\cos\theta\,\hat{e}_\varpi +  \sin \theta\,\hat{e}_z) = \frac{GM_*}{\varpi_0^3} \left(3\cos^2 \theta - \sin^2 \theta\right) ds.
-\end{equation}
-The force is therefore positive, indicating that it is pushing the fluid element further away from the launch point, if
-\begin{equation}
-3 \cos^2 \theta - \sin^2 \theta > 0
-\qquad\Longrightarrow\qquad
-\tan\theta < \sqrt{3}
-\qquad\Longrightarrow\qquad
-\theta < 60^\circ
-\end{equation}
-
-We have therefore derived a condition under which a disk threaded by open field lines will be unstable to the formation of a wind. If the field lines make an angle of $<60^\circ$ off the plane, then any fluid element that is lofted infinitesimally above the disk will be forced further down the field line by the centrifugal force, forming a wind.
-
-\subsection{Properties of the Wind}
-
-We have shown that disks threaded by open field lines are unstable to wind formation if the open field lines make an angle of $60^\circ$ or less relative to the disk plane. What are the properties of the wind that is launched by this process?
-
-We can derive many properties of the wind from the following elementary consideration. We have thus far assumed that the field lines above and below the disk are perfectly rigid, but of course that cannot be strictly true out to infinite radius. If we choose a large enough radius, then maintaining perfect solid body rotation would require a velocity larger than the speed of light, which is obviously forbidden by special relativity. However, there is an even more restrictive limit: the field line can remain rigid only as long as the matter attached to it has negligible inertia. If the inertia of the material is significant, it will slow down the field lines, causing them to deviate from rigid rotation.
-
-Recalling our dimensional analysis of the MHD equations, the relative importance of the terms describing inertia and magnetic force is determined by the Alfv\'en Mach number,
-\begin{equation}
-\mathcal{M}_A \sim \frac{v}{v_A},
-\end{equation}
-where $v_A = B/\sqrt{4\pi \rho}$ is the Alfv\'{e}n speed. The material starts at zero velocity, and accelerates as it moves outward, so that $\mathcal{M}_A$ increases along any given field line. We expect that the field lines will cease to be rigid once the material along them is accelerated to a velocity such that $\mathcal{M}_A \sim 1$. This transition between sub- and super-Alfv\'{e}nic motion will occur at a critical radius $\varpi_A$ (which is not necessarily the same along every field line), called the Alfv\'{e}n radius.
-
-Once the field line starts to unwind at $\varpi_A$, it will no longer be able to impart significant angular momentum or energy to the fluid parcels that travel along it -- it's like the rigid wires that are accelerating the beads beginning to bend. We therefore expect the terminal velocity of the wind to be of order the wind speed at $\varpi_A$, which is
-\begin{equation}
-v_\infty \sim \Omega_0 \varpi_A \sim v_{K,0} \frac{\varpi_A}{\varpi_0},
-\end{equation}
-where $\Omega_0$ is the angular velocity at the launch point, and $v_{K,0}$ is the Keplerian velocity at that point. Thus the wind speed is comparable to the Keplerian speed times a factor of order the ratio of the Alfv\'{e}n radius to the launch radius.
-
-The specific angular momentum of the material ejected in the wind will be
-\begin{equation}
-j_w \sim \varpi_A v_\infty \sim v_{K,0} \frac{\varpi_A^2}{\varpi_0}.
-\end{equation}
-For comparison, the specific angular momentum of the material that remains in the disk is
-\begin{equation}
-j_d = v_{K,0} \varpi_0.
-\end{equation}
-Thus the specific angular momentum of wind material exceeds that of disk material by a factor of
-\begin{equation}
-\frac{j_w}{j_d} \sim \frac{\varpi_A^2}{\varpi_0}^2.
-\end{equation}
-One factor of $\varpi_A/\varpi_0$ comes from the greater level arm of the material being launched into the wind, and the second factor comes from the greater velocity.
-
-If the wind is predominantly responsible for removing the angular momentum of the disk and allowing accretion, this implies that the rates of mass accretion and wind launch must be related by
-\begin{equation}
-\dot{M}_a \sim \frac{\varpi_A^2}{\varpi_0^2} \dot{M}_w.
-\end{equation}
-Thus wind launching provides an efficient means to allow accretion, since for even a relatively modest Alfv\'{e}n radius, say $\varpi_A/\varpi_0 \sim 3$, it will enable accretion to occur using only $\sim 1/10$ of the available accreting mass.
-
-Of course we have not self-consistently calculated $\varpi_A$, and we will not do so in class. Schematically, one must do so by taking a wind mass launching rate (called the mass loading) as a function of radius, and then self-consistently solving for the structure of the magnetic field and the velocity above the disk. The Alfv\'{e}n radius then appears as a critical point of the solution along each streamline / magnetic field line. The first such self-consistent calculation was provided by \citet{blandford82a}, although this calculation still had to leave the mass loading as a free parameter.
+In the HR diagram, the contraction and increase in $T_{\rm eff}$ produces a vaguely horizontal evolutionary track. This is called the Heyney track. The star continues to contract until its center becomes warm enough to allow H burning to begin.
+At that point it may contract a small additional amount, but the star is essentially on the main sequence. The total time required depends on the stellar mass, but it ranges from several hundred Myr for $0.1$ $\msun$ stars to essentially zero time for very massive stars, which reach the main sequence while still accreting.
 
 
