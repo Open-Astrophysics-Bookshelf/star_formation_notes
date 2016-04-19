@@ -130,16 +130,12 @@ Once a population III.1 or III.2 star explodes as a supernova, it disperses meta
 
 The distinguishing characteristic of modern star formation is the ability of star-forming gas to cool much faster than a dynamical time. Metal line cooling becomes significant when there are enough metals to make this possible, at which point they supplant H$_2$ cooling and trigger a transition to a more modern star formation mode. We can analytically estimate the metallicity required to achieve this, following the original calculation by \citet{bromm01a}, by comparing the rate of metal line cooling to the rate of heating due to adiabatic compression that we expect for baryons at the center of a virialized dark matter halo.
 
-Let $e$ be the thermal energy per unit mass of a particular gas parcel, and let $\Gamma$ and $\Lambda$ be the rates of change in $e$ due to heating and cooling processes, i.e.
+The calculation here is quite analogous to the one presented in Section \ref{ssec:iso_adiabat}. We
+let $e$ be the thermal energy per unit mass of a particular gas parcel, and let $\Gamma$ and $\Lambda$ be the rates of change in $e$ due to heating and cooling processes, so
 \begin{equation}
 \frac{de}{dt} = \Gamma - \Lambda.
 \end{equation}
-As the gas collapses it will heat up due to adiabatic compression. The first law of thermodynamics tells us that the heating rate due to this process is
-\begin{equation}
-\label{eq:gamma_ad}
-\Gamma = -p \frac{d}{dt}\left(\frac{1}{\rho}\right),
-\end{equation}
-where $\rho$ and $p=\rho c_s^2$ are the gas density and pressure, and $c_s$ is the isothermal sound speed. Since $1/\rho$ is the specific volume, meaning the volume per unit mass occupied by the gas, this term is just $p\,dV$, the work done on the gas in compressing it. If the gas is collapsing in free-fall, the compression time scale is about the free-fall timescale $t_{\rm ff} = \sqrt{3\pi/32G\rho}$, so we expect
+The heating rate due to adiabatic compression is no different in the primordial case than in the present-day one: $\Gamma = -p d/dt (1/\rho) \approx -p/(\rho t_{\rm ff})$. For $t_{\rm ff} = \sqrt{3\pi/32G\rho}$, we have
 \begin{equation}
 \Gamma \approx k_B T \sqrt{\frac{32 G n}{3\pi \mu m_{\rm H}}},
 \end{equation}
