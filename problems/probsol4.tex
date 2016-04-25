@@ -145,7 +145,7 @@ L2 = facc*G*M*Mdot/R + np.maximum(
     Lsun*(M2/Msun)**3)
 
 # Plot radius
-clf()
+plt.clf()
 p1,=plt.plot(M2/Msun, R2/Rsun, 'b', lw=2)
 plt.xlabel(r'$M/M_\odot$')
 plt.ylabel(r'$R/R_\odot$')
@@ -269,22 +269,22 @@ In turn, plugging this into the relation we just derived between the surface and
 T_m & \approx & \left(\frac{27}{64} \frac{\nu \kappa \Sigma^2 \Omega^2}{\sigma}\right)^{1/4} \\
 & \approx & \left(\frac{27}{64} \frac{\alpha \kappa c_s^2 \Sigma^2 \Omega}{\sigma}\right)^{1/4}
 \end{eqnarray*}
-Substituting $c_s^2 = k_B T_m / \mu$, where $\mu$ is the mean particle mass, and solving for $T_m$ gives
+Substituting $c_s^2 = k_B T_m / \mu m_{\rm H}$, where $\mu$ is the mean particle mass in units of $m_{\rm H}$, and solving for $T_m$ gives
 \begin{displaymath}
 T_m \approx
-\left(\frac{27}{64} \frac{\alpha k_B \kappa \Sigma^2 \Omega}{\sigma \mu}\right)^{1/3}.
+\left(\frac{27}{64} \frac{\alpha k_B \kappa \Sigma^2 \Omega}{\sigma \mu m_{\rm H}}\right)^{1/3}.
 \end{displaymath}
 Note that it makes much more sense to compute $c_s$ from the midplane temperature than from the surface temperature, since the vast majority of the viscous dissipation is occurring near the midplane, not at the disk surface.\\
 
 \item The cooling time is the thermal energy divided by the energy radiation rate. The thermal energy per unit area is
 \begin{displaymath}
-E_{\rm th} \approx \frac{\Sigma c_s^2}{\gamma-1} = \frac{k_B \Sigma T_m}{(\gamma-1)\mu},
+E_{\rm th} \approx \frac{\Sigma c_s^2}{\gamma-1} = \frac{k_B \Sigma T_m}{(\gamma-1)\mu m_{\rm H}},
 \end{displaymath}
 where $\gamma$ is the ratio of specific heats for the gas, which for molecular hydrogen will be somewhere between $5/3$ and $7/5$ depending on the gas temperature. The radiation rate is $2\sigma T_s^4$, so the cooling time is
 \begin{eqnarray*}
 t_{\rm cool} & = & \frac{E_{\rm th}}{2\sigma T_s^4} \\
-& \approx & \frac{\Sigma k_B T_m}{2(\gamma-1)\mu \sigma T_s^4} \\
-& \approx & \frac{3 \kappa \Sigma^2 k_B}{16(\gamma-1)\mu \sigma T_m^3} \\
+& \approx & \frac{\Sigma k_B T_m}{2(\gamma-1)\mu m_{\rm H} \sigma T_s^4} \\
+& \approx & \frac{3 \kappa \Sigma^2 k_B}{16(\gamma-1)\mu m_{\rm H} \sigma T_m^3} \\
 & \approx & \frac{4}{9 (\gamma-1) \alpha \Omega}
 \end{eqnarray*}
 The orbital period is $t_{\rm orb} = 2\pi/\Omega$, so the ratio of cooling time to orbital period is
@@ -293,34 +293,34 @@ The orbital period is $t_{\rm orb} = 2\pi/\Omega$, so the ratio of cooling time 
 \end{displaymath}
 For the typical values of $\alpha$ expected due to MRI or similar mechanisms, $\sim 0.01$ or less, this number is significantly bigger than unity, so the cooling time is longer than the orbital period. Under these conditions the disk is likely to act adiabatically rather than isothermally. Only if $\alpha$ gets quite large, $\sim 0.1$ or more, do we approach the isothermal regime.
 
-\item Let the disk surface density be $\Sigma=\Sigma_0 (r/r_0)^{-1}$, and let $r_0=1$ AU and $r_1=20$ AU be the inner and outer radii. The mass in the disk is
+\item Let the disk surface density be $\Sigma=\Sigma_0 (\varpi/\varpi_0)^{-1}$, and let $\varpi_0=1$ AU and $\varpi_1=20$ AU be the inner and outer radii. The mass in the disk is
 \begin{displaymath}
-M_{\rm disk} = \int_{r_0}^{r_1} \Sigma_0 \left(\frac{r}{r_0}\right)^{-1} 2 \pi r \, dr 
-= 2 \pi \Sigma_0 r_0 (r_1 - r_0),
+M_{\rm disk} = \int_{\varpi_0}^{\varpi_1} \Sigma_0 \left(\frac{\varpi}{\varpi_0}\right)^{-1} 2 \pi \varpi \, d\varpi 
+= 2 \pi \Sigma_0 \varpi_0 (\varpi_1 - \varpi_0),
 \end{displaymath}
 so 
 \begin{displaymath}
-\Sigma = \frac{M_{\rm disk}}{2 \pi r_0 (r_1 - r_0)} \left(\frac{r}{r_0}\right)^{-1} = 2.2\times 10^3\left(\frac{r}{1\mbox{ AU}}\right)^{-1}\mbox{ g cm}^{-2}.
+\Sigma = \frac{M_{\rm disk}}{2 \pi \varpi_0 (\varpi_1 - \varpi_0)} \left(\frac{\varpi}{\varpi_0}\right)^{-1} = 2.2\times 10^3\left(\frac{\varpi}{1\mbox{ AU}}\right)^{-1}\mbox{ g cm}^{-2}.
 \end{displaymath}
 For a 1 $\msun$ star, the angular velocity of the orbit is
 \begin{displaymath}
-\Omega = \sqrt{\frac{GM}{r^3}} = 2.0\times 10^{-7} \left(\frac{r}{1\mbox{ AU}}\right)^{-3/2}\mbox{ s}^{-1}
+\Omega = \sqrt{\frac{GM}{\varpi^3}} = 2.0\times 10^{-7} \left(\frac{\varpi}{1\mbox{ AU}}\right)^{-3/2}\mbox{ s}^{-1}
 \end{displaymath}
-Plugging in $\kappa=3$ cm$^{-2}$ g$^{-1}$ and $\alpha=0.01$, taking $\mu=3.9\times 10^{-24}$ as the mean particle mass, and plugging into the expression for $T_m$ derived in part (b) gives
+Plugging in $\kappa=3$ cm$^{-2}$ g$^{-1}$ and $\alpha=0.01$, taking $\mu=2.3$ as the mean particle mass, and plugging into the expression for $T_m$ derived in part (b) gives
 \begin{displaymath}
-T_m \approx 1980 \left(\frac{r}{1\mbox{ AU}}\right)^{-7/6}\mbox{ K},
+T_m \approx 1980 \left(\frac{\varpi}{1\mbox{ AU}}\right)^{-7/6}\mbox{ K},
 \end{displaymath}
 and plugging this into the relation between $T_m$ and $T_s$ derived in part (a) gives
 \begin{displaymath}
-T_s \approx 370 \left(\frac{r}{1\mbox{ AU}}\right)^{-11/12}\mbox{ K}.
+T_s \approx 370 \left(\frac{\varpi}{1\mbox{ AU}}\right)^{-11/12}\mbox{ K}.
 \end{displaymath}
-The midplane density is $\rho_m\approx \Sigma/H$, where $H$ is the scale height is $H = c_s/\Omega = \Omega^{-1}\sqrt{k_B T/\mu}$. If we use $T\approx T_m$ to compute the scale height, then we have
+The midplane density is $\rho_m\approx \Sigma/H$, where $H$ is the scale height is $H = c_s/\Omega = \Omega^{-1}\sqrt{k_B T/\mu m_{\rm H}}$. If we use $T\approx T_m$ to compute the scale height, then we have
 \begin{displaymath}
-\rho_m \approx \frac{\Sigma\Omega}{\sqrt{k_B T_m/\mu}} = 1.7\times 10^{-9} \left(\frac{r}{1\mbox{ AU}}\right)^{-23/12}\mbox{ g cm}^{-3}.
+\rho_m \approx \frac{\Sigma\Omega}{\sqrt{k_B T_m/\mu m_{\rm H}}} = 1.7\times 10^{-9} \left(\frac{\varpi}{1\mbox{ AU}}\right)^{-23/12}\mbox{ g cm}^{-3}.
 \end{displaymath}
 Finally, the Toomre $Q$ of the disk computed using the midplane temperature (which is the most reasonable one to use, since it is the temperature of most of the mass) is
 \begin{displaymath}
-Q = \frac{\Omega c_s}{\pi G \Sigma} = \frac{\Omega \sqrt{k_B T_m/\mu}}{\pi G \Sigma} = 110 \left(\frac{r}{1\mbox{ AU}}\right)^{-13/12}.
+Q = \frac{\Omega c_s}{\pi G \Sigma} = \frac{\Omega \sqrt{k_B T_m/\mu m_{\rm H}}}{\pi G \Sigma} = 110 \left(\frac{\varpi}{1\mbox{ AU}}\right)^{-13/12}.
 \end{displaymath}
 This reaches a minimum value of $4.4$ at $r=20$ AU. Thus the disk is gravitationally stable.
 
