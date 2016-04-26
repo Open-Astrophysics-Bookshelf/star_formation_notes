@@ -19,9 +19,9 @@ The equivalent photon occupation number is
 n_{\gamma,\rm LTE}(\nu,\mathbf{n}) = \frac{1}{e^{h\nu/k_B T} - 1}.
 \end{equation}
 
-For non-relativistic problems, the rates at which photons are emitted or absorbed by atoms undergoing a particular quantum mechanical transition does not depend upon the direction of photon propagation, and thus it is convenient to average over the direction $\mathbf{n}$. We define the directionally-integrated photon occupation number by
+For non-relativistic problems, the rates at which photons are emitted or absorbed by atoms undergoing a particular quantum mechanical transition does not depend upon the direction of photon propagation, and thus it is convenient to average over the direction $\mathbf{n}$. We define the directionally-averaged photon occupation number by
 \begin{equation}
-\langle n_\gamma\rangle(\nu) = \int n_\gamma(\nu, \mathbf{n}) \, d\Omega,
+\langle n_\gamma\rangle(\nu) = \frac{1}{4\pi} \int n_\gamma(\nu, \mathbf{n}) \, d\Omega,
 \end{equation}
 where the integral is over all directions $\mathbf{n}$.
 
@@ -43,6 +43,7 @@ n_u = \frac{g_u}{g_\ell} e^{-h\nu_{u\ell}/k_B T} n_\ell.
 \end{equation}
 The directionally-averaged photon occupation number must take on its LTE value
 \begin{equation}
+\label{eq:ngamma_avg_LTE}
 \langle n_\gamma\rangle(\nu) = \frac{1}{e^{h\nu/k_B T} - 1}.
 \end{equation}
 Inserting these values of $n_u$ and $\langle n_\gamma\rangle$ into equation (\ref{eq:dnudt}), and noting that we must have $dn_u/dt = 0$ for a system in LTE, we have
@@ -97,7 +98,7 @@ Combining all of the above expressions, we can write out the full rate of change
  n_i \sum_j \frac{g_j}{g_i} \langle n_{\gamma,ji}\rangle A_{ji}.
 \label{eq:stat_eq}
 \end{eqnarray}
-If the system is in statistical equilibrium (but not necessarily LTE), then $dn_i/dt = 0$ for all states $i$. In this case the set of equations \ref{eq:stat_eq} represents a set of linear equations to be solved for the unknown number densities $n_i$. With some algebraic manipulation, one can express this system as a matrix equation
+If the system is in statistical equilibrium (but not necessarily LTE), then $dn_i/dt = 0$ for all states $i$. In this case the set of equations (\ref{eq:stat_eq}) represents a set of linear equations to be solved for the unknown number densities $n_i$. With some algebraic manipulation, one can express this system as a matrix equation
 \begin{equation}
 \mathbf{M} \cdot \mathbf{n} = \mathbf{n},
 \end{equation}
@@ -134,4 +135,4 @@ Substituting in this definition of $n_{{\rm crit},i}$ into equation (\ref{eq:nst
 n_i = \left(\frac{n_c}{n_c+n_{{\rm crit},i}}\right) \frac{\sum_{j<i} n_j k_{ji}}{\sum_{j<i} k_{ij}}
 + \left(\frac{n_{{\rm crit},i}}{n_c+n_{{\rm crit},i}}\right) \frac{\sum_{j<i} n_j \frac{g_i}{g_j} \langle n_{\gamma,ij}\rangle A_{ij}}{\sum_{j<i} \left(1+\langle n_{\gamma,ij}\rangle\right) A_{ij}}.
 \end{equation}
-Examining this expression, one can see that the generalized $n_{{\rm crit},i}$ plays much the same role as $n_{\rm crit}$ for a two-level system. In the limit $n_c \gg n_{{\rm crit},i}$, the first term dominates and the second is negligible. In this case the level population is simply set by collisional effects, and radiative effects become irrelevant. Given the relationships between the various collision rate coefficients $k_{ij}$ (c.f. equation \ref{eq:detailed_balance}), this implies that the level population goes to the usual Boltzmann distribution at the gas temperature $T$. Conversely, if $n_c \ll n_{{\rm crit},i}$, the first term is negligible and the second one dominates, so the level population is determined solely by the radiation field. In the absence of an external radiation field (i.e., $\langle n_{\gamma,ij}\rangle \rightarrow 0$), level $i$ becomes depopulated and thus the excitation is sub-thermal. If the radiation field follows a blackbody distribution (i.e., $\langle n_{\gamma,ij}\rangle$ has the value given by equation \ref{eq:ngamma_LTE}), then one can show that the result is that the levels are populated following a Boltzmann distribution at the radiation field temperature.
+Examining this expression, one can see that the generalized $n_{{\rm crit},i}$ plays much the same role as $n_{\rm crit}$ for a two-level system. In the limit $n_c \gg n_{{\rm crit},i}$, the first term dominates and the second is negligible. In this case the level population is simply set by collisional effects, and radiative effects become irrelevant. Given the relationships between the various collision rate coefficients $k_{ij}$ (c.f. equation \ref{eq:detailed_balance}), this implies that the level population goes to the usual Boltzmann distribution at the gas temperature $T$. Conversely, if $n_c \ll n_{{\rm crit},i}$, the first term is negligible and the second one dominates, so the level population is determined solely by the radiation field. In the absence of an external radiation field (i.e., $\langle n_{\gamma,ij}\rangle \rightarrow 0$), level $i$ becomes depopulated and thus the excitation is sub-thermal. If the radiation field follows a blackbody distribution (i.e., $\langle n_{\gamma,ij}\rangle$ has the value given by equation \ref{eq:ngamma_avg_LTE}), then one can show that the result is that the levels are populated following a Boltzmann distribution at the radiation field temperature.
