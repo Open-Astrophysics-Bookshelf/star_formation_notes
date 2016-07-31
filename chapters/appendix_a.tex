@@ -80,7 +80,7 @@ Here the first expression is a sum over the rate of collisional transitions from
 \end{eqnarray}
 where we adopt the convention that $A_{ij} = 0$ for $i \leq j$, i.e., the spontaneous transition rate from a lower energy state to a higher energy one is zero. Finally, the expressions for stimulated emission- and absorption-induced transitions are
 \begin{eqnarray}
-\left(\frac{dn_i}{dt}\right)_{\rm stim.~emiss.~out} & = & -n_i \sum_j A_{ji} \langle n_{\gamma,ji}\rangle \\
+\left(\frac{dn_i}{dt}\right)_{\rm stim.~emiss.~out} & = & -n_i \sum_j A_{ij} \langle n_{\gamma,ji}\rangle \\
 \left(\frac{dn_i}{dt}\right)_{\rm stim.~emiss.~in} & = & \sum_j n_j A_{ji} \langle n_{\gamma,ji}\rangle \\
 \left(\frac{dn_i}{dt}\right)_{\rm abs.~out} & = & -n_i \sum_j \frac{g_j}{g_i} A_{ij} \langle n_{\gamma,ij}\rangle \\
 \left(\frac{dn_i}{dt}\right)_{\rm abs.~in} & = & \sum_j \frac{g_i}{g_j} n_j A_{ij} \langle n_{\gamma,ij}\rangle,
@@ -90,9 +90,9 @@ where for convenience we have introduced the shorthand $\langle n_{\gamma,ij}\ra
 Combining all of the above expressions, we can write out the full rate of change for the number density of particles in each state $i$ as
 \begin{eqnarray}
 \frac{dn_i}{dt} & = & \sum_j n_j\left[n_c k_{ji} + \left(1+\langle n_{\gamma,ji}\rangle\right) A_{ji}\right] +
- \sum_j n_j \frac{g_i}{g_j} \langle n_{\gamma,ij} A_{ij}
+ \sum_j n_j \frac{g_i}{g_j} \langle n_{\gamma,ij}\rangle A_{ij}
 \nonumber \\
-& & \qquad {} - n_i \sum_j \left[n_c k_{ij} + \left(1+\langle n_{\gamma,ij}\right) A_{ij}\right] 
+& & \qquad {} - n_i \sum_j \left[n_c k_{ij} + \left(1+\langle n_{\gamma,ij}\rangle\right) A_{ij}\right] 
 \nonumber \\
 & & \qquad {} -
  n_i \sum_j \frac{g_j}{g_i} \langle n_{\gamma,ji}\rangle A_{ji}.
