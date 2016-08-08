@@ -60,7 +60,7 @@ The meanings of these dimensionless numbers are fairly clear from the equations.
 \begin{equation}
 c_s  =\sqrt{\frac{k_B T}{\mu m_H}} = 0.18 \left(\frac{T}{10\,\mathrm{K}}\right)^{1/2}\mbox{ km s}^{-1},
 \end{equation}
-where $\mu =2.33$ is the mean mass per particle in a gas composed of molecular hydrogen and helium in the usual cosmic abundance ratio of 1 He per 10 H atoms. Thus $\mathcal{M} V/c_s \sim 20$, and we learn that pressure forces are unimportant.
+where $\mu =2.33$ is the mean mass per particle in a gas composed of molecular hydrogen and helium in the usual cosmic abundance ratio of 1 He per 10 H atoms. Thus $\mathcal{M} = V/c_s \sim 20$, and we learn that pressure forces are unimportant.
 
 The Reynolds number is a measure of how important viscous forces are. Viscous forces are significant for $\mathrm{Re} \sim 1$ or less, and are unimportant of $\mathrm{Re} \gg 1$. We can think of the Reynolds number as describing a characteristic length scale $L\sim \nu/V$ in the flow. This is the length scale on which diffusion causes the flow to dissipate energy. Larger scale motions are effectively dissipationless, while smaller scales ones are damped out by viscosity.
 
@@ -91,9 +91,9 @@ A(\mathbf{r})\equiv \frac{1}{V} \int \mathbf{v}(\mathbf{x})\cdot \mathbf{v}(\mat
 \end{equation}
 where the angle brackets indicate an average over all positions $\mathbf{x}$. Here, $A(0) = \langle|\vecv|^2\rangle$ is just the mean square velocity in the fluid. If the velocity field is isotropic, then clearly $A(\mathbf{r})$ cannot depend on the direction, and thus must depend only on $r=|\mathbf{r}|$. Thus $A(r)$ tells us how similar or different the velocities are at points separated by some distance $r$.
 
-It is often more convenient to think about this in Fourier space than in real space, so rather than the autocorrelation function we often instead think about its Fourier transform. We define the Fourier transform of the velocity field in the usual way, i.e.\
+It is often more convenient to think about this in Fourier space than in real space, so rather than the autocorrelation function we often instead think about its Fourier transform. We define the Fourier transform of the velocity field in the usual way, i.e.,
 \begin{equation}
-\tilde{\vecv}(\veck) = \frac{1}{\sqrt{2\pi}}\int \vecv(\vecx) e^{-i\veck\cdot\vecx} \,d\vecx.
+\tilde{\vecv}(\veck) = \frac{1}{(2\pi)^{3/2}}\int \vecv(\vecx) e^{-i\veck\cdot\vecx} \,d\vecx.
 \end{equation}
 We then define the power spectrum
 \begin{equation}
@@ -106,7 +106,7 @@ P(k) = 4\pi k^2 \Psi(k).
 \end{equation}
 This is just the total power integrated over some shell from $k$ to $k+dk$ in $k$-space. Note that Parseval's theorem tells us that
 \begin{equation}
-\int P(k)\, dk = \int | \tilde{\vecv}(\veck)|^2 \, d^3\veck = \int \vecv(\vecx)^2 \, d^3\vecx,
+\int P(k)\, dk = \int | \tilde{\vecv}(\veck)|^2 \, d\veck = \int \vecv(\vecx)^2 \, d\vecx,
 \end{equation}
 i.e., the integral of the power spectral density over all wavenumbers is equal to the integral of the square of the velocity over all space, so for a flow with constant density (an incompressible flow) the integral of the power spectrum just tells us how much kinetic energy per unit mass there is in the flow. The Wiener-Khinchin theorem also tells us that $P(\veck)$ is just the Fourier transform of the autocorrelation function,
 \begin{equation}
