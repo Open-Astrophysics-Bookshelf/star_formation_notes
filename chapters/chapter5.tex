@@ -85,16 +85,12 @@ To understand what this equation implies, it is useful consider the magnetic flu
 \begin{equation}
 \Phi = \int_A  \vecB \cdot \nhat\, dA,
 \end{equation}
-where we integrate over some area $A$ that defines the fluid element. Using Stokes's theorem, we can alternately write this as
-\begin{equation}
-\Phi = \oint_C \vecB \cdot d\mathbf{l},
-\end{equation}
-where $C$ is the curve that bounds $A$. The time derivative of this is then
+where we integrate over some area $A$ that defines the fluid element. The time derivative of this is then
 \begin{eqnarray}
-\frac{d\Phi}{dt} & = & \int_A \frac{\partial\vecB}{\partial t}\cdot\nhat\, dA + \oint_C \vecB\cdot \vecv \times d\mathbf{l} \\
-& = & \int_A \frac{\partial\vecB}{\partial t}\cdot\nhat\, dA + \oint_C \vecB\times \vecv \cdot d\mathbf{l}
+\frac{d\Phi}{dt} & = & \int_A \frac{\partial\vecB}{\partial t}\cdot\nhat\, dA + \oint_{\partial A} \vecB\cdot \vecv \times d\mathbf{l} \\
+& = & \int_A \frac{\partial\vecB}{\partial t}\cdot\nhat\, dA + \oint_{\partial A} \vecB\times \vecv \cdot d\mathbf{l}
 \end{eqnarray}
-Here the second term on the right comes from the fact that, if the fluid is moving at velocity $\vecv$, the area swept out by a vector $d\mathbf{l}$ per unit time is $\vecv\times d\mathbf{l}$, so the flux crossing this area is $\vecB\cdot \vecv\times d\mathbf{l}$. Then in the second step we used the fact that $\nabla\cdot \vecB = 0$ to exchange the dot and cross products.
+where $\partial A$ is the boundary of $A$. Here the second term on the right comes from the fact that, if the fluid is moving at velocity $\vecv$, the area swept out by a vector $d\mathbf{l}$ per unit time is $\vecv\times d\mathbf{l}$, so the flux crossing this area is $\vecB\cdot \vecv\times d\mathbf{l}$. Then in the second step we used the fact that $\nabla\cdot \vecB = 0$ to exchange the dot and cross products.
 
 If we now apply Stokes theorem again to the second term, we get
 \begin{eqnarray}
