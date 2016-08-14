@@ -31,7 +31,7 @@ Here $\vecI$ is the identity tensor. In tensor notation, these are
 \end{eqnarray}
 With these definitions, the momentum equation just becomes
 \begin{equation}
-\frac{\partial}{\partial t}(\rho \vecv) = -\nabla\cdot(\vecPi-\vecT) - \rho \nabla\phi.
+\frac{\partial}{\partial t}(\rho \vecv) = -\nabla\cdot(\vecPi-\vecT_M) - \rho \nabla\phi.
 \end{equation}
 
 The substitution for $\vecPi$ is obvious. The equivalence of $\nabla\cdot\vecT_M$ to $1/(4\pi) (\nabla\times\vecB)\times\vecB$ is easy to establish with a little vector manipulation, which is most easily done in tensor notation:
@@ -104,7 +104,7 @@ We get a particularly simple form of the virial theorem if there is no gas cross
 \end{equation}
 with
 \begin{eqnarray}
-\mathcal{T}_S & = & \int_S rP dS\\
+\mathcal{T}_S & = & \int_S rP \,dS\\
 \mathcal{B} & = & \frac{1}{8\pi} \int_V (B^2-B_0^2) \,dV.
 \end{eqnarray}
 For this simplified physical setup, $\mathcal{T}_S$ just represents the mean radius times pressure at the virial surface, and $\mathcal{B}$ just represents the total magnetic energy of the cloud minus the magnetic energy of the background field over the same volume. Notice that, if a cloud is in equilibrium ($\ddot{I}=0$) and magnetic and surface forces are negligible, then we have $2\mathcal{T} = -\mathcal{W}$. Based on this result, we define the virial ratio
@@ -269,7 +269,7 @@ We now examine another term that generally opposes collapse: the magnetic one. L
 
 Here it is easiest to work directly with the virial theorem. The magnetic term in the virial theorem is
 \begin{equation}
-\mathcal{B} = \frac{1}{8\pi} \int_V B^2 \,dV + \int_S \vecx \cdot \vecT_M \cdot d\vecS
+\mathcal{B} = \frac{1}{8\pi} \int_V B^2 \,dV + \int_S \vecr \cdot \vecT_M \cdot d\vecS
 \end{equation}
 where
 \begin{equation}
@@ -348,8 +348,8 @@ The equation of mass conservation for the gas in spherical coordinates is
 \end{eqnarray}
 where $v$ is the radial velocity of the gas. It is useful to write the equations in terms of $M_r$ rather than $\rho$, so we take the time derivative of $M_r$ to get
 \begin{eqnarray}
-\frac{\partial}{\partial t}M_r & = & 4\pi \int_{0}^{r'} r'^2 \frac{\partial}{\partial t} \rho \,dr' \\
-& = & -4\pi \int_{0}^{r'} \frac{\partial}{\partial r'}(r'^2 \rho v)\, dr' \\
+\frac{\partial}{\partial t}M_r & = & 4\pi \int_{0}^{r} r'^2 \frac{\partial}{\partial t} \rho \,dr' \\
+& = & -4\pi \int_{0}^{r} \frac{\partial}{\partial r'}(r'^2 \rho v)\, dr' \\
 & = & -4\pi r^2 \rho v \\
 & = & -v \frac{\partial}{\partial r}M_r.
 \end{eqnarray}
