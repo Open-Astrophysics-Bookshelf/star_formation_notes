@@ -53,11 +53,11 @@ In practice we cannot really integrate to infinity for most quantities, since th
 
 It can also be useful to define a different IMF average. The quantities we have discussed thus far are yields per unit mass that goes into stars. Sometimes we are instead interested in the yield per unit mass that stays locked in stellar remnants for a long time, rather than the mass that goes into stars for $\sim 3-4$ Myr and then comes back out in supernovae. Let us define the mass of the remnant that a star of mass $m$ leaves as $w(m)$. If the star survives for a long time, $w(m) = m$. In this case, the mass that is ejected back into the ISM is
 \begin{equation}
-M_{\rm remnant} = M \int_{-\infty}^{\infty} d\ln m \, \xi(m) [m - w(m)] \equiv R M,
+M_{\rm return} = M \int_{-\infty}^{\infty} d\ln m \, \xi(m) [m - w(m)] \equiv R M,
 \end{equation}
 where we define $R$ as the return fraction. The mass fraction that stays locked in remnants is $1-R$.
 
-Of course ``long time" here is a vague term. By convention (defined by \citealt{tinsley80a}), we choose to take $w(m) = m$ for $m=1$ $\msun$. We take $w(m) = 0.7$ $\msun$ for $m=1-8$ $\msun$ and $w(m) = 1.4$ $\msun$ for $m>8$ $\msun$, i.e., we assume that stars from $1-8$ $\msun$ leave behind $0.7$ $\msun$ white dwarfs, and stars larger than that mass form $1.4$ $\msun$ neutron stars. If one puts this in for a \citet{chabrier05a} IMF, the result is $R=0.46$, meaning that these averages are larger by a factor of $1/0.56$.
+Of course ``long time" here is a vague term. By convention (defined by \citealt{tinsley80a}), we choose to take $w(m) = m$ for $m=1$ $\msun$. We take $w(m) = 0.7$ $\msun$ for $m=1-8$ $\msun$ and $w(m) = 1.4$ $\msun$ for $m>8$ $\msun$, i.e., we assume that stars from $1-8$ $\msun$ leave behind $0.7$ $\msun$ white dwarfs, and stars larger than that mass form $1.4$ $\msun$ neutron stars. If one puts this in for a \citet{chabrier05a} IMF, the result is $R=0.46$, meaning that these averages are larger by a factor of $1/0.54$.
 
 Given this formalism, it is straightforward to use a set of stellar evolutionary tracks plus an IMF to compute $\langle q/M\rangle$ or $\langle Q/M\rangle$ for any quantity of interest. Indeed, this is effectively what starburst99 \citep{leitherer99a} and programs like it do. The quantities of greatest concern for massive star feedback are the bolometric output, ionizing photon output, wind momentum and energy output, and supernova output.
 
@@ -77,7 +77,7 @@ p_{\rm sh} = M_{\rm sh} v_{\rm sh} = \dot{p}_w t.
 \end{equation}
 The kinetic energy of the shell is
 \begin{equation}
-E = \frac{\dot{p}_{\rm sh}^2}{2 M_{\rm sh}} = \frac{1}{2} v_{\rm sh} \dot{p}_w t.
+E = \frac{p_{\rm sh}^2}{2 M_{\rm sh}} = \frac{1}{2} v_{\rm sh} \dot{p}_w t.
 \end{equation} 
 For comparison, if none of the energy is radiated away, the energy is simply
 \begin{equation}
@@ -101,7 +101,7 @@ The simplest form of feedback to consider is radiation pressure. Since the major
 \end{equation}
 and the corresponding momentum injection rate is
 \begin{equation}
-\left\langle \frac{p_{\rm rad}}{M}\right \rangle = \frac{1}{c} \left\langle \frac{L}{M}\right \rangle = 7.3\times 10^{-8}\mbox{ cm s}^{-2} = 23\mbox{ km s}^{-1}\mbox{ Myr}^{-1}
+\left\langle \frac{\dot{p}_{\rm rad}}{M}\right \rangle = \frac{1}{c} \left\langle \frac{L}{M}\right \rangle = 7.3\times 10^{-8}\mbox{ cm s}^{-2} = 23\mbox{ km s}^{-1}\mbox{ Myr}^{-1}
 \end{equation}
 The physical meaning of this expression is that for every gram of matter that goes into stars, those stars produce enough light over 1 Myr to accelerate another gram of matter to a speed of 23 km s$^{-1}$. For very massive stars, radiation pressure also accelerates winds off the star's surfaces; for such stars, the wind carries a bit under half the momentum of the radiation field. Including this factor raises the estimate by a few tens of percent.  However, these winds may also be energy conserving, a topic we will approach momentarily.
 
@@ -242,15 +242,15 @@ We can also compute the momentum of the shell, for comparison to the other forms
 \begin{equation}
 p_{\rm sh} = M_{\rm sh} \dot{r}_i = 1.1\times 10^5 n_2^{-1/7} T_{i,4}^{-8/7} S_{49}^{4/7} t_6^{9/7} \, M_\odot\mbox{ km s}^{-1}.
 \end{equation}
-Since this is non-linear in $S_{49}$ and in time, the effects of HII regions will depend on how the stars are clustered together, and how long they live. To get a rough estimate, though, we can take the typical cluster to have an ionizing luminosity around $10^{49}$ s$^{-1}$, since by number most clusters are small, and we can adopt an age of 4 Myr. This means that (also using $n_2 = 1$ and $T_{i,4} = 1$) the momentum injected per $10^{49}$ photons s$^{-1}$ of luminosity is $p = 3-5\times 10^5$ $M_\odot$ km s$^{-1}$. Recalling that we get $6.3\times 10^{46}$ photons s$^{-1}$ $M_\odot^{-1}$ for a zero-age population, this means that the momentum injection rate for HII regions is roughly
+Since this is non-linear in $S_{49}$ and in time, the effects of HII regions will depend on how the stars are clustered together, and how long they live. To get a rough estimate, though, we can take the typical cluster to have an ionizing luminosity around $10^{49}$ s$^{-1}$, since by number most clusters are small, and we can adopt an age of 4 Myr. This means that (also using $n_2 = 1$ and $T_{i,4} = 1$) the momentum injected per $10^{49}$ photons s$^{-1}$ of luminosity is $p = 3-5\times 10^5$ $M_\odot$ km s$^{-1}$. Recalling that we get $6.3\times 10^{46}$ photons s$^{-1}$ $M_\odot^{-1}$ for a zero-age population, this means that the momentum injected per unit stellar mass for HII regions is roughly
 \begin{equation}
-\left\langle\frac{\dot{p}_{\rm HII}}{M}\right\rangle \sim 3\times 10^3\mbox{ km s}^{-1}.
+\left\langle\frac{p_{\rm HII}}{M}\right\rangle \sim 3\times 10^3\mbox{ km s}^{-1}.
 \end{equation}
 This is obviously a very rough calculation, and it can be done with much more sophistication, but this analysis suggests that H~\textsc{ii} regions are likely the dominant feedback mechanism compared to winds and H~\textsc{ii} regions.
 
 There is one important caveat to make, though. Although in the similarity solution we formally have $v_i \rightarrow \infty$ as $r_i \rightarrow 0$, in reality the ionized region cannot expand faster than roughly the ionized gas sound speed: one cannot drive a 100 km s$^{-1}$ expansion using gas with a sound speed of 10 km s$^{-1}$. As a result, all of these effects will not work in any cluster for which the escape speed or the virial velocity exceeds $\sim 10$ km s$^{-1}$. This is not a trivial limitation, since for very massive star clusters the escape speed can exceed this value. An example is the R136 cluster in the LMC, which has a present-day stellar mass of $5.5\times 10^4$ $\msun$ inside a radius of $1$ pc \citep{hunter96a}. The escape speed from the stars alone is roughly 20 km s$^{-1}$. Assuming there was gas in the past when the cluster formed, the escape speed must have been even higher. For a region like this, H~\textsc{ii} regions cannot be important.
 
-\subsection{Stellar Winds}
+\subsection{Hot Stellar Winds}
 
 Next let us consider the effects of stellar winds. As we alluded to earlier, O stars launch winds with velocities of $v_w \sim 1000-2500$ km s$^{-1}$ and mass fluxes of $\dot{M}_w \sim 10^{-7}$ $\msun$ yr$^{-1}$. We have already seen that the momentum carried by these winds is fairly unimportant in comparison to the momentum of the protostellar outflows or the radiation field, let alone the momentum provided by H~\textsc{ii} regions. However, because of the high wind velocities, repeating the analysis we performed for protostellar jets yields a characteristic post-shock temperature that is closer to $10^8$ K than $10^6$ K. Gas at such high temperatures has a very long cooling time, so we might end up with an energy-driven feedback. We therefore consider that case next.
 
