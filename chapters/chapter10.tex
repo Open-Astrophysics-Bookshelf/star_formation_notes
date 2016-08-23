@@ -113,7 +113,7 @@ g_z = 2\pi G \Sigma.
 \end{equation}
 Note that $\Sigma$ here should be the total mass per unit area within roughly 1 gas scale height of the mid-plane, including the contribution from both gas and stars. If we plug this in, then we get
 \begin{equation}
-\frac{d}{dz} \left(\left\langle \frac{p}{M}\right\rangle \Sigma_{\rm SFR}\right) \sim 2\pi G \Sigma
+\frac{d}{dz} \left(\left\langle \frac{p}{M}\right\rangle \Sigma_{\rm SFR}\right) \sim 2\pi G \Sigma \rho
 \quad \Longrightarrow \quad
 \Sigma_{\rm SFR} \sim 2\pi G \left\langle \frac{p}{M}\right\rangle^{-1} \Sigma \Sigma_{\rm gas} ,
 \end{equation}
@@ -200,7 +200,7 @@ The transition between the two regimes occurs when $\tau_d \sim 3$.
 
 In the cosmic ray-dominated regime, for $\zeta'/Z'_d = 1$ we get $T = 23$ K. Thus the gas can cool down to almost as low a temperature as we would get in a CO-dominated region (which will be closer to 10 K). On the other hand, if the cosmic ray heating rate is negligible compared to the FUV heating rate, and the optical depth is small, will have a temperature that is an order of magnitude higher than what we normally expect in molecular clouds. The corresponding Jeans mass,
 \begin{equation}
-M_J = \rho \lambda_J^3 = \rho \left(\frac{\pi c_s^2}{G \rho}\right)^{3/2} = 4.8\times 10^3\,M_\odot n_{\rm H}^{-1/2} T_2^{3/2}
+M_J = \rho \lambda_J^3 = \rho \left(\frac{\pi c_s^2}{G \rho}\right)^{3/2} = 4.8\times 10^3\,M_\odot n_{\rm H,2}^{-1/2} T_2^{3/2}
 \end{equation}
 where $T_2 = T/100$ K, will differ between the two cases by a factor of $\sim (91/23)^{1.5} \approx 8$. Thus the presence of a high optical depth that suppresses FUV heating lowers the mass that can be supported against collapse by roughly an order of magnitude (or possibly more, if the local FUV radiation field is more intense than in the Solar neighborhood, as we would expect closer to a galactic center).
 
@@ -252,7 +252,7 @@ One potential explanation focuses on the role of turbulent support. This model w
 \end{equation}
 where $c_s$ is the sound speed and $\lambda_s$ is the sonic length. We want to know what parts of this flow will go Jeans-unstable and begin to collapse. The maximum mass that can held up against turbulence is the Bonnor-Ebert mass, the computation of which is included in Problem Set 2:
 \begin{equation}
-M_{\rm BE} = 1.18 \frac{c_s^3}{G^3\rho} = \frac{1.18}{\pi^{3/2}}\rho \lambda_J^3,
+M_{\rm BE} = 1.18 \frac{c_s^3}{\sqrt{G^3\rho}} = \frac{1.18}{\pi^{3/2}}\rho \lambda_J^3,
 \end{equation}
 where $c_s$ is the isothermal sound speed and $\rho$ is the {\it local} gas density, i.e., the density at the surface of the Bonnor-Ebert sphere. The corresponding radius is
 \begin{equation}
@@ -276,29 +276,29 @@ Now let us turn this around and hypothesize that the collapsing parts of the flo
 \begin{equation}
 \lambda_{J0}=\sqrt{\frac{\pi c_s^2}{G\overline{\rho}}},
 \end{equation}
-where $\overline{\rho}$ is the mean density. If we let $s = \rho/\overline{\rho}$, then $\lambda_J = \lambda_{J0}/\sqrt{s}$. The condition that $\lambda_J \lesssim \lambda_s$ therefore requires that the overdensity $s$ satisfy
+where $\overline{\rho}$ is the mean density. If we let $s = \ln \rho/\overline{\rho}$, then $\lambda_J = \lambda_{J0}/e^{s/2}$. The condition that $\lambda_J \lesssim \lambda_s$ therefore requires that the overdensity $s$ satisfy
 \begin{equation}
-s > s_{\rm crit} \equiv \left(\phi_s \frac{\lambda_{J0}}{\lambda_s}\right)^2,
+s > s_{\rm crit} \equiv 2 \ln \left(\phi_s \frac{\lambda_{J0}}{\lambda_s}\right),
 \end{equation}
 where we have replaced the $\lesssim$ simply with a firm inequality, and introduced $\phi_s$, a dimensionless number of order unity.
 
 The nice thing is that we can now determine what fraction of the mass satisfies this condition simply from knowing the density PDF. Specifically,
 \begin{eqnarray}
-f & = & \int_{s_{\rm crit}}^\infty p(s) \,ds \\
+f & = & \int_{s_{\rm crit}}^\infty p_M(s) \,ds \\
 & = & \frac{1}{\sqrt{2\pi \sigma_s^2}}
-\int_{s_{\rm crit}}^\infty \exp\left[-\frac{(\ln s - \overline{\ln s})^2}{2\sigma_s^2}\right] \, ds \\
-& = & \frac{1}{2} \left[1+\mbox{erf}\left(\frac{-2\ln s_{\rm crit}+\sigma_s^2}{2^{3/2}\sigma_s}\right)\right],
+\int_{s_{\rm crit}}^\infty \exp\left[-\frac{(s -\sigma_s^2/2)^2}{2\sigma_s^2}\right] \, ds \\
+& = & \frac{1}{2} \left[1+\mbox{erf}\left(\frac{-2 s_{\rm crit}+\sigma_s^2}{2^{3/2}\sigma_s}\right)\right],
 \end{eqnarray}
 where $\sigma_s \approx [\ln(1+3\mathcal{M}^2/4)]^{1/2}$ and $\mathcal{M}$ is the 1D Mach number. If we then hypothesize that a fraction $\sim f$ of the cloud will collapse every cloud free-fall time, the total star formation rate per free-fall time in the simulations should follows
 \begin{equation}
-\epsilon_{\rm ff} = \frac{1}{2 \phi_t} \left[1+\mbox{erf}\left(\frac{-2\ln s_{\rm crit}+\sigma_{\rho}^2}{2^{3/2}\sigma_s}\right)\right],
+\epsilon_{\rm ff} = \frac{1}{2 \phi_t} \left[1+\mbox{erf}\left(\frac{-2 s_{\rm crit}+\sigma_{\rho}^2}{2^{3/2}\sigma_s}\right)\right],
 \end{equation}
 where $\phi_t$ is another fudge factor of order unity.
 
 Another assumption here is that the collapse time is given by the global free-fall time, as opposed to a density-dependent local free-fall time. Again, this is an area where subsequent work by \citet{hennebelle11b} and \citet{federrath12a} have improved on the original model. It turns out to be a better assumption that the collapse happens on a local free-fall timescale instead, in which case we instead have a star formation rate
 \begin{equation}
 \epsilon_{\rm ff} = \frac{1}{\phi_t} \int_{s_{\rm crit}}^\infty p(s) e^{s/2} \, ds
-= \frac{1}{2\phi_t} \left[1+\mbox{erf}\left(\frac{-\ln s_{\rm crit}+\sigma_s^2}{2^{1/2}\sigma_s}\right)\right] \exp\left(\frac{3}{8}\sigma_s^2\right),
+= \frac{1}{2\phi_t} \left[1+\mbox{erf}\left(\frac{-s_{\rm crit}+\sigma_s^2}{2^{1/2}\sigma_s}\right)\right] \exp\left(\frac{3}{8}\sigma_s^2\right),
 \end{equation}
 where the extra factor of $e^{s/2}$ inside the integral comes from the fact that $t_{\rm ff} \propto \rho^{-1/2}$, so higher density regions get weighted more because they collapse faster.
 
