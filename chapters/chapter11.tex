@@ -34,16 +34,16 @@ Such an inhomogeneous structure calls for a statistical description, and a numbe
 
 Stars, on the other hand, are point objects, and so one cannot compute a power spectrum for them as one would for a continuous field like the density. However, one can compute a closely-related quantity, the two-point correlation function. Recall that, for a continuous vector field (say the velocity), we defined the autocorrelation function as
 \begin{equation}
-A_{\vecv}(\vecr) = \frac{1}{V} \int \vecv(\vecx) \cdot \vecv(\vecx + \vecr)\, dV.
+A_{\vecv}(\vecr) = \frac{1}{V} \int \vecv(\vecx) \cdot \vecv(\vecx + \vecr)\, d\vecx.
 \end{equation}
 For a scalar field, say density $\rho$, we can just replace the dot product with a simple multiplication. It is also common to slightly modify the definition by subtracting off the mean density so that we get a quantity that depends only on the shape of the density distribution, not its mean value. This quantity is
 \begin{equation}
 \label{eq:autocorr}
-\xi(\vecr) = \frac{1}{V} \int [\rho(\vecx)-\overline{\rho}] [\rho(\vecx + \vecr)-\overline{\rho}]\, dV,
+\xi(\vecr) = \frac{1}{V} \int [\rho(\vecx)-\overline{\rho}] [\rho(\vecx + \vecr)-\overline{\rho}]\, d\vecx,
 \end{equation}
 where $\overline{\rho} = (1/V) \int \rho(\vecx)\, dV$. If the function is isotropic, then the autocorrelation function depends only on $r=|\vecr|$.
 
-This is still defined for a continuous field, but we can extend the definition to the positions of a collection of point particles by imagining that the point particles represent samples drawn from an underlying probability density function. That is, we imagine that there is a continuous probability $(dP(\vecr)/dV) dV$ of finding a star in a volume of size $dV$ centered at some position $\vecr$, and that the actual stars present represent a random draw from this distribution.
+This is still defined for a continuous field, but we can extend the definition to the positions of a collection of point particles by imagining that the point particles represent samples drawn from an underlying probability density function. That is, we imagine that there is a continuous probability $(dP(\vecr)/dV)\, dV$ of finding a star in a volume of size $dV$ centered at some position $\vecr$, and that the actual stars present represent a random draw from this distribution.
 
 In this case one can show that the autocorrelation function can be defined by the following procedure. Imagine drawing stellar positions from the PDF until the mean number density is $n$, and then imagine choosing a random star from this sample. Now consider a volume $dV$ that is displaced by a distance $\vecr$ from the chosen star. If $dP(\vecr)/dV$ were uniform, i.e., if there were no correlation, then the probability of finding another star at that point would simply be $n\, dV$. The two-point correlation function is then the \textit{excess} probability of finding a star over and above this value. That is, if the actual probability of finding a star is $dP_2(\vecr)/dV$, we define the two-point correlation function by
 \begin{equation}
