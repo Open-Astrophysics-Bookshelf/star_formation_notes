@@ -44,9 +44,9 @@ The main cooling source is thermal emission by dust grains, which at the high de
 \begin{equation}
 \Lambda_{\rm thin} = 4\kappa_{\rm P} \sigma_{\rm SB} T^4.
 \end{equation}
-Here $\sigma_{\rm SB}$ is the Stefan-Boltzmann constant and $\kappa_{\rm P}$ is the Planck mean specific opacity of the gas-dust mixture. As long as $\Lambda \gtrsim \Gamma$, the gas will remain isothermal.(Strictly speaking if $\Lambda > \Gamma$ the gas will cool, but that is because we have left out other sources of heating, such as cosmic rays and the fact that the gas and dust are bathed in a background IR radiation field from other stars.) If we equate the heating and cooling rates, using for $T$ the temperature in the isothermal gas, we therefore will obtain a characteristic density beyond which the gas can no longer remain isothermal. Doing so gives
+Here $\sigma_{\rm SB}$ is the Stefan-Boltzmann constant and $\kappa_{\rm P}$ is the Planck mean specific opacity of the gas-dust mixture. As long as $\Lambda \gtrsim \Gamma$, the gas will remain isothermal. (Strictly speaking if $\Lambda > \Gamma$ the gas will cool, but that is because we have left out other sources of heating, such as cosmic rays and the fact that the gas and dust are bathed in a background IR radiation field from other stars.) If we equate the heating and cooling rates, using for $T$ the temperature in the isothermal gas, we therefore will obtain a characteristic density beyond which the gas can no longer remain isothermal. Doing so gives
 \begin{eqnarray}
-\rho_{\rm thin} & = & \frac{4}{\pi} \frac{\kappa_{\rm P}^2 \sigma_{\rm SB}^2 \mu^2 m_{\rm H}^2 T^4}{C_1^2 G k_B^2} \\
+\rho_{\rm thin} & = & \frac{4}{\pi} \frac{\kappa_{\rm P}^2 \sigma_{\rm SB}^2 \mu^2 m_{\rm H}^2 T^6}{C_1^2 G k_B^2} \\
 & = & 5\times 10^{-15} \mbox{ g cm}^{-3}\, C_1^{-2} \kappa_{\rm P,-2}^2 T_1^6
 \end{eqnarray}
 where $\mu$ is the mean mass per particle in units of $m_{\rm H}$ ($\mu=2.3$ for fully molecular gas), and we have set $c_s = \sqrt{k_B T/\mu m_{\rm H}}$. In the second line, $T_1 = T/10$ K and $\kappa_{\rm P,-2} = \kappa_{\rm P}/0.01$ cm$^2$ g$^{-1}$, a typical value for thermal radiation at a temperature of $\approx 10$ K and Milky Way dust grains. Thus we find that compressional heating and optically thin cooling to balance at about $10^{-14}$ g cm$^{-3}$.
@@ -77,11 +77,11 @@ t_{\rm diff} = \frac{l\tau}{c} = \frac{\kappa_{\rm P} \rho l^2}{c}
 \end{equation}
 where $l$ is the characteristic size of the core. Inside the optically thick region matter and radiation are in thermal balance, so the radiation energy density approaches the blackbody value $a_R T^4$. The radiation energy per unit mass is therefore $a_R T^4/\rho$. Putting all this together, and taking $l=2 R$ as we did before in computing $\rho_{\tau\sim 1}$, the optically thick cooling rate per unit mass is
 \begin{equation}
-\Lambda_{\rm thick} = \frac{a_R T^4/\rho}{t_{\rm diff}} = \frac{\sigma T^4}{\kappa_{\rm P} \rho^2 R^2},
+\Lambda_{\rm thick} = \frac{a_R T^4/\rho}{t_{\rm diff}} = \frac{\sigma_{\rm SB} T^4}{\kappa_{\rm P} \rho^2 R^2},
 \end{equation}
 where $\sigma_{\rm SB} =ca_R /4$. If we equate $\Lambda_{\rm thick}$ and $\Gamma$, we get the characteristic density where the gas becomes non-isothermal in the optically thick regime
 \begin{eqnarray}
-\rho_{\rm thick} & = & \left(\frac{C_1^2 G \sigma^2 \mu^4 m_{\rm H}^4 T^4}{4\pi^3 C_2^4 k_B^4 \kappa_{\rm P}^2}\right)^{1/3} \\
+\rho_{\rm thick} & = & \left(\frac{C_1^2 G \sigma_{\rm SB}^2 \mu^4 m_{\rm H}^4 T^4}{4\pi^3 C_2^4 k_B^4 \kappa_{\rm P}^2}\right)^{1/3} \\
 & = & 5\times 10^{-14}\mbox{ g cm}^{-3}\, \frac{C_1^{2/3}}{C_2^{4/3}} \kappa_{\rm P,-2}^{-2/3} T_1^{4/3}.
 \end{eqnarray}
 This is much more weakly dependent on $\kappa_{\rm P}$ and $T$, so we can now make the somewhat more general statement that, even for supersolar metallicity or warmer regions, we expect a transition from isothermal to adiabatic behavior somewhere in the vicinity of $10^{-14}-10^{-13}$ g cm$^{-3}$.
@@ -101,7 +101,7 @@ a^2 = \frac{(n+1) K}{4\pi G} \rho_c^{\frac{1-n}{n}}.
 \end{equation}
 The factor $K = p/\rho^{\gamma}$ is the polytropic constant, which is determined by the specific entropy of the gas.
 
-For our first core, the specific entropy will just be determined by the density at which the gas transitions from isothermal to adiabatic. If we let $\rho_{\rm ad}$ be the density at which the gas becomes adiabatic, then the pressure at this density is $p = \rho_{\rm ad} c_{s0}^2$, where $c_{s0}$ is the sound speed in the isothermal phase, and $K = c_{s0}^2 \rho_{\rm ad}^{1-\gamma}$. For $\gamma=5/3$ ($n=1.5$) we have $\xi_1=3.65$ and $(\xi\, d\theta/d\xi)_1=-2.71$, and plugging in we get
+For our first core, the specific entropy will just be determined by the density at which the gas transitions from isothermal to adiabatic. If we let $\rho_{\rm ad}$ be the density at which the gas becomes adiabatic, then the pressure at this density is $p = \rho_{\rm ad} c_{s0}^2$, where $c_{s0}$ is the sound speed in the isothermal phase, and $K = c_{s0}^2 \rho_{\rm ad}^{1-\gamma}$. For $\gamma=5/3$ ($n=1.5$) we have $\xi_1=3.65$ and $(\xi^2\, d\theta/d\xi)_1=-2.71$, and plugging in we get
 \begin{eqnarray}
 R & = & 2.2\mbox{ AU} \; T_1^{1/2} \rho_{c,-10}^{1/6} \rho_{\rm ad,-13}^{-1/3} \\
 M & = & 0.059\,\msun\; T_1^{1/2} \rho_{c,-10}^{7/6} \rho_{\rm ad,-13}^{-1/3},
