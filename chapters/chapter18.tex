@@ -171,13 +171,13 @@ That said, this omits the fact that there is likely to be lower density within t
 
 By far the biggest potential worry for massive star formation is not that ionizing radiation will heat the gas enough to allow it to escape, but the pressure exerted by radiation will halt accretion. Let us go back to our picture of the structure of the envelope of dusty gas around a protostar, developed in chapter \ref{ch:protostar_form}. There is a dust destruction radius where all direct starlight is absorbed, and outside that a diffusion region. The calculation of this radius is the same as for a low mass star, except that the luminosity is not mostly due to accretion. Equating heating and cooling (and again ignoring the complication introduced by dust grain sizes smaller than $\sim 1$ $\mu$m) gives
 \begin{equation}
-\frac{L_*}{4\pi r_d^2} \pi a^2 = 4\pi a^2 \sigma T_d^4,
+\frac{L}{4\pi r_d^2} \pi a^2 = 4\pi a^2 \sigma_{\rm SB} T_d^4,
 \end{equation}
 where $r_d$ and $T_d$ are the radius and temperature at the dust destruction front. Thus
 \begin{equation}
-r_d = \sqrt{\frac{L_*}{16 \pi \sigma T_d^4}} = 25\mbox{ AU}\; L_{*,5}^{1/2} T_{d,3}^{-2},
+r_d = \sqrt{\frac{L_*}{16 \pi \sigma_{\rm SB} T_d^4}} = 25\mbox{ AU}\; L_{*,5}^{1/2} T_{d,3}^{-2},
 \end{equation}
-where $L_{*,5} = L_*/(10^5\,\lsun)$ and $T_{d,3}=T_d/(1000\mbox{ K})$. The dust destruction radius is therefore a factor of $\sim 10$ larger than it is for a low mass star.
+where $L_{5} = L/(10^5\,\lsun)$ and $T_{d,3}=T_d/(1000\mbox{ K})$. The dust destruction radius is therefore a factor of $\sim 10$ larger than it is for a low mass star.
 
 \paragraph{Direct radiation pressure at the dust destruction front.} It is interesting to consider the force exerted by the radiation on the gas in two different regimes. One is at the dust destruction front, where the radiation still has a stellar spectrum and has not yet been down-shifted in frequency by the dust. At this front we can assume that essentially all the stellar radiation is absorbed in a thin region, so all of the momentum carried by the stellar radiation field will be transferred to the gas. Infall will reverse if this change in momentum is enough to reduce the infall velocity to zero.
 
@@ -202,38 +202,38 @@ The condition that $v_1 < 0$ (i.e., that the new velocity still be inward) then 
 If we assume that the gas is arriving at free-fall before reaching the dust destruction front, then $v_0 = \sqrt{2 G M/r_d}$, and thus the mass flux must exceed
 \begin{equation}
 \label{eq:mdot_min}
-\dot{M} > \frac{L}{v_0 c} = \frac{L}{c} \sqrt{\frac{r_d}{2 G M_*}} = 8\times 10^{-5} \,\msun\mbox{ yr}^{-1} \, L_{*,5}^{3/2} T_{d,3}^{-1} M_{*,1}^{-1/2},
+\dot{M} > \frac{L}{v_0 c} = \frac{L}{c} \sqrt{\frac{r_d}{2 G M}} = 8\times 10^{-5} \,\msun\mbox{ yr}^{-1} \, L_{5}^{3/2} T_{d,3}^{-1} M_{1}^{-1/2},
 \end{equation}
-where $M_{*,1}=M_*/(10\,\msun)$.
+where $M_{1}=M_*/(10\,\msun)$.
 
 This is less than the accretion rates we inferred for massive stars based on dimensional arguments, although maybe not by quite as much as one would like. Nonetheless, this seems to imply that matter will not be stopped at the dust destruction front if it arrives as quickly as expected. More detailed evaluations of this condition by \citet{mckee03a}, who in turn build off of \citet{wolfire87a}, generally find that this is not a problem. However, there is an important caveat to mention. In deriving equation (\ref{eq:mdot_min}), we plugged in a radius $r_d$, which assumes that the direct radiation pressure encounters the gas at $r_d$. If something is able to evacuate the gas out to a radius $r > r_d$ (for example the diffuse radiation pressure we will consider momentarily), then the infall momentum is reduced as $r^{-1/2}$, while the momentum budget of the radiation remains the same. Thus direct radiation pressure cannot halt accretion by itself, but if something else begins to evacuate the region around the star, then direct radiation pressure may be able to keep it evacuated or even expand the evacuated region.
 
 \paragraph{Diffuse radiation pressure in the envelope.} The second regime to think about this the dusty envelope, through which radiation must diffuse to escape. The radiation flux $F=L/(4\pi r^2)$, and this applies a force per unit mass to the gas
 \begin{equation}
-f_{\rm rad} = \frac{1}{c} \int \kappa_{\nu} F_{\nu} \, d\nu = \frac{1}{4\pi r^2 c} \int \kappa_{\nu} F_{\nu} \, d\nu,
+f_{\rm rad} = \frac{1}{c} \int \kappa_{\nu} F_{\nu} \, d\nu = \frac{1}{4\pi r^2 c} \int \kappa_{\nu} L_{\nu} \, d\nu,
 \end{equation}
-where the subscript $\nu$ indicates the frequency-dependent flux and opacity. Since the radiation field will be close to a black body in the envelope, we can replace the frequency integral with a Rosseland mean opacity, giving
+where the subscript $\nu$ indicates the frequency-dependent luminosity, flux, and opacity. Since the radiation field will be close to a black body in the envelope, we can replace the frequency integral with a Rosseland mean opacity, giving
 \begin{equation}
-f_{\rm rad} = \frac{\kappa_{\rm R} F}{c} = \frac{\kappa_{\rm R} L_*}{4\pi r^2 c}
+f_{\rm rad} = \frac{\kappa_{\rm R} F}{c} = \frac{\kappa_{\rm R} L}{4\pi r^2 c}
 \end{equation}
 
 Since the opacity of the gas to the reprocessed radiation field is much less than its opacity to direct stellar radiation (i.e., $\kappa_{\rm R}$ evaluated at temperatures $T<T_d$ is much smaller than $\kappa_{\nu}$ evaluated at the peak frequency of stellar output), this force is much less than that applied at the dust destruction front. Unlike at the dust destruction front, however, this force is not applied in a quick impulse. It is applied at every radius, and thus its cumulative effect can be much stronger than that at the dust destruction front. If we think of things in terms of accelerations, the force applied in the dust envelope is much smaller, but it is applied to the gas for a much longer time, so that the total acceleration can be larger. The relevant comparison here is not to the momentum of the radiation field, but to the force of gravity exerted by the star, since we want to know whether the net acceleration is inward or outward.
 
 The condition that gravitational force be stronger than radiative force is
 \begin{equation}
-\frac{G M_*}{r^2} > \frac{\kappa_{\rm R} L_*}{4\pi r^2 c},
+\frac{G M}{r^2} > \frac{\kappa_{\rm R} L}{4\pi r^2 c},
 \end{equation}
 or
 \begin{equation}
-\frac{L_*}{M_*} < \frac{4\pi G c}{\kappa_{\rm R}}.
+\frac{L}{M} < \frac{4\pi G c}{\kappa_{\rm R}}.
 \end{equation}
 This is just the Eddington limit calculation, or it would be if we plugged in the electron scattering opacity for $\kappa_{\rm R}$.
 If we instead plug in a typical infrared dust opacity of a few cm$^2$ g$^{-1}$, we get
 \begin{equation}
-\left(\frac{L_*}{M_*}\right) = 1300 (\lsun/\msun) \,\kappa_{\rm R,1}^{-1},
+\left(\frac{L}{M}\right) = 1300 (\lsun/\msun) \,\kappa_{\rm R,1}^{-1},
 \end{equation}
 where $\kappa_{\rm R,1} = \kappa_{\rm R}/(10\mbox{ cm}^2\mbox{ g}^{-1})$.
-For comparison, our standard 50 $\msun$ ZAMS star has $L_*/M_*= 7100 (\lsun/\msun)$, and thus it exceeds this limit by a factor of $\sim 5$. In fact, all ZAMS stars larger than $\sim 20$ $\msun$ exceed the limit, which would seem at face value to suggest that it should not be possible to form stars above this limit by accretion. This argument led to all sorts of contortions trying to explain how massive stars could form -- models included trying to make them only in regions of dramatically reduced dust opacity, trying to make them by collisions of lower mass stars, and various other ideas.
+For comparison, our standard 50 $\msun$ ZAMS star has $L/M= 7100 (\lsun/\msun)$, and thus it exceeds this limit by a factor of $\sim 5$. In fact, all ZAMS stars larger than $\sim 20$ $\msun$ exceed the limit, which would seem at face value to suggest that it should not be possible to form stars above this limit by accretion. This argument led to all sorts of contortions trying to explain how massive stars could form -- models included trying to make them only in regions of dramatically reduced dust opacity, trying to make them by collisions of lower mass stars, and various other ideas.
 
 The solution in reality is much more prosaic: the real world is not spherically symmetric, and the argument we just went through is. Multidimensional simulations show that, contrary to this naive calculation, radiation does not stop accretion in a real system. The main effect is that the ram pressure and the gas pressure can both be asymmetric, and they will conspire to be anti-correlated with one another because the radiation will escape by the path of least resistance. This asymmetry can be produced by many mechanisms; an obvious one is angular momentum, which shapes the accretion flow into a disk can concentrates ram pressure in a plane, while radiation pressure is not so confined. A shell of material held up by the radiation field turns out to be unstable, allowing radiation to escape asymmetrically and concentrating the infall. Magnetic fields or turbulence will both produce filamentary infall, again concentrating the ram pressure of the gas over a small solid angle, while allowing radiation to escape over the remaining, unoccupied solid angle. Outflows present yet another mechanism to punch a whole through which radiation can escape, as illustrated in Figure \ref{fig:msf_cunningham11}. For all these reasons, it is misleading to compare the radiation and gravitational forces averaged over $4\pi$ sr. Accretion will continue as long as there are significant patches of solid angle where gravity wins.
 

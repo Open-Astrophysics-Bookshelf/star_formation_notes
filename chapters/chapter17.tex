@@ -52,7 +52,6 @@ and converting to Lagrangian coordinates by dividing by the relationship between
 \begin{equation}
 \frac{\partial P}{\partial M_r} = -\frac{G M_r}{4\pi r^4}.
 \end{equation}
-Note that we have ignored radiation pressure in writing this equation, since it is significant only for very massive stars. It can be included in exactly the same manner as for massive main sequence stars.
 
 The third equation is the equation of radiation diffusion:
 \begin{equation}
@@ -72,9 +71,9 @@ Finally, the last equation describes how the internal energy of the fluid evolve
 \begin{equation}
 \rho T\frac{\partial s}{\partial t} = \rho \epsilon - \frac{1}{r^2}\frac{\partial}{\partial r}(r^2 F),
 \end{equation}
-where $s$ is the entropy per unit mass of the gas and $\epsilon$ is the rate of nuclear energy generation per unit mass. Substituting $L_r = 4 \pi r^2 F$ gives
+where $s$ is the entropy per unit mass of the gas and $\epsilon$ is the rate of nuclear energy generation per unit mass. Substituting $L = 4 \pi r^2 F$ gives
 \begin{equation}
-\frac{\partial L}{\partial r} = 4\pi r^2 \rho \left(\epsilon - T\frac{\partial s}{\partial T}\right),
+\frac{\partial L}{\partial r} = 4\pi r^2 \rho \left(\epsilon - T\frac{\partial s}{\partial t}\right),
 \end{equation}
 and dividing once more by $\partial r/\partial M_r$ gives
 \begin{equation}
@@ -102,13 +101,13 @@ L(0) & = & 0.
 \end{eqnarray}
 The remaining two are less obvious. Thus far everything we have written down is completely identical to the case of a main sequence star, except for the time derivative in the heat equation, but the remaining two boundary conditions, describing the pressure and luminosity at the edge of the star, are different.
 
-\paragraph{Spherical Accretion Flows.} First consider the simplest case, where we assume spherical symmetry everywhere. A main sequence star effectively has vacuum of negligible pressure outside it, but a protostar does not. It is bounded by an accretion flow, and  the pressure at the stellar surface must be sufficient to halt the flow. The accretion rate onto the star $\dot{M}$ is related to the density $\rho$ and velocity $v$ of the infalling material by
+\paragraph{Spherical Accretion Flows.} First consider the simplest case, where we assume spherical symmetry everywhere. A main sequence star effectively has vacuum of negligible pressure outside it, but a protostar does not. It is bounded by an accretion flow, and  the pressure at the stellar surface must be sufficient to halt the flow. The accretion rate onto the star $\dot{M}$ is related to the density $\rho_i$ and velocity $v$ of the infalling material by
 \begin{equation}
-\dot{M} = 4\pi r^2 \rho v,
+\dot{M} = 4\pi r^2 \rho_i v,
 \end{equation}
 and the ram pressure at the stellar surface is therefore
 \begin{equation}
-P(M) = \rho v^2 = \frac{\dot{M} v}{4\pi r^2},
+P(M) = \rho_i v^2 = \frac{\dot{M} v}{4\pi r^2},
 \end{equation}
 where the right hand side is to be evaluated at $r=R$. If the incoming gas is in free-fall, then we can set $v = v_{\rm ff} = \sqrt{2GM/R}$, which gives
 \begin{equation}
@@ -242,6 +241,8 @@ The formation of the barrier ends the transport of D to the stellar center. The 
 
 The next evolutionary phase, which occurs from $\approx 3-4$ $M_\odot$ in Figure \ref{fig:kippenhahn_hosokawa09}, is swelling. This phase is marked by a marked increase in the star's radius over a relatively short period of time. The physical mechanism driving this is the radiative barrier discussed above. The radiative barrier forms because increasing temperatures drive decreasing opacities, allowing more rapid transport of energy by radiation. The decreased opacity allows the center of the star to lose entropy rapidly, and the entropy to be transported to the outer parts of the star via radiation. The result is a wave of luminosity and entropy that propagates outward through the star.
 
+Once the wave of luminosity and entropy gets near the stellar surface, which is not confined by the weight of overlying material, the surface undergoes a rapid expansion, leading to rapid swelling. The maximum radius, and the mass at which the swelling phase occurs, is a strong function of the accretion rate (Figure \ref{fig:rt_hosokawa09}). However, even at very low accretion rates, swelling does not occur until the mass exceeds $1$ $M_\odot$, and thus this phase occurs only for stars more massive than the Sun.
+
 \begin{marginfigure}
 \includegraphics[width=\linewidth]{rt_hosokawa09}
 \caption[Protostellar mass-radius relation for different accretion rates]{
@@ -249,8 +250,6 @@ The next evolutionary phase, which occurs from $\approx 3-4$ $M_\odot$ in Figure
 Radius versus mass (top panel) and maximum interior temperature versus mass (bottom panel) for protostars accreting at different rates \citep{hosokawa09a}. The accretion rate is indicated by the line style, as illustrated in the top panel. For each accretion rate there are two lines, one thick and one thin. The thick line is for the observed Milky Way deuterium abundance, while the thin line is the result assuming zero deuterium abundance.
 }
 \end{marginfigure}
-
-Once the wave of luminosity and entropy gets near the stellar surface, which is not confined by the weight of overlying material, the surface undergoes a rapid expansion, leading to rapid swelling. The maximum radius, and the mass at which the swelling phase occurs, is a strong function of the accretion rate (Figure \ref{fig:rt_hosokawa09}). However, even at very low accretion rates, swelling does not occur until the mass exceeds $1$ $M_\odot$, and thus this phase occurs only for stars more massive than the Sun.
 
 \subsection{Contraction to the Main Sequence}
 
@@ -330,7 +329,7 @@ P_R \approx \frac{GM}{R^2\kappa_{\rm R}} \qquad\Longrightarrow\qquad
 \log P_R \approx \log M - 2 \log R - \log \kappa_{\rm R}.
 \end{equation}
 
-To make further progress, we will assume that we can approximate the opacity as some powerlaw in density and temperature, $\kappa_{\rm R} \propto \rho T^b$. For a Kramers opacity, for example, $a=1$ and $b=-3.5$. Substituting this into the equation for $P_R$, we have
+To make further progress, we will assume that we can approximate the opacity as some powerlaw in the temperature, $\kappa_{\mathrm{R}} \propto \rho T^b$. For Kramers opacity, for example, $b=-3.5$. Substituting this into the equation for $P_R$, we have
 \begin{equation}
 \label{eq:opacity}
 \log P_R = \log M - 2\log R - \log \rho_R - b\log T_R + \mbox{constant}.

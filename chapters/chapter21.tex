@@ -92,9 +92,9 @@ We have just considered the consequences of the forces acting on solid particles
 
 Problem Set 5 contains a calculation showing that the difference in velocity between the Keplerian speed and the speed with which a particle orbits is
 \begin{equation}
-\Delta v = \frac{2n c_s^2}{v_K} = \eta v_K^2
+\Delta v = \frac{n c_g^2}{2 v_K} = \eta v_K
 \end{equation}
-where the pressure in the disk is assumed to vary with distance from the star as $P\propto \varpi^{-n}$, $c_g$ is the gas sound speed, and the dimensionless quantity $\eta = 2 n c_s^2/v_K^2$, which depends only on the local properties of the disk, has been defined for future convenience. At 1 AU for our minimum mass solar nebula model, this velocity is about $70 n$ m s$^{-1}$.
+where the pressure in the disk is assumed to vary with distance from the star as $P\propto \varpi^{-n}$, $c_g$ is the gas sound speed, and the dimensionless quantity $\eta = n c_g^2/2 v_K^2$, which depends only on the local properties of the disk, has been defined for future convenience. At 1 AU for our minimum mass solar nebula model, this velocity is about $70 n$ m s$^{-1}$.
 
 Drag takes away angular momentum, in turn causing the bodies to spiral inward. We can parameterize this effect in terms of the stopping time 
 \begin{equation}
@@ -122,7 +122,7 @@ Q_s = \frac{\Omega c_s}{\pi G \Sigma_s}
 \end{equation}
 where $c_s$ and $\Sigma_s$ are the velocity dispersion and surface density of the solid material. To see what velocity dispersion is required, note that this definition of $Q$ lets use write $Q_s$ in terms of $Q_g$ as
 \begin{equation}
-Q_s = Q_g \left(\frac{\Sigma_s}{\Sigma_g}\right) \left(\frac{c_g}{c_s}\right) \approx(240, 60) Q_g \left(\frac{c_g}{c_s}\right),
+Q_s = Q_g \left(\frac{\Sigma_g}{\Sigma_s}\right) \left(\frac{c_s}{c_g}\right) \approx(240, 60) Q_g \left(\frac{c_s}{c_g}\right),
 \end{equation}
 where the factors of 240 or 60 are for regions with and without solid ices, respectively.
 
@@ -134,11 +134,11 @@ where the two numbers are again for the cases with and without ices in solid for
 
 To see whether this condition can be met, it is more convenient to phrase the instability criterion in terms of a density. If we use $H_s=c_s/\Omega$ in the Toomre condition, where $H_s$ is the scale height of the solids, and we take the midplane density of the solids to be $\rho_s \approx \Sigma_s/H_s$, then we have
 \begin{equation}
-Q_s  = \frac{\Omega^2 H_s}{\pi G \Sigma_s} \approx \frac{M_*}{r^3 \rho_s},
+Q_s  = \frac{\Omega^2 H_s}{\pi G \Sigma_s} \approx \frac{M_*}{\varpi^3 \rho_s},
 \end{equation}
-where $M_*$ is the mass of the star. A detailed stability analysis by Sekiya (1983) of the behavior of a stratified self-gravitating disk show that the instability condition turns out to be
+where $M_*$ is the mass of the star. A detailed stability analysis by \citet{sekiya1983} of the behavior of a stratified self-gravitating disk show that the instability condition turns out to be
 \begin{equation}
-\rho > 0.62\frac{M_*}{r^3} = 4\times 10^{-7} M_{*,0} \varpi_0^{-3} \mbox{ g cm}^{-3},
+\rho > 0.62\frac{M_*}{\varpi^3} = 4\times 10^{-7} M_{*,0} \varpi_0^{-3} \mbox{ g cm}^{-3},
 \end{equation}
 where $\rho = \rho_s + \rho_g$ is the total (gas plus solid) surface density and $M_{*,0}=M_*/\msun$. For our minimum mass solar nebula, recall that the midplane density of the gas is roughly $3\times 10^{-9}$ g cm$^{-3}$, a factor of 100 too small for instability to set in. The question then is whether the density of solids at the midplane can rise to 100 times that of the gas.
 
@@ -181,18 +181,18 @@ Substituting this into the condition that the Richardson is roughly $1/4$, and n
 
 Now we make our second approximation: if we focus our attention near the midplane where solids are trying to sediment out, and are being stirred up by KH instability, the density of solids should be changing much more quickly than the density of gas. In other words, we will focus our attention at heights $z$ much smaller than the gas scale height, so we can set $\partial \rho/\partial z \approx \partial \rho_s/\partial z$, and drop $\partial \rho_g/\partial z$ in comparison to $\partial \rho_s/\partial z$. Doing so gives
 \begin{equation}
-\mbox{Ri}_c \approx \frac{z}{\eta^2 r^2} \frac{\rho^3}{\rho_g^2 (\partial\rho_s/\partial z)}
+\mbox{Ri}_c \approx \frac{z}{\eta^2 \varpi^2} \frac{\rho^3}{\rho_g^2 (\partial\rho_s/\partial z)}
 \end{equation}
 
 To see what this implies, consider a layer of solids with scale height $H_s$ and surface density $\Sigma_s$ that marginally satisfies this equation. Plugging in $z\sim H_s$ and $\rho_s \sim \Sigma_s/H_s$ gives
 \begin{equation}
-\mbox{Ri}_c \sim \frac{H_s}{\eta^2 r^2} \frac{(\rho_g + \Sigma_s/H_s)^3}{\rho_g^2 (\Sigma_s/H_s^2)} = \frac{(\rho_g H_s + \Sigma_s)^3}{(\eta r \rho_g)^2 \Sigma_s}
+\mbox{Ri}_c \sim \frac{H_s}{\eta^2 \varpi^2} \frac{(\rho_g + \Sigma_s/H_s)^3}{\rho_g^2 (\Sigma_s/H_s^2)} = \frac{(\rho_g H_s + \Sigma_s)^3}{(\eta r \rho_g)^2 \Sigma_s}
 \end{equation}
 Clearly this equation cannot be satisfied for arbitrarily large $\Sigma_s$, since the RHS scales as $\Sigma_s^2$ in this case. Physically, this indicates that our assumption that the KH instability can keep the Richardson number at the critical value must break down if the surface density of solids is too high. If we think about it, it makes sense that there is a maximum amount of solid material that the gas can keep aloft. To continue the sandstorm analogy, the wind can only keep a certain amount of sand aloft in the desert. It cannot pick up the entire desert.
 
 Thus, we expect there to be a critical column density $\Sigma_p$ at which it becomes impossible to satisfy the condition that the Richardson number is $1/4$. If $\Sigma_p$ exceeds this critical value, the surface density at the midplane will rise arbitrarily, and gravitational instability becomes inevitable. For the case $\Sigma_s \gg \rho_g H_s$, this critical value is clearly given by
 \begin{equation}
-\Sigma_s \sim \sqrt{\mbox{Ri}_c} \eta \varpi \rho_g = 2 n \sqrt{\mbox{Ri}_c} \left(\frac{c_s}{v_K}\right)^2 \varpi \rho_g.
+\Sigma_s \sim \sqrt{\mbox{Ri}_c} \eta \varpi \rho_g = 2 n \sqrt{\mbox{Ri}_c} \left(\frac{c_g}{v_K}\right)^2 \varpi \rho_g.
 \end{equation}
 For the conditions of our MMSN at 1 AU, using $n=1$ and $\mbox{Ri}_c=1/4$, this evaluates to $70$ g cm$^{-2}$. The numerical solution for the critical surface density is $\Sigma_s=94$ g cm$^{-2}$; the increase relative to our simple analytic estimate mostly comes from the self-gravity of the dust, which increases the shear and thus strengthens the KH instability.
 
