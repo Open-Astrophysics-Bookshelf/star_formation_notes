@@ -96,7 +96,7 @@ where
 
 Written this way, we can give a clear interpretation to what these terms mean. $\mathcal{T}$ is just the total kinetic plus thermal energy of the cloud. $\mathcal{T}_S$ is the confining pressure on the cloud surface, including both the thermal pressure and the ram pressure of any gas flowing across the surface. $\mathcal{B}$ is the the difference between the magnetic pressure in the cloud interior, which tries to hold it up, and the magnetic pressure plus magnetic tension at the cloud surface, which try to crush it. $\mathcal{W}$ is the gravitational energy of the cloud. If there is no external gravitational field, and $\phi$ comes solely from self-gravity, then $\mathcal{W}$ is just the gravitational binding energy. The final integral represents the rate of change of the momentum flux across the cloud surface.
 
-$\ddot{I}$ is the integrated form of the acceleration. For a cloud of fixed shape, it tells us the rate of change of the cloud's expansion of contraction. If it is negative, the terms that are trying to collapse the cloud (the surface pressure, magnetic pressure and tension at the surface, and gravity) are larger, and the cloud accelerates inward. If it is positive, the terms that favor expansion (thermal pressure, ram pressure, and magnetic pressure) are larger, and the cloud accelerates outward. If it is zero, the cloud neither accelerates nor decelerates.
+$\ddot{I}$ is the integrated form of the acceleration. For a cloud of fixed shape, it tells us the rate of change of the cloud's expansion or contraction. If it is negative, the terms that are trying to collapse the cloud (the surface pressure, magnetic pressure and tension at the surface, and gravity) are larger, and the cloud accelerates inward. If it is positive, the terms that favor expansion (thermal pressure, ram pressure, and magnetic pressure) are larger, and the cloud accelerates outward. If it is zero, the cloud neither accelerates nor decelerates.
 
 We get a particularly simple form of the virial theorem if there is no gas crossing the cloud surface (so $\vecv=0$ at $S$) and if the magnetic field at the surface to be a uniform value $B_0$. In this case the virial theorem reduces to
 \begin{equation}
@@ -243,9 +243,9 @@ The corresponding wavelength is
 \end{equation}
 This is known as the Jeans length. One can also define a mass scale associated with this: the Jeans mass, $M_J=\rho\lambda_J^3/8$.\footnote{The definition of the Jeans mass is somewhat ambiguous, and multiple definitions can be found in the literature. The one we have chosen corresponds to considering the mass within a cube of half a Jeans length in size. Possible alternatives include choosing a cube one Jeans length in size or choosing a sphere one Jeans length in radius or diameter, to name just two possibilities. These definitions all scale with density and Jeans length in the same way, and differ only in their coefficients.}
 
-If we plug in some typical numbers for a GMC, $c_s=0.2$ km s$^{-1}$ and $\rho_0 = 100 m_p$, we get $\lambda_J = 3.4$ pc. Since every GMC we have seen is larger than this size, and there are clearly always perturbations present, this means that molecular clouds cannot be stabilized by gas pressure against collapse. Of course one could have guessed this result just by evaluating terms in the virial theorem: the gas pressure term is very small compared to the gravitational one. Ultimately, the virial theorem and the Jeans instability analysis are just two different ways of extracting the same information from the equations of motion.
+If we plug in some typical numbers for a GMC, $c_s=0.2$ km s$^{-1}$ and $\rho_0 = 100 m_p\mbox{ cm}^{-3}$, we get $\lambda_J = 3.4$ pc. Since every GMC we have seen is larger than this size, and there are clearly always perturbations present, this means that molecular clouds cannot be stabilized by gas pressure against collapse. Of course one could have guessed this result just by evaluating terms in the virial theorem: the gas pressure term is very small compared to the gravitational one. Ultimately, the virial theorem and the Jeans instability analysis are just two different ways of extracting the same information from the equations of motion.
 
-One nice thing about the Jeans analysis, however, is that it makes it obvious how fast we should expect gravitational instabilities to grow. Suppose we have a very unstable system, where $c_s^2 k^2 \ll 4 \pi G \rho_0$. This is the case for GMC, for example. There are perturbations on the size of the entire cloud, which might be 50 pc in size. This is a spatial frequency $k=2\pi/(50\mbox{ pc}) = 0.12$ pc$^{-1}$. Plugging this in with $c_s = 0.2$ km s$^{-1}$ and $\rho_0=100 m_p$ gives $c_s^2 k^2 / (4\pi G \rho) = 0.005$.
+One nice thing about the Jeans analysis, however, is that it makes it obvious how fast we should expect gravitational instabilities to grow. Suppose we have a very unstable system, where $c_s^2 k^2 \ll 4 \pi G \rho_0$. This is the case for GMC, for example. There are perturbations on the size of the entire cloud, which might be 50 pc in size. This is a spatial frequency $k=2\pi/(50\mbox{ pc}) = 0.12$ pc$^{-1}$. Plugging this in with $c_s = 0.2$ km s$^{-1}$ and $\rho_0=100 m_p\mbox{ cm}^{-3}$ gives $c_s^2 k^2 / (4\pi G \rho) = 0.005$.
 In this case we have
 \begin{equation}
 \omega \approx \pm i \sqrt{4\pi G\rho_0}.
@@ -288,7 +288,7 @@ Here we have dropped any contribution from the field outside the cloud. The seco
 
 Since the field lines that pass through the cloud must also pass through the virial surface, it is convenient to rewrite everything in terms of the magnetic flux. The flux passing through the cloud is $\Phi_B = \pi B R^2$, and since these field lines must also pass through the virial surface, we must have $\Phi_B = \pi B_0 R_0^2$ as well. Thus, we can rewrite the magnetic term in the virial theorem as
 \begin{equation}
-\mathcal{B} \approx \frac{B^2 R^3}{6} - \frac{B_0^2 R_0^2}{6} = \frac{1}{6\pi^2} \left(\frac{\Phi_B^2}{R} - \frac{\Phi_B^2}{R_0}\right) \approx \frac{\Phi_B^2}{6\pi^2 R}.
+\mathcal{B} \approx \frac{B^2 R^3}{6} - \frac{B_0^2 R_0^3}{6} = \frac{1}{6\pi^2} \left(\frac{\Phi_B^2}{R} - \frac{\Phi_B^2}{R_0}\right) \approx \frac{\Phi_B^2}{6\pi^2 R}.
 \end{equation}
 
 In the last step we used the fact that $R \ll R_0$ to drop the $1/R_0$ term. Now let us compare this to the gravitational term, which is
@@ -372,7 +372,7 @@ In this case the momentum equation is trivial:
 \end{equation}
 This just says that a shell's inward acceleration is equal to the gravitational force per unit mass exerted by all the mass interior to it, which is constant. We can then solve for the velocity as a function of position:
 \begin{equation}
-v = \dot{r} = -\sqrt{2GM_r}\left(\frac{1}{r_0}-\frac{1}{r}\right)^{1/2},
+v = \dot{r} = -\sqrt{2GM_r}\left(\frac{1}{r}-\frac{1}{r_0}\right)^{1/2},
 \end{equation}
 where $r_0$ is the position at which a particular fluid element starts. 
 
