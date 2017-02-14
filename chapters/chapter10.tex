@@ -19,7 +19,7 @@ Chapter \ref{ch:sflaw_obs} was a brief review of the current state of the observ
 \item In unresolved observations, the rate of star formation appears to rise non-linearly with the total gas content.
 \item In the central disks of galaxies, where most star formation takes place, star formation appears to correlate strongly with the molecular phase of the ISM, and poorly or not at all with the atomic phase.
 \item The depletion time in molecular gas is nearly constant in nearby, "normal" galaxies, though a weak dependence on total gas surface density cannot be ruled out given the observational uncertainties. In more actively star-forming galaxies with higher gas surface densities than any found within $\sim 20$ Mpc of the Milky Way, the depletion time does appear to be smaller.
-\item  A correlation between star formation and atomic gas appears only in regions where the ISM is completely dominated by atomic gas, but with a very large scatter, and with a depletion time in the atomic gas is $\sim 2$ order of magnitude larger than that in molecular gas. In such regions, "second parameters" such as the metallicity or the stellar mass density appear to affect the star formation rate in ways that they do not in inner disks.
+\item  A correlation between star formation and atomic gas appears only in regions where the ISM is completely dominated by atomic gas, but with a very large scatter, and with a depletion time in the atomic gas is $\sim 2$ orders of magnitude larger than that in molecular gas. In such regions, "second parameters" such as the metallicity or the stellar mass density appear to affect the star formation rate in ways that they do not in inner disks.
 \item If one uses tracers of higher density gas such as HCN, the depletion time is shorter than for the bulk of the molecular gas, but still remains much longer than any plausible estimate of the free-fall time in the emitting gas.
 \end{itemize}
 As we shall see, there is at present no theory that is capable of fully, self-consistently explaining all the observations. However, there are a number of approaches that appear to successfully explain at least some of the observations, and may serve as the nucleus for a fuller theory in the future.
@@ -290,9 +290,9 @@ f & = & \int_{s_{\rm crit}}^\infty p_M(s) \,ds \\
 \int_{s_{\rm crit}}^\infty \exp\left[-\frac{(s -\sigma_s^2/2)^2}{2\sigma_s^2}\right] \, ds \\
 & = & \frac{1}{2} \left[1+\mbox{erf}\left(\frac{-2 s_{\rm crit}+\sigma_s^2}{2^{3/2}\sigma_s}\right)\right],
 \end{eqnarray}
-where $\sigma_s \approx [\ln(1+3\mathcal{M}^2/4)]^{1/2}$ and $\mathcal{M}$ is the 1D Mach number. If we then hypothesize that a fraction $\sim f$ of the cloud will collapse every cloud free-fall time, the total star formation rate per free-fall time in the simulations should follows
+where $\sigma_s \approx [\ln(1+3\mathcal{M}^2/4)]^{1/2}$ and $\mathcal{M}$ is the 1D Mach number. If we then hypothesize that a fraction $\sim f$ of the cloud will collapse every cloud free-fall time, the total star formation rate per free-fall time in the simulations should follow
 \begin{equation}
-\epsilon_{\rm ff} = \frac{1}{2 \phi_t} \left[1+\mbox{erf}\left(\frac{-2 s_{\rm crit}+\sigma_{\rho}^2}{2^{3/2}\sigma_s}\right)\right],
+\epsilon_{\rm ff} = \frac{1}{2 \phi_t} \left[1+\mbox{erf}\left(\frac{-2 s_{\rm crit}+\sigma_{s}^2}{2^{3/2}\sigma_s}\right)\right],
 \end{equation}
 where $\phi_t$ is another fudge factor of order unity.
 
@@ -315,7 +315,7 @@ We therefore have
 \begin{equation}
 \lambda_s = 2R \left(\frac{c_s}{\sigma_{2R}}\right)^2.
 \end{equation}
-Similar, we can re-write the mean-density Jeans length as
+Similarly, we can re-write the mean-density Jeans length as
 \begin{equation}
 \lambda_{J0} = \sqrt{\frac{\pi c_s^2}{G\overline{\rho}}} = 2\pi c_s \sqrt{\frac{R^3}{3 GM}}.
 \end{equation}
@@ -333,7 +333,7 @@ Comparing the bottom-up models to our observational constraints, we see that the
 
 A second strength of the bottom-up model, at least one in which turbulence is assumed to regulate the star formation rate within molecular clouds, is that it automatically reproduces the observation that $\epsilon_{\rm ff} \sim 0.01$ on all scales, from individual clouds to small dense regions to entire galaxies; indeed, the central assumption of the model is that the galactic star formation law is simply a sum of local cloud ones. Thus the local-global connection is made naturally.
 
-However, the model has two major weaknesses as well. First, the explanation why $\epsilon_{\rm ff} \sim 0.01$, as opposed to $\sim 0.1$, is still somewhat hazy, and relies on generalized appeals to local feedback processes that are not tremendously well understood. The central problem is that of dynamic range. If local feedback processes like H~\textsc{ii} regions or protostellar outflows are what drives the low rate of star formation within clouds, not larger-scale things like supernovae, then the problem is much harder to solve numerically due to the far larger dynamic range involved. No one has ever successfully simulated an entire galaxy, following the self-consistent formation and evolution of molecular clouds, with enough resolution to capture the turbulence and all the local feedback processes that drive it within individual molecular clouds.
+However, the model has two major weaknesses as well. First, the explanation why $\epsilon_{\rm ff} \sim 0.01$, as opposed to $\sim 0.1$, is still somewhat hazy, and relies on generalized appeals to local feedback processes that are not tremendously well understood. The central problem is that of dynamic range. If local feedback processes like H~\textsc{ii} regions or protostellar outflows are what drive the low rate of star formation within clouds, not larger-scale things like supernovae, then the problem is much harder to solve numerically due to the far larger dynamic range involved. No one has ever successfully simulated an entire galaxy, following the self-consistent formation and evolution of molecular clouds, with enough resolution to capture the turbulence and all the local feedback processes that drive it within individual molecular clouds.
 
 A second weakness is that the appeal to the thermodynamics of the gas as an explanation for the origin of the low star formation rate does not address the question of global regulation of the ISM and its hydrostatic balance. To put it another way, in principle one could have a region of the ISM where the gas surface density is low enough that almost all the gas is atomic and there is very little star formation. In that case, however, what maintains vertical hydrostatic balance? If thermal pressure alone is not enough to do so, where does the required turbulent pressure come from in the absence of star formation? This is an unsolved problem in the local model, one that is avoided in the global model simply by adopting hydrostatic balance as a starting assumption.
 
