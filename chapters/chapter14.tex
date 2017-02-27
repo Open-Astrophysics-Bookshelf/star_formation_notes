@@ -80,11 +80,11 @@ In order to deduce things like $\Sigma$ and $T$ we need to have a physical model
 
 \paragraph{The optically thick limit.}
 
-First, suppose that the disk is optically thick at some wavelength, i.e., $\tau_{\lambda} = \kappa_{\lambda}\Sigma/\cos\theta \gg 1$. This is likely to be true for shorter (e.g., near-IR) wavelengths, where the opacity is high, and where most emission is coming form close to the star where the surface density is highest. In this case it is reasonable to set the exponential factor in equation (\ref{eq:diskflux}) to 0, and we are simply left with the integral of the Planck function of the disk temperature over radius.
+First, suppose that the disk is optically thick at some wavelength, i.e., $\tau_{\lambda} = \kappa_{\lambda}\Sigma/\cos\theta \gg 1$. This is likely to be true for shorter (e.g., near-IR) wavelengths, where the opacity is high, and where most emission is coming from close to the star where the surface density is highest. In this case it is reasonable to set the exponential factor in equation (\ref{eq:diskflux}) to 0, and we are simply left with the integral of the Planck function of the disk temperature over radius.
 
 Note that in this limit $\Sigma$ drops out, which makes intuitive sense: if the disk is optically thick then we only get to see its surface, and adding or removing material beneath this surface will not change the amount of light we see. Substituting in the Planck function, in the optically thick case we now have
 \begin{equation}
-F_{\lambda} = \frac{4\pi\cos\theta}{D^2} \frac{hc^2}{\lambda^5} \int_{\varpi_0}^{\varpi_1} \frac{\varpi}{\exp[hc/(k_B T)]-1}\,d\varpi.
+F_{\lambda} = \frac{4\pi\cos\theta}{D^2} \frac{hc^2}{\lambda^5} \int_{\varpi_0}^{\varpi_1} \frac{\varpi}{\exp[hc/(\lambda k_B T)]-1}\,d\varpi.
 \end{equation}
 
 If we further assume that the temperature varies with radius as a powerlaw, $T=T_0(\varpi/\varpi_0)^{-q}$, then we can evaluate the integral via the substitution
@@ -186,7 +186,7 @@ In addition to observing the disks themselves, we can observe the outflows that 
 
 The standard interpretation of this sort of ionization structure is that we are seeing a fast shock. The shocked material is ionized, producing H$\alpha$ emission as it recombines. Both upstream and downstream of the shock itself, however, there is neutral material that is warm, either because it has had a chance to recombine but not to cool (for the downstream gas) or because it has been pre-heated by radiation from the shock (for the upstream gas). This produces the neutral or weakly ionized emission lines.
 
-More sensitive measurements in the 1970s revealed that the bright emission knots Herbig and Haro saw are in fact connected by linear structures that also emit in optical, just with lower surface brightness. We can also see bow shocks at the heads of jets, where the plough into dense molecular gas (Figure \ref{fig:hhjet}).
+More sensitive measurements in the 1970s revealed that the bright emission knots Herbig and Haro saw are in fact connected by linear structures that also emit in optical, just with lower surface brightness. We can also see bow shocks at the heads of jets, where they plough into dense molecular gas (Figure \ref{fig:hhjet}).
 
 \begin{figure}
 \includegraphics[width=\linewidth]{hhjet}
