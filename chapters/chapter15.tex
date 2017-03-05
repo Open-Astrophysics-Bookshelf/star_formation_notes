@@ -55,7 +55,7 @@ We should not take the factor too seriously, since of course real clouds are not
 
 \subsection{Rotating Collapse: the Magnetohydrodynamic Case}
 
-Magnetic fields can greatly complicate this picture, due to magnetic braking. As a core contracts, conservation of angular momentum causes it to spin faster, but this in turn twists up the magnetic field. This creates a tension force that opposes the rotation rate, and tries to keep the core rotating as a solid body.
+Magnetic fields can greatly complicate this picture, due to magnetic braking. As a core contracts, conservation of angular momentum causes it to spin faster, but this in turn twists up the magnetic field. This creates a tension force that opposes the rotation, and tries to keep the core rotating as a solid body.
 
 To analyze this effect, let us work in cylindrical coordinates $(\varpi, \phi, z)$. Consider a fluid element in a disk at a distance $\varpi$ from the star, whose dimensions are $d\varpi$, $d\phi$, $dz$ in the $\varpi$, $\phi$, and $z$ directions. The fluid element is rotating around the star with a velocity $v_{\phi}$ in the $\phi$ direction. The fluid element is threaded by a magnetic field $\vecB=(B_\varpi, B_\phi, B_z)$. For future convenience we define the poloidal component of the field to be
 \begin{equation}
@@ -103,7 +103,7 @@ t_{\rm br} & \sim & \frac{G^{1/2}\rho^{3/2} \varpi^2}{B^2} \\
 & \sim & \frac{(G\rho)^{1/2} \varpi^2}{v_A^2} \\
 & \sim & \frac{t_{\rm cr}^2}{t_{\rm ff}},
 \end{eqnarray}
-where we are dropping constants of order unity. Note that in the second step we wrote $B$ in terms of the Alfven speed $v_A = B/\sqrt{4\pi \rho}$, and in the final step we wrote $t_{\rm cr} = \varpi/v_A$, where $t_{\rm cr}$ is the Alfven crossing time of the cloud.
+where we are dropping constants of order unity. Note that in the second step we wrote $B$ in terms of the Alfv\'en speed $v_A = B/\sqrt{4\pi \rho}$, and in the final step we wrote $t_{\rm cr} = \varpi/v_A$, where $t_{\rm cr}$ is the Alfv\'en crossing time of the cloud.
 
 If a cloud starts out with a magnetic field near equipartition with gravity and thermal energies, we expect $t_{\rm ff} \sim t_{\rm cr}$, so this means that $t_{\rm br}\sim t_{\rm cr}$. This is an order of magnitude calculation, but its implication is clear: if we have a field that is even marginally wound up, such that the poloidal and toroidal components become comparable, this field is capable of stopping Keplerian rotation in a time scale comparable to the collapse or crossing time. This can effectively prevent formation of a Keplerian disk at all if the magnetic field is strong enough. Indeed, this is what simulations seem to show happening (Figure \ref{fig:magdisk_hennebelle}).
 
@@ -203,7 +203,7 @@ where $\nu=\mu/\rho$ is the kinematic viscosity, which will be more convenient t
 \label{eq:torque}
 \mathcal{T} = 2\pi \varpi \int \varpi T_{\varpi\phi}\, dz = 2\pi \varpi^3 \Sigma \nu \frac{d\Omega}{d\varpi}.
 \end{equation}
-This combined with the equation giving the relationship between $\dot{M}$ and $d\mathcal{T}/d\varpi$ immediately give us the accretion rate for any steady disk of known surface density and angular momentum profile $j(\varpi)$.
+This combined with the equation giving the relationship between $\dot{M}$ and $d\mathcal{T}/d\varpi$ immediately gives us the accretion rate for any steady disk of known surface density and angular momentum profile $j(\varpi)$.
 
 The most interesting case in star formation is for $j$ and $\Omega$ corresponding to Keplerian rotation, $j=\sqrt{GM_*\varpi}$ and $\Omega=\sqrt{GM_*/\varpi^3}$, where $M_*$ is the mass of the central star.\footnote{If we were interested in galactic disks, we might instead have considered a flat rotation curve, $j\propto \varpi$.} If we now take the continuity equation (\ref{eq:continuity_disk}) and the angular momentum equation (\ref{eq:angmom_disk}), express the torque in terms of $\nu$ using equation (\ref{eq:torque}), and plug in the Keplerian values of $j$ and $\Omega$, a little algebra shows that the resulting equation is
 \begin{equation}
@@ -277,7 +277,7 @@ We have established that there must be a viscous mechanism to transport angular 
 
 The obvious place to start is to examine the ordinary hydrodynamic viscosity we expect all fluids to have. The kinematic viscosity of a diffuse gas is $\nu = 2\overline{u}\lambda$, where $\overline{u}$ is the RMS particle speed and $\lambda$ is the mean free path. Let us consider a protostellar accretion disk with the typical properties density $n=10^{12}$ cm$^{-3}$ and temperature 100 K. In this case the velocity $\overline{u} = 0.6$ km s$^{-1}$, and assuming a particle-particle cross section of $\sigma=(1\mbox{ nm})^2$, the mean free path is $\lambda \sim 1/(n\sigma)=100$ cm, and $\nu \sim 10^8$ cm$^{-2}$ s. We can put this in terms of $\alpha$ if we remember that $\nu = \alpha (c_s^2/\Omega)$. If the material under consideration is orbiting 100 AU from a 1 $\msun$ star, then $\Omega = 6.3\times 10^{-3}$ yr$^{-1}$, and we have $\alpha \approx 6\times 10^{-12}$.
 
-This obviously a problem. Suppose the gas starts out $\sim 100$ AU from the star. The time required for the gas to accrete is then $t_{\rm acc}\sim \varpi^2/\nu \sim (100\mbox{ AU})^2/\nu \sim 10^{22}$ s, or just shy of $10^{15}$ yr. In other words, longer than the age of the universe. The obvious conclusion from this is that ordinary hydrodynamic viscosity is completely ineffective at producing accretion. If that were the only source of angular momentum transport in a disk, then stars would never form. Something else must be at work.
+This is obviously a problem. Suppose the gas starts out $\sim 100$ AU from the star. The time required for the gas to accrete is then $t_{\rm acc}\sim \varpi^2/\nu \sim (100\mbox{ AU})^2/\nu \sim 10^{22}$ s, or just shy of $10^{15}$ yr. In other words, longer than the age of the universe. The obvious conclusion from this is that ordinary hydrodynamic viscosity is completely ineffective at producing accretion. If that were the only source of angular momentum transport in a disk, then stars would never form. Something else must be at work.
 
 \paragraph{Turbulent hydrodynamic viscosity.}
 
@@ -305,15 +305,15 @@ Results from a series of simulation of magneto-rotational instability with non-i
 }
 \end{marginfigure}
 
-The question of how well coupled the gas and the field are turns on details of the ionization structure of the disk. Turbulence requires large values of the magnetic Reynolds number $\mbox{Re}_{\rm M} = v_A^2 /(\eta\Omega)$, where $v_A$ is the Alfven speed and $\eta$ is the magnetic diffusivity. Numerical experiments suggest that MRI shuts of when $\mbox{Re}_{\rm M} \lesssim 3000$ (Figure \ref{fig:mri_sano02}). The diffusivity, in turn, depends on the electron fraction: $\eta = c^2/(4\pi \sigma_e)$, where $\sigma_e = n_e e^2/(m_e \nu_c)$ is the conductivity and $\nu_c$ is the frequency of electron-neutral collisions. If there are few electrons, $\sigma_e$ is small and $\eta$ is large, making $\mbox{Re}_{\rm M}$ small. This means that, in order to know where and whether MRI will operate, we need to know the ionization fraction in the disk.
+The question of how well coupled the gas and the field are turns on details of the ionization structure of the disk. Turbulence requires large values of the magnetic Reynolds number $\mbox{Re}_{\rm M} = v_A^2 /(\eta\Omega)$, where $v_A$ is the Alfv\'en speed and $\eta$ is the magnetic diffusivity. Numerical experiments suggest that MRI shuts of when $\mbox{Re}_{\rm M} \lesssim 3000$ (Figure \ref{fig:mri_sano02}). The diffusivity, in turn, depends on the electron fraction: $\eta = c^2/(4\pi \sigma_e)$, where $\sigma_e = n_e e^2/(m_e \nu_c)$ is the conductivity and $\nu_c$ is the frequency of electron-neutral collisions. If there are few electrons, $\sigma_e$ is small and $\eta$ is large, making $\mbox{Re}_{\rm M}$ small. This means that, in order to know where and whether MRI will operate, we need to know the ionization fraction in the disk.
 
 This is an incredibly complex problem, because the ionization is generally non-thermal, non-LTE, and it only takes a tiny number of electrons to make MRI operate: an electron fraction $\sim 10^{-9}$ is sufficient. In the very inner disk near the star, where the temperature is $\sim 2000$ K, thermal ionization of alkali metals will provide the necessary electrons. In regions where the disk column density is $\lesssim 100$ g cm$^{-2}$, X-rays from the central star and cosmic rays can penetrate the disk, providing free electrons. However, for comparison the estimated column density of the minimum mass Solar nebula (the minimum mass required to make all the planets -- to be discussed further in Chapter \ref{ch:late_disk}) is 1700 g cm$^{-2}$ at 1 AU, and the equilibrium temperature is $\ll 2000$ K.
 
-In such high column density, cool regions, the electron fraction depends on such complex questions as the mean size of dust grains (since these can absorb free electrons) and the rate of vertical transport of electrons from the surface layers down to the disk midplane. One possible result of this is that MRI would operate only at the surface of disk, leaving the midplane a "dead zone". Another possibility is that there may be radial dead zones with no MRI. Material would move inward to such regions, but then get stuck there, potentially making accretion bursty.
+In such high column density, cool regions, the electron fraction depends on such complex questions as the mean size of dust grains (since these can absorb free electrons) and the rate of vertical transport of electrons from the surface layers down to the disk midplane. One possible result of this is that MRI would operate only at the surface of disk, leaving the midplane a ``dead zone". Another possibility is that there may be radial dead zones with no MRI. Material would move inward to such regions, but then get stuck there, potentially making accretion bursty.
 
 \paragraph{Gravitational transport mechanisms.}
 
-Magnetic fields provide one potential source of transport, but, as we have seen, they may fail if the gas is not sufficiently ionized. If the accretion rate onto the disk is large enough, it is also possible that MRI may operate, but not may not provide sufficiently rapid angular momentum transport to stop gas from building up the disk -- this is likely to occur particularly for massive stars. In this case, mass can build up in the disk, leading to gravitational instability.
+Magnetic fields provide on potential source of transport, but, as we have seen, they may fail if the gas is not sufficiently ionized. If the accretion rate onto the disk is large enough, it is also possible that MRI may operate, but may not provide sufficiently rapid angular momentum transport to stop gas from building up the disk -- this is likely to occur particularly for massive stars. In this case, mass can build up in the disk, leading to gravitational instability.
 
 We can understand when gravitational instability is likely to set in using our theory of disks. In steady state we showed that the accretion rate depends on $\Sigma$, $\alpha$, $c_s$, and $\Omega$ (equation \ref{eq:mdot_steady}). Since we are interested in gravitational stability, let us introduce the Toomre $Q$ parameter for our disk,
 \begin{equation}
@@ -381,7 +381,7 @@ Now let us consider our perturbed fluid element. It has been moved a distance $d
 \begin{equation}
 \cos \theta = \frac{B_\varpi}{\sqrt{B_\varpi^2 + B_z^2}}.
 \end{equation}
-An angle $\theta=90^\circ$ corresponds to a field line that has zero radial component, and $\theta=0^\circ$ corresponds to one that has zero vertical component. The coordinates of the displaced fluid elements are $\varpi = \varpi_0 + \cos\theta \, ds$ and $z = \sin\theta \, ds$. To determine the force experienced by the fluid element, we simply plug these coordinates into $\mathbf{f}$ and expand to first order:
+An angle $\theta=90^\circ$ corresponds to a field line that has zero radial component, and $\theta=0^\circ$ corresponds to one that has zero vertical component. The coordinates of the displaced fluid element is $\varpi = \varpi_0 + \cos\theta \, ds$ and $z = \sin\theta \, ds$. To determine the force experienced by the fluid element, we simply plug these coordinates into $\mathbf{f}$ and expand to first order:
 \begin{equation}
 d\mathbf{f} = \frac{GM_*}{\varpi_0^3} \left(3 \cos\theta\,\hat{e}_\varpi - \sin\theta\,\hat{e}_z\right) ds.
 \end{equation}

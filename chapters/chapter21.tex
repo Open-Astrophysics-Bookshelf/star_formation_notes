@@ -12,7 +12,7 @@
 \end{itemize}
 }
 
-In this final chapter, we will finish our discussion of the transition from star formation to planet formation. We have already seen in chapter \ref{ch:late_disk} that the interstellar dust grains that are captured in a star's disk will begin to collide with one another and grow, and that they will reach macroscopic size on time scales shorter than the observed disk lifetime. We now see to sharpen our understanding of how these solids will evolve. We will continue to make use of fiducial numbers from the minimum mass Solar nebula (MMSN) that we introduced in chapter \ref{ch:late_disk}.
+In this final chapter, we will finish our discussion of the transition from star formation to planet formation. We have already seen in chapter \ref{ch:late_disk} that the interstellar dust grains that are captured in a star's disk will begin to collide with one another and grow, and that they will reach macroscopic size on time scales shorter than the observed disk lifetime. We now seek to sharpen our understanding of how these solids will evolve. We will continue to make use of fiducial numbers from the minimum mass Solar nebula (MMSN) that we introduced in chapter \ref{ch:late_disk}.
 
 \section{Dynamics of Solid Particles in a Disk}
 
@@ -124,7 +124,7 @@ where $c_s$ and $\Sigma_s$ are the velocity dispersion and surface density of th
 \begin{equation}
 Q_s = Q_g \left(\frac{\Sigma_g}{\Sigma_s}\right) \left(\frac{c_s}{c_g}\right) \approx(240, 60) Q_g \left(\frac{c_s}{c_g}\right),
 \end{equation}
-where the factors of 240 or 60 are for regions with and without solid ices, respectively.
+where the factors of 240 or 60 are for regions without and with solid ices, respectively.
 
 Using equation (\ref{eq:QMMSN}) for $Q_g$ and equation (\ref{eq:TMMSN}) for the gas temperature, we have $Q_g\approx 55$ and $c_g\approx 1$ km s$^{-1}$ at 1 AU. Thus, gravitational instability for the solids, $Q_s<1$, requires that $c_s \lesssim (30, 7)$ cm s$^{-1}$, depending on whether ice is present or not. If such an instability were to occur, the characteristic mass of the resulting object would be set by the Toomre mass
 \begin{equation}
@@ -136,13 +136,13 @@ To see whether this condition can be met, it is more convenient to phrase the in
 \begin{equation}
 Q_s  = \frac{\Omega^2 H_s}{\pi G \Sigma_s} \approx \frac{M_*}{\varpi^3 \rho_s},
 \end{equation}
-where $M_*$ is the mass of the star. A detailed stability analysis by \citet{sekiya1983} of the behavior of a stratified self-gravitating disk show that the instability condition turns out to be
+where $M_*$ is the mass of the star. A detailed stability analysis by \citet{sekiya1983} of the behavior of a stratified self-gravitating disk shows that the instability condition turns out to be
 \begin{equation}
 \rho > 0.62\frac{M_*}{\varpi^3} = 4\times 10^{-7} M_{*,0} \varpi_0^{-3} \mbox{ g cm}^{-3},
 \end{equation}
 where $\rho = \rho_s + \rho_g$ is the total (gas plus solid) surface density and $M_{*,0}=M_*/\msun$. For our minimum mass solar nebula, recall that the midplane density of the gas is roughly $3\times 10^{-9}$ g cm$^{-3}$, a factor of 100 too small for instability to set in. The question then is whether the density of solids at the midplane can rise to 100 times that of the gas.
 
-The discussion followed here closely follows that of \citet{youdin02a}. We have seen that settling causes solid particles to drift down to the midplane, and if this were the only force acting on them, then the density could rise to arbitrarily high values. However, there is a countervailing effect that will limit how high the midplane density can rise. If the midplane density of solids is large enough so that the solid density greatly exceeds the gas density, then the solid-dominated layer will rotate at the Keplerian speed rather than the sub-Keplerian speed that results from gas pressure. It is fairly straightforward to show (and a slight extension of one of the problems in Problem Set 5) that the rotation velocity required for radial hydrostatic balance is
+The discussion followed here closely follows that of \citet{youdin02a}. We have seen that drag causes solid particles to drift down to the midplane, and if this were the only force acting on them, then the density could rise to arbitrarily high values. However, there is a countervailing effect that will limit how high the midplane density can rise. If the midplane density of solids is large enough so that the solid density greatly exceeds the gas density, then the solid-dominated layer will rotate at the Keplerian speed rather than the sub-Keplerian speed that results from gas pressure. It is fairly straightforward to show (and a slight extension of one of the problems in Problem Set 5) that the rotation velocity required for radial hydrostatic balance is
 \begin{equation}
 v_{\phi} = \left(1-\eta \frac{\rho_g}{\rho}\right) v_K,
 \end{equation}
@@ -170,7 +170,7 @@ First, note that we are interested in whether a self-gravitating layer of partic
 \begin{equation}
 \frac{\partial v_\phi}{\partial z} = -\eta \left(\frac{1}{\rho} \frac{\partial \rho_g}{\partial z} - \frac{\rho_g}{\rho^2}\frac{\partial \rho}{\partial z}\right) v_K.
 \end{equation}
-Substituting this into the condition that the Richardson is roughly $1/4$, and noting the $v_K = \varpi\Omega$, we have
+Substituting this into the condition that the Richardson number is roughly $1/4$, and noting the $v_K = \varpi\Omega$, we have
 \begin{eqnarray}
 \mbox{Ri}_c \approx \frac{1}{4} 
 & \approx &
@@ -220,7 +220,7 @@ v_e = \frac{1}{2\rho\Omega} \frac{dP}{dr}.
 \end{equation}
 We see that if the eddy is associated with a pressure maximum, $dP/dr < 0$, then $v_e < 0$ as well, indicating that rotation is clockwise; eddies associated with pressure minima, $dP/dr > 0$, produce counter-clockwise rotation.
 
-Now let us consider the dynamics of a solid particle moving through the eddy. Returning to the inertial frame, if the eddy is rotating clockwise, $v_e < 0$, then the material that is further from the star is orbiting somewhat more slowly, while the material that is closer to the star is orbiting somewhat more rapidly. This means that the material farther from the star will have a smaller velocity difference with the sub-Keplerian solids, while the material that is closer to the star will have a somewhat larger velocity difference. The drag force is therefore smaller on the far side of the eddy, and larger on the near side. The net effect is that, as solids drift from large radii inward and encounter the eddy, their rate of drift slows down, and they tend to pile up at the location of the eddy. This is a potential mechanism to raise the local ratio of solids to gas, and thus to set of gravitational instability.
+Now let us consider the dynamics of a solid particle moving through the eddy. Returning to the inertial frame, if the eddy is rotating clockwise, $v_e < 0$, then the material that is further from the star is orbiting somewhat more slowly, while the material that is closer to the star is orbiting somewhat more rapidly. This means that the material farther from the star will have a smaller velocity difference with the sub-Keplerian solids, while the material that is closer to the star will have a somewhat larger velocity difference. The drag force is therefore smaller on the far side of the eddy, and larger on the near side. The net effect is that, as solids drift from large radii inward and encounter the eddy, their rate of drift slows down, and they tend to pile up at the location of the eddy. This is a potential mechanism to raise the local ratio of solids to gas, and thus to set off gravitational instability.
 
 The final step in this argument is to have something that provides a pressure jump and thus can produce clockwise eddies. There are a number of possible mechanisms, including a build-up of gas at the edge of a dead zone where MRI shuts off, or simply the turbulence driven by the MRI itself. Whether this actually happens in practice is still an unsolved problem, but the mechanism is at least potentially viable.
 

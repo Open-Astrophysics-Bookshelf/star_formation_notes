@@ -66,7 +66,7 @@ Inserting these results into our expressions for the rates of stimulated emissio
 
 \section{Statistical Equilibrium for Multi-Level Systems}
 
-Now let us consider some species with a series of possible quantum states. We number them $0, 1, 2, \ldots$ in order of increasing energy, so state $0$ is the ground state. We denote the energy and degeneracy of state $i$ as $E_i$ and $g_i$ respectively. We write the energy difference between any two states as $E_{ij} = E_i - E_j$,  the corresponding frequency as $\nu_{ij} = E_{ij}/h$, and we write the Einstein spontaneous emission coefficient for transitions from state $i$ to state $j$ as $A_{ij}$. The species of interest as number density $n$, and we let $n_i$ be the number density of that species in state $i$. Finally, the species of interest can undergo collisions with another species or with itself, and these can cause state transitions as well. We let $n_c$ be the number density of colliders, and we let $k_{ij}$ be the collision rate coefficient connecting any two states, so that the rate of collisionally-induced transitions from state $i$ to state $j$ is given by $n_i n_c k_{ij}$.
+Now let us consider some species with a series of possible quantum states. We number them $0, 1, 2, \ldots$ in order of increasing energy, so state $0$ is the ground state. We denote the energy and degeneracy of state $i$ as $E_i$ and $g_i$ respectively. We write the energy difference between any two states as $E_{ij} = E_i - E_j$,  the corresponding frequency as $\nu_{ij} = E_{ij}/h$, and we write the Einstein spontaneous emission coefficient for transitions from state $i$ to state $j$ as $A_{ij}$. The species of interest has number density $n$, and we let $n_i$ be the number density of that species in state $i$. Finally, the species of interest can undergo collisions with another species or with itself, and these can cause state transitions as well. We let $n_c$ be the number density of colliders, and we let $k_{ij}$ be the collision rate coefficient connecting any two states, so that the rate of collisionally-induced transitions from state $i$ to state $j$ is given by $n_i n_c k_{ij}$.
 
 Given this setup, we can write out the rates of all processes that induce changes in the number density of any quantum state. Specifically, the rates of collisional transitions out of and into state $i$ are
 \begin{eqnarray}
@@ -83,7 +83,7 @@ where we adopt the convention that $A_{ij} = 0$ for $i \leq j$, i.e., the sponta
 \left(\frac{dn_i}{dt}\right)_{\rm stim.~emiss.~out} & = & -n_i \sum_j A_{ij} \langle n_{\gamma,ji}\rangle \\
 \left(\frac{dn_i}{dt}\right)_{\rm stim.~emiss.~in} & = & \sum_j n_j A_{ji} \langle n_{\gamma,ji}\rangle \\
 \left(\frac{dn_i}{dt}\right)_{\rm abs.~out} & = & -n_i \sum_j \frac{g_j}{g_i} A_{ij} \langle n_{\gamma,ij}\rangle \\
-\left(\frac{dn_i}{dt}\right)_{\rm abs.~in} & = & \sum_j \frac{g_i}{g_j} n_j A_{ij} \langle n_{\gamma,ij}\rangle,
+\left(\frac{dn_i}{dt}\right)_{\rm abs.~in} & = & \sum_j \frac{g_i}{g_j} n_j A_{ji} \langle n_{\gamma,ij}\rangle,
 \end{eqnarray}
 where for convenience we have introduced the shorthand $\langle n_{\gamma,ij}\rangle \equiv \langle n_{\gamma}\rangle(\nu_{ij})$. Note that, per our convention that $A_{ij}$ is non-zero only for $i > j$, the terms in the sums for stimulated emission are non-zero only for states $j > i$, while the terms in the sums for absorption are non-zero only for states $j < i$.
 
@@ -130,7 +130,7 @@ n_{{\rm crit},i} = \frac{\sum_{j<i} \left(1 + \langle n_{\gamma,ij}\rangle\right
 \end{equation}
 i.e., the critical density is the rate of radiative de-excitation divided by the rate of collisional de-excitation. The sole differences between this and the two-level critical density defined by equation (\ref{eq:ncrit}) are that this expression sums over all states into which radiative and collisional de-excitation can occur, and that it contains an extra factor of $ \left(1 + \langle n_{\gamma,ij}\rangle\right)$ in order to properly account for enhancements in the radiative de-excitation rate due to stimulated emission.
 
-Substituting in this definition of $n_{{\rm crit},i}$ into equation (\ref{eq:nsteady}) for the steady state population gives
+Substituting this definition of $n_{{\rm crit},i}$ into equation (\ref{eq:nsteady}) for the steady state population gives
 \begin{equation}
 n_i = \left(\frac{n_c}{n_c+n_{{\rm crit},i}}\right) \frac{\sum_{j<i} n_j k_{ji}}{\sum_{j<i} k_{ij}}
 + \left(\frac{n_{{\rm crit},i}}{n_c+n_{{\rm crit},i}}\right) \frac{\sum_{j<i} n_j \frac{g_i}{g_j} \langle n_{\gamma,ij}\rangle A_{ij}}{\sum_{j<i} \left(1+\langle n_{\gamma,ij}\rangle\right) A_{ij}}.
