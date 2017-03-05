@@ -45,7 +45,7 @@ Combining these two equations for the two unknowns $\varpi_{\rm min}$ and $v_{\r
 \end{equation}
 where we have substituted in for $\Omega^2$ in terms of $\beta$. This tells us the radius at which infalling material must go into a disk because conservation of angular momentum and energy will not let it get any closer.
 
-We can equate the stellar mass $m_*$ with the mass that started off interior to the position of the fluid element we are considering. This amounts to assuming that the collapse is perfectly inside-out, and that the mass that collapses before the fluid element under consideration all makes it onto the star. If we make this approximation, then $m_*=(4/3)\pi \rho r_0^3$, and we have
+We can equate the stellar mass $m_*$ with the mass that started off interior to the position of the fluid element we are considering. This amounts to assuming that the collapse is perfectly inside-out, and that the mass that collapses before the fluid element under consideration all makes it onto the star. If we make this approximation, then $m_*=(4/3)\pi \rho \varpi_0^3$, and we have
 \begin{equation}
 \varpi_{\rm min} = 3 \beta \varpi_0,
 \end{equation}
@@ -257,7 +257,7 @@ where $c_s$ is the sound speed in the disk and $H = c_s/\Omega$ is the disk scal
 \label{eq:mdot_steady}
 \dot{M} = 3\pi \Sigma \alpha c_s H = 3\pi \Sigma \alpha \frac{c_s^2}{\Omega}
 \end{equation}
-This if we know the disk thermal structure, i.e.\ we know $c_s$ and $H$, and we know its surface density $\Sigma$, then $\alpha$ tells us its accretion rate.
+Thus if we know the disk thermal structure, i.e.\ we know $c_s$ and $H$, and we know its surface density $\Sigma$, then $\alpha$ tells us its accretion rate.
 
 The physical meaning of this result becomes a bit clearer if we put in an order of magnitude estimate that $\Sigma \approx M_d / R_d^2$, where $M_d$ and $R_d$ are the disk mass and radius. Putting this in we have
 \begin{equation}
@@ -313,7 +313,7 @@ In such high column density, cool regions, the electron fraction depends on such
 
 \paragraph{Gravitational transport mechanisms.}
 
-Magnetic fields provide on potential source of transport, but, as we have seen, they may fail if the gas is not sufficiently ionized. If the accretion rate onto the disk is large enough, it is also possible that MRI may operate, but not may not provide sufficiently rapid angular momentum transport to stop gas from building up the disk -- this is likely to occur particularly for massive stars. In this case, mass can build up in the disk, leading to gravitational instability.
+Magnetic fields provide one potential source of transport, but, as we have seen, they may fail if the gas is not sufficiently ionized. If the accretion rate onto the disk is large enough, it is also possible that MRI may operate, but not may not provide sufficiently rapid angular momentum transport to stop gas from building up the disk -- this is likely to occur particularly for massive stars. In this case, mass can build up in the disk, leading to gravitational instability.
 
 We can understand when gravitational instability is likely to set in using our theory of disks. In steady state we showed that the accretion rate depends on $\Sigma$, $\alpha$, $c_s$, and $\Omega$ (equation \ref{eq:mdot_steady}). Since we are interested in gravitational stability, let us introduce the Toomre $Q$ parameter for our disk,
 \begin{equation}
@@ -334,7 +334,7 @@ What happens then depends on how the gas radiates away the excess energy. If the
 
 The global variety of gravitational instability occurs when the disk clumps up on scales comparable to the entire disk. This occurs when the disk mass becomes comparable to the mass of the star it is orbiting; instability sets in at disk masses of $30-50\%$ of the total system mass. This generally manifests as the appearance of spiral arms. These instabilities transport angular momentum because the disk is no longer axisymmetric, and instead has a significant moment arm that can exert torques, or on which torques can be exerted. Transport of angular momentum can then occur in several ways. If there is an envelope outside the disk, the disk can spin up the envelope, sending angular momentum outward in that way.
 
-The disk can also transfer angular momentum to the star by forcing the star to move away from the center of mass. In this configuration the disk develops a one-armed spiral, and the star in effect goes into a binary orbit with the overdensity in the disk. In this case angular momentum is transported inward rather than out, with the excess angular momentum going into orbital motion of the star. This phenomenon is known as the Sling instability \citet{shu90a}.
+The disk can also transfer angular momentum to the star by forcing the star to move away from the center of mass. In this configuration the disk develops a one-armed spiral, and the star in effect goes into a binary orbit with the overdensity in the disk. In this case angular momentum is transported inward rather than out, with the excess angular momentum going into orbital motion of the star. This phenomenon is known as the Sling instability \citep{shu90a}.
 
 \section{Outflow Launching}
 
