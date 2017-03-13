@@ -38,7 +38,7 @@ For future reference, it is also useful to think about how long accretion will l
 
 Now that we have shown that we can treat protostars as hydrostatic equilibrium objects, let us proceed to write down the evolution equations that govern the protostar. These should be familiar from stellar structure. An important caveat is that what we cover here represents an extremely simple approach to stellar structure, and that all of the complications that arise in real stellar structure calculations (e.g., rotation, convective overshooting, real stellar atmospheres, etc.) apply equally well to protostellar evolution. The goal here is simply to sketch the basic theory, so that we can understand how it changes for protostars as opposed to main sequence stars.
 
-As in other stellar structure calculations, it is most convenient to work in Lagrangian coordinates, where we let $M_r$ be the mass interior to radius $r$, so that $M_r$ runs from 0 to M. We then solve for stellar properties as a function of $M_r$. The first equation is the standard definition of mass in terms of density and radius:
+As in other stellar structure calculations, it is most convenient to work in Lagrangian coordinates, where we let $M_r$ be the mass interior to radius $r$, so that $M_r$ runs from 0 to $M$. We then solve for stellar properties as a function of $M_r$. The first equation is the standard definition of mass in terms of density and radius:
 \begin{equation}
 \label{mass}
 \frac{\partial r}{\partial M_r} = \frac{1}{4\pi r^2 \rho}.
@@ -57,7 +57,7 @@ The third equation is the equation of radiation diffusion:
 \begin{equation}
 F = \frac{L}{4\pi r^2} = -\frac{c}{3\rho\kappa_{\rm R}} \frac{\partial E}{\partial r},
 \end{equation}
-where $F$ is the radiation flux, $L$ is the luminosity passing through radius $r$, and $\kappa_{\rm R}$ is the Rosseland mean opacity of the gas. Writing $E=a_R T^4 = \sigma_{\rm SB} T^4/(4c)$ and again converting to Lagrangian coordinates by dividing by $\partial r/\partial M_r$ gives
+where $F$ is the radiation flux, $L$ is the luminosity passing through radius $r$, and $\kappa_{\rm R}$ is the Rosseland mean opacity of the gas. Writing $E=a_R T^4 = 4 \sigma_{\rm SB} T^4/(c)$ and again converting to Lagrangian coordinates by dividing by $\partial r/\partial M_r$ gives
 \begin{equation}
 T^3 \frac{\partial T}{\partial M_r} = - \frac{3\kappa_{\rm R} L}{256 \pi^2 \sigma_{\rm SB} r^4}.
 \end{equation}
