@@ -2,7 +2,7 @@ This is a list of errata in the print edition. The errors have been
 corrected in the github repository version.
 
 Chapter 6, equation 6.40: the inequality should be $\lesssim$ rather
-than $\gtrsim$
+than $\gtrsim$ (reported by J. Dalcanton)
 
 Chapter 6, after equation 6.86: this should read "where $\mathbf{f}_g$
-is the gravitational force per unit mass."
+is the gravitational force per unit mass." (reported by J. Dalcanton)
