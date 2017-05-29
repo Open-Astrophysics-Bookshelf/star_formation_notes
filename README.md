@@ -1,9 +1,5 @@
 # Notes on Star Formation
 
-This text is a series of lecture notes on star formation, based on Mark Krumholz's course on the topic at UC Santa Cruz. It includes a series of exercises. The course used the following as its primary references:
+This text covers star formation at a level suitable for advanced undergraduates or beginning graduate students. It is based on Mark Krumholz's course on star formation at UC Santa Cruz and Australian National University. The book includes problem sets and solutions.
 
-* [The Big Problems in Star Formation: the Star Formation Rate, Stellar Clustering, and the Initial Mass Function](http://adsabs.harvard.edu/abs/2014PhR...539...49K), 2014, Krumholz, M. R., Physics Reports, 539, 49
-* [Star Formation in Nearby Galaxies](http://adsabs.harvard.edu/abs/2012ARA\%26A..50..531K), 2012, Kennicutt, R. C., & Evans, N. J., ARA&A, 50, 531
-* [Protostars and Planets VI](http://www.mpia.de/homes/ppvi/prognew.php), 2014, ed. H Beuther, R. Klessen, C. Dullemond, Th. Henning, U. Arizona Press -- various chapters and authors
-
-The course is aimed at graduate students, or perhaps advanced undergraduates.
+This version is published through the Open Astrophysics Bookshelf, and is available under a creative commons license (see the LICENSE file included in the repository). Paper and e-book editions are also available for [purchase](http://www.worldscientific.com/worldscibooks/10.1142/10091) as part of the World Scientific Series in Astrophysics.
