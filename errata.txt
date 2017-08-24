@@ -6,3 +6,6 @@ than $\gtrsim$ (reported by J. Dalcanton)
 
 Chapter 6, after equation 6.86: this should read "where $\mathbf{f}_g$
 is the gravitational force per unit mass." (reported by J. Dalcanton)
+
+Chapter 7, equation 7.12: the final unit should be erg s^-1 g^-1, not
+erg g^-1
