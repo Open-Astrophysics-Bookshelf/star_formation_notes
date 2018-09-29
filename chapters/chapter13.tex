@@ -111,7 +111,7 @@ A powerlaw is scale-free, but the peak has a definite mass scale. This mass scal
 We can see this in a few ways. First we can demonstrate it in a more intuitive but not rigorous manner, and then we can demonstrate it rigorously. The intuitive argument is as follows. In the system we have described, there are four energies in the problem: thermal energy, bulk kinetic energy, magnetic energy, and gravitational potential energy. From these energies we can define three dimensionless ratios, and the behavior of the system will be determined by these three ratios. As an example, we might define the Mach number, plasma beta, and Jeans number via
 \begin{equation}
 \mathcal{M} = \frac{\sigma}{c_s} \qquad \beta = \frac{8\pi \rho c_s^2}{B^2}
-\qquad n_J = \frac{\rho L^2}{c_s^3/\sqrt{G^3\rho}}.
+\qquad n_J = \frac{\rho L^3}{c_s^3/\sqrt{G^3\rho}}.
 \end{equation}
 The ratios describe the ratio of kinetic to thermal energy, the ratio of thermal to magnetic energy, and the ratio of thermal to gravitational energy. All other dimensionless numbers we normally use can be derived from these, e.g., the Alfv\'enic Mach number $\mathcal{M}_A = \mathcal{M}\sqrt{\beta/2}$ is simply the ratio of kinetic to magnetic energy.
 
@@ -138,7 +138,7 @@ One can non-dimensionalize these equations by choosing a characteristic length s
 \begin{eqnarray}
 \frac{\partial r}{\partial t'} & = & -\nabla'\cdot (r\mathbf{u}) \\
 \frac{\partial}{\partial t'}(r \mathbf{u}) & = & -\nabla' \cdot \left(r\mathbf{uu}\right) - \frac{1}{\mathcal{M}^2}\nabla' r \nonumber \\
-& & {} + \frac{1}{\mathcal{M}_A^2} (\nabla'\times\mathbf{b})\times\mathbf{b} - \frac{1}{\alpha_{\rm vir}} \nabla' \psi \\
+& & {} + \frac{1}{\mathcal{M}_A^2} (\nabla'\times\mathbf{b})\times\mathbf{b} - \frac{1}{\alpha_{\rm vir}} r \nabla' \psi \\
 \frac{\partial\mathbf{b}}{\partial t'} & = & -\nabla'\times\left(\mathbf{b}\times\mathbf{u}\right) \\
 \nabla'^2 \psi & = & 4\pi r,
 \end{eqnarray}

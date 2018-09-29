@@ -8,4 +8,24 @@ Chapter 6, after equation 6.86: this should read "where $\mathbf{f}_g$
 is the gravitational force per unit mass." (reported by J. Dalcanton)
 
 Chapter 7, equation 7.12: the final unit should be erg s^-1 g^-1, not
-erg g^-1
+erg g^-1.
+
+Chapter 8, after equation 8.2: there are two equations between 8.2 and
+8.3 that are not numbered, and should be; in addition, these two
+equations are missing factors of g_0 and g_1, the degeneracies of the
+states, respectively. Finally, in the sentence before the unnumbered
+equations, "atoms in the level 0 and 1 states" should read "molecules
+in the level 0 and 1 states".
+
+Chapter 10, equation 10.42: the left hand side should read
+exp(s_crit), not s_crit.
+
+Chapter 13, equation 13.10: the final numerator should be rho L^3
+rather than rho L^2.
+
+Chapter 13, equation 13.17: the final term on the right hand side
+should be 1/alpha_vir r nabla' psi, rather than 1/alpha_vir nabla' psi
+as written.
+
+Chapter 14, above equation 14.2: the text "and the case theta = 1
+corresponds" should read "and the case theta = 90^\circ corresponds"

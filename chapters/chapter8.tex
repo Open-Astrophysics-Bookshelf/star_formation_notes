@@ -34,12 +34,12 @@ These equations allow the following simple method of deducing the column density
 \begin{equation}
 I_{\nu} = \left(1-e^{-\tau_{\nu}}\right) B_{\nu}(T),
 \end{equation}
-for $\tau_{\nu}$, the optical depth of the $^{13}$CO line. If $N_{\rm ^{13}CO}$ is the column density of $^{13}$CO atoms, then for gas in LTE the column densities of atoms in the level 0 and 1 states are
-\begin{eqnarray*}
-N_0 & = & \frac{N_{^{13}CO}}{Z} \\
-N_1 & = & e^{-T/T_1}\frac{N_{^{13}CO}}{Z}
-\end{eqnarray*}
-where $Z$ is the partition function, which is a known function of $T$, and $T_1=5.3$ K is the temperature corresponding to the first excited state.
+for $\tau_{\nu}$, the optical depth of the $^{13}$CO line. If $N_{\rm ^{13}CO}$ is the column density of $^{13}$CO atoms, then for gas in LTE the column densities of molecules in the level 0 and 1 states are
+\begin{eqnarray}
+N_0 & = & g_0 \frac{N_{^{13}CO}}{Z} \\
+N_1 & = & g_1 e^{-T/T_1}\frac{N_{^{13}CO}}{Z},
+\end{eqnarray}
+where $g_0$ and $g_1$ are the degeneracies of states 0 and 1, $Z$ is the partition function, which is a known function of $T$, and $T_1=5.3$ K is the temperature corresponding to the first excited state.
 
 The opacity to line absorption at frequency $\nu$ is
 \begin{equation}
