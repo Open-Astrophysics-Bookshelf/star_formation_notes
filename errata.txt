@@ -20,6 +20,11 @@ in the level 0 and 1 states".
 Chapter 10, equation 10.42: the left hand side should read
 exp(s_crit), not s_crit.
 
+Chapter 12, equation 12.3: the second fraction on the right hand side
+is inverted, i.e., the second term on the RHS should be
+\int_{-\infty}^0 dt \dot{M}_*(t) / \int_{-t_{MS}(m)}^0 dt
+\dot{M}_*(t). (reported by A. Ginsburg)
+
 Chapter 13, equation 13.10: the final numerator should be rho L^3
 rather than rho L^2.
 
