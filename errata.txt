@@ -1,6 +1,10 @@
 This is a list of errata in the print edition. The errors have been
 corrected in the github repository version.
 
+Chapter 2, various locations: class 1 instead of class I (when
+referring to protostars), plus miscellaneous typos in text (reported
+by G. Ejlali)
+
 Chapter 6, equation 6.40: the inequality should be $\lesssim$ rather
 than $\gtrsim$ (reported by J. Dalcanton)
 
@@ -31,6 +35,8 @@ rather than rho L^2.
 Chapter 13, equation 13.17: the final term on the right hand side
 should be 1/alpha_vir r nabla' psi, rather than 1/alpha_vir nabla' psi
 as written.
+
+Chapter 13: "viral" instead of "virial" (reported by G. Ejlali)
 
 Chapter 14, above equation 14.2: the text "and the case theta = 1
 corresponds" should read "and the case theta = 90^\circ corresponds"
