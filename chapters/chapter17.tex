@@ -22,7 +22,10 @@ The fundamental reason that stars can be hydrostatic objects is that the time th
 
 The time required for a star to reach mechanical equilibrium is the sound crossing time, $t_s\sim R/c_s$, where $R$ is the stellar radius and $c_s$ is the sound speed. The virial theorem tells use that the sound speed inside the star (potentially including the contribution from radiation pressure) must be of order $\sqrt{GM/R}$, where $M$ is the stellar mass. Thus the mechanical equilibration timescale is
 \begin{equation}
-t_s \sim \sqrt{\frac{R^3}{GM}} = 35\, M_0^{-1/2} R_1^{3/2}\mbox{ hours},
+t_s \sim \sqrt{\frac{R^3}{GM}} = 14\, M_0^{-1/2} R_1^{3/2}\mbox{ hours},
+% python:
+% >>> ((6.957e10 * 10)**3 / 6.67e-8 / 2e33)**0.5 / 3600
+% 13.955730991983714
 \end{equation}
 where $M_0 = M / \msun$ and $R_{1} = R/(10\rsun)$. Here the radius to which we have scaled is a typical one for protostars, as we will see below.
 
