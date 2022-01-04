@@ -355,28 +355,44 @@ where $v$ is the radial velocity of the gas. It is useful to write the equations
 \end{eqnarray}
 In the second step we used the mass conservation equation to substitute for $\partial \rho/\partial t$, and in the final step we used the definition of $M_r$ to substitute for $\rho$.
 
-To figure out how the gas moves, we write down the Lagrangean version of the momentum equation:
+To figure out how the gas moves, we write down the Lagrangian version of the momentum equation:
 \begin{equation}
-\rho \frac{Dv}{Dt} = -\frac{\partial}{\partial r}P - \mathbf{f}_g,
+\rho \frac{Dv}{Dt} = -\frac{\partial}{\partial r}P - \rho \mathbf{f}_g,
 \end{equation}
-where $\mathbf{f}_g$ is the gravitational force per unit mass. For the momentum equation, we take advantage of the fact that the gas is isothermal to write $P=\rho c_s^2$. The gravitational force is $\mathbf{f}_g = -G M_r / r^2$. Thus we have
-\begin{equation}
-\frac{Dv}{Dt}= \frac{\partial}{\partial t}v + v\frac{\partial}{\partial r} v= -\frac{c_s^2}{\rho} \frac{\partial}{\partial r}{\rho} - \frac{G M_r}{r^2}.
-\end{equation}
+where $\mathbf{f}_g$ is the gravitational force per unit mass. As a reminder, the total derivative $D/Dt$ indicates we are not evaluating the derivative at a fixed position, but that instead we are following a fixed shell of mass as it moves; that is, $\partial v/\partial t$ means ``change in fluid velocity at a fixed position'', while $Dv/Dt$ means ``change in the velocity of a particular shell of mass as it moves". 
 
+For the momentum equation, we take advantage of the fact that the gas is isothermal to write $P=\rho c_s^2$. The gravitational force is $\mathbf{f}_g = G M_r / r^2$. Thus we have
+\begin{equation}
+\frac{Dv}{Dt}= -\frac{c_s^2}{\rho} \frac{\partial}{\partial r}{\rho} - \frac{G M_r}{r^2}.
+\end{equation}
 To go further, let us make one more simplifying assumption: that the sound speed $c_s$ is zero. This is not as bad an approximation as one might think. Consider the virial theorem: the thermal pressure term is just proportional to the mass, since the gas sound speed stays about constant. On the other hand, the gravitational term varies as $1/R$. Thus, even if pressure starts out competitive with gravity, as the core collapses the dominance of gravity will increase, and before too long the collapse will resemble a pressureless one.
 
 In this case the momentum equation is trivial:
 \begin{equation}
 \frac{Dv}{Dt} = -\frac{GM_r}{r^2}.
 \end{equation}
-This just says that a shell's inward acceleration is equal to the gravitational force per unit mass exerted by all the mass interior to it, which is constant. We can then solve for the velocity as a function of position:
+This just says that a shell's inward acceleration is equal to the gravitational force per unit mass exerted by all the mass interior to it, which is constant. To solve the system, we will use the trick of changing from $t$ to $r$ as our independent variable. That is, rather than asking about the velocity as a function of time, we will ask about it as a function of position. To make this change of variable, we invoke the chain rule:
 \begin{equation}
-v = \dot{r} = -\sqrt{2GM_r}\left(\frac{1}{r}-\frac{1}{r_0}\right)^{1/2},
+\frac{Dv}{Dt} = \frac{D^2 r}{Dt^2} = \frac{D}{Dt}\left(\frac{Dr}{Dt}\right) = \frac{Dr}{Dt} \frac{D}{Dr}\left(\frac{Dr}{Dt}\right) = v \frac{Dv}{Dr}
 \end{equation}
-where $r_0$ is the position at which a particular fluid element starts. 
+Thus we have
+\begin{equation}
+v\frac{Dv}{Dr} = -\frac{G M_r}{r^2},
+\end{equation}
+which is trivial to integrate via separation of variables:
+\begin{equation}
+\int_{0}^{v} v' \, dv' = -G M_r \int_{r_0}^r \frac{dr'}{r'^2},
+\end{equation}
+where we are considering a fluid element that starts at radius $r_0$ with a velocity $v=0$. Evaluating the integrals and solving gives the velocity as a function of position:
+\begin{equation}
+v = -\sqrt{2GM_r}\left(\frac{1}{r}-\frac{1}{r_0}\right)^{1/2}.
+\end{equation}
 
-The integral can be evaluated by the trigonometric substitution $r=r_0 \cos^2\xi$. The solution, first obtained by Hunter (1962), is
+To obtain the solution as a function of time, we can integrate again. The equation we have just written down is a first-order ODE for the radius as a function of time:
+\begin{equation}
+\dot{r} =  -\sqrt{2GM_r}\left(\frac{1}{r}-\frac{1}{r_0}\right)^{1/2},
+\end{equation}
+This ODE can be evaluated by the trigonometric substitution $r=r_0 \cos^2\xi$. The solution, first obtained by Hunter (1962), is
 \begin{eqnarray}
 -2 r_0 (\cos\xi \sin\xi) \dot{\xi} & = & -\sqrt{\frac{2GM_r}{r_0}} \left(\frac{1}{\cos^2\xi}-1\right)^{1/2} \\
 2 (\cos\xi\sin\xi) \dot{\xi} & = & \sqrt{\frac{2GM_r}{r_0^3}}\tan\xi \\
