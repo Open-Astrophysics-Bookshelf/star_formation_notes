@@ -91,11 +91,12 @@ P = \frac{\rho k_B T}{\mu m_{\rm H}},
 \end{equation}
 where $\mu$ is the mean mass for particle in units of hydrogen masses. For constant $\mu$ the entropy is
 \begin{equation}
+\label{eq:entropy}
 s = \frac{k_B}{\mu m_{\rm H}} \ln \left(\frac{T^{3/2}}{\rho}\right) + \mbox{const}.
 \end{equation}
 For a fully ionized gas $\mu=0.61$, but in numerical calculations we generally use a numerically tabulated value of $\mu(\rho, T)$ and $s(\rho,T)$. The terms describing the opacity and nuclear energy generation rate are exactly the same as in the case of a main sequence star, with one important exception for nuclear energy generation that we will discuss below.
 
-\subsection{Boundary Conditions}
+\subsection{Boundary Conditions: Hot Versus Cold Accretion}
 
 The four structure equations require four boundary conditions to solve. Two are obvious, and are the same for protostars as main sequence stars: at $M_r=0$
 \begin{eqnarray}
@@ -104,7 +105,7 @@ L(0) & = & 0.
 \end{eqnarray}
 The remaining two are less obvious. Thus far everything we have written down is completely identical to the case of a main sequence star, except for the time derivative in the heat equation, but the remaining two boundary conditions, describing the pressure and luminosity at the edge of the star, are different.
 
-\paragraph{Spherical Accretion Flows.} First consider the simplest case, where we assume spherical symmetry everywhere. A main sequence star effectively has vacuum of negligible pressure outside it, but a protostar does not. It is bounded by an accretion flow, and  the pressure at the stellar surface must be sufficient to halt the flow. The accretion rate onto the star $\dot{M}$ is related to the density $\rho_i$ and velocity $v$ of the infalling material by
+For the pressure boundary condition, we can think of two limiting cases. First, suppose that the accretion flow is spherically symmetric, with equal mass flux landing everywhere on the stellar surface. The pressure at the stellar surface must be sufficient to halt this accretion flow. The accretion rate onto the star $\dot{M}$ is related to the density $\rho_i$ and velocity $v$ of the infalling material by
 \begin{equation}
 \dot{M} = 4\pi r^2 \rho_i v,
 \end{equation}
@@ -117,23 +118,9 @@ where the right hand side is to be evaluated at $r=R$. If the incoming gas is in
 \label{pbound1}
 P(M) = \frac{\dot{M}}{4\pi} \sqrt{\frac{2 G M}{R^5}},
 \end{equation}
-where $M$ is the total stellar mass. 
+where $M$ is the total stellar mass. This is our pressure boundary condition in the limiting case of spherical accretion.
 
-The final boundary condition is on the luminosity. For a non-accreting star, in the simplest case we treat the star as radiating as a blackbody, and require that
-\begin{equation}
-\label{lbound2}
-L(M)=4\pi R^2 \sigma_{\rm SB} T(M)^4.
-\end{equation}
-In more sophisticated computations we derive the luminosity from a stellar atmosphere calculation. The situation is more complex for an accreting star, because the accreting gas carries a non-negligible energy flux with it. The question therefore becomes what fraction of this energy will be radiated away at the stellar surface and what fraction will be advected or radiated into the stellar interior. We will not derive these results in detail, just sketch out the issues. The boundary condition must take the form
-\begin{equation}
-\label{lbound1}
-L(M) = L_{\rm acc} + L_{\rm bb} - L_{\rm in},
-\end{equation}
-where $L_{\rm acc}=G M \dot{M}/R$ is the mechanical luminosity of the accreting gas, $L_{\rm bb} = 4\pi R^2 \sigma_{\rm SB} T(M)^4$ represents the blackbody radiation from the stellar surface, and $L_{\rm in}$ represents the inward flux of energy due to advection and radiation from the shocked gas. One way to think about $L_{\rm in}$ is that it specifies what fraction of the kinetic energy of the accreting gas escapes promptly as radiation, with the remaining portion assumed to be advected into the stellar interior with the accreting gas. The correct value of $L_{\rm in}$ is a subtle question, since it depends on the structure of the shock at the stellar surface, and on its geometry. For spherical accretion, \citet{stahler80a, stahler80b, stahler81a} show that $L_{\rm in}\approx 3 L_{\rm acc}/4$. 
-
-\paragraph{Cold versus Hot Accretion.} Thus far we have assumed that the accretion flow is spherically symmetric, but this assumption may not be even close to correct. In particular, there is good observational evidence for T Tauri stars that accretion occurs only over a small portion of the stellar surface, likely because the star's magnetic field exerts enough pressure to prevent accretion over much of the surface. It is unknown, and a subject of great current debate, whether this is also the case during the optically-hidden main accretion phase, when the accretion rate is much higher than during the later T Tauri phase.
-
-If the accretion is confined to a small portion of the stellar surface, this has two implications. First, the pressure boundary condition should revert to the usual vacuum one that applies to main sequence stars, since there will be no ram pressure over most of the stellar surface. We can write down this condition by integrating the equation of hydrostatic balance (equation \ref{eq:hydrobalance}) to obtain 
+However, spherical accretion is probably not realistic, especially during the later phases of protostellar evolution when accretion rates are small; instead, the accreting material probably falls onto only a small fraction of the stellar surface. In this case we should have the usual vacuum boundary condition on the pressure that applies to main sequence stars, since there will be no ram pressure over most of the stellar surface. We can write down this condition by integrating the equation of hydrostatic balance (equation \ref{eq:hydrobalance}) to obtain 
 \begin{equation}
 P(M) = \frac{G M}{R}^2 \int_{R}^{\infty} \rho \, dr.
 \end{equation}
@@ -146,9 +133,23 @@ where $\tau_{\rm phot}$ is the optical depth from infinity to the photosphere an
 \label{pbound2}
 P(M) = \frac{2 G M}{3 R^2 \kappa_{\rm R, phot}}.
 \end{equation}
-The second implication of non-spherical accretion is that $L_{\rm in}$ might be much larger than in the spherical case. This is because, if the accretion shock covers only a small portion of the stellar surface, radiation will be able to escape out the "sides" of the shock in a way that it cannot for a fully-confined sphere. There has yet to be a fully detailed calculation of this case, and instead the usual practice in the protostellar evolution community is to parameterize the uncertainty by adopting a value of $L_{\rm in}$ that lies somewhere between the minimum possible value, corresponding to the spherical case, and the maximum possible value, in which $L_{\rm in}$ is chosen so as to set the specific entropy of the material being added to the star equal to either the specific entropy of material at the stellar surface, or the mean specific entropy of all material in the star. We refer to cases where the value of $L_{\rm in}$ is chosen equal or close to the spherical value as "hot accretion" models, because the material being added to the star is hot in this case. We refer to models where $L_{\rm in}$ is chosen so that the specific entropy of accreting material matches that of material already in the star as "cold accretion" models, since the material in this case is cold.
 
-In the absence of a first-principles theoretical calculation, it is difficult to determine whether reality is closer to the hot or cold accretion assumption, and whether the answer to this question might be different for different stars. Approaches to settling this problem have generally relied on the empirical approach of generating synthetic tracks from hot or cold accretion assumptions and then comparing to observations to see what gives the best fit. The method by which we can generate these tracks we defer to Section \ref{ssec:protostar_numeric}.
+The luminosity boundary condition is even trickier, and here the consequences are much more significant -- indeed, the luminosity boundary condition is probably the single biggest uncertainty in protostellar evolution. Before discussing alternative choices for it, it is useful to consider why the luminosity boundary condition matters so much. We saw in the previous chapter that material free-falling onto a stellar surface will be shock-heated to a temperature $\sim 10^6$ K, orders of magnitude higher than the temperature in the envelope (as opposed to the core) of a star. Since the radius of a star is largely determined by the entropy of material in the envelope, if this high-entropy material were added directly to the star, the result would be to drive the star into a very large-radius, low-density state.
+
+However, it is almost certainly not the case that the accreting material retains all of its entropy. It can radiate (indeed, this is what powers accretion luminosity), and that radiation will remove much of the entropy from the accreting gas before it is incorporated into the protostar. The crucial question is, how much? Because the specific entropy is so large immediately after the accretion shock, even if the accreting material retains only a small fraction of its entropy, this might still be enough to completely change the entropy budget of the protostar, and thus its radius. The implication is that the characteristic radii of protostars depend sensitively on whether accreting gas retains, for example, 10\% of its entropy or only 0.1\%. We refer to cases where the accreting material retains a substantial fraction of its entropy as ``hot'' accretion, and those where the material loses almost all of its entropy as ``cold'' accretion.
+
+With this understood conceptually, we can now write down the final boundary condition. This must take the form\footnote{This is unfortunately a case where the notation and terminology used in the literature is far from unified. It seems that nearly every author who works on protostellar evolution has a different convention for how to parameterize this boundary condition, and in many cases the choices are not well-documented, so it is not immediately obvious how to translate the boundary conditions used by one author into those used by another. Use caution when reading the literature in this area.}
+\begin{equation}
+\label{lbound1}
+L(M) = L_{\rm bb} + L_{\rm acc,max} - L_{\rm acc,rad},
+\end{equation}
+where $L_{\rm bb} = 4\pi R^2 \sigma_{\rm SB} T(M)^4$ represents the blackbody radiation from the stellar surface that would be present even without an accretion flow, and $L_{\rm acc,max} - L_{\rm acc,rad}$ is the available mechanical luminosity in the accretion flow, which is $L_{\rm acc,max}=\epsilon G M \dot{M}/R$, minus the amount lost to radiation $L_{\rm acc,rad}$; here $\epsilon$ is a factor less than unity that represents energy radiated before the accretion flow reaches the stellar surface, for example in an accretion disk. If we define $\alpha = 1 - L_{\rm acc,rad}/L_{\rm acc,max}$ as the fraction of energy retained by the accreting gas, hot accretion is roughly $\alpha \gtrsim 0.1$, while cold accretion is roughly $\alpha \lesssim 0.001$.
+
+In the case of a spherically-symmetric accretion flow (which also implies $\epsilon=1$), one can calculate $L_{\rm acc,rad}$ directly by considering radiative losses, through the accretion shock, and \citet{stahler80a, stahler80b, stahler81a} show that the result is $L_{\rm acc,rad}\approx 3 L_{\rm acc,max}/4$, i.e., $3/4$ of the total energy is lost to radiation. However, this is still hot accretion, since even if the accreting material only retains $1/4$ of its energy ($\alpha=0.25$), this is sufficient to render its entropy much higher than the entropy in the envelope, and results in a large protostellar radius. This spherical case is likely the limit of how ``hot'' accretion could possibly be.
+
+If the accretion shock does not cover the full stellar surface, on the other hand, we expect that it will be easier for radiation to escape, and thus accretion should be colder. However, it is unclear exactly how cold; no detailed calculations of the structure of an accretion shock covering only part of the stellar surface have been published, and, even if such a calculation were performed, we have limited knowledge of the actual geometry of the accretion shocks. For this reason, in cold accretion models it is common simply to either adopt a fixed, small value for $L_{\rm acc,rad}/L_{\rm acc,max}$, or to choose a ``target'' value for the specific entropy of the newly-accreted material (usually either the specific entropy at the stellar surface or the mean specific entropy of all the gas in the star), and choose $L_{\rm acc,rad}/L_{\rm acc,max}$ to hit that target. 
+
+Approaches to determining whether reality is closer to hot or cold accretion, or to tuning the ``coldness'' parameter required in the cold accretion models, have generally relied on the empirical approach of generating synthetic tracks for differing assumptions then comparing to observations to see what gives the best fit. The method by which we can generate these tracks we defer to Section \ref{ssec:protostar_numeric}.
 
 \subsection{Deuterium Burning}
 
