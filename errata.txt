@@ -1,6 +1,8 @@
 This is a list of errata in the print edition. The errors have been
 corrected in the github repository version.
 
+Chapter 1, miscellaneous typos (reported by A. Ginsburg)
+
 Chapter 2, various locations: class 1 instead of class I (when
 referring to protostars), plus miscellaneous typos in text (reported
 by G. Ejlali)
