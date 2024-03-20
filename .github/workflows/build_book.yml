@@ -1,0 +1,42 @@
+name: build book
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build-book:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update -y -qq
+          sudo apt-get -qq -y install texlive texlive-latex-extra texlive-fonts-extra texlive-font-utils build-essential
+
+      - name: Build
+        run: |
+          make
+          mkdir out
+          mv sfnotes.pdf out
+
+      - name: Archive
+        uses: actions/upload-artifact@v3
+        with:
+          name: book-pdf
+          path: out/sfnotes.pdf
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
+          keep_files: true
+
